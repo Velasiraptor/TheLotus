@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Texture2D" uid="uid://152aojnhliiq" path="res://Sprites/Forest/Platf_big.png" id="1_uvtih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8j3q"]
+size = Vector2(289, 55.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paptx"]
+size = Vector2(307, 55.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uv60g"]
+size = Vector2(269, 43)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oiehy"]
+radius = 15.8804
+height = 71.982
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpi60"]
+radius = 9.0
+height = 60.0
+
+[node name="platfBig1" type="Node2D"]
+light_mask = 64
+visibility_layer = 64
+
+[node name="PlatfBig" type="Sprite2D" parent="."]
+texture = ExtResource("1_uvtih")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatfBig"]
+collision_layer = 2
+collision_mask = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-293.5, 14.875)
+shape = SubResource("RectangleShape2D_n8j3q")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(3.5, -38.3125)
+shape = SubResource("RectangleShape2D_paptx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(299.25, -5)
+shape = SubResource("RectangleShape2D_uv60g")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(307.5, -11.5)
+shape = SubResource("RectangleShape2D_uv60g")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(167, -31)
+rotation = 2.50921
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(446, 44)
+rotation = 3.13371
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(404, 37)
+rotation = 3.13371
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(360, 41)
+rotation = 1.7198
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(309, 26)
+rotation = 1.7198
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(276, 33)
+rotation = 4.1465
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(226, 31)
+rotation = 4.81784
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(200, 24)
+rotation = 3.82945
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(186, 18)
+rotation = 3.73325
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(129, 5.99997)
+rotation = 3.73325
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(159, -1)
+rotation = 3.73325
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(63, 3)
+rotation = 5.10391
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-10, -3)
+rotation = 4.01091
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-104, -2)
+rotation = 2.61697
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-130, 0)
+rotation = 2.61697
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-149, 29)
+rotation = 2.61697
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-166, 48)
+rotation = 2.61697
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-182, 41)
+rotation = 3.29013
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-249, 46)
+rotation = 3.29013
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-322, 40)
+rotation = 3.29013
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-352, 44)
+rotation = 3.29013
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-392, 56)
+rotation = 3.29013
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-421, 46)
+rotation = 3.29013
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-443, 50)
+rotation = 3.36168
+shape = SubResource("CapsuleShape2D_oiehy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-436, 17)
+shape = SubResource("CapsuleShape2D_wpi60")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(-150, -36)
+shape = SubResource("CapsuleShape2D_wpi60")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="PlatfBig/StaticBody2D"]
+position = Vector2(439, -3)
+shape = SubResource("CapsuleShape2D_wpi60")
+metadata/_edit_group_ = true

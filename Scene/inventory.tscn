@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf7a0afpemdca"]
+
+[ext_resource type="Texture2D" uid="uid://be3tqk1fwusp5" path="res://Sprites/UI/Inventory/inventory_1.png" id="1_d17wh"]
+[ext_resource type="Texture2D" uid="uid://cggh7bnpbmweh" path="res://Sprites/UI/Inventory/inventory_2.png" id="2_41dmr"]
+[ext_resource type="Texture2D" uid="uid://bo3jqcdjd1ad3" path="res://Sprites/UI/Inventory/FrogInvent_1.png" id="3_qqf8d"]
+[ext_resource type="Texture2D" uid="uid://dg1lt7ii7xskl" path="res://Sprites/UI/Inventory/FrogInvent_2.png" id="4_dpxof"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osb2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qqf8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dpxof")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_right = 1029.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.772549)
+
+[node name="wind1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_d17wh")
+
+[node name="wind2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_41dmr")
+
+[node name="frog" type="AnimatedSprite2D" parent="wind2"]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_osb2k")
+autoplay = "default"
+frame_progress = 0.236479

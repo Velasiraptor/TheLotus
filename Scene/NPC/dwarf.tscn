@@ -1,0 +1,228 @@
+[gd_scene load_steps=18 format=3 uid="uid://cqmk2gl5u37bs"]
+
+[ext_resource type="Script" path="res://Script/NPC/dwarf.gd" id="1_u3k52"]
+[ext_resource type="Texture2D" uid="uid://c6l715y8kw2aj" path="res://Sprites/Dwarf/DwarfIdle_1_5.png" id="1_vobkw"]
+[ext_resource type="Texture2D" uid="uid://dpqfvr4pkc4f2" path="res://Sprites/Dwarf/DwarfIdle_2_4.png" id="2_vf0vx"]
+[ext_resource type="Texture2D" uid="uid://d4kyl433amugo" path="res://Sprites/Dwarf/DwarfIdle_3.png" id="3_hqtyt"]
+[ext_resource type="Texture2D" uid="uid://bvw7qxcjbktbw" path="res://Sprites/Dwarf/DwarfTalk_1.png" id="4_bvexl"]
+[ext_resource type="Texture2D" uid="uid://crrngk2h082hq" path="res://Sprites/Dwarf/DwarfTalk_0.png" id="4_ye55s"]
+[ext_resource type="Texture2D" uid="uid://ice5y8eveep6" path="res://Sprites/Dwarf/DwarfTalk_2.png" id="5_rqhu0"]
+[ext_resource type="Texture2D" uid="uid://dukowtahvht10" path="res://Sprites/Dwarf/DwarfTalk_3.png" id="6_go4c8"]
+[ext_resource type="Texture2D" uid="uid://c3ae0khl1q30f" path="res://addons/ActionIcon/Keyboard/E.png" id="9_u4yrk"]
+[ext_resource type="AudioStream" uid="uid://tccvvsp3i1m1" path="res://Sounds/NPC/Dwarf/DwarfFanpinio.mp3" id="10_hgsvo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwivy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vf0vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hqtyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vf0vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vobkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ye55s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bvexl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rqhu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bvexl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rqhu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_go4c8")
+}],
+"loop": false,
+"name": &"talk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dsvl"]
+radius = 130.0
+height = 640.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv8b1"]
+size = Vector2(250, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hylow"]
+size = Vector2(306.667, 673.333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3i2q"]
+size = Vector2(526, 630)
+
+[sub_resource type="Animation" id="Animation_h55r5"]
+resource_name = "scale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(1.5, 1.5), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dc5vu"]
+_data = {
+"scale": SubResource("Animation_h55r5")
+}
+
+[node name="Dwarf" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_u3k52")
+
+[node name="Spr_Dwarf" type="AnimatedSprite2D" parent="."]
+position = Vector2(-40, 0)
+sprite_frames = SubResource("SpriteFrames_rwivy")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.491735
+
+[node name="CollisionShapeD_1" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+rotation = -3.14159
+shape = SubResource("CapsuleShape2D_4dsvl")
+debug_color = Color(0.772549, 0.411765, 0.45098, 0.419608)
+
+[node name="CollisionShapeD_2" type="CollisionShape2D" parent="."]
+position = Vector2(1.66667, 292.5)
+shape = SubResource("RectangleShape2D_xv8b1")
+debug_color = Color(0.772549, 0.411765, 0.45098, 0.419608)
+
+[node name="AreaFlipH_true" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaFlipH_true"]
+position = Vector2(-380, -10)
+shape = SubResource("RectangleShape2D_hylow")
+debug_color = Color(0.588235, 0.537255, 0.305882, 0.419608)
+
+[node name="AreaFlipH_false" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaFlipH_false"]
+position = Vector2(300, -10)
+shape = SubResource("RectangleShape2D_hylow")
+debug_color = Color(0.588235, 0.537255, 0.305882, 0.419608)
+
+[node name="Talks" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Talks"]
+position = Vector2(-265, 5)
+shape = SubResource("RectangleShape2D_d3i2q")
+debug_color = Color(0.734151, 0.94601, 1, 0.42)
+
+[node name="TimerIdle" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Press_E" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.905882, 0.639216, 0.415686, 0.745098)
+position = Vector2(-330, -256.667)
+scale = Vector2(1.63637, 1.63637)
+texture = ExtResource("9_u4yrk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Press_E"]
+autoplay = "scale"
+libraries = {
+"": SubResource("AnimationLibrary_dc5vu")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Press_E"]
+show_behind_parent = true
+offset_left = -41.0
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioFampinio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_hgsvo")
+volume_db = -15.0
+max_distance = 500.0
+
+[connection signal="body_entered" from="AreaFlipH_true" to="." method="_on_area_flip_h_true_body_entered"]
+[connection signal="body_entered" from="AreaFlipH_false" to="." method="_on_area_flip_h_false_body_entered"]
+[connection signal="body_entered" from="Talks" to="." method="_on_talks_body_entered"]
+[connection signal="body_exited" from="Talks" to="." method="_on_talks_body_exited"]
+[connection signal="timeout" from="TimerIdle" to="." method="_on_timer_idle_timeout"]

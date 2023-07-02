@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cubkru0xmbi1w" path="res://Sprites/Forest/Bottom.png" id="1"]
+[ext_resource type="Shader" path="res://Shaders/Grass.gdshader" id="1_b0iqr"]
+[ext_resource type="Script" path="res://Script/Forest/Bottom.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://v0rx3flohgt" path="res://Sprites/Forest/Bottom60.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dns72ev465l16" path="res://Sprites/Forest/Bottom80.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bddnclovqy0bq" path="res://Sprites/Forest/Bottom50.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bxocg544hnpmk" path="res://Sprites/Forest/Bottom90.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://gje1lnch4758" path="res://Sprites/Forest/Bottom70.png" id="7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2v58"]
+shader = ExtResource("1_b0iqr")
+shader_parameter/x_intensity = -2.0
+shader_parameter/y_intensity = 0.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 2.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 800.0
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": false,
+"name": &"damping",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": false,
+"name": &"damping2",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 88.005
+height = 532.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bv6a"]
+radius = 183.0
+height = 560.0
+
+[node name="Bottom" type="Area2D"]
+script = ExtResource("2")
+
+[node name="BottomAnimate" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_y2v58")
+position = Vector2(1924, 1)
+sprite_frames = SubResource("2")
+animation = &"damping"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1455, 320)
+rotation = 1.56979
+shape = SubResource("1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3220, 319)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7bv6a")
+
+[connection signal="body_entered" from="." to="." method="_on_Bottom_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Bottom_body_exited"]

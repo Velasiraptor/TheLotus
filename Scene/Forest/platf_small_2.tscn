@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Texture2D" uid="uid://b4s7v6ify41ch" path="res://Sprites/Forest/Platf_small2.png" id="1_k188o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noose"]
+size = Vector2(203, 34.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j577o"]
+height = 61.9782
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pe2jc"]
+radius = 4.0
+height = 48.0
+
+[node name="platfSmall2_1" type="Node2D"]
+light_mask = 64
+visibility_layer = 64
+
+[node name="PlatfSmall2" type="Sprite2D" parent="."]
+texture = ExtResource("1_k188o")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatfSmall2"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(4.5, -17.75)
+shape = SubResource("RectangleShape2D_noose")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(89, 18)
+rotation = 1.05703
+shape = SubResource("CapsuleShape2D_j577o")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(54, 19)
+rotation = 1.39028
+shape = SubResource("CapsuleShape2D_j577o")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(24, 14)
+rotation = 1.39028
+shape = SubResource("CapsuleShape2D_j577o")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(-28, 14)
+rotation = 2.42986
+shape = SubResource("CapsuleShape2D_j577o")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(-40, 19)
+rotation = 2.42986
+shape = SubResource("CapsuleShape2D_j577o")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(-65, 11)
+rotation = 1.56133
+shape = SubResource("CapsuleShape2D_j577o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(-98, -11)
+shape = SubResource("CapsuleShape2D_pe2jc")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="PlatfSmall2/StaticBody2D"]
+position = Vector2(106, -11)
+shape = SubResource("CapsuleShape2D_pe2jc")

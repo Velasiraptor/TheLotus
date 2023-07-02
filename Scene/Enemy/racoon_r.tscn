@@ -1,0 +1,203 @@
+[gd_scene load_steps=23 format=3]
+
+[ext_resource type="Script" path="res://Script/Enemy/EnemyAR.gd" id="1_1fs38"]
+[ext_resource type="Texture2D" uid="uid://c6hintfs8fn7k" path="res://Sprites/NPC/Racoon/RacoonHit1.png" id="2_1owkb"]
+[ext_resource type="Texture2D" uid="uid://cer7ag0q67ddo" path="res://Sprites/NPC/Racoon/RacoonHit2.png" id="3_sulka"]
+[ext_resource type="Texture2D" uid="uid://f0p528x1hu7o" path="res://Sprites/NPC/Racoon/RacoonHit3.png" id="4_m6m26"]
+[ext_resource type="Texture2D" uid="uid://curp3ovovj553" path="res://Sprites/NPC/Racoon/RacoonHit4.png" id="5_lmucm"]
+[ext_resource type="Texture2D" uid="uid://bafofeyyjfo6o" path="res://Sprites/NPC/Racoon/RacoonHit5.png" id="6_rviv6"]
+[ext_resource type="Texture2D" uid="uid://bp50bebtayhsw" path="res://Sprites/NPC/Racoon/RaccoonIdle1.png" id="7_7vfr6"]
+[ext_resource type="Texture2D" uid="uid://d3lmvmk1ll2vb" path="res://Sprites/NPC/Racoon/RacoonWalk-1.png" id="8_1ra6c"]
+[ext_resource type="Texture2D" uid="uid://cl1lwiyd2febq" path="res://Sprites/NPC/Racoon/RacoonWalk-2.png" id="9_2omrd"]
+[ext_resource type="Texture2D" uid="uid://cq6u3pw7cibr0" path="res://Sprites/NPC/Racoon/RacoonWalk-3.png" id="10_o1srw"]
+[ext_resource type="Texture2D" uid="uid://cjwde67yn4mwm" path="res://Sprites/NPC/Racoon/RacoonWalk-4.png" id="11_t1227"]
+[ext_resource type="Texture2D" uid="uid://drixhxnriu53i" path="res://Sprites/NPC/Racoon/RacoonWalk-5.png" id="12_fcv6e"]
+[ext_resource type="AudioStream" uid="uid://ch0inhrbft72g" path="res://Sounds/NPC/Racoon.mp3" id="13_ap7u0"]
+[ext_resource type="Script" path="res://addons/random_timer/random_timer.gd" id="14_4xgiv"]
+[ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="15_bk8u2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1i85f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1owkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sulka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m6m26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lmucm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rviv6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7vfr6")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1ra6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2omrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o1srw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t1227")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fcv6e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1ra6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2omrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o1srw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t1227")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fcv6e")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0njk"]
+size = Vector2(637.5, 190.313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x64h7"]
+size = Vector2(2764.38, 440)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b2h4"]
+size = Vector2(603.125, 355)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imahm"]
+radius = 230.0
+height = 470.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oio30"]
+size = Vector2(570, 212.188)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0vrg1"]
+radius = 65.0
+height = 220.0
+
+[node name="RacoonR" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 33
+script = ExtResource("1_1fs38")
+
+[node name="TimeRun" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="TimeAttack" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimRacoon" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1i85f")
+animation = &"run"
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 395)
+shape = SubResource("RectangleShape2D_j0njk")
+
+[node name="RayCastWall" type="RayCast2D" parent="."]
+position = Vector2(450, 290)
+rotation = -1.5708
+scale = Vector2(50, 3)
+collision_mask = 32
+
+[node name="RayCastFloor" type="RayCast2D" parent="."]
+position = Vector2(535, 475)
+scale = Vector2(10, 3)
+target_position = Vector2(0, 20)
+collision_mask = 32
+
+[node name="RacoonRrr" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ap7u0")
+volume_db = -15.0
+max_distance = 1000.0
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisDP" type="CollisionShape2D" parent="DetectPlayer"]
+position = Vector2(1987.19, 245)
+shape = SubResource("RectangleShape2D_x64h7")
+
+[node name="Attack" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisAT" type="CollisionShape2D" parent="Attack"]
+position = Vector2(306.562, 287.969)
+shape = SubResource("RectangleShape2D_1b2h4")
+
+[node name="AttackBehind" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisBeh" type="CollisionShape2D" parent="AttackBehind"]
+position = Vector2(0, 80)
+shape = SubResource("CapsuleShape2D_imahm")
+
+[node name="CollisTail" type="CollisionShape2D" parent="AttackBehind"]
+position = Vector2(-284.999, 331.563)
+shape = SubResource("RectangleShape2D_oio30")
+
+[node name="CollisionTail2" type="CollisionShape2D" parent="AttackBehind"]
+position = Vector2(-240, 190)
+rotation = 0.626573
+shape = SubResource("CapsuleShape2D_0vrg1")
+
+[node name="RandomTimerIdle" type="Timer" parent="."]
+one_shot = true
+autostart = true
+script = ExtResource("14_4xgiv")
+min_time = 5.0
+max_time = 10.0
+
+[node name="TimerWalk" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Shadow" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(100, 480)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("15_bk8u2")
+
+[connection signal="timeout" from="TimeRun" to="." method="_on_TimeRun_timeout"]
+[connection signal="timeout" from="TimeAttack" to="." method="_on_TimeAttack_timeout"]
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_DetectPlayer_body_entered"]
+[connection signal="body_exited" from="DetectPlayer" to="." method="_on_DetectPlayer_body_exited"]
+[connection signal="body_entered" from="Attack" to="." method="_on_Attack_body_entered"]
+[connection signal="body_entered" from="AttackBehind" to="." method="_on_AttackBehind_body_entered"]
+[connection signal="timeout" from="RandomTimerIdle" to="." method="_on_random_timer_idle_timeout"]
+[connection signal="timeout" from="TimerWalk" to="." method="_on_timer_walk_timeout"]

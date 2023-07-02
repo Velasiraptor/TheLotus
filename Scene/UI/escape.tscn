@@ -1,0 +1,232 @@
+[gd_scene load_steps=19 format=3 uid="uid://o4mtmtl8n46o"]
+
+[ext_resource type="Script" path="res://Script/UI/escape.gd" id="1_qyf56"]
+[ext_resource type="Texture2D" uid="uid://crh5mw2pn65yn" path="res://Sprites/UI/GameOver/GameOver.png" id="2_7xuoc"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_pnj0y"]
+[ext_resource type="Texture2D" uid="uid://d3k1jv1p56py6" path="res://Sprites/Menu/Button.png" id="3_vvhwo"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_yvry7"]
+[ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="4_skf8n"]
+[ext_resource type="Texture2D" uid="uid://bqmid6o6ih6vf" path="res://Sprites/UI/ButtonPlay.png" id="6_a3xt7"]
+[ext_resource type="Texture2D" uid="uid://cv6dd23qr0c3o" path="res://Sprites/UI/ButtonPlayClick.png" id="7_awxj8"]
+[ext_resource type="Texture2D" uid="uid://cnmvopsc8chlg" path="res://Sprites/UI/GameOver/ButtonExit.png" id="7_eq84v"]
+[ext_resource type="Texture2D" uid="uid://dwnd6qtb24rdp" path="res://Sprites/UI/GameOver/ButtonExitClick.png" id="8_kq686"]
+[ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="9_ecuxt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xd2a5"]
+shader = ExtResource("2_pnj0y")
+shader_parameter/lod = 2.0
+
+[sub_resource type="InputEventAction" id="InputEventAction_7koup"]
+action = &"ui_cancel"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_h0x55"]
+events = [SubResource("InputEventAction_7koup")]
+
+[sub_resource type="Animation" id="Animation_gf1i3"]
+resource_name = "PAUSE"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"grabButton"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3np3i"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6qfop"]
+resource_name = "UNPAUS"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlv5y"]
+_data = {
+"PAUSE": SubResource("Animation_gf1i3"),
+"RESET": SubResource("Animation_3np3i"),
+"UNPAUS": SubResource("Animation_6qfop")
+}
+
+[node name="ESCAPE" type="Control" groups=["Menu"]]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyf56")
+
+[node name="Blur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_xd2a5")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3608.0
+offset_top = -1140.0
+offset_right = -3544.0
+offset_bottom = -940.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(118, 13.1875)
+texture = ExtResource("3_yvry7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -970.0
+offset_top = -555.0
+offset_right = 969.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.117647)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -956.0
+offset_top = -540.0
+offset_right = 956.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_7xuoc")
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = -3.0
+offset_right = 571.0
+offset_bottom = 138.0
+texture = ExtResource("3_vvhwo")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -25.0
+offset_right = 185.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("4_skf8n")
+theme_override_font_sizes/font_size = 30
+text = "Пауза"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 185.0
+offset_right = 716.0
+offset_bottom = 435.0
+scale = Vector2(0.7, 0.7)
+
+[node name="ButtonReset" type="TextureButton" parent="CenterContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer2/ButtonExit")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/ButtonExit")
+shortcut = SubResource("Shortcut_h0x55")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("6_a3xt7")
+texture_focused = ExtResource("7_awxj8")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("4_skf8n")
+theme_override_font_sizes/font_size = 42
+text = "Продолжить"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 348.0
+offset_right = 716.0
+offset_bottom = 598.0
+scale = Vector2(0.7, 0.7)
+
+[node name="ButtonExit" type="TextureButton" parent="CenterContainer/TextureRect/HBoxContainer2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/ButtonReset")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/ButtonReset")
+texture_normal = ExtResource("7_eq84v")
+texture_focused = ExtResource("8_kq686")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("4_skf8n")
+theme_override_font_sizes/font_size = 42
+text = "Выйти из игры"
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ecuxt")
+volume_db = -20.0
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "UNPAUS"
+libraries = {
+"": SubResource("AnimationLibrary_qlv5y")
+}
+
+[connection signal="focus_entered" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_button_reset_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_ButtonReset_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_ButtonReset_pressed"]
+[connection signal="focus_entered" from="CenterContainer/TextureRect/HBoxContainer2/ButtonExit" to="." method="_on_button_exit_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/TextureRect/HBoxContainer2/ButtonExit" to="." method="_on_ButtonExit_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/TextureRect/HBoxContainer2/ButtonExit" to="." method="_on_ButtonExit_pressed"]

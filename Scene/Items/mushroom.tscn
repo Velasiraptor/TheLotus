@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://0qcetmsr5o2g"]
+
+[ext_resource type="Texture2D" uid="uid://bwsbf51u2dg7i" path="res://Sprites/Items/mushroom.png" id="1_b041i"]
+[ext_resource type="Script" path="res://Script/Items/mushroom.gd" id="1_gvp4g"]
+[ext_resource type="Texture2D" uid="uid://c3ae0khl1q30f" path="res://addons/ActionIcon/Keyboard/E.png" id="3_aj2av"]
+[ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="4_u3458"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcauo"]
+radius = 108.0
+height = 385.435
+
+[sub_resource type="Animation" id="Animation_h55r5"]
+resource_name = "scale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(1.5, 1.5), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dc5vu"]
+_data = {
+"scale": SubResource("Animation_h55r5")
+}
+
+[node name="mushroom" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+collision_layer = 2
+script = ExtResource("1_gvp4g")
+
+[node name="SprMush" type="Sprite2D" parent="."]
+texture = ExtResource("1_b041i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(146.667, 73.3334)
+rotation = -1.04986
+shape = SubResource("CapsuleShape2D_qcauo")
+
+[node name="Press_E" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.905882, 0.639216, 0.415686, 0.745098)
+position = Vector2(-224, -277)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("3_aj2av")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Press_E"]
+autoplay = "scale"
+libraries = {
+"": SubResource("AnimationLibrary_dc5vu")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Press_E"]
+show_behind_parent = true
+offset_left = -41.0
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 106.667)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_u3458")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

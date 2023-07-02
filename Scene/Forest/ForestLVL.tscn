@@ -1,0 +1,797 @@
+[gd_scene load_steps=83 format=3 uid="uid://hrim7s88bl86"]
+
+[ext_resource type="Texture2D" uid="uid://c30qjjrujkf1f" path="res://Sprites/Forest/BackgroundsLevel1/BackgroundFull.png" id="1_axv3k"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/smoke_1.tscn" id="2_ubu5b"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/smoke_2.tscn" id="3_1pkg0"]
+[ext_resource type="Texture2D" uid="uid://dp481rliiwafx" path="res://Sprites/Forest/BackgroundsLevel1/CityMirror.png" id="4_vsk6d"]
+[ext_resource type="Shader" path="res://Shaders/water.gdshader" id="5_jog88"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="6_3b2y1"]
+[ext_resource type="Texture2D" uid="uid://dq7ggyy7ud8wn" path="res://Sprites/Forest/BackgroundsLevel1/City.png" id="7_tk0bd"]
+[ext_resource type="Texture2D" uid="uid://b3ldqv0x14tm6" path="res://Sprites/Forest/BackgroundsLevel1/Background3.png" id="8_a2xkd"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/leaf_fall.tscn" id="9_qnf3j"]
+[ext_resource type="Texture2D" uid="uid://i36e15xxw3ja" path="res://Sprites/Forest/BackgroundsLevel1/Background4.png" id="10_etumo"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="11_1yqdb"]
+[ext_resource type="Texture2D" uid="uid://1m5b4gdai2va" path="res://Sprites/Forest/BackgroundsLevel1/Background5.png" id="12_aw23o"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/water.tscn" id="13_60kp0"]
+[ext_resource type="PackedScene" uid="uid://tbhcnn0bwgeo" path="res://Scene/Forest/fog.tscn" id="14_d1dqn"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/Platform(NPC).tscn" id="15_oafnx"]
+[ext_resource type="PackedScene" uid="uid://lg8ljfws6pdr" path="res://Scene/Forest/Platform.tscn" id="16_mxp1m"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/platf_small_1.tscn" id="17_c10em"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/platf_small_2.tscn" id="18_1ucfl"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/platf_big_1.tscn" id="19_b31sm"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/platf_bad_small_1.tscn" id="20_45voo"]
+[ext_resource type="Shader" path="res://Shaders/Grass.gdshader" id="21_44ilp"]
+[ext_resource type="Texture2D" uid="uid://cw3auo0ncmue2" path="res://Sprites/Forest/Grass2.png" id="22_q7p2p"]
+[ext_resource type="Texture2D" uid="uid://cexkouorbo250" path="res://Sprites/Forest/Grass4.png" id="23_3vhip"]
+[ext_resource type="Texture2D" uid="uid://b5e2cb8hse2wn" path="res://Sprites/Forest/Grass5.png" id="24_1n2j5"]
+[ext_resource type="Texture2D" uid="uid://dtvhw46q5iya8" path="res://Sprites/Forest/Grass6.png" id="25_2mwjk"]
+[ext_resource type="PackedScene" uid="uid://cp610e1p4o1k2" path="res://Scene/Items/Fly.tscn" id="26_go5gx"]
+[ext_resource type="PackedScene" path="res://Scene/Player/Player.tscn" id="27_gqmbv"]
+[ext_resource type="PackedScene" path="res://Scene/Enemy/RacoonL.tscn" id="28_65tdn"]
+[ext_resource type="PackedScene" path="res://Scene/Enemy/racoon_r.tscn" id="29_tkhhh"]
+[ext_resource type="Texture2D" uid="uid://dstp3se483tbh" path="res://Sprites/Forest/Grass.png" id="30_bikpu"]
+[ext_resource type="Texture2D" uid="uid://b4oh65lx42hh4" path="res://Sprites/Forest/WaterBottom.png" id="31_lkf74"]
+[ext_resource type="Texture2D" uid="uid://ce7almiyry7p" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull1.png" id="32_rfns5"]
+[ext_resource type="Texture2D" uid="uid://bcqy4qp83hs2n" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull2.png" id="33_o1u5v"]
+[ext_resource type="Texture2D" uid="uid://ch3gv8oy58vy1" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull3.png" id="34_7vtyv"]
+[ext_resource type="Texture2D" uid="uid://b0xar20l44ui3" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull4.png" id="35_hiadv"]
+[ext_resource type="Texture2D" uid="uid://2r3pxs0a1ubc" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull5.png" id="36_kv3aq"]
+[ext_resource type="Texture2D" uid="uid://c0nup35r8n3ul" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull6.png" id="37_qr77c"]
+[ext_resource type="Texture2D" uid="uid://b0dcxe7eww6g8" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull7.png" id="38_l0ldt"]
+[ext_resource type="Texture2D" uid="uid://c5i2cfdv750y3" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull8.png" id="39_uuxmh"]
+[ext_resource type="Script" path="res://Script/Forest/AreaWh.gd" id="40_43hql"]
+[ext_resource type="Texture2D" uid="uid://twaag6kb8nd7" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-1.png" id="41_e5q3o"]
+[ext_resource type="Texture2D" uid="uid://cn7rx4kyqlq3g" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-2.png" id="42_p355d"]
+[ext_resource type="Texture2D" uid="uid://cijvppo78yp7k" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-3.png" id="43_4h0id"]
+[ext_resource type="Texture2D" uid="uid://d0ea45aaw754b" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-4.png" id="44_ash30"]
+[ext_resource type="Texture2D" uid="uid://duoefdyxagf1g" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-5.png" id="45_4v6gq"]
+[ext_resource type="Texture2D" uid="uid://cxl06hfqo50dq" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-6.png" id="46_u1ha7"]
+[ext_resource type="Texture2D" uid="uid://18r60s48if1u" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-7.png" id="47_1ovrf"]
+[ext_resource type="Texture2D" uid="uid://c67hlg6vvyg40" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-8.png" id="48_4qodv"]
+[ext_resource type="Texture2D" uid="uid://bmgal2nlbwpna" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-9.png" id="49_do02t"]
+[ext_resource type="Texture2D" uid="uid://bmsu7cc5i6qlx" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-10.png" id="50_ri4ty"]
+[ext_resource type="Texture2D" uid="uid://bd2k1isgckjpf" path="res://Sprites/Forest/Top.png" id="51_wpigg"]
+[ext_resource type="AudioStream" uid="uid://dwqph1jq3eaqs" path="res://Sounds/Location /forest.mp3" id="52_kpk6e"]
+[ext_resource type="PackedScene" uid="uid://bf7a0afpemdca" path="res://Scene/inventory.tscn" id="53_2sqsh"]
+[ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="54_ldd2a"]
+[ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="55_eavr7"]
+[ext_resource type="PackedScene" path="res://Scene/Forest/Bottom.tscn" id="56_hphew"]
+[ext_resource type="Texture2D" uid="uid://ddd5re4fsxr8v" path="res://Sprites/Forest/BottomStatic.png" id="57_bysl0"]
+[ext_resource type="Texture2D" uid="uid://cx0ulfx824wai" path="res://Sprites/Forest/BackgroundsLevel1/Edge.png" id="58_2jd71"]
+
+[sub_resource type="GDScript" id="GDScript_i4hel"]
+script/source = "extends Node2D
+
+var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мышив
+var scene = preload(\"res://Scene/Forest/ForestLVL.tscn\")
+
+func _ready():
+	set_process_input(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func _input(event):
+	if event is InputEventMouseMotion and $GameOver/GameOver.visible == true:
+		last_mouse_motion = OS.get_static_memory_peak_usage()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event is InputEventMouseMotion:
+		last_mouse_motion != OS.get_static_memory_peak_usage()
+		$TimerCursor.start()
+	if event.is_action_pressed(\"ui_cancel\") and $GameOver/GameOver.visible == false and $Inventory/inventory.visible == false:
+		get_tree().call_group(\"Menu\", \"pause\")
+	if event.is_action_pressed(\"open_inventory\") and $GameOver/GameOver.visible == false and $Escape/ESCAPE.visible == false:
+		if $Inventory/inventory.visible == false:
+			$Inventory/inventory.visible = true
+		elif $Inventory/inventory.visible == true:
+			$Inventory/inventory.visible = false
+	if $GameOver/GameOver.visible == true:
+		$Escape/ESCAPE.visible = false
+		$Inventory/inventory.visible = false
+
+func _on_timer_cursor_timeout():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func _on_timer_music_timeout(): #МУЗЫКА ЛОКАЦИИ
+	$BackgroundSound.play()
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6iray"]
+noise_type = 4
+seed = 2
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yhx7d"]
+noise = SubResource("FastNoiseLite_6iray")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ddro4"]
+noise_type = 4
+seed = 2
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivibj"]
+seamless = true
+seamless_blend_skirt = 0.34
+noise = SubResource("FastNoiseLite_ddro4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32obc"]
+shader = ExtResource("5_jog88")
+shader_parameter/scroll1 = Vector2(0, 0)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strenght = 0.03
+shader_parameter/tone_color = Color(0.823529, 0.878431, 1, 0.486275)
+shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shader_parameter/light_start = 0.339
+shader_parameter/light_end = 0.687
+shader_parameter/noise1 = SubResource("NoiseTexture2D_yhx7d")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_ivibj")
+
+[sub_resource type="Shader" id="Shader_ii8k6"]
+code = "shader_type canvas_item;
+
+uniform float lod: hint_range(0.0, 5) = 0.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment(){
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
+	COLOR = color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8y6gg"]
+shader = SubResource("Shader_ii8k6")
+shader_parameter/lod = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20xbu"]
+shader = ExtResource("11_1yqdb")
+shader_parameter/lod = 0.7
+
+[sub_resource type="Animation" id="Animation_r4w2h"]
+resource_name = "foggy"
+length = 240.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Foggy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 239.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3500, 100), Vector2(-1000, 100), Vector2(3500, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Foggy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 239.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Foggy2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 180, 180.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2500, 100), Vector2(-1000, 100), Vector2(3500, 100), Vector2(2500, 100)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Foggy2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 180, 180.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Foggy3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 120, 120.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1500, 100), Vector2(-1000, 100), Vector2(3500, 100), Vector2(1500, 100)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Foggy3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 120, 120.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Foggy4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 60, 60.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 100), Vector2(-1000, 100), Vector2(3500, 100), Vector2(500, 100)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Foggy4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 60, 60.2, 240),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fw38h"]
+_data = {
+"foggy": SubResource("Animation_r4w2h")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7toa6"]
+shader = ExtResource("21_44ilp")
+shader_parameter/x_intensity = -6.0
+shader_parameter/y_intensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/speed = 4.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_length = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgpni"]
+shader = ExtResource("21_44ilp")
+shader_parameter/x_intensity = -6.0
+shader_parameter/y_intensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/speed = 4.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_length = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbx5h"]
+shader = ExtResource("21_44ilp")
+shader_parameter/x_intensity = -6.0
+shader_parameter/y_intensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/speed = 4.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_length = 200.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qv6wh"]
+noise_type = 4
+seed = 2
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sgbdx"]
+noise = SubResource("FastNoiseLite_qv6wh")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pj3fy"]
+noise_type = 4
+seed = 2
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cxhai"]
+seamless = true
+seamless_blend_skirt = 0.34
+noise = SubResource("FastNoiseLite_pj3fy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3t8qd"]
+shader = ExtResource("5_jog88")
+shader_parameter/scroll1 = Vector2(0, 0)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strenght = 0.01
+shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
+shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shader_parameter/light_start = 0.339
+shader_parameter/light_end = 0.687
+shader_parameter/noise1 = SubResource("NoiseTexture2D_sgbdx")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_cxhai")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3nrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_rfns5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_o1u5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7vtyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hiadv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_kv3aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qr77c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_l0ldt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uuxmh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6peuq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_e5q3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_p355d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4h0id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ash30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4v6gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_u1ha7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1ovrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_4qodv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_do02t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ri4ty")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8ql0"]
+radius = 201.0
+height = 494.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf2ed"]
+shader = ExtResource("21_44ilp")
+shader_parameter/x_intensity = 2.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 0.1
+shader_parameter/wave_frequency = 0.0
+shader_parameter/wave_length = 800.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlurm"]
+shader = ExtResource("5_jog88")
+shader_parameter/scroll1 = Vector2(0.05, 0.05)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strenght = 0.2
+shader_parameter/tone_color = null
+shader_parameter/top_color = null
+shader_parameter/light_start = 0.275
+shader_parameter/light_end = 0.4
+
+[node name="Forest" type="Node2D"]
+script = SubResource("GDScript_i4hel")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -5
+
+[node name="ParallaxBackgrounds" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="BackgroundFull" type="Sprite2D" parent="ParallaxBackground/ParallaxBackgrounds"]
+texture = ExtResource("1_axv3k")
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxBackgrounds"]
+offset_left = -2140.0
+offset_top = -599.0
+offset_right = 3551.0
+offset_bottom = 149.0
+color = Color(0.701961, 0.784314, 0.72549, 0.627451)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = -4
+
+[node name="ParallaxCity" type="ParallaxLayer" parent="ParallaxBackground2"]
+
+[node name="Smoke1" parent="ParallaxBackground2/ParallaxCity" instance=ExtResource("2_ubu5b")]
+position = Vector2(-3172, -23)
+scale = Vector2(0.6, 0.6)
+
+[node name="Smoke2" parent="ParallaxBackground2/ParallaxCity" instance=ExtResource("3_1pkg0")]
+position = Vector2(-2522, 8)
+scale = Vector2(0.6, 0.6)
+
+[node name="CityMirror" type="Sprite2D" parent="ParallaxBackground2/ParallaxCity"]
+texture = ExtResource("4_vsk6d")
+
+[node name="MMWater" type="Sprite2D" parent="ParallaxBackground2/ParallaxCity"]
+material = SubResource("ShaderMaterial_32obc")
+position = Vector2(-2959, 178.844)
+scale = Vector2(16.9844, 2.00488)
+texture = ExtResource("6_3b2y1")
+
+[node name="City" type="Sprite2D" parent="ParallaxBackground2/ParallaxCity"]
+texture = ExtResource("7_tk0bd")
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+layer = -3
+
+[node name="ParallaxTree3" type="ParallaxLayer" parent="ParallaxBackground3"]
+light_mask = 128
+visibility_layer = 128
+motion_scale = Vector2(0.98, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground3/ParallaxTree3"]
+offset_left = -3660.0
+offset_top = -519.0
+offset_right = 3814.0
+offset_bottom = 561.0
+texture = ExtResource("8_a2xkd")
+
+[node name="LeafFall" parent="ParallaxBackground3/ParallaxTree3" instance=ExtResource("9_qnf3j")]
+position = Vector2(-1625, -642)
+scale = Vector2(0.5, 0.5)
+
+[node name="LeafFall2" parent="ParallaxBackground3/ParallaxTree3" instance=ExtResource("9_qnf3j")]
+position = Vector2(-577, -723)
+scale = Vector2(0.5, 0.5)
+
+[node name="LeafFall3" parent="ParallaxBackground3/ParallaxTree3" instance=ExtResource("9_qnf3j")]
+position = Vector2(1317, -754)
+scale = Vector2(0.5, 0.5)
+
+[node name="LeafFall4" parent="ParallaxBackground3/ParallaxTree3" instance=ExtResource("9_qnf3j")]
+position = Vector2(2332, -643)
+scale = Vector2(0.5, 0.5)
+
+[node name="Blur" type="TextureRect" parent="ParallaxBackground3/ParallaxTree3"]
+material = SubResource("ShaderMaterial_8y6gg")
+offset_left = -3806.0
+offset_top = -555.0
+offset_right = -3742.0
+offset_bottom = -491.0
+scale = Vector2(118, 13.1875)
+texture = ExtResource("6_3b2y1")
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
+layer = -2
+
+[node name="ParallaxTree4" type="ParallaxLayer" parent="ParallaxBackground4"]
+light_mask = 128
+visibility_layer = 128
+position = Vector2(-3792, -212)
+motion_scale = Vector2(0.96, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground4/ParallaxTree4"]
+offset_left = -57.0
+offset_top = -357.0
+offset_right = 7417.0
+offset_bottom = 723.0
+texture = ExtResource("10_etumo")
+
+[node name="LeafFall" parent="ParallaxBackground4/ParallaxTree4" instance=ExtResource("9_qnf3j")]
+position = Vector2(1462, -588)
+scale = Vector2(0.6, 0.6)
+
+[node name="LeafFall2" parent="ParallaxBackground4/ParallaxTree4" instance=ExtResource("9_qnf3j")]
+position = Vector2(4074, -467)
+scale = Vector2(0.6, 0.6)
+
+[node name="LeafFall3" parent="ParallaxBackground4/ParallaxTree4" instance=ExtResource("9_qnf3j")]
+position = Vector2(5624, -420)
+scale = Vector2(0.6, 0.6)
+
+[node name="Blur" type="TextureRect" parent="ParallaxBackground4/ParallaxTree4"]
+material = SubResource("ShaderMaterial_20xbu")
+offset_left = -14.0
+offset_top = -343.0
+offset_right = 50.0
+offset_bottom = -279.0
+scale = Vector2(118, 13.1875)
+texture = ExtResource("6_3b2y1")
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="."]
+layer = -1
+
+[node name="ParallaxTree5" type="ParallaxLayer" parent="ParallaxBackground5"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground5/ParallaxTree5"]
+offset_left = -3660.0
+offset_top = -519.0
+offset_right = 3814.0
+offset_bottom = 561.0
+texture = ExtResource("12_aw23o")
+
+[node name="Blur" type="TextureRect" parent="ParallaxBackground5/ParallaxTree5"]
+material = SubResource("ShaderMaterial_20xbu")
+offset_left = -3806.0
+offset_top = -555.0
+offset_right = -3742.0
+offset_bottom = -491.0
+scale = Vector2(118, 13.1875)
+texture = ExtResource("6_3b2y1")
+
+[node name="water" parent="." instance=ExtResource("13_60kp0")]
+position = Vector2(-5, 5)
+
+[node name="FoggyForest" type="Node2D" parent="."]
+position = Vector2(-140, 59)
+
+[node name="Foggy" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(3500, 100)
+
+[node name="Foggy2" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(2500, 100)
+
+[node name="Foggy3" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(1500, 100)
+
+[node name="Foggy4" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(500, 100)
+
+[node name="AnimationFoggyForest" type="AnimationPlayer" parent="FoggyForest"]
+autoplay = "foggy"
+libraries = {
+"": SubResource("AnimationLibrary_fw38h")
+}
+
+[node name="Platform(npc)" parent="." instance=ExtResource("15_oafnx")]
+position = Vector2(-3538, -213)
+
+[node name="Platform" parent="." instance=ExtResource("16_mxp1m")]
+position = Vector2(-3538, -213)
+
+[node name="Platf" type="Node2D" parent="."]
+light_mask = 64
+visibility_layer = 64
+
+[node name="platfSmall1_1" parent="Platf" instance=ExtResource("17_c10em")]
+position = Vector2(-637, -20)
+
+[node name="platfSmall2_1" parent="Platf" instance=ExtResource("18_1ucfl")]
+position = Vector2(-306, -124)
+
+[node name="platfBig1" parent="Platf" instance=ExtResource("19_b31sm")]
+position = Vector2(460, -107)
+
+[node name="platfBad_small_1" parent="Platf" instance=ExtResource("20_45voo")]
+position = Vector2(-3276, 160)
+
+[node name="Grass" type="Node2D" parent="."]
+position = Vector2(-740, -110)
+scale = Vector2(0.3, 0.3)
+
+[node name="Grass2_1" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_7toa6")
+position = Vector2(3610, -460)
+texture = ExtResource("22_q7p2p")
+
+[node name="Grass4_1" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(433.333, -33.3333)
+texture = ExtResource("23_3vhip")
+
+[node name="Grass5_1" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-4260, 203.333)
+texture = ExtResource("24_1n2j5")
+
+[node name="Grass5_2" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-6643.33, 1006.67)
+texture = ExtResource("24_1n2j5")
+
+[node name="Grass6_1" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-2296.67, -256.667)
+texture = ExtResource("25_2mwjk")
+
+[node name="Grass6_2" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-7073.33, 993.333)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("25_2mwjk")
+
+[node name="Grass6_3" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-6456.67, 1443.33)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("25_2mwjk")
+
+[node name="Heal" type="Node2D" parent="."]
+
+[node name="Fly" parent="Heal" instance=ExtResource("26_go5gx")]
+position = Vector2(-1428, -160)
+
+[node name="Fly2" parent="Heal" instance=ExtResource("26_go5gx")]
+position = Vector2(477, -215)
+
+[node name="Player" parent="." groups=["GUI"] instance=ExtResource("27_gqmbv")]
+position = Vector2(-3290, 85)
+rotation = 0.000409808
+scale = Vector2(0.55, 0.55)
+
+[node name="Racoons" type="Node2D" parent="."]
+position = Vector2(-2670, 304)
+
+[node name="RacoonL" parent="Racoons" instance=ExtResource("28_65tdn")]
+position = Vector2(-125, 9)
+
+[node name="RacoonR2" parent="Racoons" instance=ExtResource("29_tkhhh")]
+position = Vector2(1560, -360)
+
+[node name="GrassTop" type="Node2D" parent="."]
+scale = Vector2(0.4, 0.4)
+
+[node name="Grass2_1" type="Sprite2D" parent="GrassTop"]
+material = SubResource("ShaderMaterial_7toa6")
+position = Vector2(-635, -567.5)
+texture = ExtResource("22_q7p2p")
+
+[node name="Grass4_1" type="Sprite2D" parent="GrassTop"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(2080, -515)
+texture = ExtResource("23_3vhip")
+
+[node name="Grass4_2" type="Sprite2D" parent="GrassTop"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-2975, -30)
+texture = ExtResource("23_3vhip")
+
+[node name="Grass5_2" type="Sprite2D" parent="GrassTop"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-6180, 885)
+texture = ExtResource("24_1n2j5")
+
+[node name="Grass6_1" type="Sprite2D" parent="GrassTop"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-8157.5, 157.5)
+texture = ExtResource("25_2mwjk")
+
+[node name="Grass3_1" type="Sprite2D" parent="GrassTop"]
+material = SubResource("ShaderMaterial_vbx5h")
+position = Vector2(-4492.5, 110)
+texture = ExtResource("30_bikpu")
+
+[node name="WaterBottom" type="Sprite2D" parent="."]
+position = Vector2(-8, 6)
+texture = ExtResource("31_lkf74")
+
+[node name="MMWater" type="Sprite2D" parent="WaterBottom"]
+material = SubResource("ShaderMaterial_3t8qd")
+position = Vector2(1486, 445.5)
+scale = Vector2(65.2187, 2.82813)
+texture = ExtResource("6_3b2y1")
+
+[node name="whirlpool" type="AnimatedSprite2D" parent="WaterBottom"]
+position = Vector2(2612, 386)
+sprite_frames = SubResource("SpriteFrames_p3nrk")
+autoplay = "default"
+frame_progress = 0.962699
+flip_h = true
+
+[node name="AreaWh" type="Area2D" parent="WaterBottom/whirlpool"]
+script = ExtResource("40_43hql")
+
+[node name="WhFrog" type="AnimatedSprite2D" parent="WaterBottom/whirlpool/AreaWh"]
+visible = false
+position = Vector2(-24, -26)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_6peuq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBottom/whirlpool/AreaWh"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_x8ql0")
+
+[node name="TimerWhirl" type="Timer" parent="WaterBottom/whirlpool/AreaWh"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Top" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yf2ed")
+position = Vector2(-5, 9)
+texture = ExtResource("51_wpigg")
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("52_kpk6e")
+volume_db = -25.0
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+layer = 7
+
+[node name="inventory" parent="Inventory" instance=ExtResource("53_2sqsh")]
+visible = false
+
+[node name="Escape" type="CanvasLayer" parent="."]
+process_priority = 1
+layer = 7
+
+[node name="ESCAPE" parent="Escape" instance=ExtResource("54_ldd2a")]
+visible = false
+scale = Vector2(1.2, 1.2)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+process_priority = 1
+layer = 7
+
+[node name="GameOver" parent="GameOver" instance=ExtResource("55_eavr7")]
+visible = false
+
+[node name="Bottom" parent="." instance=ExtResource("56_hphew")]
+light_mask = 8
+material = SubResource("ShaderMaterial_hlurm")
+position = Vector2(-1929, 8)
+collision_layer = 8
+
+[node name="BottomStatic" type="Sprite2D" parent="."]
+position = Vector2(-9, 11)
+scale = Vector2(1, 1.00185)
+texture = ExtResource("57_bysl0")
+
+[node name="Edge" type="Node2D" parent="."]
+
+[node name="Edge" type="Sprite2D" parent="Edge"]
+position = Vector2(-359, 1047.5)
+scale = Vector2(1, 0.4995)
+texture = ExtResource("58_2jd71")
+
+[node name="Edge2" type="Sprite2D" parent="Edge"]
+position = Vector2(-331, -1027)
+scale = Vector2(1, 0.5)
+texture = ExtResource("58_2jd71")
+
+[node name="Edge3" type="Sprite2D" parent="Edge"]
+position = Vector2(-4711, 15)
+scale = Vector2(0.2, 1)
+texture = ExtResource("58_2jd71")
+
+[node name="Edge4" type="Sprite2D" parent="Edge"]
+position = Vector2(4632, 5)
+scale = Vector2(0.215, 1)
+texture = ExtResource("58_2jd71")
+
+[node name="TimerCursor" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="TimerMusic" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="WaterBottom/whirlpool/AreaWh" to="WaterBottom/whirlpool/AreaWh" method="_on_body_entered"]
+[connection signal="timeout" from="WaterBottom/whirlpool/AreaWh/TimerWhirl" to="WaterBottom/whirlpool/AreaWh" method="_on_timer_whirl_timeout"]
+[connection signal="timeout" from="TimerCursor" to="." method="_on_timer_cursor_timeout"]
+[connection signal="timeout" from="TimerMusic" to="." method="_on_timer_music_timeout"]

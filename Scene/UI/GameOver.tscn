@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=3 uid="uid://cye50rqhw7x7y"]
+
+[ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://dwnd6qtb24rdp" path="res://Sprites/UI/GameOver/ButtonExitClick.png" id="2"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_1qba5"]
+[ext_resource type="Texture2D" uid="uid://dw2kvsyiper7i" path="res://Sprites/UI/GameOver/ButtonResetClick.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_elud1"]
+[ext_resource type="Texture2D" uid="uid://d3k1jv1p56py6" path="res://Sprites/Menu/Button.png" id="4_c23iw"]
+[ext_resource type="Texture2D" uid="uid://b2ws5eit5coyo" path="res://Sprites/UI/GameOver/ButtonReset.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cnmvopsc8chlg" path="res://Sprites/UI/GameOver/ButtonExit.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://crh5mw2pn65yn" path="res://Sprites/UI/GameOver/GameOver.png" id="8"]
+[ext_resource type="Script" path="res://Script/Player/GameOver.gd" id="9"]
+[ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="10_7v21w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52wxo"]
+shader = ExtResource("2_1qba5")
+shader_parameter/lod = 2.0
+
+[node name="GameOver" type="Control" groups=["GameOver"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+script = ExtResource("9")
+
+[node name="Blur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_52wxo")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3608.0
+offset_top = -1140.0
+offset_right = -3544.0
+offset_bottom = -940.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(118, 13.1875)
+texture = ExtResource("3_elud1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -970.0
+offset_top = -555.0
+offset_right = 969.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.117647)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -956.0
+offset_top = -540.0
+offset_right = 956.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("8")
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = -3.0
+offset_right = 571.0
+offset_bottom = 138.0
+texture = ExtResource("4_c23iw")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -25.0
+offset_right = 185.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 30
+text = "Игра закончена"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 185.0
+offset_right = 716.0
+offset_bottom = 435.0
+scale = Vector2(0.7, 0.7)
+
+[node name="ButtonReset" type="TextureButton" parent="CenterContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer2/ButtonExit")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/ButtonExit")
+texture_normal = ExtResource("6")
+texture_focused = ExtResource("3")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 42
+text = "Перезапустить"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 348.0
+offset_right = 716.0
+offset_bottom = 598.0
+scale = Vector2(0.7, 0.7)
+
+[node name="ButtonExit" type="TextureButton" parent="CenterContainer/TextureRect/HBoxContainer2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/ButtonReset")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/ButtonReset")
+texture_normal = ExtResource("7")
+texture_focused = ExtResource("2")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 42
+text = "Выйти из игры"
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7v21w")
+volume_db = -20.0
+
+[connection signal="focus_entered" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_button_reset_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_ButtonReset_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_ButtonReset_pressed"]
+[connection signal="focus_entered" from="CenterContainer/TextureRect/HBoxContainer2/ButtonExit" to="." method="_on_button_exit_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/TextureRect/HBoxContainer2/ButtonExit" to="." method="_on_ButtonExit_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/TextureRect/HBoxContainer2/ButtonExit" to="." method="_on_ButtonExit_pressed"]

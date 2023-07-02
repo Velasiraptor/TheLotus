@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bwsmg6tpd3u88" path="res://Sprites/Forest/BackgroundsLevel1/Smoke.png" id="1_0sg3h"]
+
+[sub_resource type="Curve" id="Curve_gcsh0"]
+max_value = 1024.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1024), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ctcwn"]
+max_value = 1.5
+_data = [Vector2(0, 0.0217558), 0.0, 0.0, 0, 0, Vector2(0.566237, 1.5), 0.0, 0.0, 0, 0, Vector2(0.798068, 1.24466), 0.0, 0.0, 0, 0, Vector2(0.974701, 0.708779), 0.0, 0.0, 0, 0, Vector2(1, 0.172901), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="Smoke2" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 12
+lifetime = 1.6
+preprocess = 5.0
+speed_scale = 0.1
+randomness = 0.1
+fixed_fps = 60
+fract_delta = false
+local_coords = true
+draw_order = 1
+texture = ExtResource("1_0sg3h")
+gravity = Vector2(90, -400)
+damping_curve = SubResource("Curve_gcsh0")
+angle_min = -30.0
+angle_max = 30.0
+scale_amount_curve = SubResource("Curve_ctcwn")

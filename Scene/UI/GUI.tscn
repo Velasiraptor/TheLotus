@@ -1,0 +1,479 @@
+[gd_scene load_steps=24 format=3 uid="uid://c5cpg1sr7oi7a"]
+
+[ext_resource type="Texture2D" uid="uid://cp3jkuaqjgqoa" path="res://Sprites/UI/GUI/HpFull.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cygu7fov4xc7j" path="res://Sprites/UI/GUI/IconIdle1.png" id="2_633up"]
+[ext_resource type="Texture2D" uid="uid://b8cro36k5s22a" path="res://Sprites/UI/GUI/IconJump.png" id="2_jwbdh"]
+[ext_resource type="Texture2D" uid="uid://bvcdug24klmvv" path="res://Sprites/UI/GUI/HpZero.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dfm5hxew4lrta" path="res://Sprites/UI/GUI/HpHalf.png" id="4"]
+[ext_resource type="Script" path="res://Script/Player/GUI.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://danrxidgr16va" path="res://Sprites/UI/GUI/minusHP.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dvyfin6ck5yfw" path="res://Sprites/UI/GUI/IconDeath.png" id="6_da2h8"]
+[ext_resource type="Texture2D" uid="uid://cin6nc0lq5wd5" path="res://Sprites/UI/GUI/minusHP60.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://djf1wtfyejgjx" path="res://Sprites/UI/GUI/IconIdle3.png" id="7_5tv1c"]
+[ext_resource type="Texture2D" uid="uid://cjur63ms4bhlu" path="res://Sprites/UI/GUI/minusHP40.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dcep2loc15mri" path="res://Sprites/UI/GUI/minusHP80.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cj42xu1s56usi" path="res://Sprites/UI/GUI/IconIdle4.png" id="9_j5gnk"]
+[ext_resource type="Texture2D" uid="uid://cyshts1lk7c2w" path="res://Sprites/UI/GUI/minusHP20.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cfp84ku24wdr2" path="res://Sprites/UI/GUI/IconDMG.png" id="10_hjh6w"]
+[ext_resource type="Texture2D" uid="uid://biejgq6uwvom4" path="res://Sprites/UI/GUI/HealBackground20.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://2ug3epkuo4fe" path="res://Sprites/UI/GUI/HealBackground.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://ccdwaysb6g5ke" path="res://Sprites/UI/GUI/HealBackground40.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cqlfkpu3dv0er" path="res://Sprites/UI/GUI/HealBackground80.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://g764s3je7fv5" path="res://Sprites/UI/GUI/HealBackground60.png" id="15"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00q2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_da2h8")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j5gnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5tv1c")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hjh6w")
+}],
+"loop": true,
+"name": &"TakeDamage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jwbdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_633up")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": false,
+"name": &"heal",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 10.0
+}]
+
+[node name="GUI" type="CanvasLayer" groups=["GUI"]]
+layer = 5
+script = ExtResource("5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="0hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureRect" type="TextureRect" parent="Control/0hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/0hp/TextureRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1zeroHP" type="TextureRect" parent="Control/0hp/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3")
+
+[node name="2zeroHP" type="TextureRect" parent="Control/0hp/TextureRect/HBoxContainer/1zeroHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="3zeroHP" type="TextureRect" parent="Control/0hp/TextureRect/HBoxContainer/1zeroHP/2zeroHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="1hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureRect" type="TextureRect" parent="Control/1hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/1hp/TextureRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1halfHP" type="TextureRect" parent="Control/1hp/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4")
+
+[node name="2halfHP" type="TextureRect" parent="Control/1hp/TextureRect/HBoxContainer/1halfHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="3halfHP" type="TextureRect" parent="Control/1hp/TextureRect/HBoxContainer/1halfHP/2halfHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="2hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Mirror" type="TextureRect" parent="Control/2hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/2hp/Mirror"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1fullHP" type="TextureRect" parent="Control/2hp/Mirror/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="2fullHP" type="TextureRect" parent="Control/2hp/Mirror/HBoxContainer/1fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="3fullHP" type="TextureRect" parent="Control/2hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="3hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Mirror" type="TextureRect" parent="Control/3hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/3hp/Mirror"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1fullHP" type="TextureRect" parent="Control/3hp/Mirror/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="2fullHP" type="TextureRect" parent="Control/3hp/Mirror/HBoxContainer/1fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("4")
+
+[node name="3fullHP" type="TextureRect" parent="Control/3hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="4hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Mirror" type="TextureRect" parent="Control/4hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/4hp/Mirror"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1fullHP" type="TextureRect" parent="Control/4hp/Mirror/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="2fullHP" type="TextureRect" parent="Control/4hp/Mirror/HBoxContainer/1fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("2")
+
+[node name="3fullHP" type="TextureRect" parent="Control/4hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("3")
+
+[node name="5hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Mirror" type="TextureRect" parent="Control/5hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/5hp/Mirror"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1fullHP" type="TextureRect" parent="Control/5hp/Mirror/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="2fullHP" type="TextureRect" parent="Control/5hp/Mirror/HBoxContainer/1fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("2")
+
+[node name="3fullHP" type="TextureRect" parent="Control/5hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("4")
+
+[node name="6hp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Mirror" type="TextureRect" parent="Control/6hp"]
+layout_mode = 2
+texture = ExtResource("2_jwbdh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/6hp/Mirror"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 46.0
+offset_right = 694.0
+offset_bottom = 196.0
+
+[node name="1fullHP" type="TextureRect" parent="Control/6hp/Mirror/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="2fullHP" type="TextureRect" parent="Control/6hp/Mirror/HBoxContainer/1fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("2")
+
+[node name="3fullHP" type="TextureRect" parent="Control/6hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 260.0
+offset_bottom = 150.0
+texture = ExtResource("2")
+
+[node name="IconPlayer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Icon" type="AnimatedSprite2D" parent="Control/IconPlayer"]
+position = Vector2(120, 120)
+sprite_frames = SubResource("SpriteFrames_00q2p")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="BackHeal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(968, 539)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("2")
+animation = &"heal"
+
+[node name="BackDamage" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(968, 539)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("1")
+animation = &"damage"
+
+[node name="TimerDamage" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="TimerHeal" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="TimerDamage" to="." method="_on_TimerDamage_timeout"]
+[connection signal="timeout" from="TimerHeal" to="." method="_on_TimerHeal_timeout"]

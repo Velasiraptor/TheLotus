@@ -1,0 +1,109 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bikpkpdhxfy52" path="res://Sprites/Forest/water.png" id="1"]
+[ext_resource type="Script" path="res://Script/Forest/WaterSounds.gd" id="2"]
+[ext_resource type="Shader" path="res://Shaders/water.gdshader" id="2_0xjfx"]
+[ext_resource type="AudioStream" uid="uid://lf6qgux7c6se" path="res://Sounds/Location /waterExit.mp3" id="3"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_gjnsc"]
+[ext_resource type="AudioStream" uid="uid://dqr4k6dxdwtkx" path="res://Sounds/Location /waterEntered.mp3" id="4"]
+[ext_resource type="Texture2D" uid="uid://c3jscfx6f0fsh" path="res://Sprites/Forest/ReedsWater.png" id="5_k45fo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c0cl2"]
+noise_type = 4
+seed = 2
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p7syf"]
+noise = SubResource("FastNoiseLite_c0cl2")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rr5gy"]
+noise_type = 4
+seed = 2
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wldoo"]
+seamless = true
+seamless_blend_skirt = 0.34
+noise = SubResource("FastNoiseLite_rr5gy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjiq2"]
+shader = ExtResource("2_0xjfx")
+shader_parameter/scroll1 = Vector2(0, 0)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strenght = 0.01
+shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
+shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shader_parameter/light_start = 0.339
+shader_parameter/light_end = 0.687
+shader_parameter/noise1 = SubResource("NoiseTexture2D_p7syf")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_wldoo")
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(5356, 99)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(437.147, 59)
+
+[sub_resource type="CapsuleShape2D" id="3"]
+radius = 57.4197
+height = 295.977
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(105.699, 8.60686)
+
+[node name="water" type="StaticBody2D"]
+collision_layer = 34
+collision_mask = 5
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(1, 1.0463)
+texture = ExtResource("1")
+
+[node name="MMWater" type="Sprite2D" parent="Water"]
+material = SubResource("ShaderMaterial_wjiq2")
+position = Vector2(979.5, 377)
+scale = Vector2(81.0469, 4.96875)
+texture = ExtResource("3_gjnsc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1031, 448)
+shape = SubResource("1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3243, 334)
+rotation = -0.34847
+shape = SubResource("2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(2998, 381)
+rotation = 1.31861
+shape = SubResource("3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2861, 390)
+scale = Vector2(2.98908, 4.02594)
+polygon = PackedVector2Array(-9.36749, 7.45168, -4.68378, 0.496788, -4.68378, -1.49033, -5.01837, -3.22905, -6.35657, -5.96133, -7.02563, -6.95489, -6.6911, -7.94845, -4.68378, -8.19683, 9.03278, -9.93555, 7.02551, -6.95489, -3.34558, 7.94846)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(996, 380)
+scale = Vector2(49.4233, -11.0674)
+shape = SubResource("4")
+
+[node name="WaterEntered" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("4")
+volume_db = -30.0
+
+[node name="WaterExit" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("3")
+volume_db = -30.0
+
+[node name="Reeds" type="Sprite2D" parent="."]
+texture = ExtResource("5_k45fo")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]

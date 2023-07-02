@@ -1,0 +1,621 @@
+[gd_scene load_steps=30 format=3]
+
+[ext_resource type="Script" path="res://Script/Cave/Level2.gd" id="1_wbc34"]
+[ext_resource type="Texture2D" uid="uid://bjk3e3bhno6nl" path="res://Sprites/Cave/Backgrounds/Backgrounds0.png" id="2_2aktn"]
+[ext_resource type="Texture2D" uid="uid://ckx0r2qkm3tf6" path="res://Sprites/Cave/Backgrounds/Backgrounds1.png" id="3_xcad3"]
+[ext_resource type="Texture2D" uid="uid://bbot45wwsp1yc" path="res://Sprites/Cave/Backgrounds/Backgrounds2.png" id="4_l3ttf"]
+[ext_resource type="Texture2D" uid="uid://iewi2ke6iy4g" path="res://Sprites/Cave/Waterfall.png" id="5_8x5xk"]
+[ext_resource type="Texture2D" uid="uid://dn63kss51q7o4" path="res://Sprites/Cave/Backgrounds/Backgrounds3.png" id="6_4jrii"]
+[ext_resource type="Texture2D" uid="uid://dr53tr1sla7vm" path="res://Sprites/Forest/Fog.png" id="6_wucgo"]
+[ext_resource type="Texture2D" uid="uid://b5gn4nlh4wius" path="res://Sprites/Cave/WaterLine.png" id="7_0qtis"]
+[ext_resource type="PackedScene" uid="uid://80juedhephb8" path="res://Scene/Cave/platformCave.tscn" id="7_arvrn"]
+[ext_resource type="AudioStream" uid="uid://dy7nr2wwkj1qm" path="res://Sounds/Location /WaterFallSound.mp3" id="8_3dqxi"]
+[ext_resource type="PackedScene" path="res://Scene/Player/Player.tscn" id="8_hkwea"]
+[ext_resource type="Texture2D" uid="uid://cgxnqyijyki8q" path="res://Sprites/Cave/WaterDrop.png" id="9_ii5xb"]
+[ext_resource type="Texture2D" uid="uid://7i5goxtewiyi" path="res://Sprites/Cave/Backgrounds/Backgrounds4.png" id="9_vw5g3"]
+[ext_resource type="Texture2D" uid="uid://6ibn6oc4mfn1" path="res://Sprites/Cave/Backgrounds/Backgrounds5.png" id="10_dsann"]
+[ext_resource type="AudioStream" uid="uid://bxkclmqw3njy3" path="res://Sounds/Location /CaveSound.mp3" id="11_vlvw3"]
+[ext_resource type="Script" path="res://Script/Cave/Abyss.gd" id="12_7iuvf"]
+[ext_resource type="PackedScene" uid="uid://0qcetmsr5o2g" path="res://Scene/Items/mushroom.tscn" id="12_s2vl0"]
+[ext_resource type="Texture2D" uid="uid://krpddqjqf0wa" path="res://Sprites/Cave/Fonnn.png" id="13_ir43h"]
+[ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="14_ci4m1"]
+[ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="15_gx3nq"]
+[ext_resource type="PackedScene" uid="uid://cpaky8se6tuvm" path="res://Scene/inventory2.tscn" id="20_0c73n"]
+[ext_resource type="PackedScene" uid="uid://cqmk2gl5u37bs" path="res://Scene/NPC/dwarf.tscn" id="20_avnp1"]
+
+[sub_resource type="Animation" id="Animation_5s4to"]
+resource_name = "WD"
+length = 7.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dwat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1875, 0), Vector2(-1875, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dwat:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dwat3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 6.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1980, 0), Vector2(-1980, -30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dwat3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 4.5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dwat2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1770, 0), Vector2(-1770, -30)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Dwat2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 5, 7.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pbh3p"]
+resource_name = "WD_2"
+length = 11.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dwat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.75, 9.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1875, 0), Vector2(-1875, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dwat:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.75, 7.75, 9.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dwat3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.25, 10.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1980, 0), Vector2(-1980, -30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dwat3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.25, 8.25, 10.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dwat2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.75, 11.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1770, 0), Vector2(-1770, -30)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Dwat2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.75, 8.75, 11.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wa4il"]
+_data = {
+"WD": SubResource("Animation_5s4to"),
+"WD_2": SubResource("Animation_pbh3p")
+}
+
+[sub_resource type="Animation" id="Animation_g5axq"]
+resource_name = "linean"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaterLine:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-45, 50), Vector2(-45, 400), Vector2(-45, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaterLine:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaterLine:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaterLine2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(45, 400), Vector2(45, 50), Vector2(45, 322.222)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WaterLine2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WaterLine2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WaterLine3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 400), Vector2(0, 50), Vector2(0, 205.555)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WaterLine3:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WaterLine3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnphs"]
+_data = {
+"linean": SubResource("Animation_g5axq")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vg8ji"]
+emission_shape = 3
+emission_box_extents = Vector3(30, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswbv"]
+size = Vector2(793, 299)
+
+[node name="Cave" type="Node2D"]
+script = ExtResource("1_wbc34")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.96, 1)
+
+[node name="Backgrounds0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_2aktn")
+
+[node name="Backgrounds1" type="Sprite2D" parent="."]
+texture = ExtResource("3_xcad3")
+
+[node name="Backgrounds2" type="Sprite2D" parent="."]
+texture = ExtResource("4_l3ttf")
+
+[node name="WaterFall" type="Sprite2D" parent="."]
+texture = ExtResource("5_8x5xk")
+
+[node name="WaterFog" type="Node2D" parent="WaterFall"]
+
+[node name="Dwat" type="Node2D" parent="WaterFall/WaterFog"]
+modulate = Color(1, 1, 1, 0.29502)
+position = Vector2(-1875, -27.0498)
+
+[node name="Fog" type="Sprite2D" parent="WaterFall/WaterFog/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog2" type="Sprite2D" parent="WaterFall/WaterFog/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog3" type="Sprite2D" parent="WaterFall/WaterFog/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog4" type="Sprite2D" parent="WaterFall/WaterFog/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog5" type="Sprite2D" parent="WaterFall/WaterFog/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Dwat2" type="Node2D" parent="WaterFall/WaterFog"]
+modulate = Color(1, 1, 1, 0.836016)
+position = Vector2(-1770, -20.3537)
+
+[node name="Fog" type="Sprite2D" parent="WaterFall/WaterFog/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog2" type="Sprite2D" parent="WaterFall/WaterFog/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog3" type="Sprite2D" parent="WaterFall/WaterFog/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog4" type="Sprite2D" parent="WaterFall/WaterFog/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog5" type="Sprite2D" parent="WaterFall/WaterFog/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Dwat3" type="Node2D" parent="WaterFall/WaterFog"]
+modulate = Color(1, 1, 1, 0.54502)
+position = Vector2(-1980, -24.5498)
+
+[node name="Fog" type="Sprite2D" parent="WaterFall/WaterFog/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog2" type="Sprite2D" parent="WaterFall/WaterFog/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog3" type="Sprite2D" parent="WaterFall/WaterFog/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog4" type="Sprite2D" parent="WaterFall/WaterFog/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog5" type="Sprite2D" parent="WaterFall/WaterFog/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="AnimationWD" type="AnimationPlayer" parent="WaterFall/WaterFog"]
+autoplay = "WD"
+libraries = {
+"": SubResource("AnimationLibrary_wa4il")
+}
+
+[node name="WaterFog2" type="Node2D" parent="WaterFall"]
+
+[node name="Dwat" type="Node2D" parent="WaterFall/WaterFog2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1875, -14.8951)
+
+[node name="Fog" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog2" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog3" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog4" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog5" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat"]
+texture = ExtResource("6_wucgo")
+
+[node name="Dwat2" type="Node2D" parent="WaterFall/WaterFog2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1770, -22.7788)
+
+[node name="Fog" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog2" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog3" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog4" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog5" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat2"]
+texture = ExtResource("6_wucgo")
+
+[node name="Dwat3" type="Node2D" parent="WaterFall/WaterFog2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1980, -17.7522)
+
+[node name="Fog" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog2" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog3" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog4" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="Fog5" type="Sprite2D" parent="WaterFall/WaterFog2/Dwat3"]
+texture = ExtResource("6_wucgo")
+
+[node name="AnimationWD" type="AnimationPlayer" parent="WaterFall/WaterFog2"]
+autoplay = "WD_2"
+libraries = {
+"": SubResource("AnimationLibrary_wa4il")
+}
+
+[node name="Lines" type="Node2D" parent="WaterFall"]
+position = Vector2(-1922, 65)
+
+[node name="WaterLine" type="Sprite2D" parent="WaterFall/Lines"]
+modulate = Color(1, 1, 1, 0.176973)
+position = Vector2(-45, 70.6469)
+texture = ExtResource("7_0qtis")
+
+[node name="WaterLine2" type="Sprite2D" parent="WaterFall/Lines"]
+modulate = Color(1, 1, 1, 0.352726)
+position = Vector2(45, 342.869)
+texture = ExtResource("7_0qtis")
+
+[node name="WaterLine3" type="Sprite2D" parent="WaterFall/Lines"]
+modulate = Color(1, 1, 1, 0.781297)
+position = Vector2(0, 226.202)
+texture = ExtResource("7_0qtis")
+
+[node name="AnimationLines" type="AnimationPlayer" parent="WaterFall/Lines"]
+autoplay = "linean"
+libraries = {
+"": SubResource("AnimationLibrary_tnphs")
+}
+
+[node name="AudioWaterFall" type="AudioStreamPlayer2D" parent="WaterFall/Lines"]
+position = Vector2(8, 0)
+stream = ExtResource("8_3dqxi")
+volume_db = -20.0
+autoplay = true
+max_distance = 1500.0
+
+[node name="Backgrounds3" type="Sprite2D" parent="."]
+texture = ExtResource("6_4jrii")
+
+[node name="Platform" parent="." instance=ExtResource("7_arvrn")]
+
+[node name="WaterDrops" type="Node2D" parent="."]
+
+[node name="WaterDrops" type="GPUParticles2D" parent="WaterDrops"]
+position = Vector2(-1682, -552)
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_vg8ji")
+texture = ExtResource("9_ii5xb")
+lifetime = 3.7
+preprocess = 2.0
+explosiveness = 0.2
+visibility_rect = Rect2(-300, -100, 600, 1000)
+
+[node name="WaterDrops2" type="GPUParticles2D" parent="WaterDrops"]
+position = Vector2(-217, -490)
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_vg8ji")
+texture = ExtResource("9_ii5xb")
+lifetime = 3.7
+preprocess = 2.0
+explosiveness = 0.2
+visibility_rect = Rect2(-300, -100, 600, 1000)
+
+[node name="WaterDrops3" type="GPUParticles2D" parent="WaterDrops"]
+position = Vector2(977, -490)
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_vg8ji")
+texture = ExtResource("9_ii5xb")
+lifetime = 3.7
+preprocess = 2.0
+explosiveness = 0.2
+visibility_rect = Rect2(-300, -100, 600, 1000)
+
+[node name="mushroom" parent="." instance=ExtResource("12_s2vl0")]
+position = Vector2(-1756, 343)
+
+[node name="Dwarf" parent="." instance=ExtResource("20_avnp1")]
+position = Vector2(1235, 134)
+
+[node name="Player" parent="." instance=ExtResource("8_hkwea")]
+position = Vector2(-1674, -309)
+scale = Vector2(0.55, 0.55)
+
+[node name="Backgrounds4" type="Sprite2D" parent="."]
+texture = ExtResource("9_vw5g3")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.98, 1)
+
+[node name="Backgrounds5" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+texture = ExtResource("10_dsann")
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vlvw3")
+volume_db = -25.0
+
+[node name="TimerMusic" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Abyss" type="Area2D" parent="."]
+collision_layer = 4
+script = ExtResource("12_7iuvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Abyss"]
+position = Vector2(-1924, 615.5)
+shape = SubResource("RectangleShape2D_sswbv")
+
+[node name="Fon" type="Node2D" parent="."]
+
+[node name="Fonnn" type="Sprite2D" parent="Fon"]
+position = Vector2(-196, 1080)
+scale = Vector2(1.46558, 1)
+texture = ExtResource("13_ir43h")
+
+[node name="Fonnn2" type="Sprite2D" parent="Fon"]
+position = Vector2(-125, -1079)
+scale = Vector2(1.46558, 1)
+texture = ExtResource("13_ir43h")
+
+[node name="Fonnn3" type="Sprite2D" parent="Fon"]
+position = Vector2(2738, -147)
+rotation = -1.5708
+scale = Vector2(1.46558, 1)
+texture = ExtResource("13_ir43h")
+
+[node name="Fonnn4" type="Sprite2D" parent="Fon"]
+position = Vector2(-2738, -91)
+rotation = -1.5708
+scale = Vector2(1.46558, 1)
+texture = ExtResource("13_ir43h")
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+layer = 7
+
+[node name="inventory" parent="Inventory" instance=ExtResource("20_0c73n")]
+visible = false
+
+[node name="Escape" type="CanvasLayer" parent="."]
+process_priority = 1
+layer = 7
+
+[node name="ESCAPE" parent="Escape" instance=ExtResource("14_ci4m1")]
+visible = false
+scale = Vector2(1.2, 1.2)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+process_priority = 1
+layer = 7
+
+[node name="GameOver" parent="GameOver" instance=ExtResource("15_gx3nq")]
+visible = false
+
+[node name="TimerCursor" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="TimerMusic" to="." method="_on_timer_music_timeout"]
+[connection signal="body_entered" from="Abyss" to="Abyss" method="_on_body_entered"]
+[connection signal="timeout" from="TimerCursor" to="." method="_on_timer_cursor_timeout"]
