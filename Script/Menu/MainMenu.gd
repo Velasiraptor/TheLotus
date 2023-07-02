@@ -1,6 +1,7 @@
 extends Control
 
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мыши
+var dgf = "gdf"
 
 func _ready():
 	$CenterContainer/Lily/AnimationMenu.play("MainMenu")
