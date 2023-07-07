@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b5e2cb8hse2wn" path="res://Sprites/Forest/Grass5.png" id="24_1n2j5"]
 [ext_resource type="Texture2D" uid="uid://dtvhw46q5iya8" path="res://Sprites/Forest/Grass6.png" id="25_2mwjk"]
 [ext_resource type="PackedScene" uid="uid://cp610e1p4o1k2" path="res://Scene/Items/Fly.tscn" id="26_go5gx"]
-[ext_resource type="PackedScene" path="res://Scene/Player/Player.tscn" id="27_gqmbv"]
+[ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="27_gqmbv"]
 [ext_resource type="PackedScene" path="res://Scene/Enemy/RacoonL.tscn" id="28_65tdn"]
 [ext_resource type="PackedScene" path="res://Scene/Enemy/racoon_r.tscn" id="29_tkhhh"]
 [ext_resource type="Texture2D" uid="uid://dstp3se483tbh" path="res://Sprites/Forest/Grass.png" id="30_bikpu"]
@@ -51,7 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://bmgal2nlbwpna" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-9.png" id="49_do02t"]
 [ext_resource type="Texture2D" uid="uid://bmsu7cc5i6qlx" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-10.png" id="50_ri4ty"]
 [ext_resource type="Texture2D" uid="uid://bd2k1isgckjpf" path="res://Sprites/Forest/Top.png" id="51_wpigg"]
-[ext_resource type="AudioStream" uid="uid://dwqph1jq3eaqs" path="res://Sounds/Location /forest.mp3" id="52_kpk6e"]
+[ext_resource type="AudioStream" uid="uid://dwqph1jq3eaqs" path="res://Sounds/Location-/forest.mp3" id="52_kpk6e"]
 [ext_resource type="PackedScene" uid="uid://bf7a0afpemdca" path="res://Scene/inventory.tscn" id="53_2sqsh"]
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="54_ldd2a"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="55_eavr7"]
@@ -640,7 +640,7 @@ position = Vector2(-1428, -160)
 position = Vector2(477, -215)
 
 [node name="Player" parent="." groups=["GUI"] instance=ExtResource("27_gqmbv")]
-position = Vector2(-3290, 85)
+position = Vector2(-3280, 83)
 rotation = 0.000409808
 scale = Vector2(0.55, 0.55)
 
