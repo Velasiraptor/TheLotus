@@ -11,6 +11,9 @@ var dustPatricle = load("res://Sprites/Player/Dust.png")
 var grassParticle = load("res://Sprites/Player/GrassParticle.png")
 var ind = 1
 
+func _ready():
+	$TongueAr/CollisionShape2D.disabled = true
+
 func _physics_process(delta):
 	if $".".visible == true:
 		move()
@@ -112,6 +115,10 @@ func animate():
 		$"Лягуха2".visible = false
 		$"Лягуха".frame = 0
 		$"Лягуха".play("Tongue")
+		if $"Лягуха".flip_h == false:
+			$TongueAr/TongueAnim.play("Tongue_right")
+		elif $"Лягуха".flip_h == true:
+			$TongueAr/TongueAnim.play("Tongue_left")
 		$TimerIdle.start()
 	else:
 		if is_on_floor() and lives > 0 and $"Лягуха".animation != "Tongue":
@@ -182,9 +189,10 @@ func heal(): #лечение здоровья
 
 
 func _on_timer_idle_timeout(): #Возвращает в idle
-	$"Лягуха".visible = false
-	$"Лягуха2".visible = true
-	$"Лягуха2".play("idle")
+	if $"Лягуха".animation == "Tongue":
+		$"Лягуха".visible = false
+		$"Лягуха2".visible = true
+		$"Лягуха2".play("idle")
 
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
