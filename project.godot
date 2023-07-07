@@ -151,6 +151,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_4="Bottom"
 2d_physics/layer_5="Interface"
 2d_physics/layer_6="level(NPC)"
+2d_physics/layer_7="TakePlayer"
 
 [physics]
 
