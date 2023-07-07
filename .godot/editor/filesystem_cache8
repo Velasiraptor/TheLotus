@@ -1,7 +1,7 @@
 2a60927148abd1d33b818b535e306557
-::res://::1688370043
+::res://::1688745840
 Comic Sans MS.ttf::FontFile::3641416805012745984::1688337938::1688338152::1::::<><>::
-default_env.tres::Environment::4354001539825914689::1688338477::0::1::::<><>::
+default_env.tres::Environment::4354001539825914689::1688370064::0::1::::<><>::
 example.png::CompressedTexture2D::1186403807813443451::1688337939::1688338158::1::::<><>::
 export_presets.cfg::TextFile::-1::1688337939::0::1::::<><>::
 icon.png::CompressedTexture2D::5493151214475446462::1688337939::1688338158::1::::<><>::
@@ -372,12 +372,12 @@ setting_panel.tscn::PackedScene::1515033023590208775::1688338052::0::1::::<><>::
 ::res://addons/ggs/editor/_theme/::1688338186
 ggs_theme.gd::GDScript::-1::1688338025::0::1::::<>Theme<>::
 ggs_theme.tres::Theme::6840631685889568947::1688338186::0::1::::<><>::res://addons/ggs/editor/_theme/ggs_theme.gd
-::res://addons/GPTIntegration/::1688338531
+::res://addons/GPTIntegration/::1688370151
 Chat.tscn::PackedScene::1773702815319108865::1688337946::0::1::::<><>::
 ChatBubble.tscn::PackedScene::4835911937297589263::1688337946::0::1::::<><>::
 GPTIntegration.gd::GDScript::-1::1688337946::0::1::::<>EditorPlugin<>::
 plugin.cfg::TextFile::-1::1688337946::0::1::::<><>::
-settings.json::JSON::-1::1688338531::0::1::::<><>::
+settings.json::JSON::-1::1688370151::0::1::::<><>::
 SettingsWindow.tscn::PackedScene::7889180966212432454::1688337946::0::1::::<><>::
 ::res://addons/random_timer/::1688338155
 icon.svg::CompressedTexture2D::5386956193963553346::1688337946::1688338155::1::::<><>::
@@ -472,8 +472,8 @@ mushroom.tscn::PackedScene::1787880729499975828::1688337995::0::1::::<><>::uid:/
 LoadExit.tscn::PackedScene::2715260333235418606::1688337994::0::1::::<><>::res://Script/LoadsScene/loadExit.gd<>uid://ijlgsxgcik8l<>uid://br46uq16dmf1i
 LoadForest.tscn::PackedScene::5230962477026392738::1688337994::0::1::::<><>::res://Script/LoadsScene/loadlvl_forest.gd<>uid://ijlgsxgcik8l<>uid://br46uq16dmf1i
 loadlvl_cave.tscn::PackedScene::7409875916958824699::1688337994::0::1::::<><>::res://Script/LoadsScene/loadlvl_cave.gd<>uid://ijlgsxgcik8l<>uid://br46uq16dmf1i
-::res://Scene/MainMenu/::1688338477
-MainMenu.tscn::PackedScene::3737605440716882617::1688338477::0::1::::<><>::res://Script/Menu/MainMenu.gd<>uid://s5e1yxiaxak2<>res://Shaders/water.gdshader<>uid://cki6nsa0r000q<>uid://c87pphqt05alu<>uid://5givl8rbyrdp<>res://Shaders/Wave.gdshader<>uid://cyib2mokx3rmj<>uid://bf7hqkmqcq2dn<>uid://734qvv4a2nam<>uid://bd0vydc1qkdfq<>res://Shaders/Grass.gdshader<>uid://cgkded5ri5085<>uid://cw4lerjtq6r7i<>uid://n8q8i0liwfin<>uid://2s6sjv8i3j5x<>uid://ybtnetcdrft2<>uid://c24iyw3pmghh6<>res://Script/Menu/FrogMainMenu.gd<>uid://nuv04jws0ym5<>uid://j8ao0pb43wtb<>uid://brv7336e0pgp<>uid://c56hwiuty13is<>uid://lefd4q0bu1y5<>uid://ty4x73kwbvru<>uid://b73hkfuxiq542<>uid://ct3egygay0mxc<>uid://duosyhpme7gvq<>uid://l0je6n5krjcm<>uid://dok2cdgc6l2vg<>uid://blb4qv8qf6xlx<>uid://ckehwgmrsbyuy<>uid://blye7dtq2p136<>uid://c8rqah6ntqquw<>uid://bsclc7t8deqt3<>uid://dssll10rik35r<>uid://d3k1jv1p56py6<>uid://3q2nmhjtq53n<>uid://br46uq16dmf1i<>uid://ck23yt1gc0oqj<>uid://vogfyc4chu74<>uid://gn82pc41cvlx<>uid://5qu8o8byitax
+::res://Scene/MainMenu/::1688370064
+MainMenu.tscn::PackedScene::3737605440716882617::1688370064::0::1::::<><>::res://Script/Menu/MainMenu.gd<>uid://s5e1yxiaxak2<>res://Shaders/water.gdshader<>uid://cki6nsa0r000q<>uid://c87pphqt05alu<>uid://5givl8rbyrdp<>res://Shaders/Wave.gdshader<>uid://cyib2mokx3rmj<>uid://bf7hqkmqcq2dn<>uid://734qvv4a2nam<>uid://bd0vydc1qkdfq<>res://Shaders/Grass.gdshader<>uid://cgkded5ri5085<>uid://cw4lerjtq6r7i<>uid://n8q8i0liwfin<>uid://2s6sjv8i3j5x<>uid://ybtnetcdrft2<>uid://c24iyw3pmghh6<>res://Script/Menu/FrogMainMenu.gd<>uid://nuv04jws0ym5<>uid://j8ao0pb43wtb<>uid://brv7336e0pgp<>uid://c56hwiuty13is<>uid://lefd4q0bu1y5<>uid://ty4x73kwbvru<>uid://b73hkfuxiq542<>uid://ct3egygay0mxc<>uid://duosyhpme7gvq<>uid://l0je6n5krjcm<>uid://dok2cdgc6l2vg<>uid://blb4qv8qf6xlx<>uid://ckehwgmrsbyuy<>uid://blye7dtq2p136<>uid://c8rqah6ntqquw<>uid://bsclc7t8deqt3<>uid://dssll10rik35r<>uid://d3k1jv1p56py6<>uid://3q2nmhjtq53n<>uid://br46uq16dmf1i<>uid://ck23yt1gc0oqj<>uid://vogfyc4chu74<>uid://gn82pc41cvlx<>uid://5qu8o8byitax
 ::res://Scene/NPC/::1688337996
 dwarf.tscn::PackedScene::5921291118530410836::1688337996::0::1::::<><>::res://Script/NPC/dwarf.gd<>uid://c6l715y8kw2aj<>uid://dpqfvr4pkc4f2<>uid://d4kyl433amugo<>uid://bvw7qxcjbktbw<>uid://crrngk2h082hq<>uid://ice5y8eveep6<>uid://dukowtahvht10<>uid://c3ae0khl1q30f<>uid://tccvvsp3i1m1
 ::res://Scene/Player/::1688337995
