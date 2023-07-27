@@ -1,7 +1,6 @@
 res://default_env.tres
-res://Scene/Items/Fly.tscn
-res://Script/Player/Player.gd
-res://Scene/Player/Player.tscn
 res://Scene/MainMenu/MainMenu.tscn
+res://addons/ggs/editor/_theme/ggs_theme.tres
 res://Scene/Forest/ForestLVL.tscn
-res://Script/Items/Fly.gd
+res://Scene/Player/Player.tscn
+res://Scene/Items/Fly.tscn
