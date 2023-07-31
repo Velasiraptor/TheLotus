@@ -59,6 +59,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_qhqy1")
+}],
+"loop": true,
+"name": &"IdleF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("18")
 }],
 "loop": true,
@@ -367,18 +375,11 @@ interpolate = false
 fract_delta = false
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
-[node name="TimerDustParticleVis" type="Timer" parent="ParticlesPlayer"]
-one_shot = true
-
-[node name="TimerGrassParticleVis" type="Timer" parent="ParticlesPlayer"]
-one_shot = true
-
 [node name="Лягуха" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"Tongue"
+animation = &"IdleF"
 autoplay = "run"
-frame = 1
 
 [node name="Лягуха2" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -400,6 +401,7 @@ zoom = Vector2(1.7, 1.7)
 limit_bottom = 540
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.15
@@ -427,7 +429,7 @@ volume_db = -20.0
 wait_time = 2.0
 one_shot = true
 
-[node name="TimerIdle" type="Timer" parent="."]
+[node name="TimerIdleTongue" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
@@ -438,7 +440,6 @@ collision_mask = 2
 
 [node name="GUI" parent="." instance=ExtResource("20_ce54u")]
 layer = 6
-visible = false
 
 [node name="Shadow" type="Sprite2D" parent="."]
 show_behind_parent = true
@@ -462,7 +463,5 @@ position = Vector2(-104, 23)
 shape = SubResource("CircleShape2D_kktoy")
 debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
 
-[connection signal="timeout" from="ParticlesPlayer/TimerDustParticleVis" to="." method="_on_timer_particle_vis_timeout"]
-[connection signal="timeout" from="ParticlesPlayer/TimerGrassParticleVis" to="." method="_on_timer_grass_particle_vis_timeout"]
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
-[connection signal="timeout" from="TimerIdle" to="." method="_on_timer_idle_timeout"]
+[connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]

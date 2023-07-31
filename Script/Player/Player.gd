@@ -10,6 +10,7 @@ var lives = 6
 var dustPatricle = load("res://Sprites/Player/Dust.png")
 var grassParticle = load("res://Sprites/Player/GrassParticle.png")
 var ind = 1
+var idleInd = 1
 
 func _ready():
 	$TongueAr/CollisionShape2D.disabled = true
@@ -27,18 +28,19 @@ func _physics_process(delta):
 func move():
 	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and lives > 0 and $"Лягуха".animation != "TakeDamage":
 		vel.x = -SPEED
-		if vel.y < 0:
+		if not is_on_floor():
 			vel.x = -jumpSPEED
 	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left") and lives > 0 and $"Лягуха".animation != "TakeDamage":
 		vel.x = SPEED
-		if vel.y < 0:
+		if not is_on_floor():
 			vel.x = jumpSPEED
-	elif is_on_floor() and $"Лягуха".visible == false:
+	elif is_on_floor() and $"Лягуха2".visible == true:
 		vel.x = 0
 
 func jump():
 	if Input.is_action_pressed("player_jump") and is_on_floor() and lives > 0:
 		if vel.y > 0: #прыжок
+			idleInd = 0
 			vel.y -= jumpForce
 			$"Лягуха2".visible = false
 			$"Лягуха".visible = true
@@ -62,13 +64,6 @@ func soundIdle(): #звук при стоячей анимации
 func soundWalk(): #звук ходьбы
 	if $"Лягуха".visible == true and ($"Лягуха".frame == 1 or $"Лягуха".frame == 10):
 		$walkSound.play()
-
-#РАЗЛИЧНЫЕ СПРАЙТЫ ЧАСТИЦ
-func DustParticle(): #частицы в виде грязи
-	#$ParticlesPlayer.texture = dustPatricle
-	pass
-func waterParticle(): #частицы в виде капель
-	pass
 
 
 func animate():
@@ -119,14 +114,24 @@ func animate():
 			$TongueAr/TongueAnim.play("Tongue_right")
 		elif $"Лягуха".flip_h == true:
 			$TongueAr/TongueAnim.play("Tongue_left")
-		$TimerIdle.start()
+		$TimerIdleTongue.start()
 	else:
 		if is_on_floor() and lives > 0 and $"Лягуха".animation != "Tongue":
 			$"Лягуха".visible = false
 			$"Лягуха2".visible = true
-			$"Лягуха2".play("idle")
 			get_tree().call_group("GUI", "idleIcon")
 			$ParticlesPlayer.emitting = false #выкл частицы
+			$"Лягуха2".play("idle")
+
+
+func _on_timer_idle_tongue_timeout(): #Возвращает в idle после языка
+	if $"Лягуха".animation == "Tongue":
+		$"Лягуха".visible = false
+		$"Лягуха2".visible = true
+		$"Лягуха2".play("idle")
+		get_tree().call_group("GUI", "idleIcon")
+		$ParticlesPlayer.emitting = false #выкл частицы
+
 
 func indTrue():
 	ind = 1
@@ -135,7 +140,7 @@ func indFalse():
 
 
 func shadow():
-	if $"Лягуха2".visible == true || $"Лягуха".animation == "run" || $"Лягуха".animation == "Tongue":
+	if $"Лягуха2".visible == true || $"Лягуха".animation == "run" || $"Лягуха".animation == "Tongue" || $"Лягуха".animation == "IdleF":
 		$Shadow.visible = true
 	else:
 		$Shadow.visible = false
@@ -188,18 +193,18 @@ func heal(): #лечение здоровья
 		get_tree().call_group("GUI", "BackgroundsHeal")
 
 
-func _on_timer_idle_timeout(): #Возвращает в idle
-	if $"Лягуха".animation == "Tongue":
-		$"Лягуха".visible = false
-		$"Лягуха2".visible = true
-		$"Лягуха2".play("idle")
-
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
 
 
 func  WaterSound(): #Вода на уровнях
 	pass
+
+
+
+
+
+
 
 
 
