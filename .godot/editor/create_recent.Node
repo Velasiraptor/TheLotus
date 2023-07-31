@@ -1,6 +1,8 @@
+GPUParticles2D
+AnimationPlayer
+TextureRect
 Timer
 CollisionShape2D
 Area2D
 CharacterBody2D
 StaticBody2D
-AnimationPlayer

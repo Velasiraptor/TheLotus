@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://caudsgp7lcrmo"]
+[gd_scene load_steps=40 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
 [ext_resource type="Script" path="res://Script/Player/Player.gd" id="1_6mib8"]
@@ -160,6 +160,44 @@ animations = [{
 "name": &"run",
 "speed": 25.0
 }]
+
+[sub_resource type="Animation" id="Animation_j62j5"]
+resource_name = "Damage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.607843, 0.54902, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_on6k7"]
+resource_name = "Heal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.890196, 1, 0.870588, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phc6t"]
+_data = {
+"Damage": SubResource("Animation_j62j5"),
+"Heal": SubResource("Animation_on6k7")
+}
 
 [sub_resource type="SpriteFrames" id="4"]
 animations = [{
@@ -378,8 +416,13 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="Лягуха" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"IdleF"
+animation = &"TakeDamage"
 autoplay = "run"
+
+[node name="EffectsAnim" type="AnimationPlayer" parent="Лягуха"]
+libraries = {
+"": SubResource("AnimationLibrary_phc6t")
+}
 
 [node name="Лягуха2" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -388,6 +431,11 @@ scale = Vector2(0.32, 0.32)
 sprite_frames = SubResource("4")
 animation = &"idle"
 flip_h = true
+
+[node name="EffectsAnim" type="AnimationPlayer" parent="Лягуха2"]
+libraries = {
+"": SubResource("AnimationLibrary_phc6t")
+}
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)
@@ -399,6 +447,7 @@ position = Vector2(0, -40)
 scale = Vector2(0.2, 0.2)
 zoom = Vector2(1.7, 1.7)
 limit_bottom = 540
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 rotation_smoothing_enabled = true

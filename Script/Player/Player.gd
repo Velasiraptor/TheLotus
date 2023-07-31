@@ -156,6 +156,7 @@ func hurt(): #снятие здоровья
 		$"Лягуха2".visible = false
 		$"Лягуха".visible = true
 		$"Лягуха".play("TakeDamage")
+		$"Лягуха/EffectsAnim".play("Damage")
 		get_tree().call_group("GUI", "DMGIcon")
 		$TakeDamage.play()
 		vel.y = -600
@@ -175,6 +176,7 @@ func fullHurt(): #мгновенная смерть
 	$"Лягуха".visible = false
 	$"Лягуха2".visible = true
 	$"Лягуха2".play("Death")
+	$"Лягуха2/EffectsAnim".play("Damage")
 	get_tree().call_group("GUI", "DeathIcon")
 	$TimerDeath.start()
 	get_tree().call_group("GUI", "update_lives", lives)
@@ -189,6 +191,7 @@ func RightPush(): #толчок от удара слева
 func heal(): #лечение здоровья
 	if lives != 0 and lives != 6:
 		lives += 1
+		$"Лягуха/EffectsAnim".play("Heal")
 		get_tree().call_group("GUI", "update_lives", lives)
 		get_tree().call_group("GUI", "BackgroundsHeal")
 

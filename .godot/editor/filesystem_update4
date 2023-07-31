@@ -1,6 +1,5 @@
 res://default_env.tres
-res://Scene/Player/Player.tscn
-res://Script/Player/Player.gd
 res://Scene/MainMenu/MainMenu.tscn
 res://Scene/Forest/ForestLVL.tscn
-res://Scene/Items/Fly.tscn
+res://Scene/Player/Player.tscn
+res://Script/Player/Player.gd
