@@ -1,5 +1,6 @@
+res://Script/Comic/prologue/prologue.gd
 res://default_env.tres
+res://Scene/comic/prologue.tscn
 res://Scene/MainMenu/MainMenu.tscn
 res://Scene/Forest/ForestLVL.tscn
 res://Scene/Player/Player.tscn
-res://Script/Player/Player.gd

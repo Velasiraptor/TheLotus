@@ -1,7 +1,12 @@
-GPUParticles2D
-AnimationPlayer
-TextureRect
+ColorRect
 Timer
+AudioStreamPlayer
+AnimationPlayer
+Sprite2D
+Node2D
+GPUParticles2D
+AnimatedSprite2D
+TextureRect
 CollisionShape2D
 Area2D
 CharacterBody2D
