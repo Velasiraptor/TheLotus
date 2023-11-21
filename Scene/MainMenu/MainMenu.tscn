@@ -754,6 +754,7 @@ scale = Vector2(6.42719, 1.58594)
 texture = SubResource("CompressedTexture2D_epnm3")
 
 [node name="AnimationMenu" type="AnimationPlayer" parent="CenterContainer/Lily"]
+unique_name_in_owner = true
 autoplay = "MainMenu"
 libraries = {
 "": SubResource("AnimationLibrary_vurn2")
@@ -827,15 +828,16 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 alignment = 1
 
-[node name="NewGame" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+[node name="NewGameButton" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_bottom = NodePath("../Resume")
+focus_neighbor_top = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
 texture_normal = ExtResource("37_vexlu")
 texture_focused = ExtResource("38_tk5oc")
 
-[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/NewGame"]
+[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -855,14 +857,15 @@ text = "Новая Игра"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Resume" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+[node name="ResumeButton" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../NewGame")
-focus_neighbor_bottom = NodePath("../Options")
+focus_neighbor_top = NodePath("../NewGameButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
 texture_normal = ExtResource("37_vexlu")
 texture_focused = ExtResource("38_tk5oc")
 
-[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/Resume"]
+[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/ResumeButton"]
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
@@ -879,14 +882,15 @@ text = "Продолжить"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+[node name="OptionsButton" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../Resume")
-focus_neighbor_bottom = NodePath("../Exit")
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
 texture_normal = ExtResource("37_vexlu")
 texture_focused = ExtResource("38_tk5oc")
 
-[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/Options"]
+[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/OptionsButton"]
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
@@ -903,14 +907,15 @@ text = "Настройки"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="CenterContainer3/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../NewGame")
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../NewGameButton")
 texture_normal = ExtResource("37_vexlu")
 texture_focused = ExtResource("38_tk5oc")
 
-[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/Exit"]
+[node name="Label" type="Label" parent="CenterContainer3/HBoxContainer/VBoxContainer/ExitButton"]
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1046,18 +1051,18 @@ text = "Готово
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_focus_entered"]
-[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_mouse_entered"]
-[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_focus_entered"]
-[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/Resume" to="." method="_on_Resume_mouse_entered"]
-[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_focus_entered"]
-[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_mouse_entered"]
-[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
-[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_focus_entered"]
-[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_mouse_entered"]
-[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGame_mouse_entered"]
+[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGame_pressed"]
+[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_Resume_mouse_entered"]
+[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_Resume_pressed"]
+[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_Options_mouse_entered"]
+[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_Options_pressed"]
+[connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_Exit_mouse_entered"]
+[connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_Exit_pressed"]
 [connection signal="timeout" from="TimerCursor" to="." method="_on_timer_cursor_timeout"]
 [connection signal="focus_entered" from="Options_window/Node2D/HBoxContainer/ExitOptions" to="." method="_on_exit_options_focus_entered"]
 [connection signal="mouse_entered" from="Options_window/Node2D/HBoxContainer/ExitOptions" to="." method="_on_exit_options_mouse_entered"]

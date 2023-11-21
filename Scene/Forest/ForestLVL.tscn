@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://hrim7s88bl86"]
+[gd_scene load_steps=81 format=3 uid="uid://hrim7s88bl86"]
 
 [ext_resource type="Texture2D" uid="uid://c30qjjrujkf1f" path="res://Sprites/Forest/BackgroundsLevel1/BackgroundFull.png" id="1_axv3k"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_1.tscn" id="2_ubu5b"]
@@ -27,8 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dtvhw46q5iya8" path="res://Sprites/Forest/Grass6.png" id="25_2mwjk"]
 [ext_resource type="PackedScene" uid="uid://cp610e1p4o1k2" path="res://Scene/Items/Fly.tscn" id="26_go5gx"]
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="27_gqmbv"]
-[ext_resource type="PackedScene" path="res://Scene/Enemy/RacoonL.tscn" id="28_65tdn"]
-[ext_resource type="PackedScene" path="res://Scene/Enemy/racoon_r.tscn" id="29_tkhhh"]
+[ext_resource type="PackedScene" uid="uid://coheoomnuyemb" path="res://Scene/Enemy/RacoonL.tscn" id="28_65tdn"]
+[ext_resource type="PackedScene" uid="uid://dk5bsr1asyhip" path="res://Scene/Enemy/racoon_r.tscn" id="29_tkhhh"]
 [ext_resource type="Texture2D" uid="uid://dstp3se483tbh" path="res://Sprites/Forest/Grass.png" id="30_bikpu"]
 [ext_resource type="Texture2D" uid="uid://b4oh65lx42hh4" path="res://Sprites/Forest/WaterBottom.png" id="31_lkf74"]
 [ext_resource type="Texture2D" uid="uid://ce7almiyry7p" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull1.png" id="32_rfns5"]
@@ -63,7 +63,6 @@
 script/source = "extends Node2D
 
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мышив
-var scene = preload(\"res://Scene/Forest/ForestLVL.tscn\")
 
 func _ready():
 	set_process_input(true)
@@ -123,26 +122,6 @@ shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
 shader_parameter/noise1 = SubResource("NoiseTexture2D_yhx7d")
 shader_parameter/noise2 = SubResource("NoiseTexture2D_ivibj")
-
-[sub_resource type="Shader" id="Shader_ii8k6"]
-code = "shader_type canvas_item;
-
-uniform float lod: hint_range(0.0, 5) = 0.0;
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
-
-void fragment(){
-	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
-	COLOR = color;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8y6gg"]
-shader = SubResource("Shader_ii8k6")
-shader_parameter/lod = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_20xbu"]
-shader = ExtResource("11_1yqdb")
-shader_parameter/lod = 0.7
 
 [sub_resource type="Animation" id="Animation_r4w2h"]
 resource_name = "foggy"
@@ -249,6 +228,10 @@ tracks/7/keys = {
 _data = {
 "foggy": SubResource("Animation_r4w2h")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20xbu"]
+shader = ExtResource("11_1yqdb")
+shader_parameter/lod = 0.7
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7toa6"]
 shader = ExtResource("21_44ilp")
@@ -446,6 +429,27 @@ texture = ExtResource("6_3b2y1")
 [node name="City" type="Sprite2D" parent="ParallaxBackground2/ParallaxCity"]
 texture = ExtResource("7_tk0bd")
 
+[node name="FoggyForest" type="Node2D" parent="ParallaxBackground2/ParallaxCity"]
+position = Vector2(-3799, -11)
+
+[node name="Foggy" parent="ParallaxBackground2/ParallaxCity/FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(1920.89, 100)
+
+[node name="Foggy2" parent="ParallaxBackground2/ParallaxCity/FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(867.867, 100)
+
+[node name="Foggy3" parent="ParallaxBackground2/ParallaxCity/FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(-248.714, 100)
+
+[node name="Foggy4" parent="ParallaxBackground2/ParallaxCity/FoggyForest" instance=ExtResource("14_d1dqn")]
+position = Vector2(3103.92, 100)
+
+[node name="AnimationFoggyForest" type="AnimationPlayer" parent="ParallaxBackground2/ParallaxCity/FoggyForest"]
+autoplay = "foggy"
+libraries = {
+"": SubResource("AnimationLibrary_fw38h")
+}
+
 [node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
 layer = -3
 
@@ -476,15 +480,6 @@ scale = Vector2(0.5, 0.5)
 [node name="LeafFall4" parent="ParallaxBackground3/ParallaxTree3" instance=ExtResource("9_qnf3j")]
 position = Vector2(2332, -643)
 scale = Vector2(0.5, 0.5)
-
-[node name="Blur" type="TextureRect" parent="ParallaxBackground3/ParallaxTree3"]
-material = SubResource("ShaderMaterial_8y6gg")
-offset_left = -3806.0
-offset_top = -555.0
-offset_right = -3742.0
-offset_bottom = -491.0
-scale = Vector2(118, 13.1875)
-texture = ExtResource("6_3b2y1")
 
 [node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
 layer = -2
@@ -551,16 +546,16 @@ position = Vector2(-5, 5)
 position = Vector2(-140, 59)
 
 [node name="Foggy" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
-position = Vector2(3500, 100)
+position = Vector2(2135.03, 100)
 
 [node name="Foggy2" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
-position = Vector2(2500, 100)
+position = Vector2(1089.19, 100)
 
 [node name="Foggy3" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
-position = Vector2(1500, 100)
+position = Vector2(-11.5781, 100)
 
 [node name="Foggy4" parent="FoggyForest" instance=ExtResource("14_d1dqn")]
-position = Vector2(500, 100)
+position = Vector2(3293.84, 100)
 
 [node name="AnimationFoggyForest" type="AnimationPlayer" parent="FoggyForest"]
 autoplay = "foggy"
@@ -642,7 +637,6 @@ position = Vector2(477, -215)
 [node name="Player" parent="." groups=["GUI"] instance=ExtResource("27_gqmbv")]
 position = Vector2(-3280, 83)
 rotation = 0.000409808
-scale = Vector2(0.55, 0.55)
 
 [node name="Racoons" type="Node2D" parent="."]
 position = Vector2(-2670, 304)

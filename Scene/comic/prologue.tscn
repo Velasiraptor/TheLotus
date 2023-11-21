@@ -738,7 +738,6 @@ wait_time = 4.0
 one_shot = true
 
 [node name="frame3" type="Node2D" parent="background"]
-modulate = Color(1, 1, 1, 0)
 
 [node name="back3" type="Sprite2D" parent="background/frame3"]
 texture = ExtResource("14_4gm6d")
@@ -755,8 +754,7 @@ position = Vector2(238.509, -257.661)
 texture = ExtResource("18_fy1hh")
 
 [node name="bottle" type="Sprite2D" parent="background/frame3/arrow"]
-position = Vector2(-60, -3)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-140, 100)
 texture = ExtResource("19_7sao7")
 
 [node name="Timer_frame3" type="Timer" parent="background/frame3"]

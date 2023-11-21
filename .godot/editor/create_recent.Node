@@ -1,3 +1,12 @@
+TextureRect
+CenterContainer
+Container
+MarginContainer
+HBoxContainer
+CharacterBody2D
+Camera2D
+ParallaxBackground
+ParallaxLayer
 ColorRect
 Timer
 AudioStreamPlayer
@@ -6,8 +15,6 @@ Sprite2D
 Node2D
 GPUParticles2D
 AnimatedSprite2D
-TextureRect
 CollisionShape2D
 Area2D
-CharacterBody2D
 StaticBody2D

@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3]
+[gd_scene load_steps=33 format=3 uid="uid://m1fdee2xwour"]
 
 [ext_resource type="Script" path="res://Script/Cave/Level2.gd" id="1_wbc34"]
 [ext_resource type="Texture2D" uid="uid://bjk3e3bhno6nl" path="res://Sprites/Cave/Backgrounds/Backgrounds0.png" id="2_2aktn"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_ut855"]
 [ext_resource type="Texture2D" uid="uid://ckx0r2qkm3tf6" path="res://Sprites/Cave/Backgrounds/Backgrounds1.png" id="3_xcad3"]
 [ext_resource type="Texture2D" uid="uid://bbot45wwsp1yc" path="res://Sprites/Cave/Backgrounds/Backgrounds2.png" id="4_l3ttf"]
 [ext_resource type="Texture2D" uid="uid://iewi2ke6iy4g" path="res://Sprites/Cave/Waterfall.png" id="5_8x5xk"]
@@ -9,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dr53tr1sla7vm" path="res://Sprites/Forest/Fog.png" id="6_wucgo"]
 [ext_resource type="Texture2D" uid="uid://b5gn4nlh4wius" path="res://Sprites/Cave/WaterLine.png" id="7_0qtis"]
 [ext_resource type="PackedScene" uid="uid://80juedhephb8" path="res://Scene/Cave/platformCave.tscn" id="7_arvrn"]
-[ext_resource type="AudioStream" uid="uid://dy7nr2wwkj1qm" path="res://Sounds/Location /WaterFallSound.mp3" id="8_3dqxi"]
-[ext_resource type="PackedScene" path="res://Scene/Player/Player.tscn" id="8_hkwea"]
+[ext_resource type="AudioStream" uid="uid://dy7nr2wwkj1qm" path="res://Sounds/Location-/WaterFallSound.mp3" id="8_3dqxi"]
+[ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="8_hkwea"]
 [ext_resource type="Texture2D" uid="uid://cgxnqyijyki8q" path="res://Sprites/Cave/WaterDrop.png" id="9_ii5xb"]
 [ext_resource type="Texture2D" uid="uid://7i5goxtewiyi" path="res://Sprites/Cave/Backgrounds/Backgrounds4.png" id="9_vw5g3"]
 [ext_resource type="Texture2D" uid="uid://6ibn6oc4mfn1" path="res://Sprites/Cave/Backgrounds/Backgrounds5.png" id="10_dsann"]
-[ext_resource type="AudioStream" uid="uid://bxkclmqw3njy3" path="res://Sounds/Location /CaveSound.mp3" id="11_vlvw3"]
+[ext_resource type="AudioStream" uid="uid://bxkclmqw3njy3" path="res://Sounds/Location-/CaveSound.mp3" id="11_vlvw3"]
 [ext_resource type="Script" path="res://Script/Cave/Abyss.gd" id="12_7iuvf"]
 [ext_resource type="PackedScene" uid="uid://0qcetmsr5o2g" path="res://Scene/Items/mushroom.tscn" id="12_s2vl0"]
 [ext_resource type="Texture2D" uid="uid://krpddqjqf0wa" path="res://Sprites/Cave/Fonnn.png" id="13_ir43h"]
@@ -22,6 +23,22 @@
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="15_gx3nq"]
 [ext_resource type="PackedScene" uid="uid://cpaky8se6tuvm" path="res://Scene/inventory2.tscn" id="20_0c73n"]
 [ext_resource type="PackedScene" uid="uid://cqmk2gl5u37bs" path="res://Scene/NPC/dwarf.tscn" id="20_avnp1"]
+
+[sub_resource type="Shader" id="Shader_ii8k6"]
+code = "shader_type canvas_item;
+
+uniform float lod: hint_range(0.0, 5) = 0.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment(){
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
+	COLOR = color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i6at"]
+shader = SubResource("Shader_ii8k6")
+shader_parameter/lod = 0.0
 
 [sub_resource type="Animation" id="Animation_5s4to"]
 resource_name = "WD"
@@ -322,8 +339,26 @@ motion_scale = Vector2(0.96, 1)
 [node name="Backgrounds0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("2_2aktn")
 
+[node name="Blur" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_1i6at")
+offset_left = -3806.0
+offset_top = -555.0
+offset_right = -3742.0
+offset_bottom = -491.0
+scale = Vector2(118, 13.1875)
+texture = ExtResource("3_ut855")
+
 [node name="Backgrounds1" type="Sprite2D" parent="."]
 texture = ExtResource("3_xcad3")
+
+[node name="Blur" type="TextureRect" parent="Backgrounds1"]
+material = SubResource("ShaderMaterial_1i6at")
+offset_left = -3806.0
+offset_top = -555.0
+offset_right = -3742.0
+offset_bottom = -491.0
+scale = Vector2(118, 13.1875)
+texture = ExtResource("3_ut855")
 
 [node name="Backgrounds2" type="Sprite2D" parent="."]
 texture = ExtResource("4_l3ttf")
@@ -537,7 +572,6 @@ position = Vector2(1235, 134)
 
 [node name="Player" parent="." instance=ExtResource("8_hkwea")]
 position = Vector2(-1674, -309)
-scale = Vector2(0.55, 0.55)
 
 [node name="Backgrounds4" type="Sprite2D" parent="."]
 texture = ExtResource("9_vw5g3")

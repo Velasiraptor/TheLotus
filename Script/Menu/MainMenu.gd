@@ -1,14 +1,20 @@
 extends Control
 
+
+@onready var animation_menu = %AnimationMenu
+@onready var new_game_button = %NewGameButton
+@onready var resume_button = %ResumeButton
+@onready var options_button = %OptionsButton
+@onready var exit_button = %ExitButton
+
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мыши
 
 func _ready():
-	$CenterContainer/Lily/AnimationMenu.play("MainMenu")
-	$CenterContainer3/HBoxContainer/VBoxContainer/Resume.grab_focus()
+	animation_menu.play("MainMenu")
+	resume_button.grab_focus() 
 	$HoverSound.playing = false
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	var scene = preload("res://Scene/Loads/LoadForest.tscn")
 
 func _on_NewGame_pressed(): #ДЕЙСТВИЯ КНОПОК
 	pass
@@ -21,13 +27,13 @@ func _on_Exit_pressed():
 
 
 func _on_NewGame_mouse_entered(): #ФОКУС НА КНОПКАХ
-	$CenterContainer3/HBoxContainer/VBoxContainer/NewGame.grab_focus()
+	new_game_button.grab_focus()
 func _on_Resume_mouse_entered():
-	$CenterContainer3/HBoxContainer/VBoxContainer/Resume.grab_focus()
+	resume_button.grab_focus()
 func _on_Options_mouse_entered():
-	$CenterContainer3/HBoxContainer/VBoxContainer/Options.grab_focus()
+	options_button.grab_focus()
 func _on_Exit_mouse_entered():
-	$CenterContainer3/HBoxContainer/VBoxContainer/Exit.grab_focus()
+	exit_button.grab_focus()
 
 
 func _input(event):

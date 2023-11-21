@@ -1,66 +1,59 @@
 extends CanvasLayer
 
+@onready var animation_icon = %AnimationIcon
+
+var HP_zero : Texture2D = preload("res://Sprites/UI/GUI/HpZero.png")
+var HP_full : Texture2D = preload("res://Sprites/UI/GUI/HpFull.png")
+var HP_half : Texture2D = preload("res://Sprites/UI/GUI/HpHalf.png")
+
 
 func _ready():
 	pass
 
-func update_lives(lives_count):
-	if lives_count == 6:
-		$"Control/6hp".visible = true
-		$"Control/5hp".visible = false
-		$"Control/4hp".visible = false
-		$"Control/3hp".visible = false
-		$"Control/2hp".visible = false
-		$"Control/1hp".visible = false
-		$"Control/0hp".visible = false
-	elif lives_count == 5:
-		$"Control/6hp".visible = false
-		$"Control/5hp".visible = true
-		$"Control/4hp".visible = false
-		$"Control/3hp".visible = false
-		$"Control/2hp".visible = false
-		$"Control/1hp".visible = false
-		$"Control/0hp".visible = false
-	elif lives_count == 4:
-		$"Control/6hp".visible = false
-		$"Control/5hp".visible = false
-		$"Control/4hp".visible = true
-		$"Control/3hp".visible = false
-		$"Control/2hp".visible = false
-		$"Control/1hp".visible = false
-		$"Control/0hp".visible = false
-	elif lives_count == 3:
-		$"Control/6hp".visible = false
-		$"Control/5hp".visible = false
-		$"Control/4hp".visible = false
-		$"Control/3hp".visible = true
-		$"Control/2hp".visible = false
-		$"Control/1hp".visible = false
-		$"Control/0hp".visible = false
-	elif lives_count == 2:
-		$"Control/6hp".visible = false
-		$"Control/5hp".visible = false
-		$"Control/4hp".visible = false
-		$"Control/3hp".visible = false
-		$"Control/2hp".visible = true
-		$"Control/1hp".visible = false
-		$"Control/0hp".visible = false
-	elif lives_count == 1:
-		$"Control/6hp".visible = false
-		$"Control/5hp".visible = false
-		$"Control/4hp".visible = false
-		$"Control/3hp".visible = false
-		$"Control/2hp".visible = false
-		$"Control/1hp".visible = true
-		$"Control/0hp".visible = false
-	elif lives_count == 0:
-		$"Control/6hp".visible = false
-		$"Control/5hp".visible = false
-		$"Control/4hp".visible = false
-		$"Control/3hp".visible = false
-		$"Control/2hp".visible = false
-		$"Control/1hp".visible = false
-		$"Control/0hp".visible = true
+func create_max_icon_hp_texture() -> TextureRect: #создание иконок макс хп
+	var texture_rect := TextureRect.new()
+	texture_rect.texture = HP_zero
+	texture_rect.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	return texture_rect
+
+func create_half_icon_hp_texture() -> TextureRect: #создание иконок половинок хп
+	var texture_rect := TextureRect.new()
+	texture_rect.texture = HP_half
+	texture_rect.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	return texture_rect
+
+func create_full_icon_hp_texture() -> TextureRect: #создание иконок полного хп
+	var texture_rect := TextureRect.new()
+	texture_rect.texture = HP_full
+	texture_rect.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	return texture_rect
+
+func max_icon_hp(max_lives : float): #в начале уровня высчитывает максимальное здоровье
+	for i in range(max_lives):
+		get_node("Control/IconPlayer").add_child(create_max_icon_hp_texture())
+		get_node("Control/IconPlayerHalfHp").add_child(create_half_icon_hp_texture())
+		get_node("Control/IconPlayerFullHp").add_child(create_full_icon_hp_texture())
+
+func add_update_lives(lives_count): #Прибавление хп
+	if fmod(lives_count, 1.0) == 0.5:
+		get_node("Control/IconPlayerHalfHp").add_child(create_half_icon_hp_texture())
+	else:
+		get_node("Control/IconPlayerFullHp").add_child(create_full_icon_hp_texture())
+
+func remove_update_lives(lives_count): #убавление хп
+	if fmod(lives_count, 1.0) == 0.5:
+		get_node("Control/IconPlayerFullHp").get_child(-1).queue_free()
+	else:
+		get_node("Control/IconPlayerHalfHp").get_child(-1).queue_free()
+
+
+func remove_always_hp():
+	get_node("Control/IconPlayerFullHp").queue_free()
+	get_node("Control/IconPlayerHalfHp").queue_free()
+	
 
 func BackgroundsDamage():
 	$BackDamage.visible = true
@@ -82,10 +75,10 @@ func _on_TimerHeal_timeout():
 	$BackHeal.visible = false
 
 func idleIcon():
-	$Control/IconPlayer/Icon.play("Idle")
+	animation_icon.play("Idle")
 func jumpIcon():
-	$Control/IconPlayer/Icon.play("jump")
+	animation_icon.play("jump")
 func DMGIcon():
-	$Control/IconPlayer/Icon.play("TakeDamage")
+	animation_icon.play("TakeDamage")
 func DeathIcon():
-	$Control/IconPlayer/Icon.play("Death")
+	animation_icon.play("Death")

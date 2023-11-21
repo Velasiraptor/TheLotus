@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3]
+[gd_scene load_steps=23 format=3 uid="uid://coheoomnuyemb"]
 
 [ext_resource type="Texture2D" uid="uid://cjwde67yn4mwm" path="res://Sprites/NPC/Racoon/RacoonWalk-4.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://cer7ag0q67ddo" path="res://Sprites/NPC/Racoon/RacoonHit2.png" id="2"]
@@ -94,7 +94,7 @@ size = Vector2(637.5, 190.313)
 size = Vector2(2764.38, 440)
 
 [sub_resource type="RectangleShape2D" id="5"]
-size = Vector2(603.125, 355)
+size = Vector2(603.125, 292.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c013a"]
 radius = 230.0
@@ -156,7 +156,8 @@ shape = SubResource("4")
 collision_layer = 4
 
 [node name="CollisAT" type="CollisionShape2D" parent="Attack"]
-position = Vector2(-306.562, 287.969)
+position = Vector2(-306.562, 346.25)
+scale = Vector2(1, 1)
 shape = SubResource("5")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
@@ -164,7 +165,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 collision_layer = 4
 
 [node name="CollisBeh" type="CollisionShape2D" parent="AttackBehind"]
-position = Vector2(0, 80)
+position = Vector2(0, 110)
 shape = SubResource("CapsuleShape2D_c013a")
 
 [node name="CollisTail" type="CollisionShape2D" parent="AttackBehind"]

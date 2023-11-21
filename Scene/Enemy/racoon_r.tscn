@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3]
+[gd_scene load_steps=23 format=3 uid="uid://dk5bsr1asyhip"]
 
 [ext_resource type="Script" path="res://Script/Enemy/EnemyAR.gd" id="1_1fs38"]
 [ext_resource type="Texture2D" uid="uid://c6hintfs8fn7k" path="res://Sprites/NPC/Racoon/RacoonHit1.png" id="2_1owkb"]
@@ -93,8 +93,8 @@ size = Vector2(637.5, 190.313)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x64h7"]
 size = Vector2(2764.38, 440)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b2h4"]
-size = Vector2(603.125, 355)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h37kh"]
+size = Vector2(603.125, 292.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imahm"]
 radius = 230.0
@@ -157,14 +157,16 @@ shape = SubResource("RectangleShape2D_x64h7")
 collision_layer = 4
 
 [node name="CollisAT" type="CollisionShape2D" parent="Attack"]
-position = Vector2(306.562, 287.969)
-shape = SubResource("RectangleShape2D_1b2h4")
+position = Vector2(306.562, 346.25)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h37kh")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="AttackBehind" type="Area2D" parent="."]
 collision_layer = 4
 
 [node name="CollisBeh" type="CollisionShape2D" parent="AttackBehind"]
-position = Vector2(0, 80)
+position = Vector2(0, 110)
 shape = SubResource("CapsuleShape2D_imahm")
 
 [node name="CollisTail" type="CollisionShape2D" parent="AttackBehind"]

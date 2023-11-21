@@ -1,10 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://c5cpg1sr7oi7a"]
+[gd_scene load_steps=21 format=3 uid="uid://c5cpg1sr7oi7a"]
 
-[ext_resource type="Texture2D" uid="uid://cp3jkuaqjgqoa" path="res://Sprites/UI/GUI/HpFull.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cygu7fov4xc7j" path="res://Sprites/UI/GUI/IconIdle1.png" id="2_633up"]
 [ext_resource type="Texture2D" uid="uid://b8cro36k5s22a" path="res://Sprites/UI/GUI/IconJump.png" id="2_jwbdh"]
-[ext_resource type="Texture2D" uid="uid://bvcdug24klmvv" path="res://Sprites/UI/GUI/HpZero.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://dfm5hxew4lrta" path="res://Sprites/UI/GUI/HpHalf.png" id="4"]
 [ext_resource type="Script" path="res://Script/Player/GUI.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://danrxidgr16va" path="res://Sprites/UI/GUI/minusHP.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://dvyfin6ck5yfw" path="res://Sprites/UI/GUI/IconDeath.png" id="6_da2h8"]
@@ -196,262 +193,42 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 
-[node name="0hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="TextureRect" type="TextureRect" parent="Control/0hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/0hp/TextureRect"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1zeroHP" type="TextureRect" parent="Control/0hp/TextureRect/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("3")
-
-[node name="2zeroHP" type="TextureRect" parent="Control/0hp/TextureRect/HBoxContainer/1zeroHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="3zeroHP" type="TextureRect" parent="Control/0hp/TextureRect/HBoxContainer/1zeroHP/2zeroHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="1hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="TextureRect" type="TextureRect" parent="Control/1hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/1hp/TextureRect"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1halfHP" type="TextureRect" parent="Control/1hp/TextureRect/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("4")
-
-[node name="2halfHP" type="TextureRect" parent="Control/1hp/TextureRect/HBoxContainer/1halfHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="3halfHP" type="TextureRect" parent="Control/1hp/TextureRect/HBoxContainer/1halfHP/2halfHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="2hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Mirror" type="TextureRect" parent="Control/2hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/2hp/Mirror"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1fullHP" type="TextureRect" parent="Control/2hp/Mirror/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2")
-
-[node name="2fullHP" type="TextureRect" parent="Control/2hp/Mirror/HBoxContainer/1fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="3fullHP" type="TextureRect" parent="Control/2hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="3hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Mirror" type="TextureRect" parent="Control/3hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/3hp/Mirror"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1fullHP" type="TextureRect" parent="Control/3hp/Mirror/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2")
-
-[node name="2fullHP" type="TextureRect" parent="Control/3hp/Mirror/HBoxContainer/1fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("4")
-
-[node name="3fullHP" type="TextureRect" parent="Control/3hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="4hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Mirror" type="TextureRect" parent="Control/4hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/4hp/Mirror"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1fullHP" type="TextureRect" parent="Control/4hp/Mirror/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2")
-
-[node name="2fullHP" type="TextureRect" parent="Control/4hp/Mirror/HBoxContainer/1fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("2")
-
-[node name="3fullHP" type="TextureRect" parent="Control/4hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("3")
-
-[node name="5hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Mirror" type="TextureRect" parent="Control/5hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/5hp/Mirror"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1fullHP" type="TextureRect" parent="Control/5hp/Mirror/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2")
-
-[node name="2fullHP" type="TextureRect" parent="Control/5hp/Mirror/HBoxContainer/1fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("2")
-
-[node name="3fullHP" type="TextureRect" parent="Control/5hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("4")
-
-[node name="6hp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Mirror" type="TextureRect" parent="Control/6hp"]
-layout_mode = 2
-texture = ExtResource("2_jwbdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/6hp/Mirror"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 46.0
-offset_right = 694.0
-offset_bottom = 196.0
-
-[node name="1fullHP" type="TextureRect" parent="Control/6hp/Mirror/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2")
-
-[node name="2fullHP" type="TextureRect" parent="Control/6hp/Mirror/HBoxContainer/1fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("2")
-
-[node name="3fullHP" type="TextureRect" parent="Control/6hp/Mirror/HBoxContainer/1fullHP/2fullHP"]
-layout_mode = 0
-offset_left = 110.0
-offset_right = 260.0
-offset_bottom = 150.0
-texture = ExtResource("2")
-
 [node name="IconPlayer" type="HBoxContainer" parent="Control"]
 layout_mode = 0
 offset_right = 702.0
 offset_bottom = 240.0
 scale = Vector2(0.7, 0.7)
 
-[node name="Icon" type="AnimatedSprite2D" parent="Control/IconPlayer"]
+[node name="AnimationIcon" type="AnimatedSprite2D" parent="Control/IconPlayer"]
+unique_name_in_owner = true
 position = Vector2(120, 120)
 sprite_frames = SubResource("SpriteFrames_00q2p")
-animation = &"Idle"
+animation = &"TakeDamage"
 autoplay = "Idle"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+
+[node name="IconPlayerHalfHp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerHalfHp"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+
+[node name="IconPlayerFullHp" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 702.0
+offset_bottom = 240.0
+scale = Vector2(0.7, 0.7)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerFullHp"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
 
 [node name="BackHeal" type="AnimatedSprite2D" parent="."]
 visible = false

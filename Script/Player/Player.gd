@@ -1,18 +1,27 @@
 extends CharacterBody2D
 
-const SPEED = 200
-const jumpForce = 800
-const gravity = 2000
-const jumpSPEED = 300
+enum State { IDLE, WALK_LEFT, WALK_RIGHT, JUMP, TONGUE, TAKE_DAMAGE, DEATH }
+
+var state := State.IDLE
+
+@export var SPEED := 200
+@export var jumpForce := 800
+@export var gravity := 2000
+@export var jumpSPEED := 300
 
 var vel = Vector2(0, 0)
-var lives = 6
 var dustPatricle = load("res://Sprites/Player/Dust.png")
-var grassParticle = load("res://Sprites/Player/GrassParticle.png")
 var ind = 1
 var idleInd = 1
 
+var count_max_hp := 3.0
+var actual_hp := count_max_hp
+
+@onready var frog_player = %FrogPlayer
+@onready var side_frog_player = $SideFrogPlayer
+
 func _ready():
+	max_HP()
 	$TongueAr/CollisionShape2D.disabled = true
 
 func _physics_process(delta):
@@ -20,35 +29,54 @@ func _physics_process(delta):
 		move()
 		jump()
 		animate()
+		emit_player()
 		shadow()
 		soundIdle()
 		soundWalk()
 		vel.y += gravity * delta
 
+func change_state(new_state: State): #функция изменения состояний
+	state = new_state
+
 func move():
-	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and lives > 0 and $"Лягуха".animation != "TakeDamage":
+	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and actual_hp > 0.0:  # движение влево
+		change_state(State.WALK_LEFT)
 		vel.x = -SPEED
 		if not is_on_floor():
 			vel.x = -jumpSPEED
-	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left") and lives > 0 and $"Лягуха".animation != "TakeDamage":
+	
+	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and actual_hp > 0.0:  # движение вправо
+		change_state(State.WALK_RIGHT)
 		vel.x = SPEED
 		if not is_on_floor():
 			vel.x = jumpSPEED
-	elif is_on_floor() and $"Лягуха2".visible == true:
+	
+	elif Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1: #Язык
+		change_state(State.TONGUE)
 		vel.x = 0
+	
+	elif state == State.TAKE_DAMAGE: #получение урона
+		await get_tree().create_timer(0.5).timeout
+		change_state(State.IDLE) 
+	
+	elif is_on_floor() and state != State.TAKE_DAMAGE and state != State.TONGUE \
+	and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
+		vel.x = 0
+		change_state(State.IDLE)
 
 func jump():
-	if Input.is_action_pressed("player_jump") and is_on_floor() and lives > 0:
+	if Input.is_action_pressed("player_jump") and is_on_floor() and actual_hp > 0:
 		if vel.y > 0: #прыжок
+			change_state(State.JUMP)
 			idleInd = 0
 			vel.y -= jumpForce
-			$"Лягуха2".visible = false
-			$"Лягуха".visible = true
-			$"Лягуха".frame = 0
-			$"Лягуха".play("jump")
+			frog_player.visible = false
+			side_frog_player.visible = true
+			side_frog_player.frame = 0
+			side_frog_player.play("jump")
 			get_tree().call_group("GUI", "jumpIcon")
 			$jumpSound.play()
-			if $"Лягуха".flip_h == false:
+			if side_frog_player.flip_h == false:
 				vel.x = jumpSPEED
 			else:
 				vel.x = -jumpSPEED
@@ -58,128 +86,130 @@ func jump():
 	vel = velocity
 
 func soundIdle(): #звук при стоячей анимации
-	if $"Лягуха2".visible == true and $"Лягуха2".frame == 32:
+	if frog_player.visible == true and frog_player.frame == 32:
 		$idleSound.play()
 
 func soundWalk(): #звук ходьбы
-	if $"Лягуха".visible == true and ($"Лягуха".frame == 1 or $"Лягуха".frame == 10):
+	if side_frog_player.visible == true and (side_frog_player.frame == 1 or side_frog_player.frame == 10):
 		$walkSound.play()
 
 
 func animate():
-	if Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left") and lives > 0:
-		$"Лягуха2".visible = false
-		$"Лягуха".visible = true
-		$"Лягуха".flip_h = false
-		$"Лягуха2".flip_h = true
-		if is_on_floor() and not Input.is_action_just_pressed("player_jump"):
-			$"Лягуха".play("run")
+	if actual_hp > 0:
+		if state == State.WALK_RIGHT:
+			frog_player.visible = false
+			side_frog_player.visible = true
+			side_frog_player.flip_h = false
+			frog_player.flip_h = true
+			if is_on_floor() and not Input.is_action_just_pressed("player_jump"):
+				side_frog_player.play("run")
+				get_tree().call_group("GUI", "idleIcon")
+				$ParticlesPlayer.position.x = -50
+				$ParticlesPlayer.process_material.gravity.x = -5
+				$ParticlesPlayer.explosiveness = 0.4
+				$ParticlesPlayer.process_material.gravity.y = 0
+			elif vel.y > 0 and not $RayCastFall.is_colliding():#падение
+				frog_player.visible = false
+				side_frog_player.visible = true
+				side_frog_player.play("Fall") 
+				get_tree().call_group("GUI", "idleIcon")
+		elif state == State.WALK_LEFT:
+			frog_player.visible = false
+			side_frog_player.visible = true
+			side_frog_player.flip_h = true
+			frog_player.flip_h = false
+			if is_on_floor() and not Input.is_action_just_pressed("player_jump"):
+				side_frog_player.play("run")
+				get_tree().call_group("GUI", "idleIcon")
+				$ParticlesPlayer.position.x = 50
+				$ParticlesPlayer.process_material.gravity.x = 5
+				$ParticlesPlayer.process_material.gravity.y = 0
+				$ParticlesPlayer.explosiveness = 0.4
+			elif vel.y > 0 and not $RayCastFall.is_colliding():
+				frog_player.visible = false
+				side_frog_player.visible = true
+				side_frog_player.play("Fall") #падение
+				get_tree().call_group("GUI", "idleIcon")
+		elif state == State.TONGUE and Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1:
+			side_frog_player.visible = true
+			frog_player.visible = false
+			side_frog_player.frame = 0
+			side_frog_player.play("Tongue")
+			if side_frog_player.flip_h == false:
+				$TongueAr/TongueAnim.play("Tongue_right")
+			elif side_frog_player.flip_h == true:
+				$TongueAr/TongueAnim.play("Tongue_left")
+			$TimerIdleTongue.start()
+		elif state == State.IDLE:
 			get_tree().call_group("GUI", "idleIcon")
-			$ParticlesPlayer.emitting = true #вкл частицы
-			$ParticlesPlayer.position.x = -50
-			$ParticlesPlayer.process_material.gravity.x = -5
-			$ParticlesPlayer.explosiveness = 0.4
-			$ParticlesPlayer.process_material.gravity.y = 0
-		elif vel.y > 0 and not $RayCastFall.is_colliding():#падение
-			$"Лягуха2".visible = false
-			$"Лягуха".visible = true
-			$"Лягуха".play("Fall") 
-			get_tree().call_group("GUI", "idleIcon")
-			$ParticlesPlayer.emitting = false #выкл частицы
-	elif Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and lives > 0:
-		$"Лягуха2".visible = false
-		$"Лягуха".visible = true
-		$"Лягуха".flip_h = true
-		$"Лягуха2".flip_h = false
-		if is_on_floor() and not Input.is_action_just_pressed("player_jump"):
-			$"Лягуха".play("run")
-			get_tree().call_group("GUI", "idleIcon")
-			$ParticlesPlayer.emitting = true #вкл частицы
-			$ParticlesPlayer.position.x = 50
-			$ParticlesPlayer.process_material.gravity.x = 5
-			$ParticlesPlayer.process_material.gravity.y = 0
-			$ParticlesPlayer.explosiveness = 0.4
-		elif vel.y > 0 and not $RayCastFall.is_colliding():
-			$"Лягуха2".visible = false
-			$"Лягуха".visible = true
-			$"Лягуха".play("Fall") #падение
-			get_tree().call_group("GUI", "idleIcon")
-			$ParticlesPlayer.emitting = false #выкл частицы
-	elif Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1: #Язык
-		$"Лягуха".visible = true
-		$"Лягуха2".visible = false
-		$"Лягуха".frame = 0
-		$"Лягуха".play("Tongue")
-		if $"Лягуха".flip_h == false:
-			$TongueAr/TongueAnim.play("Tongue_right")
-		elif $"Лягуха".flip_h == true:
-			$TongueAr/TongueAnim.play("Tongue_left")
-		$TimerIdleTongue.start()
+			side_frog_player.visible = false
+			frog_player.visible = true
+			frog_player.play("idle")
 	else:
-		if is_on_floor() and lives > 0 and $"Лягуха".animation != "Tongue":
-			$"Лягуха".visible = false
-			$"Лягуха2".visible = true
-			get_tree().call_group("GUI", "idleIcon")
-			$ParticlesPlayer.emitting = false #выкл частицы
-			$"Лягуха2".play("idle")
-
+		change_state(State.DEATH)
+		frog_player.play("Death")
+		get_tree().call_group("GUI", "DeathIcon")
 
 func _on_timer_idle_tongue_timeout(): #Возвращает в idle после языка
-	if $"Лягуха".animation == "Tongue":
-		$"Лягуха".visible = false
-		$"Лягуха2".visible = true
-		$"Лягуха2".play("idle")
-		get_tree().call_group("GUI", "idleIcon")
-		$ParticlesPlayer.emitting = false #выкл частицы
-
+	if side_frog_player.animation == "Tongue":
+		change_state(State.IDLE)
 
 func indTrue():
 	ind = 1
 func indFalse():
 	ind = 0
 
-
 func shadow():
-	if $"Лягуха2".visible == true || $"Лягуха".animation == "run" || $"Лягуха".animation == "Tongue" || $"Лягуха".animation == "IdleF":
+	if frog_player.visible == true || side_frog_player.animation == "run" || side_frog_player.animation == "Tongue" || side_frog_player.animation == "IdleSide":
 		$Shadow.visible = true
 	else:
 		$Shadow.visible = false
+
+func emit_player():
+	if state == State.IDLE || state == State.DEATH || state == State.TONGUE:
+		$ParticlesPlayer.emitting = false
+	else:
+		$ParticlesPlayer.emitting = true
 
 func end_game():
 	$"../GameOver/GameOver".visible = true
 	get_tree().call_group("GameOver", "end")
 
+func max_HP(): #в начале уровня высчитывает, сколько всего здоровья
+	get_tree().call_group("GUI", "max_icon_hp", count_max_hp)
 
 func hurt(): #снятие здоровья
-	lives -= 1
-	if lives > 0 and lives != 0:
-		$"Лягуха2".visible = false
-		$"Лягуха".visible = true
-		$"Лягуха".play("TakeDamage")
-		$"Лягуха/EffectsAnim".play("Damage")
+	actual_hp -= 0.5
+	if actual_hp > 0.0 and actual_hp != 0.0:
+		change_state(State.TAKE_DAMAGE)
+		frog_player.visible = false
+		side_frog_player.visible = true
+		side_frog_player.play("TakeDamage")
+		$SideFrogPlayer/EffectsAnim.play("Damage")
 		get_tree().call_group("GUI", "DMGIcon")
 		$TakeDamage.play()
 		vel.y = -600
-		get_tree().call_group("GUI", "update_lives", lives)
+		get_tree().call_group("GUI", "remove_update_lives", actual_hp)
 		get_tree().call_group("GUI", "BackgroundsDamage")
-	if lives == 0: #Убит
+	if actual_hp == 0.0: #Убит
+		change_state(State.DEATH)
 		vel.y = -400
-		$"Лягуха".visible = false
-		$"Лягуха2".visible = true
-		$"Лягуха2".play("Death")
+		side_frog_player.visible = false
+		frog_player.visible = true
+		frog_player.play("Death")
 		get_tree().call_group("GUI", "DeathIcon")
 		$TimerDeath.start()
-		get_tree().call_group("GUI", "update_lives", lives)
+		get_tree().call_group("GUI", "remove_update_lives", actual_hp)
 
 func fullHurt(): #мгновенная смерть
-	lives -= 6
-	$"Лягуха".visible = false
-	$"Лягуха2".visible = true
-	$"Лягуха2".play("Death")
-	$"Лягуха2/EffectsAnim".play("Damage")
+	actual_hp = 0
+	side_frog_player.visible = false
+	frog_player.visible = true
+	frog_player.play("Death")
+	$FrogPlayer/EffectsAnim.play("Damage")
 	get_tree().call_group("GUI", "DeathIcon")
+	get_tree().call_group("GUI", "remove_always_hp")
 	$TimerDeath.start()
-	get_tree().call_group("GUI", "update_lives", lives)
 
 func leftPush(): #толчок от удара справа
 	vel.x = 500
@@ -189,19 +219,18 @@ func RightPush(): #толчок от удара слева
 
 
 func heal(): #лечение здоровья
-	if lives != 0 and lives != 6:
-		lives += 1
-		$"Лягуха/EffectsAnim".play("Heal")
-		get_tree().call_group("GUI", "update_lives", lives)
+	if actual_hp > 0 and actual_hp != count_max_hp:
+		actual_hp += 0.5
+		$SideFrogPlayer/EffectsAnim.play("Heal")
+		get_tree().call_group("GUI", "add_update_lives", actual_hp)
 		get_tree().call_group("GUI", "BackgroundsHeal")
-
+	else:
+		return
 
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
 
 
-func  WaterSound(): #Вода на уровнях
-	pass
 
 
 
