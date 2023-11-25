@@ -20,6 +20,7 @@ config/use_hidden_project_data_directory.Windows=false
 
 [autoload]
 
+Globals="*res://Core/globals.gd"
 GGS="*res://addons/ggs/classes/ggs_globals.gd"
 
 [debug]
@@ -147,6 +148,7 @@ pointing/emulate_touch_from_mouse=true
 2d_render/layer_4="Bottom"
 2d_render/layer_5="Interface"
 2d_render/layer_6="level(NPC)"
+2d_render/layer_7="ItemRigid"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Level"
 2d_physics/layer_3="Mobs"
@@ -154,6 +156,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_5="Interface"
 2d_physics/layer_6="level(NPC)"
 2d_physics/layer_7="TakePlayer"
+2d_physics/layer_8="ItemRigid"
 
 [physics]
 

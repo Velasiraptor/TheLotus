@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=3 uid="uid://bbsyj7n0uunr5"]
 
 [ext_resource type="Texture2D" uid="uid://da1hhok1ap3dg" path="res://Sprites/Comic/background_comic.png" id="1_2oif7"]
-[ext_resource type="Script" path="res://Script/Comic/prologue/prologue.gd" id="1_ae1e1"]
+[ext_resource type="Script" path="res://Scene/comic/prologue.gd" id="1_ae1e1"]
 [ext_resource type="AudioStream" uid="uid://cgeeq7g0j6nq0" path="res://Sounds/Comic/prologue/swamp.mp3" id="1_scbfe"]
 [ext_resource type="Texture2D" uid="uid://dgxixsotrnbxm" path="res://Sprites/Comic/prologue/frame1.png" id="2_sg2k1"]
 [ext_resource type="Texture2D" uid="uid://dinxwv6povsby" path="res://Sprites/Comic/prologue/light_flower.png" id="4_hxx1h"]

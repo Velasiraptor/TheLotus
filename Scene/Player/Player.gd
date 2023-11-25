@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player_frog
 
 enum State { IDLE, WALK_LEFT, WALK_RIGHT, JUMP, TONGUE, TAKE_DAMAGE, DEATH }
 
@@ -13,9 +14,6 @@ var vel = Vector2(0, 0)
 var dustPatricle = load("res://Sprites/Player/Dust.png")
 var ind = 1
 var idleInd = 1
-
-var count_max_hp := 3.0
-var actual_hp := count_max_hp
 
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
@@ -39,13 +37,13 @@ func change_state(new_state: State): #функция изменения сост
 	state = new_state
 
 func move():
-	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and actual_hp > 0.0:  # движение влево
+	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
 		change_state(State.WALK_LEFT)
 		vel.x = -SPEED
 		if not is_on_floor():
 			vel.x = -jumpSPEED
 	
-	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and actual_hp > 0.0:  # движение вправо
+	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0:  # движение вправо
 		change_state(State.WALK_RIGHT)
 		vel.x = SPEED
 		if not is_on_floor():
@@ -65,7 +63,7 @@ func move():
 		change_state(State.IDLE)
 
 func jump():
-	if Input.is_action_pressed("player_jump") and is_on_floor() and actual_hp > 0:
+	if Input.is_action_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
 		if vel.y > 0: #прыжок
 			change_state(State.JUMP)
 			idleInd = 0
@@ -95,7 +93,7 @@ func soundWalk(): #звук ходьбы
 
 
 func animate():
-	if actual_hp > 0:
+	if Globals.actual_hp_player > 0:
 		if state == State.WALK_RIGHT:
 			frog_player.visible = false
 			side_frog_player.visible = true
@@ -176,11 +174,11 @@ func end_game():
 	get_tree().call_group("GameOver", "end")
 
 func max_HP(): #в начале уровня высчитывает, сколько всего здоровья
-	get_tree().call_group("GUI", "max_icon_hp", count_max_hp)
+	get_tree().call_group("GUI", "max_icon_hp", Globals.count_max_hp_player)
 
 func hurt(): #снятие здоровья
-	actual_hp -= 0.5
-	if actual_hp > 0.0 and actual_hp != 0.0:
+	Globals.actual_hp_player -= 0.5
+	if Globals.actual_hp_player > 0.0 and Globals.actual_hp_player != 0.0:
 		change_state(State.TAKE_DAMAGE)
 		frog_player.visible = false
 		side_frog_player.visible = true
@@ -189,9 +187,9 @@ func hurt(): #снятие здоровья
 		get_tree().call_group("GUI", "DMGIcon")
 		$TakeDamage.play()
 		vel.y = -600
-		get_tree().call_group("GUI", "remove_update_lives", actual_hp)
+		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
 		get_tree().call_group("GUI", "BackgroundsDamage")
-	if actual_hp == 0.0: #Убит
+	if Globals.actual_hp_player == 0.0: #Убит
 		change_state(State.DEATH)
 		vel.y = -400
 		side_frog_player.visible = false
@@ -199,10 +197,10 @@ func hurt(): #снятие здоровья
 		frog_player.play("Death")
 		get_tree().call_group("GUI", "DeathIcon")
 		$TimerDeath.start()
-		get_tree().call_group("GUI", "remove_update_lives", actual_hp)
+		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
 
 func fullHurt(): #мгновенная смерть
-	actual_hp = 0
+	Globals.actual_hp_player = 0
 	side_frog_player.visible = false
 	frog_player.visible = true
 	frog_player.play("Death")
@@ -219,17 +217,16 @@ func RightPush(): #толчок от удара слева
 
 
 func heal(): #лечение здоровья
-	if actual_hp > 0 and actual_hp != count_max_hp:
-		actual_hp += 0.5
+	if Globals.actual_hp_player > 0 and Globals.actual_hp_player != Globals.count_max_hp_player:
+		Globals.actual_hp_player += 0.5
 		$SideFrogPlayer/EffectsAnim.play("Heal")
-		get_tree().call_group("GUI", "add_update_lives", actual_hp)
+		get_tree().call_group("GUI", "add_update_lives", Globals.actual_hp_player)
 		get_tree().call_group("GUI", "BackgroundsHeal")
 	else:
 		return
 
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
-
 
 
 

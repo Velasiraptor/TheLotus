@@ -1,6 +1,6 @@
 [gd_scene load_steps=73 format=3 uid="uid://btir2y05jp3nh"]
 
-[ext_resource type="Script" path="res://Script/Menu/MainMenu.gd" id="1_kwoc5"]
+[ext_resource type="Script" path="res://Scene/MainMenu/MainMenu.gd" id="1_v5udu"]
 [ext_resource type="Texture2D" uid="uid://s5e1yxiaxak2" path="res://Sprites/Menu/MainMenu1Water.png" id="2_pkrkr"]
 [ext_resource type="Shader" path="res://Shaders/water.gdshader" id="3_6hu6j"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="4_x2vn5"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://2s6sjv8i3j5x" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-4.png" id="16_slfk1"]
 [ext_resource type="Texture2D" uid="uid://ybtnetcdrft2" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-5.png" id="17_q1wgp"]
 [ext_resource type="Texture2D" uid="uid://c24iyw3pmghh6" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-7.png" id="18_jr5cp"]
-[ext_resource type="Script" path="res://Script/Menu/FrogMainMenu.gd" id="19_7my24"]
+[ext_resource type="Script" path="res://Scene/MainMenu/FrogMainMenu.gd" id="19_36h70"]
 [ext_resource type="AudioStream" uid="uid://nuv04jws0ym5" path="res://Sounds/Frog1/croak.mp3" id="20_wslwr"]
 [ext_resource type="Texture2D" uid="uid://j8ao0pb43wtb" path="res://Sprites/Menu/MainMenuFrog/WaterLily1.png" id="21_8t42n"]
 [ext_resource type="Texture2D" uid="uid://brv7336e0pgp" path="res://Sprites/Menu/MainMenuFrog/WaterLily3.png" id="22_0nhun"]
@@ -602,7 +602,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_kwoc5")
+script = ExtResource("1_v5udu")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -719,7 +719,7 @@ texture = ExtResource("14_tf74h")
 sprite_frames = SubResource("7")
 autoplay = "default"
 frame_progress = 0.0943326
-script = ExtResource("19_7my24")
+script = ExtResource("19_36h70")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Lily/WaterLily2"]
 show_behind_parent = true

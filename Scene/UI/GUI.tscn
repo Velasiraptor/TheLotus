@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cygu7fov4xc7j" path="res://Sprites/UI/GUI/IconIdle1.png" id="2_633up"]
 [ext_resource type="Texture2D" uid="uid://b8cro36k5s22a" path="res://Sprites/UI/GUI/IconJump.png" id="2_jwbdh"]
-[ext_resource type="Script" path="res://Script/Player/GUI.gd" id="5"]
+[ext_resource type="Script" path="res://Scene/Player/GUI.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://danrxidgr16va" path="res://Sprites/UI/GUI/minusHP.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://dvyfin6ck5yfw" path="res://Sprites/UI/GUI/IconDeath.png" id="6_da2h8"]
 [ext_resource type="Texture2D" uid="uid://cin6nc0lq5wd5" path="res://Sprites/UI/GUI/minusHP60.png" id="7"]

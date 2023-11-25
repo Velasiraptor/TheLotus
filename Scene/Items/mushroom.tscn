@@ -1,9 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://0qcetmsr5o2g"]
 
 [ext_resource type="Texture2D" uid="uid://bwsbf51u2dg7i" path="res://Sprites/Items/mushroom.png" id="1_b041i"]
-[ext_resource type="Script" path="res://Script/Items/mushroom.gd" id="1_gvp4g"]
+[ext_resource type="Script" path="res://Scene/Items/mushroom.gd" id="1_gvp4g"]
 [ext_resource type="Texture2D" uid="uid://c3ae0khl1q30f" path="res://addons/ActionIcon/Keyboard/E.png" id="3_aj2av"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="4_u3458"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcauo"]
 radius = 108.0

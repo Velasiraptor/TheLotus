@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cl1lwiyd2febq" path="res://Sprites/NPC/Racoon/RacoonWalk-2.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://curp3ovovj553" path="res://Sprites/NPC/Racoon/RacoonHit4.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://c6hintfs8fn7k" path="res://Sprites/NPC/Racoon/RacoonHit1.png" id="11"]
-[ext_resource type="Script" path="res://Script/Enemy/EnemyAL.gd" id="12"]
+[ext_resource type="Script" path="res://Scene/Enemy/Racoons/EnemyAL.gd" id="12"]
 [ext_resource type="AudioStream" uid="uid://ch0inhrbft72g" path="res://Sounds/NPC/Racoon.mp3" id="13"]
 [ext_resource type="Script" path="res://addons/random_timer/random_timer.gd" id="14_27vox"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="15_8y0os"]

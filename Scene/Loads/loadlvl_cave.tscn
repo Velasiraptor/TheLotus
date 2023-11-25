@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddtntri5whfxb"]
 
-[ext_resource type="Script" path="res://Script/LoadsScene/loadlvl_cave.gd" id="1_oi7ec"]
+[ext_resource type="Script" path="res://Scene/Loads/loadlvl_cave.gd" id="1_oi7ec"]
 [ext_resource type="Texture2D" uid="uid://ijlgsxgcik8l" path="res://Sprites/UI/Loading.png" id="2_rwiw3"]
 [ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="3_fj648"]
 

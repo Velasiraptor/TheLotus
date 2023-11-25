@@ -25,10 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://cexkouorbo250" path="res://Sprites/Forest/Grass4.png" id="23_3vhip"]
 [ext_resource type="Texture2D" uid="uid://b5e2cb8hse2wn" path="res://Sprites/Forest/Grass5.png" id="24_1n2j5"]
 [ext_resource type="Texture2D" uid="uid://dtvhw46q5iya8" path="res://Sprites/Forest/Grass6.png" id="25_2mwjk"]
-[ext_resource type="PackedScene" uid="uid://cp610e1p4o1k2" path="res://Scene/Items/Fly.tscn" id="26_go5gx"]
+[ext_resource type="PackedScene" uid="uid://cp610e1p4o1k2" path="res://Scene/Items/Flies/Fly.tscn" id="26_go5gx"]
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="27_gqmbv"]
-[ext_resource type="PackedScene" uid="uid://coheoomnuyemb" path="res://Scene/Enemy/RacoonL.tscn" id="28_65tdn"]
-[ext_resource type="PackedScene" uid="uid://dk5bsr1asyhip" path="res://Scene/Enemy/racoon_r.tscn" id="29_tkhhh"]
+[ext_resource type="PackedScene" uid="uid://coheoomnuyemb" path="res://Scene/Enemy/Racoons/RacoonL.tscn" id="28_65tdn"]
+[ext_resource type="PackedScene" uid="uid://dk5bsr1asyhip" path="res://Scene/Enemy/Racoons/racoon_r.tscn" id="29_tkhhh"]
 [ext_resource type="Texture2D" uid="uid://dstp3se483tbh" path="res://Sprites/Forest/Grass.png" id="30_bikpu"]
 [ext_resource type="Texture2D" uid="uid://b4oh65lx42hh4" path="res://Sprites/Forest/WaterBottom.png" id="31_lkf74"]
 [ext_resource type="Texture2D" uid="uid://ce7almiyry7p" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull1.png" id="32_rfns5"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://c0nup35r8n3ul" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull6.png" id="37_qr77c"]
 [ext_resource type="Texture2D" uid="uid://b0dcxe7eww6g8" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull7.png" id="38_l0ldt"]
 [ext_resource type="Texture2D" uid="uid://c5i2cfdv750y3" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull8.png" id="39_uuxmh"]
-[ext_resource type="Script" path="res://Script/Forest/AreaWh.gd" id="40_43hql"]
+[ext_resource type="Script" path="res://Scene/Forest/ScriptsForest/AreaWh.gd" id="40_pgw12"]
 [ext_resource type="Texture2D" uid="uid://twaag6kb8nd7" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-1.png" id="41_e5q3o"]
 [ext_resource type="Texture2D" uid="uid://cn7rx4kyqlq3g" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-2.png" id="42_p355d"]
 [ext_resource type="Texture2D" uid="uid://cijvppo78yp7k" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-3.png" id="43_4h0id"]
@@ -77,7 +77,7 @@ func _input(event):
 		$TimerCursor.start()
 	if event.is_action_pressed(\"ui_cancel\") and $GameOver/GameOver.visible == false and $Inventory/inventory.visible == false:
 		get_tree().call_group(\"Menu\", \"pause\")
-	if event.is_action_pressed(\"open_inventory\") and $GameOver/GameOver.visible == false and $Escape/ESCAPE.visible == false:
+	if event.is_action_pressed(\"open_inventory\") and $GadmeOver/GameOver.visible == false and $Escape/ESCAPE.visible == false:
 		if $Inventory/inventory.visible == false:
 			$Inventory/inventory.visible = true
 		elif $Inventory/inventory.visible == true:
@@ -591,7 +591,7 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Grass2_1" type="Sprite2D" parent="Grass"]
 material = SubResource("ShaderMaterial_7toa6")
-position = Vector2(3610, -460)
+position = Vector2(3636.67, -316.667)
 texture = ExtResource("22_q7p2p")
 
 [node name="Grass4_1" type="Sprite2D" parent="Grass"]
@@ -611,18 +611,18 @@ texture = ExtResource("24_1n2j5")
 
 [node name="Grass6_1" type="Sprite2D" parent="Grass"]
 material = SubResource("ShaderMaterial_rgpni")
-position = Vector2(-2296.67, -256.667)
+position = Vector2(-2293.33, -100)
 texture = ExtResource("25_2mwjk")
 
 [node name="Grass6_2" type="Sprite2D" parent="Grass"]
 material = SubResource("ShaderMaterial_rgpni")
-position = Vector2(-7073.33, 993.333)
+position = Vector2(-7073.33, 1123.33)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("25_2mwjk")
 
 [node name="Grass6_3" type="Sprite2D" parent="Grass"]
 material = SubResource("ShaderMaterial_rgpni")
-position = Vector2(-6456.67, 1443.33)
+position = Vector2(-6443.33, 1463.33)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("25_2mwjk")
 
@@ -635,7 +635,7 @@ position = Vector2(-1428, -160)
 position = Vector2(477, -215)
 
 [node name="Player" parent="." groups=["GUI"] instance=ExtResource("27_gqmbv")]
-position = Vector2(-3280, 83)
+position = Vector2(-1619, -143)
 rotation = 0.000409808
 
 [node name="Racoons" type="Node2D" parent="."]
@@ -652,7 +652,7 @@ scale = Vector2(0.4, 0.4)
 
 [node name="Grass2_1" type="Sprite2D" parent="GrassTop"]
 material = SubResource("ShaderMaterial_7toa6")
-position = Vector2(-635, -567.5)
+position = Vector2(-652.5, -475)
 texture = ExtResource("22_q7p2p")
 
 [node name="Grass4_1" type="Sprite2D" parent="GrassTop"]
@@ -672,7 +672,7 @@ texture = ExtResource("24_1n2j5")
 
 [node name="Grass6_1" type="Sprite2D" parent="GrassTop"]
 material = SubResource("ShaderMaterial_rgpni")
-position = Vector2(-8157.5, 157.5)
+position = Vector2(-8142.5, 240)
 texture = ExtResource("25_2mwjk")
 
 [node name="Grass3_1" type="Sprite2D" parent="GrassTop"]
@@ -698,7 +698,7 @@ frame_progress = 0.962699
 flip_h = true
 
 [node name="AreaWh" type="Area2D" parent="WaterBottom/whirlpool"]
-script = ExtResource("40_43hql")
+script = ExtResource("40_pgw12")
 
 [node name="WhFrog" type="AnimatedSprite2D" parent="WaterBottom/whirlpool/AreaWh"]
 visible = false

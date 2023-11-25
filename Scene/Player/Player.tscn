@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
-[ext_resource type="Script" path="res://Script/Player/Player.gd" id="1_6mib8"]
+[ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_bjt4l"]
 [ext_resource type="Texture2D" uid="uid://4ng62jgebaqx" path="res://Sprites/Player/Dust.png" id="2_ekamj"]
 [ext_resource type="Texture2D" uid="uid://cidj4wrfyvjq4" path="res://Sprites/Player/Frogidle2.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://brymoosg0h2ka" path="res://Sprites/Player/FrogWalk1_2.png" id="4"]
@@ -413,7 +413,7 @@ radius = 36.0555
 light_mask = 2
 scale = Vector2(0.55, 0.55)
 collision_mask = 14
-script = ExtResource("1_6mib8")
+script = ExtResource("1_bjt4l")
 
 [node name="ParticlesPlayer" type="GPUParticles2D" parent="." groups=["Player"]]
 position = Vector2(-50, 76)
@@ -426,7 +426,7 @@ interpolate = false
 fract_delta = false
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
-[node name="SideFrogPlayer" type="AnimatedSprite2D" parent="."]
+[node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
 animation = &"IdleSide"
@@ -527,6 +527,5 @@ position = Vector2(-104, 23)
 shape = SubResource("CircleShape2D_kktoy")
 debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
 
-[connection signal="animation_finished" from="SideFrogPlayer" to="." method="_on_side_frog_player_animation_finished"]
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]

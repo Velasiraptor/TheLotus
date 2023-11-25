@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://cp610e1p4o1k2"]
 
 [ext_resource type="Texture2D" uid="uid://e1r21lsuy6qt" path="res://Sprites/Items/Fly/Fly3.png" id="1"]
+[ext_resource type="Script" path="res://Scene/Items/Flies/Fly.gd" id="1_6k03d"]
 [ext_resource type="Texture2D" uid="uid://s1s7xcd4wiux" path="res://Sprites/Items/Fly/Fly2.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://epdgewj73774" path="res://Sprites/Items/Fly/Fly1.png" id="3"]
-[ext_resource type="Script" path="res://Script/Items/Fly.gd" id="4"]
 [ext_resource type="AudioStream" uid="uid://cdg0svh48v4ee" path="res://Sounds/Fly.mp3" id="5"]
 [ext_resource type="AudioStream" uid="uid://bsclc7t8deqt3" path="res://Sounds/FlyLong.mp3" id="6_su2id"]
 [ext_resource type="Texture2D" uid="uid://c3ae0khl1q30f" path="res://addons/ActionIcon/Keyboard/E.png" id="7_yoump"]
@@ -91,7 +91,7 @@ height = 746.667
 [node name="Fly" type="Node2D"]
 position = Vector2(-20, 0)
 scale = Vector2(0.3, 0.3)
-script = ExtResource("4")
+script = ExtResource("1_6k03d")
 
 [node name="Fly" type="Area2D" parent="."]
 position = Vector2(19.3397, -38.6793)
@@ -157,7 +157,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_opokh")
 
 [connection signal="body_entered" from="Fly" to="." method="_on_Fly_body_entered"]
-[connection signal="body_exited" from="Fly" to="." method="_on_fly_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="AreaE" to="." method="_on_area_e_body_entered"]
 [connection signal="body_exited" from="AreaE" to="." method="_on_area_e_body_exited"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://by8ag4w6xi37k"]
+
+[ext_resource type="Shader" path="res://Shaders/Grass.gdshader" id="1_nhdt8"]
+[ext_resource type="Texture2D" uid="uid://cw3auo0ncmue2" path="res://Sprites/Forest/Grass2.png" id="2_oxwci"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydwph"]
+shader = ExtResource("1_nhdt8")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/speed = 2.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_length = 200.0
+
+[sub_resource type="Animation" id="Animation_ivamn"]
+resource_name = "new_animation"
+length = 0.8
+
+[sub_resource type="Animation" id="Animation_ojjtk"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua11j"]
+_data = {
+"RESET": SubResource("Animation_ojjtk"),
+"new_animation": SubResource("Animation_ivamn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5odgl"]
+size = Vector2(27, 108)
+
+[node name="GrassArea" type="Node2D"]
+
+[node name="Grass" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ydwph")
+texture = ExtResource("2_oxwci")
+
+[node name="GrassAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ua11j")
+}
+
+[node name="AreaLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
+position = Vector2(-15.5, 10)
+shape = SubResource("RectangleShape2D_5odgl")
+
+[node name="AreaRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
+position = Vector2(15.5, 10)
+shape = SubResource("RectangleShape2D_5odgl")
