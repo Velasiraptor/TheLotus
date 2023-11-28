@@ -1,4 +1,3 @@
 res://default_env.tres
 res://Scene/Items/GrassesArea/grass_area.tscn
-res://Shaders/Grass.gdshader
 res://Shaders/Blur.gdshader

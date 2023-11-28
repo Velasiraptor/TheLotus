@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://hrim7s88bl86"]
+[gd_scene load_steps=84 format=3 uid="uid://hrim7s88bl86"]
 
 [ext_resource type="Texture2D" uid="uid://c30qjjrujkf1f" path="res://Sprites/Forest/BackgroundsLevel1/BackgroundFull.png" id="1_axv3k"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_1.tscn" id="2_ubu5b"]
@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" path="res://Scene/Forest/Bottom.tscn" id="56_hphew"]
 [ext_resource type="Texture2D" uid="uid://ddd5re4fsxr8v" path="res://Sprites/Forest/BottomStatic.png" id="57_bysl0"]
 [ext_resource type="Texture2D" uid="uid://cx0ulfx824wai" path="res://Sprites/Forest/BackgroundsLevel1/Edge.png" id="58_2jd71"]
+[ext_resource type="PackedScene" uid="uid://by8ag4w6xi37k" path="res://Scene/Items/GrassesArea/grass_area.tscn" id="59_a7nt7"]
 
 [sub_resource type="GDScript" id="GDScript_i4hel"]
 script/source = "extends Node2D
@@ -67,7 +68,6 @@ var last_mouse_motion = OS.get_static_memory_peak_usage() # время посл�
 func _ready():
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-
 func _input(event):
 	if event is InputEventMouseMotion and $GameOver/GameOver.visible == true:
 		last_mouse_motion = OS.get_static_memory_peak_usage()
@@ -244,6 +244,52 @@ shader_parameter/wave_length = 200.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgpni"]
 shader = ExtResource("21_44ilp")
+shader_parameter/x_intensity = -6.0
+shader_parameter/y_intensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/speed = 4.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_length = 200.0
+
+[sub_resource type="Shader" id="Shader_ybaby"]
+code = "shader_type canvas_item;
+
+uniform float x_intensity = 3.0;
+uniform float y_intensity = 0.5;
+uniform float offset = 0.0;
+uniform float speed : hint_range(0, 20) = 2.0;
+uniform float wave_frequency : hint_range(0, 100) = 20;
+uniform float wave_length : hint_range(50, 800) = 200.0;
+
+void fragment() {
+	vec2 real_uv = vec2(UV.x, UV.y);
+	
+	vec2 vecToBottom = vec2(1, 1) - UV.y; 
+	float distToBottom = length(vecToBottom);
+	
+	float final_speed = TIME * (speed / 4.0) + offset;
+	
+	float time_var = (cos(final_speed) * cos(final_speed * 4.0) * cos(final_speed * 2.0))/(200.0);
+	float time_var2 = (cos(final_speed) * cos(final_speed * 6.0) * cos(final_speed * 2.0))/(200.0);
+	
+	float wave_from_x = (cos(real_uv.x * 100.0)/1000.0);
+	float wave_large_from_x = cos(TIME + (real_uv.x * wave_frequency))/wave_length;
+	
+	float wave_from_y = (cos(real_uv.y * 99000.0)/90000.0);
+	
+	float new_x = real_uv.x + time_var * (distToBottom * x_intensity) + wave_from_x + (wave_large_from_x);
+	float new_y = real_uv.y + time_var2 * (distToBottom * y_intensity);
+	
+	vec2 new_uv1 = vec2(new_x, new_y);
+	vec4 new_texture = texture(TEXTURE, new_uv1);
+	
+	if(new_texture.rgb != vec3(1,1,1)){
+		COLOR.rgba = new_texture.rgba;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3beim"]
+shader = SubResource("Shader_ybaby")
 shader_parameter/x_intensity = -6.0
 shader_parameter/y_intensity = 0.5
 shader_parameter/offset = 0.0
@@ -634,8 +680,12 @@ position = Vector2(-1428, -160)
 [node name="Fly2" parent="Heal" instance=ExtResource("26_go5gx")]
 position = Vector2(477, -215)
 
+[node name="GrassArea" parent="." instance=ExtResource("59_a7nt7")]
+position = Vector2(-1898, 16)
+scale = Vector2(0.5, 0.5)
+
 [node name="Player" parent="." groups=["GUI"] instance=ExtResource("27_gqmbv")]
-position = Vector2(-1619, -143)
+position = Vector2(-1618, -138)
 rotation = 0.000409808
 
 [node name="Racoons" type="Node2D" parent="."]
@@ -646,6 +696,11 @@ position = Vector2(-125, 9)
 
 [node name="RacoonR2" parent="Racoons" instance=ExtResource("29_tkhhh")]
 position = Vector2(1560, -360)
+
+[node name="GrassArea2" parent="." instance=ExtResource("59_a7nt7")]
+material = SubResource("ShaderMaterial_3beim")
+position = Vector2(-1849, 35)
+scale = Vector2(0.6, 0.6)
 
 [node name="GrassTop" type="Node2D" parent="."]
 scale = Vector2(0.4, 0.4)
