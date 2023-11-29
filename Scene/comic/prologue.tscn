@@ -889,7 +889,7 @@ stream = ExtResource("13_hug5m")
 
 [node name="background_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_scbfe")
-volume_db = -10.0
+volume_db = -25.0
 autoplay = true
 
 [connection signal="timeout" from="background/frame2/Timer_frame2" to="." method="_on_timer_frame_2_timeout"]
