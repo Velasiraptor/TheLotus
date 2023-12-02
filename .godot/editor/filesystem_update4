@@ -1,10 +1,4 @@
 res://default_env.tres
-res://Scene/MainMenu/MainMenu.tscn
-res://Shaders/Blur.gdshader
-res://Scene/test.tscn
-res://Scene/Player/Player.tscn
 res://Scene/Forest/ForestLVL.tscn
-res://Scene/Items/Flies/Fly.tscn
-res://Scene/Items/GrassesArea/grass_area.tscn
-res://Scene/comic/prologue.tscn
-res://Shaders/Grass.gdshader
+res://Shaders/Blur.gdshader
+res://Scene/Loads/LoadForest.tscn

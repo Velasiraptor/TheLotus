@@ -77,7 +77,7 @@ func _input(event):
 		$TimerCursor.start()
 	if event.is_action_pressed(\"ui_cancel\") and $GameOver/GameOver.visible == false and $Inventory/inventory.visible == false:
 		get_tree().call_group(\"Menu\", \"pause\")
-	if event.is_action_pressed(\"open_inventory\") and $GadmeOver/GameOver.visible == false and $Escape/ESCAPE.visible == false:
+	if event.is_action_pressed(\"open_inventory\") and $GameOver/GameOver.visible == false and $Escape/ESCAPE.visible == false:
 		if $Inventory/inventory.visible == false:
 			$Inventory/inventory.visible = true
 		elif $Inventory/inventory.visible == true:
@@ -672,6 +672,12 @@ position = Vector2(-6443.33, 1463.33)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("25_2mwjk")
 
+[node name="Grass2_2" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_7toa6")
+position = Vector2(1596.67, -266.667)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("22_q7p2p")
+
 [node name="Heal" type="Node2D" parent="."]
 
 [node name="Fly" parent="Heal" instance=ExtResource("26_go5gx")]
@@ -704,11 +710,6 @@ scale = Vector2(0.6, 0.6)
 
 [node name="GrassTop" type="Node2D" parent="."]
 scale = Vector2(0.4, 0.4)
-
-[node name="Grass2_1" type="Sprite2D" parent="GrassTop"]
-material = SubResource("ShaderMaterial_7toa6")
-position = Vector2(-652.5, -475)
-texture = ExtResource("22_q7p2p")
 
 [node name="Grass4_1" type="Sprite2D" parent="GrassTop"]
 material = SubResource("ShaderMaterial_rgpni")
