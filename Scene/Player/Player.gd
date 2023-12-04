@@ -15,6 +15,8 @@ var dustPatricle = load("res://Sprites/Player/Dust.png")
 var ind = 1
 var idleInd = 1
 
+var stamina_player := 3.0
+
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
 
@@ -31,7 +33,9 @@ func _physics_process(delta):
 		shadow()
 		soundIdle()
 		soundWalk()
+		stamina_regeneration(delta)
 		vel.y += gravity * delta
+
 
 func change_state(new_state: State): #функция изменения состояний
 	state = new_state
@@ -63,9 +67,11 @@ func move():
 		change_state(State.IDLE)
 
 func jump():
-	if Input.is_action_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
+	if Input.is_action_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 and stamina_player >= 1.0:
 		if vel.y > 0: #прыжок
 			change_state(State.JUMP)
+			stamina_player -= 1
+			get_tree().call_group("GUI", "stamina_point", stamina_player)
 			idleInd = 0
 			vel.y -= jumpForce
 			frog_player.visible = false
@@ -82,6 +88,11 @@ func jump():
 	set_up_direction(Vector2.UP)
 	move_and_slide()
 	vel = velocity
+
+func stamina_regeneration(delta): #регенерация стамины
+	if state == State.IDLE and stamina_player < 3.0:
+		stamina_player += 1.0 * delta
+		get_tree().call_group("GUI", "stamina_point", stamina_player)
 
 func soundIdle(): #звук при стоячей анимации
 	if frog_player.visible == true and frog_player.frame == 32:
@@ -227,14 +238,3 @@ func heal(): #лечение здоровья
 
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
-
-
-
-
-
-
-
-
-
-
-

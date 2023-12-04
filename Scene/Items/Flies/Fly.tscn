@@ -106,10 +106,10 @@ frame_progress = 0.110871
 
 [node name="Flyanim" type="AnimationPlayer" parent="Fly/Fly"]
 root_node = NodePath("../../..")
-autoplay = "idleFly"
 libraries = {
 "": SubResource("AnimationLibrary_3aks4")
 }
+autoplay = "idleFly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fly"]
 position = Vector2(-13.3333, 40)
@@ -143,10 +143,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Press_E"]
-autoplay = "scale"
 libraries = {
 "": SubResource("AnimationLibrary_j13r4")
 }
+autoplay = "scale"
 
 [node name="AreaE" type="Area2D" parent="."]
 collision_layer = 4

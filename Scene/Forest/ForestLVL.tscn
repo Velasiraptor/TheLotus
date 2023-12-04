@@ -491,10 +491,10 @@ position = Vector2(-248.714, 100)
 position = Vector2(3103.92, 100)
 
 [node name="AnimationFoggyForest" type="AnimationPlayer" parent="ParallaxBackground2/ParallaxCity/FoggyForest"]
-autoplay = "foggy"
 libraries = {
 "": SubResource("AnimationLibrary_fw38h")
 }
+autoplay = "foggy"
 
 [node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
 layer = -3
@@ -604,10 +604,10 @@ position = Vector2(-11.5781, 100)
 position = Vector2(3293.84, 100)
 
 [node name="AnimationFoggyForest" type="AnimationPlayer" parent="FoggyForest"]
-autoplay = "foggy"
 libraries = {
 "": SubResource("AnimationLibrary_fw38h")
 }
+autoplay = "foggy"
 
 [node name="Platform(npc)" parent="." instance=ExtResource("15_oafnx")]
 position = Vector2(-3538, -213)

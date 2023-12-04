@@ -698,10 +698,10 @@ scale = Vector2(3.95814, 0.953882)
 texture = ExtResource("4_x2vn5")
 
 [node name="AnimationTrash" type="AnimationPlayer" parent="CenterContainer/Trashs"]
-autoplay = "tr"
 libraries = {
 "": SubResource("AnimationLibrary_dqqrx")
 }
+autoplay = "tr"
 
 [node name="MainMenu1Grass" type="Sprite2D" parent="CenterContainer"]
 material = SubResource("ShaderMaterial_tnti4")
@@ -755,10 +755,10 @@ texture = SubResource("CompressedTexture2D_epnm3")
 
 [node name="AnimationMenu" type="AnimationPlayer" parent="CenterContainer/Lily"]
 unique_name_in_owner = true
-autoplay = "MainMenu"
 libraries = {
 "": SubResource("AnimationLibrary_vurn2")
 }
+autoplay = "MainMenu"
 
 [node name="MainMenu4" type="Sprite2D" parent="CenterContainer"]
 position = Vector2(-1.5, 0)
