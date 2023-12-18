@@ -185,6 +185,7 @@ func end_game():
 	get_tree().call_group("GameOver", "end")
 
 func max_HP(): #в начале уровня высчитывает, сколько всего здоровья
+	Globals.actual_hp_player = Globals.count_max_hp_player
 	get_tree().call_group("GUI", "max_icon_hp", Globals.count_max_hp_player)
 
 func hurt(): #снятие здоровья

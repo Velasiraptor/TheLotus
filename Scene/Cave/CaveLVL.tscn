@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://m1fdee2xwour"]
 
-[ext_resource type="Script" path="res://Scene/Cave/Level2.gd" id="1_wbc34"]
+[ext_resource type="Script" path="res://Scene/Cave/CaveLVL.gd" id="1_wbc34"]
 [ext_resource type="Texture2D" uid="uid://bjk3e3bhno6nl" path="res://Sprites/Cave/Backgrounds/Backgrounds0.png" id="2_2aktn"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_ut855"]
 [ext_resource type="Texture2D" uid="uid://ckx0r2qkm3tf6" path="res://Sprites/Cave/Backgrounds/Backgrounds1.png" id="3_xcad3"]
@@ -318,12 +318,10 @@ _data = {
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vg8ji"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(30, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sswbv"]
 size = Vector2(793, 299)
@@ -426,10 +424,10 @@ texture = ExtResource("6_wucgo")
 texture = ExtResource("6_wucgo")
 
 [node name="AnimationWD" type="AnimationPlayer" parent="WaterFall/WaterFog"]
-autoplay = "WD"
 libraries = {
 "": SubResource("AnimationLibrary_wa4il")
 }
+autoplay = "WD"
 
 [node name="WaterFog2" type="Node2D" parent="WaterFall"]
 
@@ -491,10 +489,10 @@ texture = ExtResource("6_wucgo")
 texture = ExtResource("6_wucgo")
 
 [node name="AnimationWD" type="AnimationPlayer" parent="WaterFall/WaterFog2"]
-autoplay = "WD_2"
 libraries = {
 "": SubResource("AnimationLibrary_wa4il")
 }
+autoplay = "WD_2"
 
 [node name="Lines" type="Node2D" parent="WaterFall"]
 position = Vector2(-1922, 65)
@@ -515,10 +513,10 @@ position = Vector2(0, 226.202)
 texture = ExtResource("7_0qtis")
 
 [node name="AnimationLines" type="AnimationPlayer" parent="WaterFall/Lines"]
-autoplay = "linean"
 libraries = {
 "": SubResource("AnimationLibrary_tnphs")
 }
+autoplay = "linean"
 
 [node name="AudioWaterFall" type="AudioStreamPlayer2D" parent="WaterFall/Lines"]
 position = Vector2(8, 0)

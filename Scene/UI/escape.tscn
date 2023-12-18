@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dwnd6qtb24rdp" path="res://Sprites/UI/GameOver/ButtonExitClick.png" id="8_kq686"]
 [ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="9_ecuxt"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xd2a5"]
 shader = ExtResource("2_pnj0y")
 shader_parameter/lod = 2.0
@@ -220,10 +219,10 @@ stream = ExtResource("9_ecuxt")
 volume_db = -20.0
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-autoplay = "UNPAUS"
 libraries = {
 "": SubResource("AnimationLibrary_qlv5y")
 }
+autoplay = "UNPAUS"
 
 [connection signal="focus_entered" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_button_reset_focus_entered"]
 [connection signal="mouse_entered" from="CenterContainer/TextureRect/HBoxContainer/ButtonReset" to="." method="_on_ButtonReset_mouse_entered"]

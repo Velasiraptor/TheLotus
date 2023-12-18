@@ -5,9 +5,12 @@ func end():
 	$HoverSound.playing = false
 
 func _on_ButtonReset_pressed(): #РАБОТА КНОПОК
-	get_tree().change_scene_to_file("res://Scene/Loads/LoadForest.tscn")
+	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
+	get_tree().change_scene_to_packed(loadingScreen)
 func _on_ButtonExit_pressed():
-	get_tree().change_scene_to_file("res://Scene/Loads/LoadExit.tscn")
+	Globals.new_load_scene = "res://Scene/MainMenu/MainMenu.tscn"
+	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
+	get_tree().change_scene_to_packed(loadingScreen)
 
 func _on_ButtonReset_mouse_entered(): #ФОКУС КНОПОК
 	$CenterContainer/TextureRect/HBoxContainer/ButtonReset.grab_focus()

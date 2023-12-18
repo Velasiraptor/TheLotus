@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://Scene/Player/GameOver.gd" id="9"]
 [ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="10_7v21w"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52wxo"]
 shader = ExtResource("2_1qba5")
 shader_parameter/lod = 2.0

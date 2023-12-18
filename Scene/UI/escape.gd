@@ -17,7 +17,9 @@ func _on_ButtonReset_pressed(): #РАБОТА КНОПОК
 func _on_ButtonExit_pressed():
 	$".".visible = false
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scene/Loads/LoadExit.tscn")
+	Globals.new_load_scene = "res://Scene/MainMenu/MainMenu.tscn"
+	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
+	get_tree().change_scene_to_packed(loadingScreen)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func pause():

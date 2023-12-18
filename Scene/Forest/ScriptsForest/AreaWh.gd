@@ -1,7 +1,5 @@
 extends Area2D
 
-var scene = preload("res://Scene/Loads/loadlvl_cave.tscn")
-
 func _ready():
 	pass
 
@@ -17,4 +15,6 @@ func _on_body_entered(body):
 
 
 func _on_timer_whirl_timeout():
-	get_tree().change_scene_to_file("res://Scene/Loads/loadlvl_cave.tscn")
+	Globals.new_load_scene = "res://Scene/Cave/CaveLVL.tscn"
+	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
+	get_tree().change_scene_to_packed(loadingScreen)

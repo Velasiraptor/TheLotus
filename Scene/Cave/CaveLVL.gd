@@ -1,9 +1,9 @@
 extends Node2D
 
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мыши
-var scene = preload("res://Scene/Loads/LoadForest.tscn")
 
 func _ready():
+	Globals.actual_resume_load_scene = "res://Scene/Cave/CaveLVL.tscn" #делаем актуальной сценой для кнопки "продолжить" в главном меню
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 

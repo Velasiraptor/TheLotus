@@ -16,13 +16,19 @@ func _ready():
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-func _on_NewGame_pressed(): #ДЕЙСТВИЯ КНОПОК
-	pass
-func _on_Resume_pressed():
-	get_tree().change_scene_to_file("res://Scene/Loads/LoadForest.tscn")
-func _on_Options_pressed():
+#ДЕЙСТВИЯ КНОПОК
+func _on_NewGame_pressed():  #НОВАЯ ИГРА
+	Globals.new_load_scene = "res://Scene/Forest/ForestLVL.tscn"
+	Globals.actual_resume_load_scene = "res://Scene/Forest/ForestLVL.tscn"
+	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
+	get_tree().change_scene_to_packed(loadingScreen)
+func _on_Resume_pressed(): #ПРОДОЛЖИТЬ
+	Globals.new_load_scene = Globals.actual_resume_load_scene
+	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
+	get_tree().change_scene_to_packed(loadingScreen)
+func _on_Options_pressed(): #НАСТРОЙКИ
 	$Options_window.visible = true
-func _on_Exit_pressed():
+func _on_Exit_pressed(): #ВЫХОД
 	get_tree().quit() 
 
 

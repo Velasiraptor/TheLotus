@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgr6gnbck5r7o"]
+[gd_scene load_steps=6 format=3 uid="uid://bexj681ov6obm"]
 
-[ext_resource type="Script" path="res://Scene/Loads/loadlvl_forest.gd" id="1_sgckt"]
-[ext_resource type="Texture2D" uid="uid://ijlgsxgcik8l" path="res://Sprites/UI/Loading.png" id="2_aommj"]
-[ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="3_ia6dp"]
+[ext_resource type="Script" path="res://Scene/Loads/LoadScene.gd" id="1_d1fh7"]
+[ext_resource type="Texture2D" uid="uid://ijlgsxgcik8l" path="res://Sprites/UI/Loading.png" id="2_2e4uc"]
+[ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="3_jdgkt"]
 
 [sub_resource type="Animation" id="Animation_qtac8"]
 resource_name = "Loading"
@@ -26,10 +26,14 @@ _data = {
 "Loading": SubResource("Animation_qtac8")
 }
 
-[node name="loadlvl_forest" type="Control"]
+[node name="LoadScene" type="Control" groups=["LoadScreen"]]
 layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_sgckt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1fh7")
 
 [node name="Load" type="TextureRect" parent="."]
 top_level = true
@@ -41,7 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_aommj")
+texture = ExtResource("2_2e4uc")
 
 [node name="LabelLoad" type="Label" parent="Load"]
 layout_mode = 1
@@ -57,11 +61,12 @@ offset_bottom = 88.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
-theme_override_fonts/font = ExtResource("3_ia6dp")
+theme_override_fonts/font = ExtResource("3_jdgkt")
 theme_override_font_sizes/font_size = 124
 text = "Загрузка"
 
 [node name="LabelPoint" type="Label" parent="Load"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,21 +80,32 @@ offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
-theme_override_fonts/font = ExtResource("3_ia6dp")
+theme_override_fonts/font = ExtResource("3_jdgkt")
 theme_override_font_sizes/font_size = 124
 text = "..."
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="LabelLoadProcent" type="Label" parent="Load"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 232.0
+offset_top = -77.0
+offset_right = 551.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
+theme_override_fonts/font = ExtResource("3_jdgkt")
+theme_override_font_sizes/font_size = 124
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Loading"
 libraries = {
 "": SubResource("AnimationLibrary_cnce2")
 }
-
-[node name="TimerLVL1" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="TimerLVL1" to="." method="_on_timer_lvl_1_timeout"]
+autoplay = "Loading"

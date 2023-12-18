@@ -1,3 +1,5 @@
+ColorRect
+ProgressBar
 Timer
 AnimationPlayer
 VBoxContainer
@@ -11,5 +13,3 @@ TextureRect
 CenterContainer
 Container
 HBoxContainer
-CharacterBody2D
-Camera2D
