@@ -412,6 +412,8 @@ light_mask = 2
 scale = Vector2(0.55, 0.55)
 collision_mask = 14
 script = ExtResource("1_bjt4l")
+Jump_speed = 400
+jump_force = 900
 
 [node name="ParticlesPlayer" type="GPUParticles2D" parent="." groups=["Player"]]
 position = Vector2(-50, 76)

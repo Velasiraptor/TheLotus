@@ -10,24 +10,6 @@ var HP_half : Texture2D = preload("res://Sprites/UI/GUI/HpHalf.png")
 func _ready():
 	pass
 
-func stamina_point(point: int): #тестовая стамина
-	if point == 3:
-		$Control/IconPlayerStamina/VBoxContainer/Stamina1.visible = true
-		$Control/IconPlayerStamina/VBoxContainer/Stamina2.visible = true
-		$Control/IconPlayerStamina/VBoxContainer/Stamina3.visible = true
-	if point == 2:
-		$Control/IconPlayerStamina/VBoxContainer/Stamina1.visible = true
-		$Control/IconPlayerStamina/VBoxContainer/Stamina2.visible = true
-		$Control/IconPlayerStamina/VBoxContainer/Stamina3.visible = false
-	if point == 1:
-		$Control/IconPlayerStamina/VBoxContainer/Stamina1.visible = true
-		$Control/IconPlayerStamina/VBoxContainer/Stamina2.visible = false
-		$Control/IconPlayerStamina/VBoxContainer/Stamina3.visible = false
-	if point == 0:
-		$Control/IconPlayerStamina/VBoxContainer/Stamina1.visible = false
-		$Control/IconPlayerStamina/VBoxContainer/Stamina2.visible = false
-		$Control/IconPlayerStamina/VBoxContainer/Stamina3.visible = false
-
 
 func create_max_icon_hp_texture() -> TextureRect: #создание иконок макс хп
 	var texture_rect := TextureRect.new()

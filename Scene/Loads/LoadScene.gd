@@ -11,10 +11,8 @@ func _ready():
 func _process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	scene_load_status = ResourceLoader.load_threaded_get_status(sceneName, progress)
-	if floor(progress[0]*100) > float(%LabelLoadProcent.text):
-		%LabelLoadProcent.text = str(floor(progress[0]*100)) + "%"
+	#if floor(progress[0]*100) > float(%LabelLoadProcent.text): ПРОЦЕНТЫ
+		#%LabelLoadProcent.text = str(floor(progress[0]*100)) + "%"
 	if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
 		var newScene = ResourceLoader.load_threaded_get(sceneName)
 		get_tree().change_scene_to_packed(newScene)
-
-

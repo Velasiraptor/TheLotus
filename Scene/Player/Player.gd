@@ -5,10 +5,10 @@ enum State { IDLE, WALK_LEFT, WALK_RIGHT, JUMP, TONGUE, TAKE_DAMAGE, DEATH }
 
 var state := State.IDLE
 
-@export var SPEED := 200
-@export var jumpForce := 800
-@export var gravity := 2000
-@export var jumpSPEED := 300
+@export var speed := 220
+@export var Jump_speed := 340
+@export var jump_force := 800
+@export var gravity := 2400
 
 var vel = Vector2(0, 0)
 var dustPatricle = load("res://Sprites/Player/Dust.png")
@@ -33,7 +33,6 @@ func _physics_process(delta):
 		shadow()
 		soundIdle()
 		soundWalk()
-		stamina_regeneration(delta)
 		vel.y += gravity * delta
 
 
@@ -43,15 +42,15 @@ func change_state(new_state: State): #функция изменения сост
 func move():
 	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
 		change_state(State.WALK_LEFT)
-		vel.x = -SPEED
-		if not is_on_floor():
-			vel.x = -jumpSPEED
+		vel.x = -speed
+		if not is_on_floor() and state == State.JUMP:
+			vel.x = -Jump_speed 
 	
 	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0:  # движение вправо
 		change_state(State.WALK_RIGHT)
-		vel.x = SPEED
-		if not is_on_floor():
-			vel.x = jumpSPEED
+		vel.x = speed
+		if not is_on_floor() and state == State.JUMP:
+			vel.x = Jump_speed 
 	
 	elif Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1: #Язык
 		change_state(State.TONGUE)
@@ -64,35 +63,26 @@ func move():
 	elif is_on_floor() and state != State.TAKE_DAMAGE and state != State.TONGUE \
 	and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
 		vel.x = 0
+		#vel.x = lerp(vel.x, 0.0, 0.2) Интерполяция
 		change_state(State.IDLE)
 
 func jump():
-	if Input.is_action_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 and stamina_player >= 1.0:
+	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
 		if vel.y > 0: #прыжок
 			change_state(State.JUMP)
-			stamina_player -= 1
-			get_tree().call_group("GUI", "stamina_point", stamina_player)
 			idleInd = 0
-			vel.y -= jumpForce
+			vel.y -= jump_force
 			frog_player.visible = false
 			side_frog_player.visible = true
 			side_frog_player.frame = 0
 			side_frog_player.play("jump")
 			get_tree().call_group("GUI", "jumpIcon")
 			$jumpSound.play()
-			if side_frog_player.flip_h == false:
-				vel.x = jumpSPEED
-			else:
-				vel.x = -jumpSPEED
 	set_velocity(vel)
 	set_up_direction(Vector2.UP)
 	move_and_slide()
 	vel = velocity
 
-func stamina_regeneration(delta): #регенерация стамины
-	if state == State.IDLE and stamina_player < 3.0:
-		stamina_player += 1.0 * delta
-		get_tree().call_group("GUI", "stamina_point", stamina_player)
 
 func soundIdle(): #звук при стоячей анимации
 	if frog_player.visible == true and frog_player.frame == 32:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c5cpg1sr7oi7a"]
+[gd_scene load_steps=21 format=3 uid="uid://c5cpg1sr7oi7a"]
 
 [ext_resource type="Texture2D" uid="uid://cygu7fov4xc7j" path="res://Sprites/UI/GUI/IconIdle1.png" id="2_633up"]
 [ext_resource type="Texture2D" uid="uid://b8cro36k5s22a" path="res://Sprites/UI/GUI/IconJump.png" id="2_jwbdh"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cin6nc0lq5wd5" path="res://Sprites/UI/GUI/minusHP60.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://djf1wtfyejgjx" path="res://Sprites/UI/GUI/IconIdle3.png" id="7_5tv1c"]
 [ext_resource type="Texture2D" uid="uid://cjur63ms4bhlu" path="res://Sprites/UI/GUI/minusHP40.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://cp3jkuaqjgqoa" path="res://Sprites/UI/GUI/HpFull.png" id="8_ssqp0"]
 [ext_resource type="Texture2D" uid="uid://dcep2loc15mri" path="res://Sprites/UI/GUI/minusHP80.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://cj42xu1s56usi" path="res://Sprites/UI/GUI/IconIdle4.png" id="9_j5gnk"]
 [ext_resource type="Texture2D" uid="uid://cyshts1lk7c2w" path="res://Sprites/UI/GUI/minusHP20.png" id="10"]
@@ -240,25 +239,6 @@ scale = Vector2(0.7, 0.7)
 [node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerStamina"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/IconPlayerStamina"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Stamina1" type="Sprite2D" parent="Control/IconPlayerStamina/VBoxContainer"]
-modulate = Color(0, 0.972549, 0.686275, 1)
-position = Vector2(-135, 312.381)
-texture = ExtResource("8_ssqp0")
-
-[node name="Stamina2" type="Sprite2D" parent="Control/IconPlayerStamina/VBoxContainer"]
-modulate = Color(0, 0.972549, 0.686275, 1)
-position = Vector2(0, 312.381)
-texture = ExtResource("8_ssqp0")
-
-[node name="Stamina3" type="Sprite2D" parent="Control/IconPlayerStamina/VBoxContainer"]
-modulate = Color(0, 0.972549, 0.686275, 1)
-position = Vector2(135, 312.381)
-texture = ExtResource("8_ssqp0")
 
 [node name="BackHeal" type="AnimatedSprite2D" parent="."]
 visible = false
