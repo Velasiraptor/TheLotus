@@ -8,7 +8,7 @@ var state := State.IDLE
 @export var speed := 220
 @export var Jump_speed := 340
 @export var jump_force := 800
-@export var gravity := 2400
+@export var gravity := 2200
 
 var vel = Vector2(0, 0)
 var dustPatricle = load("res://Sprites/Player/Dust.png")

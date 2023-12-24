@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu2vrod4nm551"]
+[gd_scene load_steps=6 format=3 uid="uid://bu2vrod4nm551"]
 
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="1_f0jps"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/platf_big_1.tscn" id="2_b38d8"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/platf_small_1.tscn" id="2_ifo2j"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/platf_small_2.tscn" id="3_qorrj"]
+[ext_resource type="PackedScene" uid="uid://cbmelwurtnfwl" path="res://Scene/Items/JumpingMushroom/jumping_mushroom.tscn" id="5_iovux"]
 
 [node name="test" type="Node2D"]
 
@@ -27,6 +28,9 @@ position = Vector2(-860, 90)
 
 [node name="platfSmall2_2" parent="." instance=ExtResource("3_qorrj")]
 position = Vector2(860, 90)
+
+[node name="Jumping_Mushroom" parent="." instance=ExtResource("5_iovux")]
+position = Vector2(-313, 230)
 
 [node name="Player" parent="." instance=ExtResource("1_f0jps")]
 position = Vector2(-4, 114)

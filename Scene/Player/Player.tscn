@@ -155,7 +155,7 @@ animations = [{
 "texture": ExtResource("6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9")
+"texture": ExtResource("6")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9")
@@ -168,7 +168,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 25.0
+"speed": 24.0
 }]
 
 [sub_resource type="Animation" id="Animation_j62j5"]
@@ -429,8 +429,9 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"IdleSide"
+animation = &"run"
 autoplay = "run"
+frame_progress = 0.404264
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
 libraries = {

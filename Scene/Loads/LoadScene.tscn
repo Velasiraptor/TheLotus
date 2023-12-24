@@ -1,8 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://bexj681ov6obm"]
+[gd_scene load_steps=9 format=3 uid="uid://bexj681ov6obm"]
 
 [ext_resource type="Script" path="res://Scene/Loads/LoadScene.gd" id="1_d1fh7"]
 [ext_resource type="Texture2D" uid="uid://ijlgsxgcik8l" path="res://Sprites/UI/Loading.png" id="2_2e4uc"]
 [ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="3_jdgkt"]
+
+[sub_resource type="Animation" id="Animation_tbn71"]
+resource_name = "PressSpace"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cf185"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bn2ja"]
+_data = {
+"PressSpace": SubResource("Animation_tbn71"),
+"RESET": SubResource("Animation_cf185")
+}
 
 [sub_resource type="Animation" id="Animation_qtac8"]
 resource_name = "Loading"
@@ -48,6 +86,7 @@ mouse_filter = 2
 texture = ExtResource("2_2e4uc")
 
 [node name="LabelPoint" type="Label" parent="Load"]
+visible = false
 layout_mode = 2
 offset_left = 1186.0
 offset_top = 453.0
@@ -59,6 +98,8 @@ theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
 theme_override_fonts/font = ExtResource("3_jdgkt")
 theme_override_font_sizes/font_size = 124
 text = "..."
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Load"]
 layout_mode = 1
@@ -82,24 +123,44 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
 theme_override_fonts/font = ExtResource("3_jdgkt")
-theme_override_font_sizes/font_size = 124
+theme_override_font_sizes/font_size = 86
 text = "Загрузка"
 
 [node name="MarginContainer" type="MarginContainer" parent="Load/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
 [node name="LabelLoadProcent" type="Label" parent="Load/CenterContainer/HBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
 theme_override_fonts/font = ExtResource("3_jdgkt")
-theme_override_font_sizes/font_size = 124
+theme_override_font_sizes/font_size = 86
 text = "0%"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Load/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Load/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1920, 950)
+layout_mode = 2
+
+[node name="LabelPressSpace" type="Label" parent="Load/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.780392, 0.968627, 0.662745, 1)
+theme_override_fonts/font = ExtResource("3_jdgkt")
+theme_override_font_sizes/font_size = 36
+text = "Нажмите \"Пробел\", чтобы продолжить"
+
+[node name="AnimationPressSpace" type="AnimationPlayer" parent="Load/CenterContainer/VBoxContainer/LabelPressSpace"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_bn2ja")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cnce2")
 }
-autoplay = "Loading"

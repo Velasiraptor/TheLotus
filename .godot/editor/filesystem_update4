@@ -1,11 +1,9 @@
 res://default_env.tres
 res://Scene/MainMenu/MainMenu.tscn
 res://Shaders/Blur.gdshader
-res://Scene/Player/Player.gd
 res://Scene/test.tscn
 res://Scene/Player/Player.tscn
 res://Scene/Forest/ForestLVL.tscn
 res://Scene/UI/GUI.tscn
 res://Scene/Loads/LoadScene.tscn
-res://Scene/Player/GUI.gd
-res://Scene/Loads/LoadScene.gd
+res://Scene/Items/JumpingMushroom/jumping_mushroom.tscn

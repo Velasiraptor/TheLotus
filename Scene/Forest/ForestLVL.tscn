@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://hrim7s88bl86"]
+[gd_scene load_steps=85 format=3 uid="uid://hrim7s88bl86"]
 
 [ext_resource type="Texture2D" uid="uid://c30qjjrujkf1f" path="res://Sprites/Forest/BackgroundsLevel1/BackgroundFull.png" id="1_axv3k"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_1.tscn" id="2_ubu5b"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://dtvhw46q5iya8" path="res://Sprites/Forest/Grass6.png" id="25_2mwjk"]
 [ext_resource type="PackedScene" uid="uid://cp610e1p4o1k2" path="res://Scene/Items/Flies/Fly.tscn" id="26_go5gx"]
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="27_gqmbv"]
+[ext_resource type="PackedScene" uid="uid://cbmelwurtnfwl" path="res://Scene/Items/JumpingMushroom/jumping_mushroom.tscn" id="28_1ytug"]
 [ext_resource type="PackedScene" uid="uid://coheoomnuyemb" path="res://Scene/Enemy/Racoons/RacoonL.tscn" id="28_65tdn"]
 [ext_resource type="PackedScene" uid="uid://dk5bsr1asyhip" path="res://Scene/Enemy/Racoons/racoon_r.tscn" id="29_tkhhh"]
 [ext_resource type="Texture2D" uid="uid://dstp3se483tbh" path="res://Sprites/Forest/Grass.png" id="30_bikpu"]
@@ -679,6 +680,12 @@ position = Vector2(1596.67, -266.667)
 scale = Vector2(1.33333, 1.33333)
 texture = ExtResource("22_q7p2p")
 
+[node name="Grass6_4" type="Sprite2D" parent="Grass"]
+material = SubResource("ShaderMaterial_rgpni")
+position = Vector2(-8390, 686.667)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("25_2mwjk")
+
 [node name="Heal" type="Node2D" parent="."]
 
 [node name="Fly" parent="Heal" instance=ExtResource("26_go5gx")]
@@ -691,8 +698,11 @@ position = Vector2(477, -215)
 position = Vector2(-1898, 16)
 scale = Vector2(0.5, 0.5)
 
+[node name="Jumping_Mushroom" parent="." instance=ExtResource("28_1ytug")]
+position = Vector2(-2354, 262)
+
 [node name="Player" parent="." groups=["GUI"] instance=ExtResource("27_gqmbv")]
-position = Vector2(-1618, -138)
+position = Vector2(-2461, 240)
 rotation = 0.000409808
 
 [node name="Racoons" type="Node2D" parent="."]
@@ -726,11 +736,6 @@ texture = ExtResource("23_3vhip")
 material = SubResource("ShaderMaterial_rgpni")
 position = Vector2(-6180, 885)
 texture = ExtResource("24_1n2j5")
-
-[node name="Grass6_1" type="Sprite2D" parent="GrassTop"]
-material = SubResource("ShaderMaterial_rgpni")
-position = Vector2(-8142.5, 240)
-texture = ExtResource("25_2mwjk")
 
 [node name="Grass3_1" type="Sprite2D" parent="GrassTop"]
 material = SubResource("ShaderMaterial_vbx5h")
