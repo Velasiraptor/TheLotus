@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n8q8i0liwfin"
-path="res://.godot/imported/MainMenuFrog-1.png-aa8ef67a79d0dc208860a01e0875eb6e.ctex"
+path="res://.godot/imported/MainMenuFrog_1.png-97fa8ffa075dd803a7fda59d79dd1b2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-1.png"
-dest_files=["res://.godot/imported/MainMenuFrog-1.png-aa8ef67a79d0dc208860a01e0875eb6e.ctex"]
+source_file="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog_1.png"
+dest_files=["res://.godot/imported/MainMenuFrog_1.png-97fa8ffa075dd803a7fda59d79dd1b2c.ctex"]
 
 [params]
 

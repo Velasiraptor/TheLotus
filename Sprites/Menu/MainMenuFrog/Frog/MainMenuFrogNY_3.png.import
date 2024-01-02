@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c24iyw3pmghh6"
-path="res://.godot/imported/MainMenuFrog-7.png-9cfa8c844bfbc77c76cd0292d83eadbe.ctex"
+uid="uid://bqrf5i7lw1v4l"
+path="res://.godot/imported/MainMenuFrogNY_3.png-a0fd75aacb275c51a2215ac6e66e00d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-7.png"
-dest_files=["res://.godot/imported/MainMenuFrog-7.png-9cfa8c844bfbc77c76cd0292d83eadbe.ctex"]
+source_file="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrogNY_3.png"
+dest_files=["res://.godot/imported/MainMenuFrogNY_3.png-a0fd75aacb275c51a2215ac6e66e00d4.ctex"]
 
 [params]
 

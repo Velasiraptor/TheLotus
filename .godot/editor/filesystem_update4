@@ -1,5 +1,6 @@
 res://default_env.tres
 res://Scene/MainMenu/MainMenu.tscn
+res://Shaders/Rain.gdshader
 res://Shaders/Blur.gdshader
 res://Scene/test.tscn
 res://Scene/Player/Player.tscn

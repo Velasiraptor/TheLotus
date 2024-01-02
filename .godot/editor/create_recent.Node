@@ -1,3 +1,5 @@
+ColorRect
+TextureRect
 RayCast2D
 GPUParticles2D
 CPUParticles2D
@@ -10,6 +12,3 @@ MarginContainer
 VBoxContainer
 HBoxContainer
 CenterContainer
-Timer
-ColorRect
-ProgressBar

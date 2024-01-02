@@ -27,7 +27,7 @@ func _on_Resume_pressed(): #ПРОДОЛЖИТЬ
 	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
 	get_tree().change_scene_to_packed(loadingScreen)
 func _on_Options_pressed(): #НАСТРОЙКИ
-	$Options_window.visible = true
+	pass
 func _on_Exit_pressed(): #ВЫХОД
 	get_tree().quit() 
 

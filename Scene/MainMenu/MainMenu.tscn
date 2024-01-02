@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://btir2y05jp3nh"]
+[gd_scene load_steps=79 format=3 uid="uid://btir2y05jp3nh"]
 
 [ext_resource type="Script" path="res://Scene/MainMenu/MainMenu.gd" id="1_v5udu"]
 [ext_resource type="Texture2D" uid="uid://s5e1yxiaxak2" path="res://Sprites/Menu/MainMenu1Water.png" id="2_pkrkr"]
@@ -14,10 +14,11 @@
 [ext_resource type="Shader" path="res://Shaders/Grass.gdshader" id="12_4r5rv"]
 [ext_resource type="Texture2D" uid="uid://cgkded5ri5085" path="res://Sprites/Menu/MainMenu1Grass.png" id="13_x7xje"]
 [ext_resource type="Texture2D" uid="uid://cw4lerjtq6r7i" path="res://Sprites/Menu/MainMenuFrog/WaterLyli2.png" id="14_tf74h"]
-[ext_resource type="Texture2D" uid="uid://n8q8i0liwfin" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-1.png" id="15_tdsd5"]
-[ext_resource type="Texture2D" uid="uid://2s6sjv8i3j5x" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-4.png" id="16_slfk1"]
-[ext_resource type="Texture2D" uid="uid://ybtnetcdrft2" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-5.png" id="17_q1wgp"]
-[ext_resource type="Texture2D" uid="uid://c24iyw3pmghh6" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog-7.png" id="18_jr5cp"]
+[ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="15_qamau"]
+[ext_resource type="Texture2D" uid="uid://n8q8i0liwfin" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog_1.png" id="15_tdsd5"]
+[ext_resource type="Texture2D" uid="uid://2s6sjv8i3j5x" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog_2.png" id="16_slfk1"]
+[ext_resource type="Texture2D" uid="uid://ybtnetcdrft2" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog_3.png" id="17_q1wgp"]
+[ext_resource type="Texture2D" uid="uid://c24iyw3pmghh6" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrog_4.png" id="18_jr5cp"]
 [ext_resource type="Script" path="res://Scene/MainMenu/FrogMainMenu.gd" id="19_36h70"]
 [ext_resource type="AudioStream" uid="uid://nuv04jws0ym5" path="res://Sounds/Frog1/croak.mp3" id="20_wslwr"]
 [ext_resource type="Texture2D" uid="uid://j8ao0pb43wtb" path="res://Sprites/Menu/MainMenuFrog/WaterLily1.png" id="21_8t42n"]
@@ -29,9 +30,13 @@
 [ext_resource type="Texture2D" uid="uid://ct3egygay0mxc" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-3.png" id="27_vvqhm"]
 [ext_resource type="Texture2D" uid="uid://duosyhpme7gvq" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-4.png" id="28_rkoub"]
 [ext_resource type="Texture2D" uid="uid://l0je6n5krjcm" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-5.png" id="29_tgb3s"]
+[ext_resource type="Texture2D" uid="uid://w4knbhmwwykb" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrogNY_1.png" id="30_ip7x4"]
 [ext_resource type="Texture2D" uid="uid://dok2cdgc6l2vg" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-6.png" id="30_vh2f0"]
 [ext_resource type="Texture2D" uid="uid://blb4qv8qf6xlx" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-7.png" id="31_eobs1"]
+[ext_resource type="Texture2D" uid="uid://dverhtmdixpbe" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrogNY_2.png" id="31_erw7d"]
 [ext_resource type="Texture2D" uid="uid://ckehwgmrsbyuy" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-8.png" id="32_de2fp"]
+[ext_resource type="Texture2D" uid="uid://bqrf5i7lw1v4l" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrogNY_3.png" id="32_qxlue"]
+[ext_resource type="Texture2D" uid="uid://cw0uri12s31wb" path="res://Sprites/Menu/MainMenuFrog/Frog/MainMenuFrogNY_4.png" id="33_4gg2k"]
 [ext_resource type="Texture2D" uid="uid://blye7dtq2p136" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-9.png" id="33_ygrpp"]
 [ext_resource type="Texture2D" uid="uid://c8rqah6ntqquw" path="res://Sprites/Menu/MainMenuFlyes/MainMenuFlyes-10.png" id="34_x0fnw"]
 [ext_resource type="AudioStream" uid="uid://bsclc7t8deqt3" path="res://Sounds/FlyLong.mp3" id="35_ta1qh"]
@@ -42,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://ck23yt1gc0oqj" path="res://Sprites/Menu/MainMenu2.png" id="40_lxe3b"]
 [ext_resource type="AudioStream" uid="uid://vogfyc4chu74" path="res://Sounds/MainMenu.mp3" id="41_8ds7g"]
 [ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="42_gpknu"]
-[ext_resource type="Texture2D" uid="uid://5qu8o8byitax" path="res://Sprites/Menu/Options_window.png" id="43_aj63h"]
+[ext_resource type="Shader" path="res://Shaders/Rain.gdshader" id="43_cfsc3"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_r4m1j"]
 noise_type = 4
@@ -73,6 +78,44 @@ shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
 shader_parameter/noise1 = SubResource("NoiseTexture2D_ix0nq")
 shader_parameter/noise2 = SubResource("NoiseTexture2D_46k8l")
+
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_1kgix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qka7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vvqhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rkoub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tgb3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_vh2f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_eobs1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_de2fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ygrpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_x0fnw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_e4e6n"]
 seed = 1
@@ -360,7 +403,117 @@ animations = [{
 "texture": ExtResource("15_tdsd5")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Classic",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_erw7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_qxlue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_qxlue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_qxlue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_erw7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4gg2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ip7x4")
+}],
+"loop": true,
+"name": &"NY",
 "speed": 9.0
 }]
 
@@ -499,44 +652,6 @@ _data = {
 "MainMenu": SubResource("8")
 }
 
-[sub_resource type="SpriteFrames" id="5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("25_1kgix")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_qka7q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_vvqhm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_rkoub")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_tgb3s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_vh2f0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_eobs1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_de2fp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_ygrpp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_x0fnw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 14.0
-}]
-
 [sub_resource type="SpriteFrames" id="6"]
 animations = [{
 "frames": [{
@@ -583,6 +698,21 @@ shader_parameter/offset = 0.0
 shader_parameter/speed = 0.2
 shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_length = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sosa"]
+shader = ExtResource("43_cfsc3")
+shader_parameter/rain_amount = 48.0
+shader_parameter/near_rain_length = 0.01
+shader_parameter/far_rain_length = 0.01
+shader_parameter/near_rain_width = 0.1
+shader_parameter/far_rain_width = 0.1
+shader_parameter/size = 1.0
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 1.0
+shader_parameter/rain_color = Color(1, 1, 1, 0.67451)
+shader_parameter/base_rain_speed = 0.1
+shader_parameter/additional_rain_speed = 0.1
+shader_parameter/slant = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dv2td"]
 shader = ExtResource("12_4r5rv")
@@ -634,6 +764,24 @@ color = Color(1, 1, 1, 0.0823529)
 
 [node name="MainMenu1" type="Sprite2D" parent="CenterContainer"]
 texture = ExtResource("5_87x2u")
+
+[node name="Fly_back1" type="AnimatedSprite2D" parent="CenterContainer"]
+position = Vector2(-506, -59)
+rotation = 1.30063
+scale = Vector2(0.3, 0.301)
+skew = -0.00717723
+sprite_frames = SubResource("5")
+autoplay = "default"
+frame_progress = 0.131634
+
+[node name="Fly_back2" type="AnimatedSprite2D" parent="CenterContainer"]
+position = Vector2(846, -31)
+rotation = -3.47729
+scale = Vector2(0.3, 0.318)
+skew = 0.0170708
+sprite_frames = SubResource("5")
+autoplay = "default"
+frame_progress = 0.37559
 
 [node name="Trashs" type="Node2D" parent="CenterContainer"]
 
@@ -712,13 +860,19 @@ position = Vector2(-9, 0)
 scale = Vector2(0.97, 1)
 
 [node name="WaterLily2" type="Sprite2D" parent="CenterContainer/Lily"]
-position = Vector2(0, -7.5)
+position = Vector2(0, -13.1198)
 texture = ExtResource("14_tf74h")
+
+[node name="Shadow" type="Sprite2D" parent="CenterContainer/Lily/WaterLily2"]
+position = Vector2(-307.216, 346.5)
+scale = Vector2(0.6, 0.582)
+texture = ExtResource("15_qamau")
 
 [node name="Frog" type="AnimatedSprite2D" parent="CenterContainer/Lily/WaterLily2"]
 sprite_frames = SubResource("7")
-autoplay = "default"
-frame_progress = 0.0943326
+animation = &"NY"
+autoplay = "NY"
+frame_progress = 0.240908
 script = ExtResource("19_36h70")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Lily/WaterLily2"]
@@ -733,17 +887,18 @@ stream = ExtResource("20_wslwr")
 volume_db = -10.0
 
 [node name="WaterLily1" type="Sprite2D" parent="CenterContainer/Lily"]
+position = Vector2(0, -5.61979)
 texture = ExtResource("21_8t42n")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Lily/WaterLily1"]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_7p7de")
-position = Vector2(-684.536, 128)
+position = Vector2(-658.763, 130.509)
 scale = Vector2(4.15995, 1.09766)
 texture = ExtResource("4_x2vn5")
 
 [node name="WaterLily3" type="Sprite2D" parent="CenterContainer/Lily"]
-position = Vector2(0, -15)
+position = Vector2(0, -9.38021)
 texture = ExtResource("22_0nhun")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Lily/WaterLily3"]
@@ -770,26 +925,18 @@ position = Vector2(-254, -228)
 scale = Vector2(0.478936, 0.469487)
 texture = ExtResource("24_lni3r")
 
-[node name="Flyes" type="Node2D" parent="."]
+[node name="Flyes_front" type="Node2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(0.97, 1)
 
-[node name="Flyes" type="AnimatedSprite2D" parent="Flyes"]
+[node name="Flyes" type="AnimatedSprite2D" parent="Flyes_front"]
 position = Vector2(-815.385, -320.895)
 scale = Vector2(1, 1.031)
 sprite_frames = SubResource("5")
 autoplay = "default"
 frame_progress = 0.488538
 
-[node name="Flyes4" type="AnimatedSprite2D" parent="Flyes"]
-position = Vector2(833.42, -234.351)
-rotation = -0.307828
-scale = Vector2(0.97, 1)
-sprite_frames = SubResource("5")
-autoplay = "default"
-frame_progress = 0.78659
-
-[node name="Flyes3" type="AnimatedSprite2D" parent="Flyes"]
+[node name="Flyes2" type="AnimatedSprite2D" parent="Flyes_front"]
 position = Vector2(231.281, 29.8992)
 rotation = 0.773082
 scale = Vector2(0.97, 1)
@@ -797,7 +944,7 @@ sprite_frames = SubResource("6")
 autoplay = "default"
 frame_progress = 0.170248
 
-[node name="AudioFlyLong" type="AudioStreamPlayer" parent="Flyes"]
+[node name="AudioFlyLong" type="AudioStreamPlayer" parent="Flyes_front"]
 stream = ExtResource("35_ta1qh")
 volume_db = -30.0
 autoplay = true
@@ -806,6 +953,26 @@ autoplay = true
 material = SubResource("ShaderMaterial_madgh")
 position = Vector2(960, 540)
 texture = ExtResource("36_fwdcx")
+
+[node name="TextureSnow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Snow" type="ColorRect" parent="TextureSnow"]
+material = SubResource("ShaderMaterial_8sosa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -974,83 +1141,6 @@ autoplay = true
 stream = ExtResource("42_gpknu")
 volume_db = -20.0
 
-[node name="Options_window" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 540)
-texture = ExtResource("43_aj63h")
-
-[node name="ColorRect" type="ColorRect" parent="Options_window"]
-show_behind_parent = true
-anchors_preset = -1
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -980.0
-offset_top = -1095.0
-offset_right = 49.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.772549)
-
-[node name="Node2D" type="Node2D" parent="Options_window"]
-scale = Vector2(0.7, 0.7)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Options_window/Node2D"]
-offset_left = 350.0
-offset_top = 238.571
-offset_right = 1138.0
-offset_bottom = 402.571
-
-[node name="ExitOptions" type="TextureButton" parent="Options_window/Node2D/HBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../NewGame")
-texture_normal = ExtResource("37_vexlu")
-texture_focused = ExtResource("38_tk5oc")
-
-[node name="Label" type="Label" parent="Options_window/Node2D/HBoxContainer/ExitOptions"]
-layout_mode = 0
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -70.5
-offset_right = 185.0
-offset_bottom = 70.5
-theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
-theme_override_fonts/font = ExtResource("39_lk2ts")
-theme_override_font_sizes/font_size = 38
-text = "Отмена"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GoodOptions" type="TextureButton" parent="Options_window/Node2D/HBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../NewGame")
-texture_normal = ExtResource("37_vexlu")
-texture_focused = ExtResource("38_tk5oc")
-
-[node name="Label" type="Label" parent="Options_window/Node2D/HBoxContainer/GoodOptions"]
-layout_mode = 0
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -70.5
-offset_right = 185.0
-offset_bottom = 70.5
-theme_override_colors/font_color = Color(0.317647, 0.12549, 0.00392157, 1)
-theme_override_fonts/font = ExtResource("39_lk2ts")
-theme_override_font_sizes/font_size = 38
-text = "Готово
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_focus_entered"]
 [connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGame_mouse_entered"]
 [connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGame_pressed"]
@@ -1064,9 +1154,3 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_Exit_mouse_entered"]
 [connection signal="pressed" from="CenterContainer3/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_Exit_pressed"]
 [connection signal="timeout" from="TimerCursor" to="." method="_on_timer_cursor_timeout"]
-[connection signal="focus_entered" from="Options_window/Node2D/HBoxContainer/ExitOptions" to="." method="_on_exit_options_focus_entered"]
-[connection signal="mouse_entered" from="Options_window/Node2D/HBoxContainer/ExitOptions" to="." method="_on_exit_options_mouse_entered"]
-[connection signal="pressed" from="Options_window/Node2D/HBoxContainer/ExitOptions" to="." method="_on_exit_options_pressed"]
-[connection signal="focus_entered" from="Options_window/Node2D/HBoxContainer/GoodOptions" to="." method="_on_good_options_focus_entered"]
-[connection signal="mouse_entered" from="Options_window/Node2D/HBoxContainer/GoodOptions" to="." method="_on_good_options_mouse_entered"]
-[connection signal="pressed" from="Options_window/Node2D/HBoxContainer/GoodOptions" to="." method="_on_good_options_pressed"]
