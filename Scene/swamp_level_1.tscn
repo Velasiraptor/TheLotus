@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://byhenmf1cb3p6"]
+
+[node name="SwampLevel1" type="Node2D"]
+position = Vector2(-9, 0)
