@@ -786,7 +786,7 @@ frame_progress = 0.37559
 [node name="Trashs" type="Node2D" parent="CenterContainer"]
 
 [node name="Trash1" type="Sprite2D" parent="CenterContainer/Trashs"]
-position = Vector2(0, -0.955167)
+position = Vector2(0, 1.1)
 texture = ExtResource("6_8b7is")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Trashs/Trash1"]
@@ -797,8 +797,8 @@ scale = Vector2(2.7353, 0.930665)
 texture = ExtResource("4_x2vn5")
 
 [node name="Trash2" type="Sprite2D" parent="CenterContainer/Trashs"]
-position = Vector2(0, -0.731667)
-skew = -0.0375137
+position = Vector2(0, 1)
+skew = -0.0523599
 texture = ExtResource("8_r4a3d")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Trashs/Trash2"]
@@ -809,8 +809,8 @@ scale = Vector2(3.20747, 0.657753)
 texture = ExtResource("4_x2vn5")
 
 [node name="Trash3" type="Sprite2D" parent="CenterContainer/Trashs"]
-position = Vector2(0, 0.731667)
-skew = -0.0250091
+position = Vector2(0, -1)
+skew = -0.0349066
 texture = ExtResource("9_lkqcy")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Trashs/Trash3"]
@@ -821,8 +821,8 @@ scale = Vector2(2.62281, 0.540052)
 texture = ExtResource("4_x2vn5")
 
 [node name="Trash4" type="Sprite2D" parent="CenterContainer/Trashs"]
-rotation = 0.0250091
-skew = 0.0375137
+rotation = 0.0349066
+skew = 0.0523599
 texture = ExtResource("10_65l5l")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Trashs/Trash4"]
@@ -835,7 +835,7 @@ texture = ExtResource("4_x2vn5")
 [node name="Trash5" type="Sprite2D" parent="CenterContainer/Trashs"]
 position = Vector2(601, -127)
 scale = Vector2(0.5, 0.5)
-skew = -0.0125046
+skew = -0.0174533
 texture = ExtResource("11_ned4t")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Trashs/Trash5"]
@@ -915,7 +915,7 @@ libraries = {
 }
 autoplay = "MainMenu"
 
-[node name="MainMenu4" type="Sprite2D" parent="CenterContainer"]
+[node name="Foliage_top" type="Sprite2D" parent="CenterContainer"]
 position = Vector2(-1.5, 0)
 scale = Vector2(1.00156, 1)
 texture = ExtResource("23_46ibf")
@@ -949,7 +949,7 @@ stream = ExtResource("35_ta1qh")
 volume_db = -30.0
 autoplay = true
 
-[node name="MainMenu3" type="Sprite2D" parent="."]
+[node name="Vines_top" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_madgh")
 position = Vector2(960, 540)
 texture = ExtResource("36_fwdcx")
@@ -1110,7 +1110,7 @@ layout_mode = 2
 [node name="TimerCursor" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="MainMenu5" type="Sprite2D" parent="."]
+[node name="Foliage_bottom" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_dv2td")
 position = Vector2(932, 514)
 scale = Vector2(1.05, 1.05)
