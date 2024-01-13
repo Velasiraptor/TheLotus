@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5t327ct5ulkw"
-path="res://.godot/imported/Spike_glass_6.png-11d6282b4c2d55cdc816b309e34e1118.ctex"
+uid="uid://bxdibmdqibf5m"
+path="res://.godot/imported/Shadow_island.png-692db09283c8ebdf22ffe4c24bc65369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Swamp_path_7/Spike_glass_6.png"
-dest_files=["res://.godot/imported/Spike_glass_6.png-11d6282b4c2d55cdc816b309e34e1118.ctex"]
+source_file="res://Sprites/SwampLevel1/Swamp_path_5(Island_mirrorPath4)/Shadow_island.png"
+dest_files=["res://.godot/imported/Shadow_island.png-692db09283c8ebdf22ffe4c24bc65369.ctex"]
 
 [params]
 

@@ -1,7 +1,4 @@
 res://default_env.tres
-res://Scene/MainMenu/MainMenu.tscn
+res://Scene/SwampLevel1/swamp_level_1.tscn
 res://Shaders/Grass.gdshader
 res://Shaders/Rain.gdshader
-res://Scene/Loads/LoadScene.tscn
-res://Scene/swamp_level_1.tscn
-res://Scene/SwampLevel1/swamp_level_1.tscn

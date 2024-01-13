@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbnjwt8nsy2vu"
-path="res://.godot/imported/Water_lily_1.png-2baf1705c951517becfdabec4e78047b.ctex"
+path="res://.godot/imported/Water_lily_1.png-58a615e89aeaa5436d14d7e091fe4349.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Swamp_path_5(Island_mirrorPath4)/Water_lily_1.png"
-dest_files=["res://.godot/imported/Water_lily_1.png-2baf1705c951517becfdabec4e78047b.ctex"]
+source_file="res://Sprites/SwampLevel1/Items/Water_lily_1.png"
+dest_files=["res://.godot/imported/Water_lily_1.png-58a615e89aeaa5436d14d7e091fe4349.ctex"]
 
 [params]
 

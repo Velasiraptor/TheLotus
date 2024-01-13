@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxdibmdqibf5m"
-path="res://.godot/imported/Water_island.png-926036a6a087fe48dcb1a7ddf0de302b.ctex"
+uid="uid://b2w0lpb4qv70g"
+path="res://.godot/imported/Platform.png-471f113dae4156a9b758695ac2459e34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Swamp_path_5(Island_mirrorPath4)/Water_island.png"
-dest_files=["res://.godot/imported/Water_island.png-926036a6a087fe48dcb1a7ddf0de302b.ctex"]
+source_file="res://Sprites/SwampLevel1/Swamp_path_7/Platform.png"
+dest_files=["res://.godot/imported/Platform.png-471f113dae4156a9b758695ac2459e34.ctex"]
 
 [params]
 
