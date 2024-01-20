@@ -476,19 +476,18 @@ drag_bottom_margin = 0.15
 
 [node name="idleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_cs4os")
-volume_db = -20.0
+volume_db = -5.0
 
 [node name="jumpSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_onmxb")
-volume_db = -15.0
 
 [node name="walkSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_2p00k")
-volume_db = -30.0
+volume_db = -5.0
 
 [node name="TakeDamage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19")
-volume_db = -20.0
+volume_db = -5.0
 
 [node name="TimerDeath" type="Timer" parent="."]
 wait_time = 2.0

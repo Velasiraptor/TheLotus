@@ -1,14 +1,14 @@
-Sprite2D
 ColorRect
+Node2D
+CollisionShape2D
+Sprite2D
 TextureRect
 RayCast2D
 GPUParticles2D
 CPUParticles2D
-CollisionShape2D
 AnimatedSprite2D
 Area2D
 AnimationPlayer
 Label
 MarginContainer
 VBoxContainer
-HBoxContainer

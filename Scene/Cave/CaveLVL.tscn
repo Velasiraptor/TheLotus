@@ -521,7 +521,6 @@ autoplay = "linean"
 [node name="AudioWaterFall" type="AudioStreamPlayer2D" parent="WaterFall/Lines"]
 position = Vector2(8, 0)
 stream = ExtResource("8_3dqxi")
-volume_db = -20.0
 autoplay = true
 max_distance = 1500.0
 
@@ -585,7 +584,6 @@ texture = ExtResource("10_dsann")
 
 [node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_vlvw3")
-volume_db = -25.0
 
 [node name="TimerMusic" type="Timer" parent="."]
 wait_time = 5.0

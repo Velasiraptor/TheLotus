@@ -2,3 +2,6 @@ res://default_env.tres
 res://Scene/SwampLevel1/swamp_level_1.tscn
 res://Shaders/Grass.gdshader
 res://Shaders/Rain.gdshader
+res://Shaders/water.gdshader
+res://Scene/Forest/ForestLVL.tscn
+res://Shaders/Blur.gdshader

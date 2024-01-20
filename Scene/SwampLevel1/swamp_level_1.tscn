@@ -1,4 +1,280 @@
-[gd_scene format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=45 format=3 uid="uid://byhenmf1cb3p6"]
+
+[ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_qj055"]
+[ext_resource type="Texture2D" uid="uid://bssfduw5uxy0j" path="res://Sprites/SwampLevel1/Swamp_path_7/Water.png" id="2_80uf3"]
+[ext_resource type="Texture2D" uid="uid://uc2k7e3rvrt2" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_1.png" id="2_p2udp"]
+[ext_resource type="Texture2D" uid="uid://dh004xo1ivw2s" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_left.png" id="3_3wcqe"]
+[ext_resource type="Texture2D" uid="uid://d4joibgvp087t" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_2.png" id="3_v3nnv"]
+[ext_resource type="Texture2D" uid="uid://mxumft6w23c" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_3.png" id="4_7yrgm"]
+[ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_205un"]
+[ext_resource type="Texture2D" uid="uid://56mcvj5mr1eu" path="res://Sprites/SwampLevel1/Items/Rock.png" id="5_j1nvg"]
+[ext_resource type="Texture2D" uid="uid://d1y3bxaspurgk" path="res://Sprites/SwampLevel1/Swamp_path_3/Water.png" id="6_4e2xw"]
+[ext_resource type="Texture2D" uid="uid://swqajsssiwel" path="res://Sprites/SwampLevel1/Swamp_path_3/Platform.png" id="7_ked2h"]
+[ext_resource type="Texture2D" uid="uid://c6rewif3bik64" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_4.png" id="8_vyqj2"]
+[ext_resource type="Texture2D" uid="uid://dkd85yf5w81d1" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_5.png" id="9_a2j8f"]
+[ext_resource type="Texture2D" uid="uid://n1ea8wg7r53s" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_6.png" id="10_yf2rq"]
+[ext_resource type="Texture2D" uid="uid://crub8nikwlie8" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_7.png" id="11_ibu7n"]
+[ext_resource type="Texture2D" uid="uid://dvo347iimd034" path="res://Sprites/SwampLevel1/Swamp_path_4/Background_1.png" id="12_x7x1o"]
+[ext_resource type="Texture2D" uid="uid://djonknswbj1kg" path="res://Sprites/SwampLevel1/Swamp_path_4/Background_2.png" id="13_sefyo"]
+[ext_resource type="Texture2D" uid="uid://begdv86psxkb3" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_1.png" id="14_8lpsh"]
+[ext_resource type="Texture2D" uid="uid://bfvkt6tg0csil" path="res://Sprites/SwampLevel1/Swamp_path_7/Background_1.png" id="15_ywtjj"]
+[ext_resource type="Texture2D" uid="uid://c8rasivf4e1j5" path="res://Sprites/SwampLevel1/Swamp_path_2/Platform.png" id="15_ywvom"]
+[ext_resource type="Texture2D" uid="uid://dhf4bymt5udgg" path="res://Sprites/SwampLevel1/Swamp_path_7/Background_2.png" id="16_bvknb"]
+[ext_resource type="Texture2D" uid="uid://pg0ir8b4bods" path="res://Sprites/SwampLevel1/Swamp_path_1/Background_1.png" id="16_qp5qb"]
+[ext_resource type="Texture2D" uid="uid://oai4ahgfogiv" path="res://Sprites/SwampLevel1/Swamp_path_1/Water.png" id="17_egms6"]
+[ext_resource type="Texture2D" uid="uid://dpjrug2s21r1i" path="res://Sprites/SwampLevel1/Swamp_path_7/Background_3.png" id="17_hci3r"]
+[ext_resource type="Texture2D" uid="uid://c77v6utea1ejx" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_2.png" id="18_fionn"]
+[ext_resource type="Texture2D" uid="uid://b2w0lpb4qv70g" path="res://Sprites/SwampLevel1/Swamp_path_7/Platform.png" id="18_svj8u"]
+[ext_resource type="Texture2D" uid="uid://cs78ae28rsl7" path="res://Sprites/SwampLevel1/Swamp_path_8/Background_1.png" id="19_2t1kj"]
+[ext_resource type="Texture2D" uid="uid://d1fa1pt37moaj" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_3.png" id="19_l1s41"]
+[ext_resource type="Texture2D" uid="uid://crighu4ws2xgs" path="res://Sprites/SwampLevel1/Swamp_path_1/Platform.png" id="20_8uqxu"]
+[ext_resource type="Texture2D" uid="uid://3o2i7uvkecpb" path="res://Sprites/SwampLevel1/Swamp_path_8/Background_2.png" id="20_g4gfg"]
+[ext_resource type="Texture2D" uid="uid://beu5gx5eadvp3" path="res://Sprites/SwampLevel1/Swamp_path_8/Background_3_left.png" id="21_8kafv"]
+[ext_resource type="Texture2D" uid="uid://8jfl7vgq5iif" path="res://Sprites/SwampLevel1/Swamp_path_1/Background_2.png" id="21_f2632"]
+[ext_resource type="Texture2D" uid="uid://bydddq64kobt6" path="res://Sprites/SwampLevel1/Swamp_path_8/Background_3_right.png" id="22_ta6fv"]
+[ext_resource type="Texture2D" uid="uid://dfdob7bq6khad" path="res://Sprites/SwampLevel1/Swamp_path_1/Background_3.png" id="22_tr0bf"]
+[ext_resource type="Texture2D" uid="uid://bmqcesembnx4a" path="res://Sprites/SwampLevel1/Items/Durt_way.png" id="23_me32c"]
+[ext_resource type="Texture2D" uid="uid://dns7jaulrwyu8" path="res://Sprites/SwampLevel1/Swamp_path_8/Background_4.png" id="23_xbq72"]
+[ext_resource type="Texture2D" uid="uid://b747r7uyy150" path="res://Sprites/SwampLevel1/Swamp_path_8/Platform.png" id="24_p367e"]
+[ext_resource type="Texture2D" uid="uid://dd15yd8nrduc6" path="res://Sprites/SwampLevel1/Swamp_path_5(Island_mirrorPath4)/Island.png" id="27_ehy1d"]
+[ext_resource type="Texture2D" uid="uid://bxdibmdqibf5m" path="res://Sprites/SwampLevel1/Swamp_path_5(Island_mirrorPath4)/Shadow_island.png" id="28_4678r"]
+[ext_resource type="Texture2D" uid="uid://ctyaodxnos80n" path="res://Sprites/SwampLevel1/Swamp_path_9/Background_1.png" id="39_cunh4"]
+[ext_resource type="Texture2D" uid="uid://dvgwo56ogsvls" path="res://Sprites/SwampLevel1/Swamp_path_9/Background_2.png" id="40_itc4d"]
+[ext_resource type="Texture2D" uid="uid://m8jo0i7lgkbg" path="res://Sprites/SwampLevel1/Swamp_path_9/Background_3.png" id="41_kvcn4"]
+[ext_resource type="Texture2D" uid="uid://cti2sicna3e0n" path="res://Sprites/SwampLevel1/Swamp_path_9/Platform.png" id="42_xshhx"]
+[ext_resource type="Texture2D" uid="uid://c3vpk1ewwrilf" path="res://Sprites/SwampLevel1/Swamp_path_9/Water.png" id="43_dskoc"]
+[ext_resource type="Texture2D" uid="uid://boxntmsg43two" path="res://Sprites/SwampLevel1/Swamp_path_9/Background_patch.png" id="46_3141q"]
 
 [node name="SwampLevel1" type="Node2D"]
-position = Vector2(-3, 0)
+
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Background_z" type="Node2D" parent="Backgrounds"]
+
+[node name="Platforms_collide" type="Node2D" parent="."]
+
+[node name="Water" type="Node2D" parent="Platforms_collide"]
+
+[node name="6p_Water" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(15239, 302)
+texture = ExtResource("1_qj055")
+
+[node name="7p_Water" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(18617, 331)
+texture = ExtResource("2_80uf3")
+
+[node name="5p_Water" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(11399, 302)
+texture = ExtResource("1_qj055")
+flip_h = true
+
+[node name="4p_Water" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(7561, 302)
+texture = ExtResource("1_qj055")
+
+[node name="ColorRect_patch" type="ColorRect" parent="Platforms_collide/Water/4p_Water"]
+offset_left = -1977.0
+offset_top = -37.0
+offset_right = -1916.0
+offset_bottom = -9.0
+color = Color(0.262745, 0.545098, 0.333333, 1)
+
+[node name="8p_Water_L" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(22703, 291)
+texture = ExtResource("3_3wcqe")
+
+[node name="8p_Water_R" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(24555, 412)
+texture = ExtResource("4_205un")
+
+[node name="9p_Water" type="Sprite2D" parent="Platforms_collide/Water"]
+position = Vector2(27443, 344)
+texture = ExtResource("43_dskoc")
+
+[node name="3p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(4102, -166)
+texture = ExtResource("2_p2udp")
+
+[node name="3p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(4063, 13)
+texture = ExtResource("3_v3nnv")
+
+[node name="3p_machine" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(3361, -244)
+texture = ExtResource("4_7yrgm")
+
+[node name="Rock" type="Sprite2D" parent="Platforms_collide/3p_machine"]
+position = Vector2(100, 255)
+texture = ExtResource("5_j1nvg")
+
+[node name="3p_Shadow_platf" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(5777, 453)
+texture = ExtResource("6_4e2xw")
+
+[node name="3p_Platform" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(4070, 273)
+texture = ExtResource("7_ked2h")
+
+[node name="3p_Background_2" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(3213, -200)
+texture = ExtResource("8_vyqj2")
+
+[node name="3p_Background_3" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(3266, -191)
+texture = ExtResource("9_a2j8f")
+
+[node name="3p_Background_4" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(3185, -178)
+texture = ExtResource("10_yf2rq")
+
+[node name="3p_Background_5" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(3529, -137)
+texture = ExtResource("11_ibu7n")
+
+[node name="7p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(19510, -154)
+texture = ExtResource("15_ywtjj")
+flip_h = true
+
+[node name="7p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(19401, 132)
+texture = ExtResource("16_bvknb")
+
+[node name="7p_Background_2" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(19825, -144)
+texture = ExtResource("17_hci3r")
+
+[node name="7p_Platform" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(19790, 184)
+texture = ExtResource("18_svj8u")
+
+[node name="9p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(27460, -177)
+texture = ExtResource("39_cunh4")
+
+[node name="9p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(27373, 58)
+texture = ExtResource("40_itc4d")
+
+[node name="8p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(23692, -177)
+texture = ExtResource("19_2t1kj")
+
+[node name="8p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(23644, -8)
+texture = ExtResource("20_g4gfg")
+
+[node name="8p_Background_2_L" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(22947, 291)
+texture = ExtResource("21_8kafv")
+
+[node name="8p_Background_2_R" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(24641, 314)
+texture = ExtResource("22_ta6fv")
+
+[node name="8p_Background_3" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(23327, -148)
+texture = ExtResource("23_xbq72")
+
+[node name="8p_Platform" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(23139, 187)
+texture = ExtResource("24_p367e")
+
+[node name="9p_Background_2" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(27314, -153)
+texture = ExtResource("41_kvcn4")
+
+[node name="9p_BackgroundPatch" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(26056, 333)
+texture = ExtResource("46_3141q")
+
+[node name="9p_Platform" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(27330, 68)
+texture = ExtResource("42_xshhx")
+
+[node name="ColorRect_patch" type="ColorRect" parent="Platforms_collide/9p_Platform"]
+offset_left = -1614.0
+offset_top = 120.0
+offset_right = -1577.0
+offset_bottom = 153.0
+color = Color(0.431373, 0.482353, 0.282353, 1)
+
+[node name="6p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(15239, -160)
+texture = ExtResource("12_x7x1o")
+
+[node name="6p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(15239, -44)
+texture = ExtResource("13_sefyo")
+
+[node name="5p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(11399, -160)
+texture = ExtResource("12_x7x1o")
+flip_h = true
+
+[node name="5p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(11399, -43)
+texture = ExtResource("13_sefyo")
+flip_h = true
+
+[node name="5p_Island" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(11551, -21)
+texture = ExtResource("27_ehy1d")
+
+[node name="5p_ShadowIsland" type="Sprite2D" parent="Platforms_collide/5p_Island"]
+show_behind_parent = true
+position = Vector2(27, 440)
+texture = ExtResource("28_4678r")
+
+[node name="4p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(7561, -160)
+texture = ExtResource("12_x7x1o")
+
+[node name="4p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(7561, -43)
+texture = ExtResource("13_sefyo")
+
+[node name="2p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(1505, -172)
+texture = ExtResource("14_8lpsh")
+
+[node name="2p_Platform" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(1413, 304)
+texture = ExtResource("15_ywvom")
+
+[node name="1p_Background_0" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(-311, -188)
+texture = ExtResource("16_qp5qb")
+
+[node name="1p_Water" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(-1401, 125)
+texture = ExtResource("17_egms6")
+
+[node name="2p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(1533, -162)
+texture = ExtResource("18_fionn")
+
+[node name="2p_Background_2" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(1368, -140)
+texture = ExtResource("19_l1s41")
+
+[node name="1p_Platform" type="Sprite2D" parent="Platforms_collide"]
+texture = ExtResource("20_8uqxu")
+
+[node name="1p_Background_1" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(-183, -152)
+texture = ExtResource("21_f2632")
+
+[node name="1p_Background_2" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(-346, -136)
+texture = ExtResource("22_tr0bf")
+
+[node name="2p_DurtWay" type="Sprite2D" parent="Platforms_collide"]
+position = Vector2(1793, 452)
+texture = ExtResource("23_me32c")
+
+[node name="Platforms_top" type="Node2D" parent="."]
+
+[node name="Top" type="Node2D" parent="."]
+
+[node name="Bottom" type="Node2D" parent="."]

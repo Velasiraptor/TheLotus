@@ -1134,12 +1134,10 @@ text = " alpha 0.0.0.3"
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_8ds7g")
-volume_db = -20.0
 autoplay = true
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("42_gpknu")
-volume_db = -20.0
 
 [connection signal="focus_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_focus_entered"]
 [connection signal="mouse_entered" from="CenterContainer3/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGame_mouse_entered"]

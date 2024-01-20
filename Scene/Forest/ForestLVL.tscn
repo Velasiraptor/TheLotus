@@ -783,7 +783,6 @@ texture = ExtResource("51_wpigg")
 
 [node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("52_kpk6e")
-volume_db = -25.0
 
 [node name="Inventory" type="CanvasLayer" parent="."]
 layer = 7
