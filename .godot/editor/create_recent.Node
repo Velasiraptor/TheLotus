@@ -1,8 +1,10 @@
-ColorRect
-Node2D
-CollisionShape2D
-Sprite2D
+CanvasLayer
 TextureRect
+StaticBody2D
+CollisionShape2D
+Node2D
+ColorRect
+Sprite2D
 RayCast2D
 GPUParticles2D
 CPUParticles2D
@@ -10,5 +12,3 @@ AnimatedSprite2D
 Area2D
 AnimationPlayer
 Label
-MarginContainer
-VBoxContainer

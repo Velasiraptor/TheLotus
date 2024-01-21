@@ -416,8 +416,6 @@ gradient = SubResource("Gradient_xnwt7")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2sikv"]
 particle_flag_disable_z = true
 gravity = Vector3(5, -10, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 color_ramp = SubResource("GradientTexture1D_gkpy7")
 
 [sub_resource type="Animation" id="Animation_16dxa"]
@@ -650,13 +648,18 @@ texture = ExtResource("1_2oif7")
 [node name="frame1" type="Node2D" parent="background"]
 
 [node name="back" type="Sprite2D" parent="background/frame1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 texture = ExtResource("2_sg2k1")
 
 [node name="light_flower" type="Sprite2D" parent="background/frame1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-760.248, -310.969)
 texture = ExtResource("4_hxx1h")
 
 [node name="love" type="Sprite2D" parent="background/frame1"]
+visible = false
 position = Vector2(-839.751, -153.016)
 texture = ExtResource("5_otukt")
 
@@ -675,6 +678,8 @@ stream = ExtResource("7_6ew41")
 [node name="frame2" type="Node2D" parent="background"]
 
 [node name="back2" type="Sprite2D" parent="background/frame2"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 texture = ExtResource("8_xugq0")
 
 [node name="smoke" type="Sprite2D" parent="background/frame2/back2"]
@@ -684,10 +689,10 @@ scale = Vector2(3.44109, 1.95068)
 texture = ExtResource("9_2y2pp")
 
 [node name="Animation_Smoke" type="AnimationPlayer" parent="background/frame2/back2/smoke"]
-autoplay = "smoke"
 libraries = {
 "": SubResource("AnimationLibrary_axl0t")
 }
+autoplay = "smoke"
 
 [node name="smoke2" type="Sprite2D" parent="background/frame2/back2"]
 modulate = Color(1, 1, 1, 0.563779)
@@ -696,10 +701,10 @@ scale = Vector2(3.44109, 1.95068)
 texture = ExtResource("9_2y2pp")
 
 [node name="Animation_Smoke" type="AnimationPlayer" parent="background/frame2/back2/smoke2"]
-autoplay = "smoke_2"
 libraries = {
 "": SubResource("AnimationLibrary_axl0t")
 }
+autoplay = "smoke_2"
 
 [node name="smoke3" type="Sprite2D" parent="background/frame2/back2"]
 modulate = Color(1, 1, 1, 0.734638)
@@ -708,12 +713,13 @@ scale = Vector2(3.44109, 1.95068)
 texture = ExtResource("9_2y2pp")
 
 [node name="Animation_Smoke" type="AnimationPlayer" parent="background/frame2/back2/smoke3"]
-autoplay = "smoke_3"
 libraries = {
 "": SubResource("AnimationLibrary_axl0t")
 }
+autoplay = "smoke_3"
 
 [node name="ah2" type="Sprite2D" parent="background/frame2"]
+visible = false
 position = Vector2(-536.646, -116.49)
 texture = ExtResource("10_bd8vq")
 
@@ -794,7 +800,7 @@ texture = ExtResource("23_qgvjw")
 stream = ExtResource("23_vh72y")
 
 [node name="Timer_frame4" type="Timer" parent="background/frame4"]
-wait_time = 1.5
+wait_time = 2.5
 one_shot = true
 
 [node name="frame5" type="Node2D" parent="background"]
@@ -834,7 +840,7 @@ libraries = {
 }
 
 [node name="Timer_frame6" type="Timer" parent="background/frame6"]
-wait_time = 2.0
+wait_time = 2.5
 one_shot = true
 
 [node name="frame7" type="Node2D" parent="background"]
