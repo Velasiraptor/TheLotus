@@ -5,9 +5,9 @@ enum State { IDLE, WALK_LEFT, WALK_RIGHT, JUMP, TONGUE, TAKE_DAMAGE, DEATH }
 
 var state := State.IDLE
 
-@export var speed := 220
-@export var Jump_speed := 340
-@export var jump_force := 800
+@export var speed := 250
+@export var Jump_speed := 400
+@export var jump_force := 1000
 @export var gravity := 2200
 
 var vel = Vector2(0, 0)

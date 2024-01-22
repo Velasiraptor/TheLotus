@@ -1,12 +1,9 @@
 res://default_env.tres
-res://Scene/SwampLevel1/swamp_level_1.tscn
-res://Shaders/water.gdshader
-res://Shaders/Grass.gdshader
+res://Scene/SwampLevel1/platforms_collide_level_1.tscn
 res://Shaders/Rain.gdshader
-res://Scene/MainMenu/MainMenu.tscn
+res://Shaders/Grass.gdshader
+res://Shaders/water.gdshader
+res://Scene/SwampLevel1/swamp_level_1.tscn
 res://Scene/test.tscn
 res://Scene/Player/Player.tscn
-res://Scene/Loads/LoadScene.tscn
-res://Scene/comic/prologue.tscn
-res://Scene/comic/prologue.gd
-res://Shaders/Blur.gdshader
+res://Scene/Player/Player.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://caudsgp7lcrmo"]
+[gd_scene load_steps=41 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
 [ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_bjt4l"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6q5v4isptloa" path="res://Sprites/Player/FrogWalk1_5.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://bkjxsq555oglq" path="res://Sprites/Player/Player_togue_3.png" id="7_rg6yq"]
 [ext_resource type="Texture2D" uid="uid://crftujxmraeo5" path="res://Sprites/Player/FrogWalk1_9.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bkw24l5a7eghj" path="res://Sprites/Player/Player_togue_4.png" id="8_xs6us"]
 [ext_resource type="Texture2D" uid="uid://d3ndduaps2pog" path="res://Sprites/Player/FrogWalk1_8.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://bq6vlx7smsd4l" path="res://Sprites/Player/FrogWalk1_3.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://b37rnrrcsmsy6" path="res://Sprites/Player/FrogWalk1_6.png" id="11"]
@@ -92,6 +93,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_rg6yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xs6us")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_qhqy1")
@@ -410,10 +414,9 @@ radius = 36.0555
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 light_mask = 2
 scale = Vector2(0.55, 0.55)
-collision_mask = 14
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_bjt4l")
-Jump_speed = 400
-jump_force = 900
 
 [node name="ParticlesPlayer" type="GPUParticles2D" parent="." groups=["Player"]]
 position = Vector2(-50, 76)
@@ -429,9 +432,10 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"run"
+animation = &"Tongue"
 autoplay = "run"
-frame_progress = 0.404264
+frame = 4
+frame_progress = 1.0
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
 libraries = {
@@ -500,7 +504,6 @@ one_shot = true
 [node name="RayCastFall" type="RayCast2D" parent="."]
 scale = Vector2(5, 1)
 target_position = Vector2(0.4, 400)
-collision_mask = 2
 
 [node name="GUI" parent="." instance=ExtResource("20_ce54u")]
 layer = 6
@@ -512,8 +515,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("21_mm38c")
 
 [node name="TongueAr" type="CharacterBody2D" parent="."]
-collision_layer = 64
-collision_mask = 4
+collision_layer = 16
+collision_mask = 8
 slide_on_ceiling = false
 
 [node name="TongueAnim" type="AnimationPlayer" parent="TongueAr"]
