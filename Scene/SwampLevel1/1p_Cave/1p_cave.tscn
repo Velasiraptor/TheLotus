@@ -1,0 +1,303 @@
+[gd_scene load_steps=29 format=3 uid="uid://edr71rj6t0gg"]
+
+[ext_resource type="Texture2D" uid="uid://owbawvop1lli" path="res://Sprites/SwampLevel1/Cave_path_1/Cave_1.png" id="1_e02li"]
+[ext_resource type="Script" path="res://Scene/SwampLevel1/1p_Cave/1p_cave.gd" id="1_m1tqq"]
+[ext_resource type="Shader" path="res://Shaders/Dissolve.gdshader" id="2_5e1yk"]
+[ext_resource type="Texture2D" uid="uid://c7fq1xxjios3" path="res://Sprites/SwampLevel1/Cave_path_1/Cave_hide.png" id="4_3dklc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rg7he"]
+noise_type = 4
+frequency = 0.0027
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_don3w"]
+invert = true
+noise = SubResource("FastNoiseLite_rg7he")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0tntb"]
+shader = ExtResource("2_5e1yk")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_don3w")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxg2l"]
+radius = 14.75
+height = 218.127
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mijpr"]
+radius = 14.75
+height = 114.624
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mphd6"]
+radius = 14.75
+height = 359.503
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51i34"]
+radius = 14.75
+height = 140.674
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhnvv"]
+radius = 14.75
+height = 140.674
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtc1v"]
+radius = 14.75
+height = 92.6377
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5x8tx"]
+radius = 29.8297
+height = 135.347
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sor"]
+radius = 19.6348
+height = 93.0776
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vu6p5"]
+radius = 26.1493
+height = 103.272
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i7n4x"]
+radius = 26.1493
+height = 95.2133
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xca2y"]
+radius = 31.7166
+height = 269.251
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5i85"]
+radius = 70.2346
+height = 155.422
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jk4xp"]
+radius = 42.2179
+height = 297.506
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_552r4"]
+radius = 42.2179
+height = 329.854
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whxmm"]
+radius = 32.2682
+height = 224.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_khgti"]
+radius = 32.2682
+height = 342.591
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plhe2"]
+size = Vector2(770.5, 662)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdhng"]
+size = Vector2(378.008, 147.438)
+
+[sub_resource type="Animation" id="Animation_cbynj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1p_Cave_sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1p_Cave_sprite:material:shader_parameter/dissolve_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaveHide:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ihc4w"]
+resource_name = "animation_cave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1p_Cave_sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.45098, 0.45098, 0.45098, 0), Color(0.45098, 0.45098, 0.45098, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1p_Cave_sprite:material:shader_parameter/dissolve_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaveHide:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46ipc"]
+_data = {
+"RESET": SubResource("Animation_cbynj"),
+"animation_cave": SubResource("Animation_ihc4w")
+}
+
+[node name="1p_Cave" type="StaticBody2D"]
+collision_mask = 14
+script = ExtResource("1_m1tqq")
+
+[node name="1p_Cave_sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0tntb")
+position = Vector2(-0.00012207, 3.05176e-05)
+texture = ExtResource("1_e02li")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(333, 11)
+rotation = -1.54089
+shape = SubResource("CapsuleShape2D_dxg2l")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(198, 14)
+rotation = -1.7102
+shape = SubResource("CapsuleShape2D_mijpr")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(8, 92)
+rotation = -2.02372
+shape = SubResource("CapsuleShape2D_mphd6")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-192, 180)
+rotation = -1.87443
+shape = SubResource("CapsuleShape2D_51i34")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-293, 199)
+rotation = -1.64222
+shape = SubResource("CapsuleShape2D_fhnvv")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-378, 197)
+rotation = -1.34749
+shape = SubResource("CapsuleShape2D_rtc1v")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-413, 141)
+rotation = 3.36414
+shape = SubResource("CapsuleShape2D_5x8tx")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(-433, 87)
+rotation = 3.36414
+shape = SubResource("CapsuleShape2D_i0sor")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(-462, 41)
+rotation = 3.36414
+shape = SubResource("CapsuleShape2D_vu6p5")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2(-479, -27)
+rotation = 3.36414
+shape = SubResource("CapsuleShape2D_i7n4x")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2(-473, -184)
+rotation = 3.23096
+shape = SubResource("CapsuleShape2D_xca2y")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+position = Vector2(-66, -46)
+rotation = 2.17022
+shape = SubResource("CapsuleShape2D_f5i85")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+position = Vector2(-165, -212)
+rotation = 2.7881
+shape = SubResource("CapsuleShape2D_jk4xp")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
+position = Vector2(-349, -269)
+rotation = 1.08799
+shape = SubResource("CapsuleShape2D_552r4")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="."]
+position = Vector2(80, -90)
+rotation = 4.28907
+shape = SubResource("CapsuleShape2D_whxmm")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
+position = Vector2(246, -126)
+rotation = 4.67417
+shape = SubResource("CapsuleShape2D_khgti")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
+[node name="Camera_player" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_player"]
+position = Vector2(-212, -40)
+shape = SubResource("RectangleShape2D_plhe2")
+debug_color = Color(0.775321, 0.710537, 0.167134, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera_player"]
+position = Vector2(223.996, -62)
+shape = SubResource("RectangleShape2D_tdhng")
+debug_color = Color(0.775321, 0.710537, 0.167134, 0.42)
+
+[node name="CaveHide" type="Sprite2D" parent="."]
+position = Vector2(-126, 52)
+texture = ExtResource("4_3dklc")
+
+[node name="AnimationCave" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_46ipc")
+}
+
+[connection signal="body_entered" from="Camera_player" to="." method="_on_camera_player_body_entered"]
+[connection signal="body_exited" from="Camera_player" to="." method="_on_camera_player_body_exited"]

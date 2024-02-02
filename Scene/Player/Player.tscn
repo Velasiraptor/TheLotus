@@ -1,27 +1,32 @@
-[gd_scene load_steps=42 format=3 uid="uid://caudsgp7lcrmo"]
+[gd_scene load_steps=49 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
 [ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_bjt4l"]
 [ext_resource type="Texture2D" uid="uid://4ng62jgebaqx" path="res://Sprites/Player/Dust.png" id="2_ekamj"]
 [ext_resource type="Texture2D" uid="uid://cidj4wrfyvjq4" path="res://Sprites/Player/Frogidle2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dlsuonn61toda" path="res://Sprites/Player/FrogDeath_1.png" id="3_wieul"]
 [ext_resource type="Texture2D" uid="uid://brymoosg0h2ka" path="res://Sprites/Player/FrogWalk1_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://blc5b62rdxgf1" path="res://Sprites/Player/FrogDeath_2.png" id="4_abn74"]
 [ext_resource type="Texture2D" uid="uid://e0rryfmd5540" path="res://Sprites/Player/Frogidle3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d2uqmlblwmfcv" path="res://Sprites/Player/FrogDeath_3.png" id="5_mcusm"]
 [ext_resource type="Texture2D" uid="uid://dkd5bfr4wc4ge" path="res://Sprites/Player/Player_togue_1.png" id="5_qhqy1"]
 [ext_resource type="Texture2D" uid="uid://x5341ciopgnc" path="res://Sprites/Player/FrogWalk1_7.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://ty7baaln2r2f" path="res://Sprites/Player/Player_togue_2.png" id="6_gfvl5"]
+[ext_resource type="Texture2D" uid="uid://o34qw681cilc" path="res://Sprites/Player/FrogDeath_4.png" id="6_rr8ly"]
 [ext_resource type="Texture2D" uid="uid://c6q5v4isptloa" path="res://Sprites/Player/FrogWalk1_5.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://6vbb11c61jqs" path="res://Sprites/Player/FrogDeath_5.png" id="7_4e47d"]
 [ext_resource type="Texture2D" uid="uid://bkjxsq555oglq" path="res://Sprites/Player/Player_togue_3.png" id="7_rg6yq"]
 [ext_resource type="Texture2D" uid="uid://crftujxmraeo5" path="res://Sprites/Player/FrogWalk1_9.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://gh76o6n8form" path="res://Sprites/Player/FrogDeath_6.png" id="8_qayf0"]
 [ext_resource type="Texture2D" uid="uid://bkw24l5a7eghj" path="res://Sprites/Player/Player_togue_4.png" id="8_xs6us"]
 [ext_resource type="Texture2D" uid="uid://d3ndduaps2pog" path="res://Sprites/Player/FrogWalk1_8.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bvhvpabhsp0v4" path="res://Sprites/Player/FrogDeath_7.png" id="9_km2lt"]
 [ext_resource type="Texture2D" uid="uid://bq6vlx7smsd4l" path="res://Sprites/Player/FrogWalk1_3.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://b37rnrrcsmsy6" path="res://Sprites/Player/FrogWalk1_6.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://dp5j8ipv7jog3" path="res://Sprites/Player/FrogWalk1_4.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://c2twhrtw7f43s" path="res://Sprites/Player/FrogWalk1_1.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://dlsuonn61toda" path="res://Sprites/Player/FrogDeath.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://dggg0751rueuk" path="res://Sprites/Player/FrogidleEye2.png" id="17"]
 [ext_resource type="AudioStream" uid="uid://nuv04jws0ym5" path="res://Sounds/Frog1/croak.mp3" id="17_cs4os"]
-[ext_resource type="Texture2D" uid="uid://bia0lbjcr6s0c" path="res://Sprites/Player/FrogTakeDamage.png" id="18"]
 [ext_resource type="AudioStream" uid="uid://hf3mqdpfkvj" path="res://Sounds/Frog1/TakeDamage.mp3" id="19"]
 [ext_resource type="PackedScene" uid="uid://c5cpg1sr7oi7a" path="res://Scene/UI/GUI.tscn" id="20_ce54u"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="21_mm38c"]
@@ -48,6 +53,32 @@ color_ramp = SubResource("GradientTexture1D_xwt24")
 
 [sub_resource type="SpriteFrames" id="3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wieul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abn74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mcusm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rr8ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4e47d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qayf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_km2lt")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6")
@@ -78,7 +109,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18")
+"texture": ExtResource("3_wieul")
 }],
 "loop": true,
 "name": &"TakeDamage",
@@ -215,14 +246,6 @@ _data = {
 
 [sub_resource type="SpriteFrames" id="4"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16")
-}],
-"loop": true,
-"name": &"Death",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1")
@@ -415,6 +438,63 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_kktoy"]
 radius = 36.0555
 
+[sub_resource type="Animation" id="Animation_t0h6o"]
+resource_name = "1p_cave"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.7, 1.7), Vector2(2.5, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:limit_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1050, -615, 180]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:limit_bottom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [540, 770, 1000]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:limit_left")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-4000, -2350]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4w7wb"]
+_data = {
+"1p_cave": SubResource("Animation_t0h6o")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 light_mask = 2
 scale = Vector2(0.55, 0.55)
@@ -436,10 +516,8 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"Tongue"
+animation = &"Fall"
 autoplay = "run"
-frame = 4
-frame_progress = 1.0
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
 libraries = {
@@ -453,6 +531,7 @@ position = Vector2(0, 13)
 scale = Vector2(0.32, 0.32)
 sprite_frames = SubResource("4")
 animation = &"idle"
+frame_progress = 0.674517
 flip_h = true
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="FrogPlayer"]
@@ -461,7 +540,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 35)
 rotation = 1.5708
 shape = SubResource("8")
@@ -470,23 +548,7 @@ shape = SubResource("8")
 position = Vector2(0, 35)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0n7av")
-
-[node name="CameraPlayer" type="Camera2D" parent="."]
-position = Vector2(0, -40)
-scale = Vector2(0.2, 0.2)
-zoom = Vector2(1.7, 1.7)
-process_callback = 0
-limit_bottom = 540
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.15
-drag_top_margin = 0.15
-drag_right_margin = 0.15
-drag_bottom_margin = 0.15
+disabled = true
 
 [node name="idleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_cs4os")
@@ -539,6 +601,31 @@ libraries = {
 position = Vector2(-104, 23)
 shape = SubResource("CircleShape2D_kktoy")
 debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
+
+[node name="CameraPlayer" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -40)
+scale = Vector2(0.2, 0.2)
+zoom = Vector2(1.7, 1.7)
+process_callback = 0
+limit_left = -4000
+limit_top = -1050
+limit_bottom = 540
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
+
+[node name="Animation_camera" type="AnimationPlayer" parent="CameraPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_4w7wb")
+}
 
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]

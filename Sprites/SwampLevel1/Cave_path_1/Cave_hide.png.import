@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlsuonn61toda"
-path="res://.godot/imported/FrogDeath.png-da58f269ccfa53a379e656256947b737.ctex"
+uid="uid://c7fq1xxjios3"
+path="res://.godot/imported/Cave_hide.png-f90cf02cb760ab9560d2eb0aa767a4c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/FrogDeath.png"
-dest_files=["res://.godot/imported/FrogDeath.png-da58f269ccfa53a379e656256947b737.ctex"]
+source_file="res://Sprites/SwampLevel1/Cave_path_1/Cave_hide.png"
+dest_files=["res://.godot/imported/Cave_hide.png-f90cf02cb760ab9560d2eb0aa767a4c7.ctex"]
 
 [params]
 

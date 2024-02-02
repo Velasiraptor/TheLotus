@@ -872,7 +872,6 @@ texture = ExtResource("15_qamau")
 sprite_frames = SubResource("7")
 animation = &"NY"
 autoplay = "NY"
-frame_progress = 0.240908
 script = ExtResource("19_36h70")
 
 [node name="Wave1" type="Sprite2D" parent="CenterContainer/Lily/WaterLily2"]

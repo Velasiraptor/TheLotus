@@ -72,7 +72,7 @@ size = Vector2(125.75, 128.75)
 size = Vector2(125.938, 105.344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvxd7"]
-size = Vector2(287.969, 32)
+size = Vector2(302.964, 90)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70ktg"]
 radius = 14.75
@@ -942,7 +942,7 @@ shape = SubResource("RectangleShape2D_lg86s")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
-position = Vector2(-1367.98, 321)
+position = Vector2(-1360.48, 341)
 shape = SubResource("RectangleShape2D_bvxd7")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 

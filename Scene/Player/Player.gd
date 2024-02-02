@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Player_frog
+class_name Player
 
 enum State { IDLE, WALK_LEFT, WALK_RIGHT, JUMP, TONGUE, TAKE_DAMAGE, DEATH }
 
@@ -15,12 +15,14 @@ var dustPatricle = load("res://Sprites/Player/Dust.png")
 var ind = 1
 var idleInd = 1
 
-var stamina_player := 3.0
 
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
+@onready var camera_player = %CameraPlayer
+
 
 func _ready():
+	camera_default()
 	max_HP()
 	$TongueAr/CollisionShape2D.disabled = true
 
@@ -39,7 +41,14 @@ func _physics_process(delta):
 func change_state(new_state: State): #функция изменения состояний
 	state = new_state
 
-func move():
+func camera_default(): # камера для игрока по умолчанию
+	camera_player.limit_bottom = 540
+	camera_player.limit_top = -1050
+	camera_player.limit_left = -4000
+	camera_player.zoom.x = 1.7
+	camera_player.zoom.y = 1.7
+
+func move(): #движение
 	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
 		change_state(State.WALK_LEFT)
 		vel.x = -speed
@@ -66,7 +75,7 @@ func move():
 		#vel.x = lerp(vel.x, 0.0, 0.2) Интерполяция
 		change_state(State.IDLE)
 
-func jump():
+func jump(): #прыжок
 	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
 		if vel.y > 0: #прыжок
 			change_state(State.JUMP)
@@ -93,7 +102,7 @@ func soundWalk(): #звук ходьбы
 		$walkSound.play()
 
 
-func animate():
+func animate(): #анимация
 	if Globals.actual_hp_player > 0:
 		if state == State.WALK_RIGHT:
 			frog_player.visible = false
@@ -146,7 +155,7 @@ func animate():
 			frog_player.play("idle")
 	else:
 		change_state(State.DEATH)
-		frog_player.play("Death")
+		side_frog_player.play("Death")
 		get_tree().call_group("GUI", "DeathIcon")
 
 func _on_timer_idle_tongue_timeout(): #Возвращает в idle после языка
@@ -194,18 +203,18 @@ func hurt(): #снятие здоровья
 	if Globals.actual_hp_player == 0.0: #Убит
 		change_state(State.DEATH)
 		vel.y = -400
-		side_frog_player.visible = false
-		frog_player.visible = true
-		frog_player.play("Death")
+		side_frog_player.visible = true
+		frog_player.visible = false
+		side_frog_player.play("Death")
 		get_tree().call_group("GUI", "DeathIcon")
 		$TimerDeath.start()
 		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
 
 func fullHurt(): #мгновенная смерть
 	Globals.actual_hp_player = 0
-	side_frog_player.visible = false
-	frog_player.visible = true
-	frog_player.play("Death")
+	side_frog_player.visible = true
+	frog_player.visible = false
+	side_frog_player.play("Death")
 	$FrogPlayer/EffectsAnim.play("Damage")
 	get_tree().call_group("GUI", "DeathIcon")
 	get_tree().call_group("GUI", "remove_always_hp")
@@ -229,3 +238,18 @@ func heal(): #лечение здоровья
 
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
+
+
+
+#КОД ДЛЯ ВЗАИМОДЕЙСТВИЙ С 1 УРОВНЕМ
+
+func change_camera_1p_cave(): # изменение камеры для игрока при входе в 1р пещеру
+	$CameraPlayer/Animation_camera.play("1p_cave", 0, 1.0)
+	$".".modulate = "737373" #добавление тени игроку
+
+func change_camera_default_1p_cave(): # изменение камеры для игрока при выходе из 1р пещеры
+	$".".modulate = "ffffff" #удаление тени игрока
+	if camera_player.limit_bottom != 1000:
+		$CameraPlayer/Animation_camera.play("1p_cave", 0, -1.0)
+	else:
+		$CameraPlayer/Animation_camera.play_backwards("1p_cave")
