@@ -41,7 +41,8 @@ func _physics_process(delta):
 func change_state(new_state: State): #функция изменения состояний
 	state = new_state
 
-func camera_default(): # камера для игрока по умолчанию
+func camera_default(): # камера и цвет для игрока по умолчанию
+	$".".modulate = "ffffff" #удаление тени игрока
 	camera_player.limit_bottom = 540
 	camera_player.limit_top = -1050
 	camera_player.limit_left = -4000
@@ -87,6 +88,10 @@ func jump(): #прыжок
 			side_frog_player.play("jump")
 			get_tree().call_group("GUI", "jumpIcon")
 			$jumpSound.play()
+			#if side_frog_player.flip_h == false and frog_player.flip_h == true: # Если добавить, то не сможет прыгать тупо вверх
+				#vel.x = speed
+			#else:
+				#vel.x = -speed
 	set_velocity(vel)
 	set_up_direction(Vector2.UP)
 	move_and_slide()
@@ -253,3 +258,7 @@ func change_camera_default_1p_cave(): # изменение камеры для �
 		$CameraPlayer/Animation_camera.play("1p_cave", 0, -1.0)
 	else:
 		$CameraPlayer/Animation_camera.play_backwards("1p_cave")
+
+func change_camera_1p_2p_cave():
+	$".".modulate = "737373" #добавление тени игроку
+	camera_player.limit_bottom = 1359

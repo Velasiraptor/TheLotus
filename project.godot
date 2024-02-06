@@ -21,7 +21,6 @@ config/use_hidden_project_data_directory.Windows=false
 [autoload]
 
 Globals="*res://Core/globals.gd"
-GGS="*res://addons/ggs/classes/ggs_globals.gd"
 
 [debug]
 
@@ -40,7 +39,7 @@ window/size/fullscreen=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GPTIntegration/plugin.cfg", "res://addons/random_timer/plugin.cfg")
+enabled=PackedStringArray("res://addons/random_timer/plugin.cfg")
 
 [gui]
 

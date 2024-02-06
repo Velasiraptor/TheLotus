@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=33 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/SwampLevel1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -10,16 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://bjb2y3y1ubnoi" path="res://Sprites/SwampLevel1/Swamp_path_7/Background_0.png" id="6_pej3d"]
 [ext_resource type="Texture2D" uid="uid://606lxe8laegt" path="res://Sprites/SwampLevel1/Swamp_path_8/Background_0.png" id="7_vhp8l"]
 [ext_resource type="Texture2D" uid="uid://8aj6pg11d825" path="res://Sprites/SwampLevel1/Swamp_path_9/Background_0.png" id="8_v6vpb"]
+[ext_resource type="PackedScene" uid="uid://cu5bs51lw23t" path="res://Scene/SwampLevel1/1p_2p_Cave/1p_2p_cave.tscn" id="12_8bes2"]
 [ext_resource type="PackedScene" uid="uid://edr71rj6t0gg" path="res://Scene/SwampLevel1/1p_Cave/1p_cave.tscn" id="12_a05vn"]
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="15_85155"]
 [ext_resource type="Texture2D" uid="uid://ckb7enwjig1bf" path="res://Sprites/SwampLevel1/Swamp_path_1/Stump.png" id="16_p1gel"]
+[ext_resource type="Texture2D" uid="uid://coxjyxjgfp33a" path="res://Sprites/SwampLevel1/Items/Trash/Trash_bag.png" id="17_7dh4p"]
 [ext_resource type="Texture2D" uid="uid://buwrh72yj7bgo" path="res://Sprites/SwampLevel1/Cave_path_1/Сave_entrance.png" id="17_b6h7v"]
 [ext_resource type="Shader" path="res://Shaders/GodRays.gdshader" id="17_db6n5"]
 [ext_resource type="Texture2D" uid="uid://bd2wqem48vu6w" path="res://Sprites/SwampLevel1/Items/Patch_Rock.png" id="18_4ycxt"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="18_5hyka"]
+[ext_resource type="Texture2D" uid="uid://d8lfd5nawp61" path="res://Sprites/SwampLevel1/Swamp_path_1/Tree_foliage.png" id="22_oruov"]
+[ext_resource type="Texture2D" uid="uid://cq64cj5jkn58q" path="res://Sprites/SwampLevel1/Items/Hole_top.png" id="24_xfc7i"]
+[ext_resource type="Texture2D" uid="uid://cr3s0ptlqodcv" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2_top.png" id="25_q86qb"]
 [ext_resource type="Texture2D" uid="uid://fmtaxqrf5efm" path="res://Sprites/SwampLevel1/Tree_path_3/Tree.png" id="35_1ao5p"]
 [ext_resource type="Texture2D" uid="uid://dm5um4l8n1q3b" path="res://Sprites/SwampLevel1/Tree_path_3/Shadow_tree.png" id="36_5dotl"]
-[ext_resource type="Texture2D" uid="uid://db8c18e7d7r36" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2.png" id="49_5t37n"]
 [ext_resource type="Texture2D" uid="uid://dgy15f4uh2ldh" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8.png" id="50_wnjiy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_448u6"]
@@ -34,9 +38,36 @@ shader_parameter/speed = 1.0
 shader_parameter/ray1_density = 8.0
 shader_parameter/ray2_density = 30.0
 shader_parameter/ray2_intensity = 0.3
-shader_parameter/color = Color(1, 0.901961, 0.65098, 0.184314)
+shader_parameter/color = Color(1, 0.901961, 0.65098, 0.345098)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
+
+[sub_resource type="Animation" id="Animation_lx82b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1578.39, 447.529)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.771, 2.264)]
+}
 
 [sub_resource type="Animation" id="Animation_a7s7m"]
 resource_name = "ray"
@@ -64,33 +95,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1.70966, 2.26409), Vector2(1.61277, 9.91485)]
-}
-
-[sub_resource type="Animation" id="Animation_lx82b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1578.39, 447.529)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.771, 2.264)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n1qg6"]
@@ -170,8 +174,12 @@ offset_right = -1300.0
 offset_bottom = 882.0
 color = Color(0.0666667, 0.0588235, 0.0470588, 1)
 
+[node name="1p_Cave" parent="." instance=ExtResource("12_a05vn")]
+position = Vector2(-1782, 478)
+
+[node name="1p_2p_Cave" parent="." instance=ExtResource("12_8bes2")]
+
 [node name="3p_Tree" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(5176, -499)
 
 [node name="3p_Tree_sprite" type="Sprite2D" parent="3p_Tree"]
@@ -183,49 +191,7 @@ show_behind_parent = true
 position = Vector2(-71, 800)
 texture = ExtResource("36_5dotl")
 
-[node name="1p_Cave" parent="." instance=ExtResource("12_a05vn")]
-position = Vector2(-1782, 478)
-
-[node name="1p_2p_Cave" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2(1304, 1126)
-
-[node name="1p_2p_Cave_sprite" type="Sprite2D" parent="1p_2p_Cave"]
-texture = ExtResource("49_5t37n")
-
-[node name="Patches" type="Node2D" parent="1p_2p_Cave/1p_2p_Cave_sprite"]
-show_behind_parent = true
-
-[node name="ColorRect4" type="ColorRect" parent="1p_2p_Cave/1p_2p_Cave_sprite/Patches"]
-offset_left = 911.0
-offset_top = 166.0
-offset_right = 1634.0
-offset_bottom = 370.0
-color = Color(0.00784314, 0, 0, 1)
-
-[node name="ColorRect" type="ColorRect" parent="1p_2p_Cave/1p_2p_Cave_sprite/Patches"]
-offset_left = -1694.0
-offset_top = -281.0
-offset_right = 1635.0
-offset_bottom = -169.0
-color = Color(0.0352941, 0.027451, 0.0117647, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="1p_2p_Cave/1p_2p_Cave_sprite/Patches"]
-offset_left = -1858.0
-offset_top = -280.0
-offset_right = -1587.0
-offset_bottom = 256.0
-color = Color(0.0352941, 0.027451, 0.0117647, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="1p_2p_Cave/1p_2p_Cave_sprite/Patches"]
-offset_left = -1859.0
-offset_top = 178.0
-offset_right = 928.0
-offset_bottom = 371.0
-color = Color(0.0352941, 0.027451, 0.0117647, 1)
-
 [node name="7_8p_Cave7-8" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(21670, 1562)
 
 [node name="7_8p_Cave7-8_sprite" type="Sprite2D" parent="7_8p_Cave7-8"]
@@ -256,9 +222,15 @@ offset_bottom = -433.0
 color = Color(0.00784314, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(-1115, 349)
+position = Vector2(4304, 338)
 
 [node name="Platforms_top" type="Node2D" parent="."]
+
+[node name="1p_TrashBag" type="Sprite2D" parent="Platforms_top"]
+modulate = Color(0.329412, 0.329412, 0.329412, 1)
+position = Vector2(-2158, -128)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_7dh4p")
 
 [node name="1p_GodRay" type="Sprite2D" parent="Platforms_top"]
 unique_name_in_owner = true
@@ -314,6 +286,130 @@ texture = SubResource("CompressedTexture2D_23o76")
 [node name="1p_Stump" type="Sprite2D" parent="Platforms_top"]
 position = Vector2(-1324, 392)
 texture = ExtResource("16_p1gel")
+
+[node name="1p_TreeFoliage" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(1186, -261)
+scale = Vector2(2, 2)
+texture = ExtResource("22_oruov")
+
+[node name="1p_Hole_ColorRect_green" type="ColorRect" parent="Platforms_top"]
+offset_left = -177.0
+offset_top = 476.0
+offset_right = 203.0
+offset_bottom = 542.0
+color = Color(0.443137, 0.482353, 0.313726, 1)
+
+[node name="2p_Hole_ColorRect_green" type="ColorRect" parent="Platforms_top"]
+offset_left = 2208.0
+offset_top = 452.0
+offset_right = 2601.0
+offset_bottom = 541.0
+color = Color(0.443137, 0.482353, 0.313726, 1)
+
+[node name="2p_ColorRect_green" type="ColorRect" parent="Platforms_top/2p_Hole_ColorRect_green"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = -24.0
+offset_right = 389.0
+offset_bottom = 15.0
+color = Color(0.443137, 0.482353, 0.313726, 1)
+
+[node name="1p_2p_Cave_Patches" type="Node2D" parent="Platforms_top"]
+show_behind_parent = true
+position = Vector2(1302, 1181)
+
+[node name="1p_cave12_GodRay" type="Sprite2D" parent="Platforms_top/1p_2p_Cave_Patches"]
+material = SubResource("ShaderMaterial_448u6")
+position = Vector2(-1261, -64)
+rotation = 0.360484
+scale = Vector2(3.63865, 3.45212)
+texture = ExtResource("18_5hyka")
+
+[node name="1p_cave12_GodRay2" type="Sprite2D" parent="Platforms_top/1p_2p_Cave_Patches"]
+material = SubResource("ShaderMaterial_448u6")
+position = Vector2(1070, -85)
+rotation = -0.177305
+scale = Vector2(3.63865, 3.45212)
+texture = ExtResource("18_5hyka")
+flip_h = true
+
+[node name="ColorRect6" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
+offset_left = 1615.0
+offset_top = -170.0
+offset_right = 2036.0
+offset_bottom = -109.0
+color = Color(0.0156863, 0.0117647, 0.00392157, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+offset_left = 926.0
+offset_top = 166.0
+offset_right = 2051.0
+offset_bottom = 370.0
+color = Color(0.00784314, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+offset_left = -1694.0
+offset_top = -640.0
+offset_right = 2035.0
+offset_bottom = -169.0
+color = Color(0.0352941, 0.027451, 0.0117647, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+offset_left = -2230.0
+offset_top = -640.0
+offset_right = -1587.0
+offset_bottom = 372.0
+color = Color(0.0352941, 0.027451, 0.0117647, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+offset_left = -1859.0
+offset_top = 178.0
+offset_right = 928.0
+offset_bottom = 371.0
+color = Color(0.0352941, 0.027451, 0.0117647, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
+offset_left = 1612.0
+offset_top = -121.0
+offset_right = 2051.0
+offset_bottom = 180.0
+color = Color(0.00784314, 0, 0, 1)
+
+[node name="HoleTop_Cave1-2_1" type="Sprite2D" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
+position = Vector2(-1275, -175)
+rotation = 0.00411743
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("24_xfc7i")
+flip_v = true
+
+[node name="HoleTop_Cave1-2_2" type="Sprite2D" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
+position = Vector2(1087, -174)
+rotation = -0.00151739
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("24_xfc7i")
+flip_h = true
+flip_v = true
+
+[node name="Cave1-2Top" type="Sprite2D" parent="Platforms_top/1p_2p_Cave_Patches"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+position = Vector2(-95, -19)
+texture = ExtResource("25_q86qb")
+
+[node name="1p_HoleTop" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(22, 478)
+texture = ExtResource("24_xfc7i")
+
+[node name="2p_HoleTop" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(2386, 448)
+rotation = -0.0394432
+texture = ExtResource("24_xfc7i")
+flip_h = true
 
 [node name="Top" type="Node2D" parent="."]
 
