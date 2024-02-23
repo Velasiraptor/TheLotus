@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=37 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/SwampLevel1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://8aj6pg11d825" path="res://Sprites/SwampLevel1/Swamp_path_9/Background_0.png" id="8_v6vpb"]
 [ext_resource type="PackedScene" uid="uid://cu5bs51lw23t" path="res://Scene/SwampLevel1/1p_2p_Cave/1p_2p_cave.tscn" id="12_8bes2"]
 [ext_resource type="PackedScene" uid="uid://edr71rj6t0gg" path="res://Scene/SwampLevel1/1p_Cave/1p_cave.tscn" id="12_a05vn"]
+[ext_resource type="PackedScene" uid="uid://d1wtnf64signc" path="res://Scene/SwampLevel1/3p_Tree/3p_tree.tscn" id="13_rcjdu"]
+[ext_resource type="PackedScene" uid="uid://duei7yc4bnxv7" path="res://Scene/SwampLevel1/7_8p_cave/7_8p_cave_7_8.tscn" id="14_cx4hp"]
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="15_85155"]
 [ext_resource type="Texture2D" uid="uid://ckb7enwjig1bf" path="res://Sprites/SwampLevel1/Swamp_path_1/Stump.png" id="16_p1gel"]
 [ext_resource type="Texture2D" uid="uid://coxjyxjgfp33a" path="res://Sprites/SwampLevel1/Items/Trash/Trash_bag.png" id="17_7dh4p"]
@@ -22,9 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://d8lfd5nawp61" path="res://Sprites/SwampLevel1/Swamp_path_1/Tree_foliage.png" id="22_oruov"]
 [ext_resource type="Texture2D" uid="uid://cq64cj5jkn58q" path="res://Sprites/SwampLevel1/Items/Hole_top.png" id="24_xfc7i"]
 [ext_resource type="Texture2D" uid="uid://cr3s0ptlqodcv" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2_top.png" id="25_q86qb"]
-[ext_resource type="Texture2D" uid="uid://fmtaxqrf5efm" path="res://Sprites/SwampLevel1/Tree_path_3/Tree.png" id="35_1ao5p"]
-[ext_resource type="Texture2D" uid="uid://dm5um4l8n1q3b" path="res://Sprites/SwampLevel1/Tree_path_3/Shadow_tree.png" id="36_5dotl"]
-[ext_resource type="Texture2D" uid="uid://dgy15f4uh2ldh" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8.png" id="50_wnjiy"]
+[ext_resource type="PackedScene" uid="uid://8pg1jibr8hkx" path="res://Scene/SwampLevel1/3p_Tree/3p_foliage_area.tscn" id="27_36g05"]
+[ext_resource type="Texture2D" uid="uid://dnuj470e57dyo" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_static.png" id="29_kjcst"]
+[ext_resource type="Texture2D" uid="uid://845mrghmwpsm" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area.png" id="30_dbbit"]
+[ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrl0"]
+size = Vector2(349.5, 228)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_448u6"]
 shader = ExtResource("17_db6n5")
@@ -113,55 +119,61 @@ load_path = "res://.godot/imported/Patch_Rock.png-b116aaef69b808e69e76e879cd515b
 load_path = "res://.godot/imported/Patch_Rock.png-b116aaef69b808e69e76e879cd515b47.ctex"
 
 [node name="SwampLevel1" type="Node2D" groups=["Level1"]]
+position = Vector2(0, 1)
 script = ExtResource("1_ukyx4")
 
 [node name="Backgrounds" type="Node2D" parent="."]
 
-[node name="CanvasLayer_0" type="Node2D" parent="Backgrounds"]
+[node name="CanvasLayer_0" type="ParallaxBackground" parent="Backgrounds"]
 
-[node name="Background" type="TextureRect" parent="Backgrounds/CanvasLayer_0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/CanvasLayer_0"]
+
+[node name="Background" type="TextureRect" parent="Backgrounds/CanvasLayer_0/ParallaxLayer"]
 offset_left = -2443.0
-offset_top = -538.0
+offset_top = -541.0
 offset_right = 29452.0
-offset_bottom = 542.0
+offset_bottom = 539.0
 texture = ExtResource("1_c3xjh")
 
-[node name="CanvasLayer_1" type="Node2D" parent="Backgrounds"]
+[node name="CanvasLayer_1" type="ParallaxBackground" parent="Backgrounds"]
+layer = -99
 
-[node name="1p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/CanvasLayer_1"]
+
+[node name="1p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(-800, -145)
 texture = ExtResource("2_stga5")
 
-[node name="2p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="2p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(1545, -146)
 texture = ExtResource("3_8nt72")
 
-[node name="3p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="3p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(4622, -163)
 texture = ExtResource("4_w21ry")
 
-[node name="4p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="4p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(8624, -161)
 texture = ExtResource("5_kvnag")
 
-[node name="5p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="5p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(13310, -85)
 texture = ExtResource("5_kvnag")
 flip_h = true
 
-[node name="6p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="6p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(16307, -154)
 texture = ExtResource("5_kvnag")
 
-[node name="7p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="7p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(20765, -123)
 texture = ExtResource("6_pej3d")
 
-[node name="8p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="8p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(25253, -54)
 texture = ExtResource("7_vhp8l")
 
-[node name="9p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1"]
+[node name="9p_Background" type="Sprite2D" parent="Backgrounds/CanvasLayer_1/ParallaxLayer"]
 position = Vector2(27257, -11)
 texture = ExtResource("8_v6vpb")
 
@@ -179,50 +191,36 @@ position = Vector2(-1782, 478)
 
 [node name="1p_2p_Cave" parent="." instance=ExtResource("12_8bes2")]
 
-[node name="3p_Tree" type="StaticBody2D" parent="."]
+[node name="3p_Tree" parent="." instance=ExtResource("13_rcjdu")]
 position = Vector2(5176, -499)
 
-[node name="3p_Tree_sprite" type="Sprite2D" parent="3p_Tree"]
-texture = ExtResource("35_1ao5p")
+[node name="7_8p_Cave7-8" parent="." instance=ExtResource("14_cx4hp")]
+position = Vector2(25215, 2098)
 
-[node name="ShadowTree" type="Sprite2D" parent="3p_Tree/3p_Tree_sprite"]
-modulate = Color(1, 1, 1, 0.490196)
-show_behind_parent = true
-position = Vector2(-71, 800)
-texture = ExtResource("36_5dotl")
+[node name="Camera_Left_Exit" type="Area2D" parent="7_8p_Cave7-8"]
+collision_mask = 2
 
-[node name="7_8p_Cave7-8" type="StaticBody2D" parent="."]
-position = Vector2(21670, 1562)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
+position = Vector2(-4400, -1078)
+shape = SubResource("RectangleShape2D_yfrl0")
+debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
-[node name="7_8p_Cave7-8_sprite" type="Sprite2D" parent="7_8p_Cave7-8"]
-texture = ExtResource("50_wnjiy")
+[node name="MarkerLeft" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
+position = Vector2(-1348, -1078)
 
-[node name="Patches" type="Node2D" parent="7_8p_Cave7-8/7_8p_Cave7-8_sprite"]
-show_behind_parent = true
+[node name="Camera_Right_Exit" type="Area2D" parent="7_8p_Cave7-8"]
+collision_mask = 2
 
-[node name="ColorRect" type="ColorRect" parent="7_8p_Cave7-8/7_8p_Cave7-8_sprite/Patches"]
-offset_left = 1630.0
-offset_top = -820.0
-offset_right = 2001.0
-offset_bottom = 455.0
-color = Color(0.00784314, 0, 0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
+position = Vector2(-2355, -1084)
+shape = SubResource("RectangleShape2D_yfrl0")
+debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
-[node name="ColorRect2" type="ColorRect" parent="7_8p_Cave7-8/7_8p_Cave7-8_sprite/Patches"]
-offset_left = -1997.0
-offset_top = -772.0
-offset_right = -1626.0
-offset_bottom = 463.0
-color = Color(0.00784314, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="7_8p_Cave7-8/7_8p_Cave7-8_sprite/Patches"]
-offset_left = -1707.0
-offset_top = -887.0
-offset_right = 1682.0
-offset_bottom = -433.0
-color = Color(0.00784314, 0, 0, 1)
+[node name="MarkerRight" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
+position = Vector2(1210, -1090)
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(4304, 338)
+position = Vector2(20546, 358)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 
@@ -233,7 +231,6 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_7dh4p")
 
 [node name="1p_GodRay" type="Sprite2D" parent="Platforms_top"]
-unique_name_in_owner = true
 material = SubResource("ShaderMaterial_448u6")
 position = Vector2(-1578.39, 447.529)
 rotation = 1.1487
@@ -241,6 +238,7 @@ scale = Vector2(1.771, 2.264)
 texture = ExtResource("18_5hyka")
 
 [node name="Ray_1p_Cave_animation" type="AnimationPlayer" parent="Platforms_top/1p_GodRay"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_n1qg6")
 }
@@ -296,14 +294,14 @@ texture = ExtResource("22_oruov")
 offset_left = -177.0
 offset_top = 476.0
 offset_right = 203.0
-offset_bottom = 542.0
+offset_bottom = 540.0
 color = Color(0.443137, 0.482353, 0.313726, 1)
 
 [node name="2p_Hole_ColorRect_green" type="ColorRect" parent="Platforms_top"]
 offset_left = 2208.0
 offset_top = 452.0
 offset_right = 2601.0
-offset_bottom = 541.0
+offset_bottom = 539.0
 color = Color(0.443137, 0.482353, 0.313726, 1)
 
 [node name="2p_ColorRect_green" type="ColorRect" parent="Platforms_top/2p_Hole_ColorRect_green"]
@@ -351,17 +349,17 @@ color = Color(0.00784314, 0, 0, 1)
 [node name="ColorRect" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
 modulate = Color(0.45098, 0.45098, 0.45098, 1)
 offset_left = -1694.0
-offset_top = -640.0
+offset_top = -641.0
 offset_right = 2035.0
-offset_bottom = -169.0
+offset_bottom = -170.0
 color = Color(0.0352941, 0.027451, 0.0117647, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
 modulate = Color(0.45098, 0.45098, 0.45098, 1)
 offset_left = -2230.0
-offset_top = -640.0
+offset_top = -641.0
 offset_right = -1587.0
-offset_bottom = 372.0
+offset_bottom = 371.0
 color = Color(0.0352941, 0.027451, 0.0117647, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Platforms_top/1p_2p_Cave_Patches"]
@@ -411,6 +409,114 @@ rotation = -0.0394432
 texture = ExtResource("24_xfc7i")
 flip_h = true
 
+[node name="3p_FoliageAreaSmall" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(4293, -1004)
+texture = ExtResource("31_m5vf0")
+
+[node name="3p_FoliageArea2" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(4281, -1038)
+rotation = -0.256511
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("30_dbbit")
+
+[node name="3p_FoliageStatic" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(5038, -1171)
+texture = ExtResource("29_kjcst")
+
+[node name="3p_FoliageArea" parent="Platforms_top" instance=ExtResource("27_36g05")]
+position = Vector2(4738, -729)
+
+[node name="7p_Hole_ColorRect_green" type="ColorRect" parent="Platforms_top"]
+offset_left = 20665.0
+offset_top = 480.0
+offset_right = 20952.0
+offset_bottom = 539.0
+color = Color(0.537255, 0.568627, 0.372549, 1)
+
+[node name="7p_Hole_ColorRect_green" type="ColorRect" parent="Platforms_top/7p_Hole_ColorRect_green"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 8.0
+offset_right = 291.0
+offset_bottom = 56.0
+rotation = -0.16409
+color = Color(0.537255, 0.568627, 0.372549, 1)
+
+[node name="7p_Hole_ColorRect_green2" type="ColorRect" parent="Platforms_top/7p_Hole_ColorRect_green"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 27.0
+offset_right = 301.0
+offset_bottom = 60.0
+rotation = -0.0064996
+color = Color(0.537255, 0.568627, 0.372549, 1)
+
+[node name="7p_Hole_ColorRect_green3" type="ColorRect" parent="Platforms_top/7p_Hole_ColorRect_green"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -27.0
+offset_right = 44.0
+offset_bottom = 13.0
+rotation = 0.304678
+color = Color(0.537255, 0.568627, 0.372549, 1)
+
+[node name="7p_HoleTop" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(20855, 472)
+texture = ExtResource("24_xfc7i")
+
+[node name="8p_Hole_ColorRect_green" type="ColorRect" parent="Platforms_top"]
+offset_left = 22695.0
+offset_top = 448.0
+offset_right = 23017.0
+offset_bottom = 541.0
+color = Color(0.443137, 0.482353, 0.305882, 1)
+
+[node name="8p_HoleTop" type="Sprite2D" parent="Platforms_top"]
+position = Vector2(22836, 444)
+rotation = -0.0149946
+texture = ExtResource("24_xfc7i")
+flip_h = true
+
+[node name="7p_8p_Cave_Patches" type="Node2D" parent="Platforms_top"]
+
+[node name="ColorRect" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
+offset_left = 26831.0
+offset_top = 641.0
+offset_right = 27202.0
+offset_bottom = 2353.0
+color = Color(0.00784314, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
+offset_left = 23204.0
+offset_top = 656.0
+offset_right = 23575.0
+offset_bottom = 2361.0
+color = Color(0.00784314, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
+offset_left = 19857.0
+offset_top = 539.0
+offset_right = 27204.0
+offset_bottom = 1695.0
+color = Color(0.00784314, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
+offset_left = 17718.0
+offset_top = 545.0
+offset_right = 23276.0
+offset_bottom = 5271.0
+color = Color(0.00784314, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
+offset_left = 23103.0
+offset_top = 2298.0
+offset_right = 27224.0
+offset_bottom = 5270.0
+color = Color(0.00784314, 0, 0, 1)
+
 [node name="Top" type="Node2D" parent="."]
 
 [node name="Bottom" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="7_8p_Cave7-8/Camera_Left_Exit" to="." method="_on_camera_left_exit_body_entered"]
+[connection signal="body_entered" from="7_8p_Cave7-8/Camera_Right_Exit" to="." method="_on_camera_right_exit_body_entered"]

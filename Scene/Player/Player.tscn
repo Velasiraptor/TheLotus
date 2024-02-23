@@ -516,7 +516,7 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"Fall"
+animation = &"Death"
 autoplay = "run"
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
@@ -543,12 +543,12 @@ libraries = {
 position = Vector2(0, 35)
 rotation = 1.5708
 shape = SubResource("8")
+disabled = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0n7av")
-disabled = true
 
 [node name="idleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_cs4os")
@@ -626,6 +626,22 @@ drag_bottom_margin = 0.15
 libraries = {
 "": SubResource("AnimationLibrary_4w7wb")
 }
+
+[node name="Cave_7_8_CameraPlayer" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -40)
+scale = Vector2(0.2, 0.2)
+zoom = Vector2(1.7, 1.7)
+limit_bottom = 3200
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
 
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]

@@ -40,6 +40,21 @@ animations = [{
 radius = 14.0
 height = 76.0
 
+[sub_resource type="Animation" id="Animation_3gjnb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -13)]
+}
+
 [sub_resource type="Animation" id="Animation_h6fxv"]
 resource_name = "animation_mushroom_jump"
 length = 0.1
@@ -56,25 +71,49 @@ tracks/0/keys = {
 "values": [Vector2(0, 15), Vector2(0, -13)]
 }
 
-[sub_resource type="Animation" id="Animation_3gjnb"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jwrb"]
+_data = {
+"RESET": SubResource("Animation_3gjnb"),
+"animation_mushroom_jump": SubResource("Animation_h6fxv")
+}
+
+[sub_resource type="Animation" id="Animation_vqd52"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/path = NodePath("MushroomDust:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -13)]
+"values": [Vector2(0, -14)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jwrb"]
-_data = {
-"RESET": SubResource("Animation_3gjnb"),
-"animation_mushroom_jump": SubResource("Animation_h6fxv")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MushroomDust:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MushroomDust:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_8ko60"]
@@ -115,45 +154,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.174533]
-}
-
-[sub_resource type="Animation" id="Animation_vqd52"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MushroomDust:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -14)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MushroomDust:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MushroomDust:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cu60a"]
@@ -230,6 +230,7 @@ libraries = {
 
 [node name="RandomTimer_dust" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 script = ExtResource("7_m0ddu")
 min_time = 10.0
 max_time = 15.0

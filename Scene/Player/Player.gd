@@ -1,7 +1,16 @@
 extends CharacterBody2D
 class_name Player
 
-enum State { IDLE, WALK_LEFT, WALK_RIGHT, JUMP, TONGUE, TAKE_DAMAGE, DEATH }
+enum State { 
+	IDLE, 
+	WALK_LEFT, 
+	WALK_RIGHT, 
+	JUMP, 
+	TONGUE, 
+	TAKE_DAMAGE, 
+	DEATH,
+	FALL
+}
 
 var state := State.IDLE
 
@@ -9,16 +18,21 @@ var state := State.IDLE
 @export var Jump_speed := 400
 @export var jump_force := 1000
 @export var gravity := 2200
+@export var length_damage_fall := 1500
 
 var vel = Vector2(0, 0)
+var camera_player_position = Vector2(0, -40)
 var dustPatricle = load("res://Sprites/Player/Dust.png")
 var ind = 1
 var idleInd = 1
-
+var ind_fall_damage := false 
+var ind_not_fall_damage := false 
 
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
 @onready var camera_player = %CameraPlayer
+@onready var cave_7_8_camera_player = %Cave_7_8_CameraPlayer
+
 
 
 func _ready():
@@ -31,10 +45,13 @@ func _physics_process(delta):
 		move()
 		jump()
 		animate()
+		fall_damage_state()
 		emit_player()
 		shadow()
 		soundIdle()
 		soundWalk()
+		if vel.y >= length_damage_fall and ind_not_fall_damage == false: #урон от падения
+			ind_fall_damage = true
 		vel.y += gravity * delta
 
 
@@ -42,10 +59,12 @@ func change_state(new_state: State): #функция изменения сост
 	state = new_state
 
 func camera_default(): # камера и цвет для игрока по умолчанию
+	camera_player.make_current()
 	$".".modulate = "ffffff" #удаление тени игрока
 	camera_player.limit_bottom = 540
 	camera_player.limit_top = -1050
 	camera_player.limit_left = -4000
+	camera_player.limit_right = 10000000
 	camera_player.zoom.x = 1.7
 	camera_player.zoom.y = 1.7
 
@@ -79,6 +98,7 @@ func move(): #движение
 func jump(): #прыжок
 	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
 		if vel.y > 0: #прыжок
+			ind_fall_damage = false
 			change_state(State.JUMP)
 			idleInd = 0
 			vel.y -= jump_force
@@ -97,6 +117,8 @@ func jump(): #прыжок
 	move_and_slide()
 	vel = velocity
 
+func drop(): #чтобы при нажатии вниз, игрок падал с конкретных платформ
+	position.y += 1
 
 func soundIdle(): #звук при стоячей анимации
 	if frog_player.visible == true and frog_player.frame == 32:
@@ -122,6 +144,7 @@ func animate(): #анимация
 				$ParticlesPlayer.explosiveness = 0.4
 				$ParticlesPlayer.process_material.gravity.y = 0
 			elif vel.y > 0 and not $RayCastFall.is_colliding():#падение
+				state == State.FALL
 				frog_player.visible = false
 				side_frog_player.visible = true
 				side_frog_player.play("Fall") 
@@ -142,6 +165,7 @@ func animate(): #анимация
 				frog_player.visible = false
 				side_frog_player.visible = true
 				side_frog_player.play("Fall") #падение
+				state == State.FALL
 				get_tree().call_group("GUI", "idleIcon")
 		elif state == State.TONGUE and Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1:
 			side_frog_player.visible = true
@@ -158,14 +182,21 @@ func animate(): #анимация
 			side_frog_player.visible = false
 			frog_player.visible = true
 			frog_player.play("idle")
-	else:
-		change_state(State.DEATH)
-		side_frog_player.play("Death")
-		get_tree().call_group("GUI", "DeathIcon")
 
 func _on_timer_idle_tongue_timeout(): #Возвращает в idle после языка
 	if side_frog_player.animation == "Tongue":
 		change_state(State.IDLE)
+
+func fall_damage_state(): #урон после падения
+	if ind_fall_damage == true and is_on_floor() and ind_not_fall_damage == false:
+		fullHurt()
+		ind_fall_damage = false
+func not_fall_damage_state(): #функция предотвращающая урон от падения
+	ind_not_fall_damage = true
+	ind_fall_damage = false
+	await get_tree().create_timer(3.0).timeout
+	ind_not_fall_damage = false
+	
 
 func indTrue():
 	ind = 1
@@ -179,13 +210,13 @@ func shadow():
 		$Shadow.visible = false
 
 func emit_player():
-	if state == State.IDLE || state == State.DEATH || state == State.TONGUE:
+	if state == State.IDLE || state == State.DEATH || state == State.TONGUE || vel.y != 0:
 		$ParticlesPlayer.emitting = false
 	else:
 		$ParticlesPlayer.emitting = true
 
 func end_game():
-	$"../GameOver/GameOver".visible = true
+	#$"../GameOver/GameOver".visible = true
 	get_tree().call_group("GameOver", "end")
 
 func max_HP(): #в начале уровня высчитывает, сколько всего здоровья
@@ -193,8 +224,8 @@ func max_HP(): #в начале уровня высчитывает, сколь�
 	get_tree().call_group("GUI", "max_icon_hp", Globals.count_max_hp_player)
 
 func hurt(): #снятие здоровья
-	Globals.actual_hp_player -= 0.5
 	if Globals.actual_hp_player > 0.0 and Globals.actual_hp_player != 0.0:
+		Globals.actual_hp_player -= 0.5
 		change_state(State.TAKE_DAMAGE)
 		frog_player.visible = false
 		side_frog_player.visible = true
@@ -248,6 +279,7 @@ func _on_TimerDeath_timeout(): #время появления меню гейм�
 
 #КОД ДЛЯ ВЗАИМОДЕЙСТВИЙ С 1 УРОВНЕМ
 
+#ПЕЩЕРА 1p
 func change_camera_1p_cave(): # изменение камеры для игрока при входе в 1р пещеру
 	$CameraPlayer/Animation_camera.play("1p_cave", 0, 1.0)
 	$".".modulate = "737373" #добавление тени игроку
@@ -259,6 +291,24 @@ func change_camera_default_1p_cave(): # изменение камеры для �
 	else:
 		$CameraPlayer/Animation_camera.play_backwards("1p_cave")
 
+#ПЕЩЕРА 1p_2p
 func change_camera_1p_2p_cave():
 	$".".modulate = "737373" #добавление тени игроку
 	camera_player.limit_bottom = 1359
+	not_fall_damage_state()
+
+#ДЕРЕВО 3p
+func change_camera_3p_tree():
+	camera_player.limit_left = 4150
+	camera_player.limit_right = 6200
+	camera_player.limit_top = -2000
+
+#ПЕЩЕРА 7p_8p
+func change_camera_7p_8p_cave():
+	$".".modulate = "737373" #добавление тени игроку
+	camera_player.limit_bottom = 3200
+	not_fall_damage_state()
+func change_camera_7p_8p_in_cave():
+	cave_7_8_camera_player.make_current()
+
+

@@ -28,6 +28,7 @@ func _on_body_entered(body): # отскок от гриба
 		sprite_jumping_mushroom.play("jumping", 1.0)
 		active = 0
 		$Animation_mushroom.play_backwards("animation_mushroom_jump")
+		get_tree().call_group("Player", "not_fall_damage_state")
 func _on_body_exited(body):
 	if body.has_method("hurt") and sprite_jumping_mushroom.frame == 2:
 		$Timer_recovery.start()
