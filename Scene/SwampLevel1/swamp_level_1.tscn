@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=39 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/SwampLevel1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -26,11 +26,15 @@
 [ext_resource type="Texture2D" uid="uid://cr3s0ptlqodcv" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2_top.png" id="25_q86qb"]
 [ext_resource type="PackedScene" uid="uid://8pg1jibr8hkx" path="res://Scene/SwampLevel1/3p_Tree/3p_foliage_area.tscn" id="27_36g05"]
 [ext_resource type="Texture2D" uid="uid://dnuj470e57dyo" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_static.png" id="29_kjcst"]
+[ext_resource type="Texture2D" uid="uid://dcaw3ffgclehu" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8_top.png" id="29_mf758"]
 [ext_resource type="Texture2D" uid="uid://845mrghmwpsm" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area.png" id="30_dbbit"]
 [ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrl0"]
 size = Vector2(349.5, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwn5a"]
+size = Vector2(440, 35)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_448u6"]
 shader = ExtResource("17_db6n5")
@@ -197,30 +201,68 @@ position = Vector2(5176, -499)
 [node name="7_8p_Cave7-8" parent="." instance=ExtResource("14_cx4hp")]
 position = Vector2(25215, 2098)
 
-[node name="Camera_Left_Exit" type="Area2D" parent="7_8p_Cave7-8"]
+[node name="Camera_Left_Entered" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
-position = Vector2(-4400, -1078)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Left_Entered"]
+position = Vector2(-4399, -1115)
 shape = SubResource("RectangleShape2D_yfrl0")
 debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
-[node name="MarkerLeft" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
-position = Vector2(-1348, -1078)
+[node name="MarkerLeft_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Entered"]
+position = Vector2(-1302, -968)
+
+[node name="Camera_Right_Entered" type="Area2D" parent="7_8p_Cave7-8"]
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Right_Entered"]
+position = Vector2(-2360, -1098)
+shape = SubResource("RectangleShape2D_yfrl0")
+debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
+
+[node name="MarkerRight_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Entered"]
+position = Vector2(1050, -927)
+
+[node name="Camera_Left_Exit" type="Area2D" parent="7_8p_Cave7-8"]
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
+position = Vector2(-1359, -850)
+shape = SubResource("RectangleShape2D_xwn5a")
+debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
+
+[node name="MarkerLeft_Exit" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
+position = Vector2(-4403, -1367)
 
 [node name="Camera_Right_Exit" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
-position = Vector2(-2355, -1084)
-shape = SubResource("RectangleShape2D_yfrl0")
-debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
+position = Vector2(1203, -812)
+shape = SubResource("RectangleShape2D_xwn5a")
+debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
 
-[node name="MarkerRight" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
-position = Vector2(1210, -1090)
+[node name="MarkerRight_Exit" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
+position = Vector2(-2359, -1358)
+
+[node name="AreaJump_Player" type="Area2D" parent="7_8p_Cave7-8"]
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/AreaJump_Player"]
+position = Vector2(-4395, -1165)
+shape = SubResource("RectangleShape2D_xwn5a")
+debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="7_8p_Cave7-8/AreaJump_Player"]
+position = Vector2(-2362, -1163)
+shape = SubResource("RectangleShape2D_xwn5a")
+debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(20546, 358)
+position = Vector2(20488, 360)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 
@@ -478,6 +520,7 @@ texture = ExtResource("24_xfc7i")
 flip_h = true
 
 [node name="7p_8p_Cave_Patches" type="Node2D" parent="Platforms_top"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
 
 [node name="ColorRect" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
 offset_left = 26831.0
@@ -514,9 +557,16 @@ offset_right = 27224.0
 offset_bottom = 5270.0
 color = Color(0.00784314, 0, 0, 1)
 
+[node name="Cave7-8Top" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
+position = Vector2(25074, 1955)
+texture = ExtResource("29_mf758")
+
 [node name="Top" type="Node2D" parent="."]
 
 [node name="Bottom" type="Node2D" parent="."]
 
+[connection signal="body_entered" from="7_8p_Cave7-8/Camera_Left_Entered" to="." method="_on_camera_left_entered_body_entered"]
+[connection signal="body_entered" from="7_8p_Cave7-8/Camera_Right_Entered" to="." method="_on_camera_right_entered_body_entered"]
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Left_Exit" to="." method="_on_camera_left_exit_body_entered"]
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Right_Exit" to="." method="_on_camera_right_exit_body_entered"]
+[connection signal="body_entered" from="7_8p_Cave7-8/AreaJump_Player" to="." method="_on_area_jump_player_body_entered"]

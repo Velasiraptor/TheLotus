@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://caudsgp7lcrmo"]
+[gd_scene load_steps=50 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
 [ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_bjt4l"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://hf3mqdpfkvj" path="res://Sounds/Frog1/TakeDamage.mp3" id="19"]
 [ext_resource type="PackedScene" uid="uid://c5cpg1sr7oi7a" path="res://Scene/UI/GUI.tscn" id="20_ce54u"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="21_mm38c"]
+[ext_resource type="Theme" uid="uid://bqp0odgpbno7c" path="res://Theme_fonts/main_theme.tres" id="31_et63p"]
 
 [sub_resource type="Gradient" id="Gradient_gtqwp"]
 offsets = PackedFloat32Array(0, 0.155556, 1)
@@ -627,21 +628,12 @@ libraries = {
 "": SubResource("AnimationLibrary_4w7wb")
 }
 
-[node name="Cave_7_8_CameraPlayer" type="Camera2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, -40)
-scale = Vector2(0.2, 0.2)
-zoom = Vector2(1.7, 1.7)
-limit_bottom = 3200
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.15
-drag_top_margin = 0.15
-drag_right_margin = 0.15
-drag_bottom_margin = 0.15
+[node name="test_label" type="Label" parent="."]
+offset_left = -101.818
+offset_top = -212.727
+offset_right = -61.8182
+offset_bottom = -189.727
+theme = ExtResource("31_et63p")
 
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]

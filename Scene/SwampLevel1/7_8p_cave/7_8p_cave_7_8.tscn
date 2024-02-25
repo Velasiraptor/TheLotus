@@ -1,6 +1,7 @@
-[gd_scene load_steps=58 format=3 uid="uid://duei7yc4bnxv7"]
+[gd_scene load_steps=59 format=3 uid="uid://duei7yc4bnxv7"]
 
 [ext_resource type="Texture2D" uid="uid://dgy15f4uh2ldh" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8.png" id="1_m2dtd"]
+[ext_resource type="PackedScene" uid="uid://cbmelwurtnfwl" path="res://Scene/Items/JumpingMushroom/jumping_mushroom.tscn" id="2_v0dhx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkohi"]
 height = 1080.0
@@ -126,7 +127,7 @@ height = 200.158
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vo3ni"]
 radius = 11.1718
-height = 1192.2
+height = 1320.52
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nygfw"]
 radius = 11.1718
@@ -213,6 +214,7 @@ radius = 11.1718
 height = 1042.49
 
 [node name="7_8p_Cave7-8" type="StaticBody2D"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
 collision_mask = 6
 
 [node name="7_8p_Cave7-8_sprite" type="Sprite2D" parent="."]
@@ -308,8 +310,8 @@ shape = SubResource("CapsuleShape2D_fsbr2")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
-position = Vector2(-319, 120)
-rotation = -3.58352
+position = Vector2(-326, 118)
+rotation = -3.18488
 shape = SubResource("CapsuleShape2D_k76g5")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
@@ -422,14 +424,14 @@ shape = SubResource("CapsuleShape2D_n1cpb")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="."]
-position = Vector2(1181, -210)
-rotation = -2.10378
+position = Vector2(1189, -183)
+rotation = -1.79402
 shape = SubResource("CapsuleShape2D_wfmxl")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="."]
-position = Vector2(1408, -823)
-rotation = -2.88044
+position = Vector2(1412, -817)
+rotation = -2.85582
 shape = SubResource("CapsuleShape2D_vo3ni")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
@@ -558,3 +560,18 @@ position = Vector2(-1192, -822)
 rotation = 0.0289632
 shape = SubResource("CapsuleShape2D_uebno")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="."]
+position = Vector2(-314, 132)
+rotation = -3.45934
+shape = SubResource("CapsuleShape2D_k76g5")
+debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
+
+[node name="Jumping_Mushroom" parent="." instance=ExtResource("2_v0dhx")]
+position = Vector2(-1424, -365)
+rotation = 0.0971111
+active = 1
+
+[node name="Jumping_Mushroom2" parent="." instance=ExtResource("2_v0dhx")]
+position = Vector2(1171, -236)
+rotation = -0.247444

@@ -1,13 +1,10 @@
 res://default_env.tres
-res://Scene/SwampLevel1/swamp_level_1.tscn
+res://Scene/SwampLevel1/platforms_collide_level_1.tscn
 res://Shaders/Dissolve.gdshader
 res://Shaders/GodRays.gdshader
 res://Shaders/Rain.gdshader
 res://Shaders/Grass.gdshader
 res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
-res://Scene/Player/Player.gd
-res://Scene/SwampLevel1/swamp_level_1.gd
 res://Scene/Player/Player.tscn
-res://Scene/SwampLevel1/platforms_collide_level_1.tscn
-res://Scene/SwampLevel1/7_8p_cave/7_8p_cave_7_8.tscn
+res://Scene/SwampLevel1/swamp_level_1.tscn

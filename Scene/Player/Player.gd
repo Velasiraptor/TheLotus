@@ -31,7 +31,6 @@ var ind_not_fall_damage := false
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
 @onready var camera_player = %CameraPlayer
-@onready var cave_7_8_camera_player = %Cave_7_8_CameraPlayer
 
 
 
@@ -41,6 +40,7 @@ func _ready():
 	$TongueAr/CollisionShape2D.disabled = true
 
 func _physics_process(delta):
+	#$test_label.text = str()
 	if $".".visible == true:
 		move()
 		jump()
@@ -97,21 +97,20 @@ func move(): #движение
 
 func jump(): #прыжок
 	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
-		if vel.y > 0: #прыжок
-			ind_fall_damage = false
-			change_state(State.JUMP)
-			idleInd = 0
-			vel.y -= jump_force
-			frog_player.visible = false
-			side_frog_player.visible = true
-			side_frog_player.frame = 0
-			side_frog_player.play("jump")
-			get_tree().call_group("GUI", "jumpIcon")
-			$jumpSound.play()
-			#if side_frog_player.flip_h == false and frog_player.flip_h == true: # Если добавить, то не сможет прыгать тупо вверх
-				#vel.x = speed
-			#else:
-				#vel.x = -speed
+		ind_fall_damage = false
+		change_state(State.JUMP)
+		idleInd = 0
+		vel.y -= jump_force
+		frog_player.visible = false
+		side_frog_player.visible = true
+		side_frog_player.frame = 0
+		side_frog_player.play("jump")
+		get_tree().call_group("GUI", "jumpIcon")
+		$jumpSound.play()
+		#if side_frog_player.flip_h == false and frog_player.flip_h == true: # Если добавить, то не сможет прыгать тупо вверх
+			#vel.x = speed
+		#else:
+			#vel.x = -speed
 	set_velocity(vel)
 	set_up_direction(Vector2.UP)
 	move_and_slide()
@@ -305,10 +304,37 @@ func change_camera_3p_tree():
 
 #ПЕЩЕРА 7p_8p
 func change_camera_7p_8p_cave():
-	$".".modulate = "737373" #добавление тени игроку
+	$".".modulate = "ffffff" #удаление тени игрока
 	camera_player.limit_bottom = 3200
 	not_fall_damage_state()
-func change_camera_7p_8p_in_cave():
-	cave_7_8_camera_player.make_current()
+func create_camera_7p_8p_cave(): #создание нода камеры 2д для пещеры 7р_8р
+	var camera_7_8 := Camera2D.new()
+	camera_7_8.zoom = Vector2(1.7, 1.7)
+	camera_7_8.limit_bottom = 3200
+	camera_7_8.position_smoothing_enabled = true
+	camera_7_8.position_smoothing_speed = 3
+	camera_7_8.rotation_smoothing_enabled = true
+	camera_7_8.rotation_smoothing_speed = 5
+	camera_7_8.drag_horizontal_enabled = true
+	camera_7_8.drag_vertical_enabled = true
+	camera_7_8.drag_left_margin = 0.15
+	camera_7_8.drag_right_margin = 0.15
+	camera_7_8.drag_top_margin = 0.15
+	camera_7_8.drag_bottom_margin = 0.15
+	camera_7_8.position.y = -40
+	camera_7_8.scale = Vector2(0.2, 0.2) 
+	return camera_7_8
+func change_camera_7p_8p_in_cave(): #ставим новую камеру для пещеры 7р_8р главной 
+	$".".modulate = "737373" #добавление тени игроку
+	get_node(".").add_child(create_camera_7p_8p_cave())
+	get_node(".").get_child(-1).make_current()
+func remove_camera_7p_8p_in_cave(): #удаление камеры
+	get_node(".").get_child(-1).queue_free()
+func camera_default_after_cave_7_8p():
+	camera_default()
+	camera_player.position_smoothing_enabled = false
+	await  get_tree().create_timer(1.0).timeout
+	camera_player.position_smoothing_enabled = true
+	camera_player.position_smoothing_speed = 3
 
 
