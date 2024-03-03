@@ -473,10 +473,10 @@ tracks/2/path = NodePath(".:limit_bottom")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [540, 770, 1000]
+"values": [540, 1000]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -488,7 +488,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-4000, -2350]
+"values": [-2444, -2350]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4w7wb"]
@@ -609,8 +609,9 @@ position = Vector2(0, -40)
 scale = Vector2(0.2, 0.2)
 zoom = Vector2(1.7, 1.7)
 process_callback = 0
-limit_left = -4000
+limit_left = -2444
 limit_top = -1050
+limit_right = 29450
 limit_bottom = 540
 limit_smoothed = true
 position_smoothing_enabled = true

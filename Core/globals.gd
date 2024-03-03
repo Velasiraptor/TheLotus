@@ -6,8 +6,8 @@ var actual_hp_player = count_max_hp_player
 enum State_screen { WINDOW_MODE, FULLSCREEN_MODE }
 var state_mode_screen := State_screen.WINDOW_MODE
 
-var new_load_scene := "res://Scene/Forest/ForestLVL.tscn"
-var actual_resume_load_scene := "res://Scene/Forest/ForestLVL.tscn"
+var new_load_scene := "res://Scene/SwampLevel1/swamp_level_1.tscn"
+var actual_resume_load_scene := "res://Scene/SwampLevel1/swamp_level_1.tscn"
 
 func _ready():
 	State_screen.WINDOW_MODE

@@ -59,41 +59,43 @@ func change_state(new_state: State): #функция изменения сост
 	state = new_state
 
 func camera_default(): # камера и цвет для игрока по умолчанию
-	camera_player.make_current()
 	$".".modulate = "ffffff" #удаление тени игрока
+	camera_player.position_smoothing_enabled = true
+	camera_player.position_smoothing_speed = 3
 	camera_player.limit_bottom = 540
 	camera_player.limit_top = -1050
-	camera_player.limit_left = -4000
-	camera_player.limit_right = 10000000
+	camera_player.limit_left = -2444
+	camera_player.limit_right = 29450
 	camera_player.zoom.x = 1.7
 	camera_player.zoom.y = 1.7
 
 func move(): #движение
-	if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
-		change_state(State.WALK_LEFT)
-		vel.x = -speed
-		if not is_on_floor() and state == State.JUMP:
-			vel.x = -Jump_speed 
+	if Globals.actual_hp_player > 0:
+		if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
+			change_state(State.WALK_LEFT)
+			vel.x = -speed
+			if not is_on_floor() and state == State.JUMP:
+				vel.x = -Jump_speed 
 	
-	elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0:  # движение вправо
-		change_state(State.WALK_RIGHT)
-		vel.x = speed
-		if not is_on_floor() and state == State.JUMP:
-			vel.x = Jump_speed 
+		elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0:  # движение вправо
+			change_state(State.WALK_RIGHT)
+			vel.x = speed
+			if not is_on_floor() and state == State.JUMP:
+				vel.x = Jump_speed 
 	
-	elif Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1: #Язык
-		change_state(State.TONGUE)
-		vel.x = 0
+		elif Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1: #Язык
+			change_state(State.TONGUE)
+			vel.x = 0
 	
-	elif state == State.TAKE_DAMAGE: #получение урона
-		await get_tree().create_timer(0.5).timeout
-		change_state(State.IDLE) 
+		elif state == State.TAKE_DAMAGE: #получение урона
+			await get_tree().create_timer(0.5).timeout
+			change_state(State.IDLE) 
 	
-	elif is_on_floor() and state != State.TAKE_DAMAGE and state != State.TONGUE \
-	and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
-		vel.x = 0
-		#vel.x = lerp(vel.x, 0.0, 0.2) Интерполяция
-		change_state(State.IDLE)
+		elif is_on_floor() and state != State.TAKE_DAMAGE and state != State.TONGUE \
+		and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
+			vel.x = 0
+			#vel.x = lerp(vel.x, 0.0, 0.2) Интерполяция
+			change_state(State.IDLE)
 
 func jump(): #прыжок
 	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
@@ -194,7 +196,10 @@ func not_fall_damage_state(): #функция предотвращающая у�
 	ind_not_fall_damage = true
 	ind_fall_damage = false
 	await get_tree().create_timer(3.0).timeout
-	ind_not_fall_damage = false
+	if is_on_floor():
+		ind_not_fall_damage = false
+	else:
+		return
 	
 
 func indTrue():
@@ -215,7 +220,7 @@ func emit_player():
 		$ParticlesPlayer.emitting = true
 
 func end_game():
-	#$"../GameOver/GameOver".visible = true
+	$"../GameOver/GameOver".visible = true
 	get_tree().call_group("GameOver", "end")
 
 func max_HP(): #в начале уровня высчитывает, сколько всего здоровья
@@ -246,7 +251,9 @@ func hurt(): #снятие здоровья
 		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
 
 func fullHurt(): #мгновенная смерть
+	change_state(State.DEATH)
 	Globals.actual_hp_player = 0
+	vel.x = 0
 	side_frog_player.visible = true
 	frog_player.visible = false
 	side_frog_player.play("Death")
@@ -303,38 +310,22 @@ func change_camera_3p_tree():
 	camera_player.limit_top = -2000
 
 #ПЕЩЕРА 7p_8p
-func change_camera_7p_8p_cave():
-	$".".modulate = "ffffff" #удаление тени игрока
+func change_camera_7p_8p_in_cave(): #изменения камеры для пещеры 7р_8р
 	camera_player.limit_bottom = 3200
-	not_fall_damage_state()
-func create_camera_7p_8p_cave(): #создание нода камеры 2д для пещеры 7р_8р
-	var camera_7_8 := Camera2D.new()
-	camera_7_8.zoom = Vector2(1.7, 1.7)
-	camera_7_8.limit_bottom = 3200
-	camera_7_8.position_smoothing_enabled = true
-	camera_7_8.position_smoothing_speed = 3
-	camera_7_8.rotation_smoothing_enabled = true
-	camera_7_8.rotation_smoothing_speed = 5
-	camera_7_8.drag_horizontal_enabled = true
-	camera_7_8.drag_vertical_enabled = true
-	camera_7_8.drag_left_margin = 0.15
-	camera_7_8.drag_right_margin = 0.15
-	camera_7_8.drag_top_margin = 0.15
-	camera_7_8.drag_bottom_margin = 0.15
-	camera_7_8.position.y = -40
-	camera_7_8.scale = Vector2(0.2, 0.2) 
-	return camera_7_8
-func change_camera_7p_8p_in_cave(): #ставим новую камеру для пещеры 7р_8р главной 
 	$".".modulate = "737373" #добавление тени игроку
-	get_node(".").add_child(create_camera_7p_8p_cave())
-	get_node(".").get_child(-1).make_current()
-func remove_camera_7p_8p_in_cave(): #удаление камеры
-	get_node(".").get_child(-1).queue_free()
-func camera_default_after_cave_7_8p():
-	camera_default()
+	not_fall_damage_state()
+	await get_tree().create_timer(0.3).timeout
 	camera_player.position_smoothing_enabled = false
-	await  get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.1).timeout
 	camera_player.position_smoothing_enabled = true
 	camera_player.position_smoothing_speed = 3
+func camera_after_cave_7_8p(): #изменения камеры для выхода из пещеры 7р_8р
+	$".".modulate = "ffffff" #удаление тени игрока
+	not_fall_damage_state()
+	camera_player.position_smoothing_enabled = false
+	await  get_tree().create_timer(0.1).timeout
+	camera_player.position_smoothing_enabled = true
+	camera_player.position_smoothing_speed = 3
+	camera_player.limit_bottom = 540
 
 

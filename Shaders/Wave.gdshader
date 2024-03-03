@@ -1,15 +1,15 @@
 shader_type canvas_item;
 
 // for circles
-uniform float amplitude: hint_range(0, 2, 0.01) = 2.0;
-uniform float frequency: hint_range(0, 15, 0.01) = 12.69;
-uniform float rippleRate : hint_range(0.5, 150.0, 0.1) = 9.2;
+uniform float amplitude: hint_range(0, 2, 0.01) = 1.0;
+uniform float frequency: hint_range(0, 15, 0.01) = 10.0;
+uniform float rippleRate : hint_range(0.5, 150.0, 0.1) = 2.0;
 
 
 // for wave
-uniform float waveAmplitude = 0.1;
-uniform float waveFrequency = 4.0;
-uniform float blendingAmount = 0.6;
+uniform float waveAmplitude = 0.01;
+uniform float waveFrequency = 10.0;
+uniform float blendingAmount = 0.9;
 
 uniform vec4 tone_color : source_color;
 

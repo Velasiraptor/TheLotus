@@ -1,10 +1,14 @@
 res://default_env.tres
-res://Scene/SwampLevel1/platforms_collide_level_1.tscn
+res://Scene/SwampLevel1/swamp_level_1.tscn
+res://Shaders/water_swamp_level_1.gdshader
 res://Shaders/Dissolve.gdshader
 res://Shaders/GodRays.gdshader
+res://Shaders/Blur.gdshader
 res://Shaders/Rain.gdshader
 res://Shaders/Grass.gdshader
 res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
+res://Shaders/Wave.gdshader
+res://Scene/SwampLevel1/platforms_collide_level_1.tscn
 res://Scene/Player/Player.tscn
-res://Scene/SwampLevel1/swamp_level_1.tscn
+res://Scene/SwampLevel1/barrel_of_oil_3p/barrel_of_oil_3p.tscn

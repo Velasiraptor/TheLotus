@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=49 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/SwampLevel1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cu5bs51lw23t" path="res://Scene/SwampLevel1/1p_2p_Cave/1p_2p_cave.tscn" id="12_8bes2"]
 [ext_resource type="PackedScene" uid="uid://edr71rj6t0gg" path="res://Scene/SwampLevel1/1p_Cave/1p_cave.tscn" id="12_a05vn"]
 [ext_resource type="PackedScene" uid="uid://d1wtnf64signc" path="res://Scene/SwampLevel1/3p_Tree/3p_tree.tscn" id="13_rcjdu"]
+[ext_resource type="PackedScene" uid="uid://dviqbc0xl5wt7" path="res://Scene/SwampLevel1/barrel_of_oil_3p/barrel_of_oil_3p.tscn" id="13_rfhq8"]
 [ext_resource type="PackedScene" uid="uid://duei7yc4bnxv7" path="res://Scene/SwampLevel1/7_8p_cave/7_8p_cave_7_8.tscn" id="14_cx4hp"]
 [ext_resource type="PackedScene" uid="uid://caudsgp7lcrmo" path="res://Scene/Player/Player.tscn" id="15_85155"]
 [ext_resource type="Texture2D" uid="uid://ckb7enwjig1bf" path="res://Sprites/SwampLevel1/Swamp_path_1/Stump.png" id="16_p1gel"]
@@ -24,10 +25,14 @@
 [ext_resource type="Texture2D" uid="uid://d8lfd5nawp61" path="res://Sprites/SwampLevel1/Swamp_path_1/Tree_foliage.png" id="22_oruov"]
 [ext_resource type="Texture2D" uid="uid://cq64cj5jkn58q" path="res://Sprites/SwampLevel1/Items/Hole_top.png" id="24_xfc7i"]
 [ext_resource type="Texture2D" uid="uid://cr3s0ptlqodcv" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2_top.png" id="25_q86qb"]
+[ext_resource type="Texture2D" uid="uid://2ab2kufipnsv" path="res://Sprites/SwampLevel1/Swamp_path_3/Water_wave_3p_top.png" id="25_tobtv"]
+[ext_resource type="Shader" path="res://Shaders/water_swamp_level_1.gdshader" id="26_5g3va"]
 [ext_resource type="PackedScene" uid="uid://8pg1jibr8hkx" path="res://Scene/SwampLevel1/3p_Tree/3p_foliage_area.tscn" id="27_36g05"]
 [ext_resource type="Texture2D" uid="uid://dnuj470e57dyo" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_static.png" id="29_kjcst"]
 [ext_resource type="Texture2D" uid="uid://dcaw3ffgclehu" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8_top.png" id="29_mf758"]
 [ext_resource type="Texture2D" uid="uid://845mrghmwpsm" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area.png" id="30_dbbit"]
+[ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="30_dxgiv"]
+[ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="31_jgvxj"]
 [ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrl0"]
@@ -44,7 +49,7 @@ shader_parameter/spread = 0.5
 shader_parameter/cutoff = 0.1
 shader_parameter/falloff = 0.2
 shader_parameter/edge_fade = 0.2
-shader_parameter/speed = 1.0
+shader_parameter/speed = 0.5
 shader_parameter/ray1_density = 8.0
 shader_parameter/ray2_density = 30.0
 shader_parameter/ray2_intensity = 0.3
@@ -57,26 +62,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1578.39, 447.529)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.771, 2.264)]
+"values": [Vector2(1.297, 1.276)]
 }
 
 [sub_resource type="Animation" id="Animation_a7s7m"]
@@ -85,26 +78,14 @@ length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1578.39, 447.529), Vector2(-1803, 545)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.70966, 2.26409), Vector2(1.61277, 9.91485)]
+"values": [Vector2(1.297, 1.276), Vector2(1.83582, 9.56769)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n1qg6"]
@@ -121,6 +102,53 @@ load_path = "res://.godot/imported/Patch_Rock.png-b116aaef69b808e69e76e879cd515b
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23o76"]
 load_path = "res://.godot/imported/Patch_Rock.png-b116aaef69b808e69e76e879cd515b47.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1mnv"]
+shader = ExtResource("26_5g3va")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhcta"]
+shader = ExtResource("17_db6n5")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.2
+shader_parameter/edge_fade = 0.2
+shader_parameter/speed = 0.5
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 0.901961, 0.65098, 0.345098)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_034wj"]
+load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2kw"]
+shader = ExtResource("17_db6n5")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.2
+shader_parameter/edge_fade = 0.2
+shader_parameter/speed = 0.5
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 0.901961, 0.65098, 0.345098)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hjnhb"]
+load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
 
 [node name="SwampLevel1" type="Node2D" groups=["Level1"]]
 position = Vector2(0, 1)
@@ -195,6 +223,10 @@ position = Vector2(-1782, 478)
 
 [node name="1p_2p_Cave" parent="." instance=ExtResource("12_8bes2")]
 
+[node name="barrel_of_oil_3p" parent="." instance=ExtResource("13_rfhq8")]
+position = Vector2(3701, 436)
+scale = Vector2(1, 1.3)
+
 [node name="3p_Tree" parent="." instance=ExtResource("13_rcjdu")]
 position = Vector2(5176, -499)
 
@@ -210,7 +242,7 @@ shape = SubResource("RectangleShape2D_yfrl0")
 debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
 [node name="MarkerLeft_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Entered"]
-position = Vector2(-1302, -968)
+position = Vector2(-1278, -918)
 
 [node name="Camera_Right_Entered" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
@@ -222,7 +254,7 @@ shape = SubResource("RectangleShape2D_yfrl0")
 debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
 [node name="MarkerRight_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Entered"]
-position = Vector2(1050, -927)
+position = Vector2(1082, -1010)
 
 [node name="Camera_Left_Exit" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
@@ -234,7 +266,7 @@ shape = SubResource("RectangleShape2D_xwn5a")
 debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
 
 [node name="MarkerLeft_Exit" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Exit"]
-position = Vector2(-4403, -1367)
+position = Vector2(-4397, -1262)
 
 [node name="Camera_Right_Exit" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
@@ -245,24 +277,10 @@ shape = SubResource("RectangleShape2D_xwn5a")
 debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
 
 [node name="MarkerRight_Exit" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
-position = Vector2(-2359, -1358)
-
-[node name="AreaJump_Player" type="Area2D" parent="7_8p_Cave7-8"]
-collision_mask = 2
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="7_8p_Cave7-8/AreaJump_Player"]
-position = Vector2(-4395, -1165)
-shape = SubResource("RectangleShape2D_xwn5a")
-debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="7_8p_Cave7-8/AreaJump_Player"]
-position = Vector2(-2362, -1163)
-shape = SubResource("RectangleShape2D_xwn5a")
-debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
+position = Vector2(-2357, -1252)
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(20488, 360)
+position = Vector2(19984, 296)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 
@@ -274,9 +292,9 @@ texture = ExtResource("17_7dh4p")
 
 [node name="1p_GodRay" type="Sprite2D" parent="Platforms_top"]
 material = SubResource("ShaderMaterial_448u6")
-position = Vector2(-1578.39, 447.529)
+position = Vector2(-1619.21, 459.528)
 rotation = 1.1487
-scale = Vector2(1.771, 2.264)
+scale = Vector2(1.297, 1.276)
 texture = ExtResource("18_5hyka")
 
 [node name="Ray_1p_Cave_animation" type="AnimationPlayer" parent="Platforms_top/1p_GodRay"]
@@ -451,6 +469,11 @@ rotation = -0.0394432
 texture = ExtResource("24_xfc7i")
 flip_h = true
 
+[node name="WaterWave3pTop" type="Sprite2D" parent="Platforms_top"]
+material = SubResource("ShaderMaterial_t1mnv")
+position = Vector2(3710, 463)
+texture = ExtResource("25_tobtv")
+
 [node name="3p_FoliageAreaSmall" type="Sprite2D" parent="Platforms_top"]
 position = Vector2(4293, -1004)
 texture = ExtResource("31_m5vf0")
@@ -522,6 +545,21 @@ flip_h = true
 [node name="7p_8p_Cave_Patches" type="Node2D" parent="Platforms_top"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
 
+[node name="7p_GodRay" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
+material = SubResource("ShaderMaterial_xhcta")
+position = Vector2(23882, 1762)
+rotation = 0.504716
+scale = Vector2(5.43427, 4.57486)
+texture = SubResource("CompressedTexture2D_034wj")
+
+[node name="8p_GodRay" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
+material = SubResource("ShaderMaterial_ys2kw")
+position = Vector2(26242, 1758)
+rotation = -0.541385
+scale = Vector2(7.74208, 8.1516)
+texture = SubResource("CompressedTexture2D_hjnhb")
+flip_h = true
+
 [node name="ColorRect" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
 offset_left = 26831.0
 offset_top = 641.0
@@ -540,7 +578,7 @@ color = Color(0.00784314, 0, 0, 1)
 offset_left = 19857.0
 offset_top = 539.0
 offset_right = 27204.0
-offset_bottom = 1695.0
+offset_bottom = 1673.0
 color = Color(0.00784314, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
@@ -561,12 +599,41 @@ color = Color(0.00784314, 0, 0, 1)
 position = Vector2(25074, 1955)
 texture = ExtResource("29_mf758")
 
+[node name="HoleTop_Left" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
+modulate = Color(0.698039, 0.698039, 0.698039, 1)
+position = Vector2(23866, 1679)
+rotation = 0.0334552
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("24_xfc7i")
+flip_v = true
+
+[node name="HoleTop_Right" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
+modulate = Color(0.698039, 0.698039, 0.698039, 1)
+position = Vector2(26300, 1666)
+rotation = 0.0446064
+texture = ExtResource("24_xfc7i")
+flip_h = true
+flip_v = true
+
 [node name="Top" type="Node2D" parent="."]
 
 [node name="Bottom" type="Node2D" parent="."]
+
+[node name="Escape" type="CanvasLayer" parent="."]
+process_priority = 1
+layer = 7
+
+[node name="ESCAPE" parent="Escape" instance=ExtResource("30_dxgiv")]
+visible = false
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+process_priority = 1
+layer = 7
+
+[node name="GameOver" parent="GameOver" instance=ExtResource("31_jgvxj")]
+visible = false
 
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Left_Entered" to="." method="_on_camera_left_entered_body_entered"]
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Right_Entered" to="." method="_on_camera_right_entered_body_entered"]
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Left_Exit" to="." method="_on_camera_left_exit_body_entered"]
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Right_Exit" to="." method="_on_camera_right_exit_body_entered"]
-[connection signal="body_entered" from="7_8p_Cave7-8/AreaJump_Player" to="." method="_on_area_jump_player_body_entered"]

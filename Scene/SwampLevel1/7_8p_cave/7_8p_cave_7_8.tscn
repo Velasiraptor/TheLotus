@@ -570,8 +570,10 @@ debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 [node name="Jumping_Mushroom" parent="." instance=ExtResource("2_v0dhx")]
 position = Vector2(-1424, -365)
 rotation = 0.0971111
+jumping = -2125
 active = 1
 
 [node name="Jumping_Mushroom2" parent="." instance=ExtResource("2_v0dhx")]
 position = Vector2(1171, -236)
 rotation = -0.247444
+jumping = -2225
