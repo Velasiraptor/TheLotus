@@ -1,7 +1,6 @@
-[gd_scene load_steps=230 format=3 uid="uid://bybfwutajwh87"]
+[gd_scene load_steps=234 format=3 uid="uid://bybfwutajwh87"]
 
 [ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_o8681"]
-[ext_resource type="Texture2D" uid="uid://dh004xo1ivw2s" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_left.png" id="3_s2efn"]
 [ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_n2j1v"]
 [ext_resource type="Texture2D" uid="uid://c3vpk1ewwrilf" path="res://Sprites/SwampLevel1/Swamp_path_9/Water.png" id="5_vaey0"]
 [ext_resource type="Texture2D" uid="uid://uc2k7e3rvrt2" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_1.png" id="6_o3x0e"]
@@ -49,22 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://bmqcesembnx4a" path="res://Sprites/SwampLevel1/Items/Durt_way.png" id="44_5prpj"]
 [ext_resource type="Texture2D" uid="uid://yakckrk31657" path="res://Sprites/SwampLevel1/Items/Hole.png" id="45_wxkat"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lqwq8"]
-load_path = "res://.godot/imported/Water.png-b63f009c96500d39a5f4062feac0b81e.ctex"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgxer"]
-shader = ExtResource("38_rrv6u")
-shader_parameter/x_intensity = 3.0
-shader_parameter/y_intensity = 1.0
-shader_parameter/offset = 0.0
-shader_parameter/speed = 1.0
-shader_parameter/wave_frequency = 5.0
-shader_parameter/wave_length = 250.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j2jbb"]
-load_path = "res://.godot/imported/Water.png-cc9f503103ef3c905f730c6e84f60256.ctex"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gatas"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4duug"]
 shader = ExtResource("38_rrv6u")
 shader_parameter/x_intensity = 3.0
 shader_parameter/y_intensity = 1.0
@@ -98,23 +82,24 @@ void fragment() {
 }
 "
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_luy5v"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w5sl8"]
 noise_type = 4
 seed = 2
 frequency = 0.1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_se746"]
-noise = SubResource("FastNoiseLite_luy5v")
+seamless_blend_skirt = 0.615
+noise = SubResource("FastNoiseLite_w5sl8")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_i57dd"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r6j20"]
 noise_type = 4
 seed = 2
 frequency = 0.06
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46k8l"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mpxsy"]
 seamless = true
 seamless_blend_skirt = 0.34
-noise = SubResource("FastNoiseLite_i57dd")
+noise = SubResource("FastNoiseLite_r6j20")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wpxv1"]
 shader = SubResource("Shader_gqmnb")
@@ -126,10 +111,79 @@ shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
 shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_46k8l")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wq54t"]
 load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efouc"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50mwx"]
+shader = SubResource("Shader_gqmnb")
+shader_parameter/scroll1 = Vector2(0, -0.03)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strenght = 0.01
+shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
+shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shader_parameter/light_start = 0.339
+shader_parameter/light_end = 0.687
+shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h0iht"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twiq3"]
+load_path = "res://.godot/imported/Water_left.png-4f73db2e5a53028144be7eb32eb91017.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htqmg"]
+shader = SubResource("Shader_gqmnb")
+shader_parameter/scroll1 = Vector2(0, -0.03)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strenght = 0.01
+shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
+shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shader_parameter/light_start = 0.339
+shader_parameter/light_end = 0.687
+shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lqwq8"]
+load_path = "res://.godot/imported/Water.png-b63f009c96500d39a5f4062feac0b81e.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgxer"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j2jbb"]
+load_path = "res://.godot/imported/Water.png-cc9f503103ef3c905f730c6e84f60256.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gatas"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lyecf"]
 shader = ExtResource("38_rrv6u")
@@ -144,33 +198,6 @@ shader_parameter/wave_length = 250.0
 load_path = "res://.godot/imported/Water.png-b63f009c96500d39a5f4062feac0b81e.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cis77"]
-shader = ExtResource("38_rrv6u")
-shader_parameter/x_intensity = 3.0
-shader_parameter/y_intensity = 1.0
-shader_parameter/offset = 0.0
-shader_parameter/speed = 1.0
-shader_parameter/wave_frequency = 5.0
-shader_parameter/wave_length = 250.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxa5g"]
-shader = ExtResource("38_rrv6u")
-shader_parameter/x_intensity = 3.0
-shader_parameter/y_intensity = 1.0
-shader_parameter/offset = 0.0
-shader_parameter/speed = 1.0
-shader_parameter/wave_frequency = 5.0
-shader_parameter/wave_length = 250.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_efouc"]
-shader = ExtResource("38_rrv6u")
-shader_parameter/x_intensity = 3.0
-shader_parameter/y_intensity = 1.0
-shader_parameter/offset = 0.0
-shader_parameter/speed = 1.0
-shader_parameter/wave_frequency = 5.0
-shader_parameter/wave_length = 250.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4duug"]
 shader = ExtResource("38_rrv6u")
 shader_parameter/x_intensity = 3.0
 shader_parameter/y_intensity = 1.0
@@ -268,6 +295,16 @@ frequency = 0.04
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ix0nq"]
 noise = SubResource("FastNoiseLite_t2fk5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i57dd"]
+noise_type = 4
+seed = 2
+frequency = 0.06
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46k8l"]
+seamless = true
+seamless_blend_skirt = 0.34
+noise = SubResource("FastNoiseLite_i57dd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w0vt4"]
 shader = SubResource("Shader_gqmnb")
@@ -895,7 +932,53 @@ collision_mask = 14
 
 [node name="Water" type="Node2D" parent="Sprites"]
 
+[node name="9p_Water" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
+material = SubResource("ShaderMaterial_4duug")
+position = Vector2(27443, 339.75)
+scale = Vector2(1, 1.02185)
+texture = ExtResource("5_vaey0")
+
+[node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/9p_Water"]
+z_as_relative = false
+material = SubResource("ShaderMaterial_wpxv1")
+position = Vector2(114.087, -18.0564)
+rotation = -0.00526347
+scale = Vector2(29.1081, 4.75609)
+texture = SubResource("CompressedTexture2D_wq54t")
+
+[node name="8p_Water_R" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
+material = SubResource("ShaderMaterial_efouc")
+position = Vector2(24553, 399)
+scale = Vector2(0.948014, 1.10714)
+texture = ExtResource("4_n2j1v")
+
+[node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/8p_Water_R"]
+z_as_relative = false
+material = SubResource("ShaderMaterial_50mwx")
+position = Vector2(299.352, 10.2905)
+rotation = -0.00526347
+scale = Vector2(22.2682, 3.80664)
+texture = SubResource("CompressedTexture2D_wq54t")
+
+[node name="8p_Water_L" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
+material = SubResource("ShaderMaterial_h0iht")
+position = Vector2(22724.5, 276)
+scale = Vector2(0.617944, 1.20295)
+texture = SubResource("CompressedTexture2D_twiq3")
+
+[node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/8p_Water_L"]
+z_as_relative = false
+material = SubResource("ShaderMaterial_htqmg")
+position = Vector2(-29.3856, -1.88927)
+rotation = -0.00526347
+scale = Vector2(38.4675, 3.37195)
+texture = SubResource("CompressedTexture2D_wq54t")
+
 [node name="6p_Water_static" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 position = Vector2(15220, 297.5)
 scale = Vector2(1, 1.03151)
 texture = SubResource("CompressedTexture2D_lqwq8")
@@ -908,6 +991,7 @@ offset_bottom = -137.0
 color = Color(0.133333, 0.466667, 0.305882, 1)
 
 [node name="6p_Water" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 material = SubResource("ShaderMaterial_bgxer")
 position = Vector2(15220, 297.5)
 scale = Vector2(1, 1.03151)
@@ -921,17 +1005,20 @@ offset_bottom = -137.0
 color = Color(0.133333, 0.466667, 0.305882, 1)
 
 [node name="7p_Water_static" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 position = Vector2(18600, 330.5)
 scale = Vector2(1, 1.01675)
 texture = SubResource("CompressedTexture2D_j2jbb")
 
 [node name="7p_Water" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 material = SubResource("ShaderMaterial_gatas")
 position = Vector2(18578, 327)
 scale = Vector2(1, 1.01675)
 texture = SubResource("CompressedTexture2D_j2jbb")
 
 [node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/7p_Water"]
+z_as_relative = false
 material = SubResource("ShaderMaterial_wpxv1")
 position = Vector2(780.794, 107.212)
 rotation = -0.00526347
@@ -939,12 +1026,14 @@ scale = Vector2(16.5705, 3.1987)
 texture = SubResource("CompressedTexture2D_wq54t")
 
 [node name="5p_Water_static" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 position = Vector2(11386, 296)
 scale = Vector2(1, 1.03782)
 texture = ExtResource("1_o8681")
 flip_h = true
 
 [node name="5p_Water" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 material = SubResource("ShaderMaterial_lyecf")
 position = Vector2(11386, 296)
 scale = Vector2(1, 1.03782)
@@ -952,6 +1041,7 @@ texture = ExtResource("1_o8681")
 flip_h = true
 
 [node name="4p_Water_static" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 position = Vector2(7566, 305)
 texture = SubResource("CompressedTexture2D_g7aqq")
 
@@ -970,6 +1060,7 @@ offset_bottom = -137.0
 color = Color(0.133333, 0.466667, 0.305882, 1)
 
 [node name="4p_Water" type="Sprite2D" parent="Sprites/Water"]
+z_index = -1
 material = SubResource("ShaderMaterial_cis77")
 position = Vector2(7566, 297.5)
 scale = Vector2(1, 1.03151)
@@ -990,49 +1081,11 @@ offset_bottom = -137.0
 color = Color(0.133333, 0.466667, 0.305882, 1)
 
 [node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/4p_Water"]
+z_as_relative = false
 material = SubResource("ShaderMaterial_wpxv1")
 position = Vector2(4217.82, 20.092)
 rotation = -0.00526347
 scale = Vector2(197.282, 7.7687)
-texture = SubResource("CompressedTexture2D_wq54t")
-
-[node name="8p_Water_L" type="Sprite2D" parent="Sprites/Water"]
-material = SubResource("ShaderMaterial_dxa5g")
-position = Vector2(22705, 292.5)
-scale = Vector2(1, 1.08118)
-texture = ExtResource("3_s2efn")
-
-[node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/8p_Water_L"]
-material = SubResource("ShaderMaterial_wpxv1")
-position = Vector2(23.4178, -26.5103)
-rotation = -0.00526347
-scale = Vector2(21.153, 4.15534)
-texture = SubResource("CompressedTexture2D_wq54t")
-
-[node name="8p_Water_R" type="Sprite2D" parent="Sprites/Water"]
-material = SubResource("ShaderMaterial_efouc")
-position = Vector2(24555, 411)
-scale = Vector2(1, 1.05556)
-texture = ExtResource("4_n2j1v")
-
-[node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/8p_Water_R"]
-material = SubResource("ShaderMaterial_wpxv1")
-position = Vector2(48.9644, -13.0488)
-rotation = -0.00526347
-scale = Vector2(32.7315, 4.5454)
-texture = SubResource("CompressedTexture2D_wq54t")
-
-[node name="9p_Water" type="Sprite2D" parent="Sprites/Water"]
-material = SubResource("ShaderMaterial_4duug")
-position = Vector2(27443, 339.75)
-scale = Vector2(1, 1.02185)
-texture = ExtResource("5_vaey0")
-
-[node name="Water_Shader" type="Sprite2D" parent="Sprites/Water/9p_Water"]
-material = SubResource("ShaderMaterial_wpxv1")
-position = Vector2(92.7066, -18.9522)
-rotation = -0.00526347
-scale = Vector2(27.8693, 4.72267)
 texture = SubResource("CompressedTexture2D_wq54t")
 
 [node name="3p_Background_0" type="Sprite2D" parent="Sprites"]
@@ -1211,6 +1264,7 @@ scale = Vector2(1.042, 1.03535)
 texture = ExtResource("38_ivnil")
 
 [node name="Water_Shader" type="Sprite2D" parent="Sprites/1p_Water"]
+z_as_relative = false
 material = SubResource("ShaderMaterial_w0vt4")
 position = Vector2(0.490849, 3.92989)
 rotation = 0.0263533
@@ -2186,7 +2240,7 @@ shape = SubResource("CapsuleShape2D_rmqg1")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)
 
 [node name="Water_collisionShape_4_5p" type="CollisionShape2D" parent="."]
-position = Vector2(8351, 459)
+position = Vector2(8357, 504)
 rotation = -1.57288
 shape = SubResource("CapsuleShape2D_ni518")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)

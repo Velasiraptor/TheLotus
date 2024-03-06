@@ -1,11 +1,11 @@
-Marker2D
-Timer
-AnimationPlayer
 CollisionShape2D
 Area2D
-AnimatableBody2D
-CanvasLayer
+AnimationPlayer
+Timer
 Node2D
+AnimatableBody2D
+Marker2D
+CanvasLayer
 ColorRect
 StaticBody2D
 Label

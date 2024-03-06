@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0wxwqjq1x852"
-path="res://.godot/imported/Tall_water_lily_1.png-ce457ccb44093683cbdff51354488ae0.ctex"
+uid="uid://cea5j1ho3svy4"
+path="res://.godot/imported/Water_drops.png-1795a9f71293132b4b23ffca6e5fd15e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily_1.png"
-dest_files=["res://.godot/imported/Tall_water_lily_1.png-ce457ccb44093683cbdff51354488ae0.ctex"]
+source_file="res://Sprites/SwampLevel1/Items/Water_drops.png"
+dest_files=["res://.godot/imported/Water_drops.png-1795a9f71293132b4b23ffca6e5fd15e.ctex"]
 
 [params]
 

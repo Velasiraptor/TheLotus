@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=52 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/SwampLevel1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://coxjyxjgfp33a" path="res://Sprites/SwampLevel1/Items/Trash/Trash_bag.png" id="17_7dh4p"]
 [ext_resource type="Texture2D" uid="uid://buwrh72yj7bgo" path="res://Sprites/SwampLevel1/Cave_path_1/Сave_entrance.png" id="17_b6h7v"]
 [ext_resource type="Shader" path="res://Shaders/GodRays.gdshader" id="17_db6n5"]
+[ext_resource type="PackedScene" uid="uid://skn1d7kismjk" path="res://Scene/SwampLevel1/Water_lilies/torn_water_lily.tscn" id="18_1sgaj"]
 [ext_resource type="Texture2D" uid="uid://bd2wqem48vu6w" path="res://Sprites/SwampLevel1/Items/Patch_Rock.png" id="18_4ycxt"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="18_5hyka"]
 [ext_resource type="Texture2D" uid="uid://d8lfd5nawp61" path="res://Sprites/SwampLevel1/Swamp_path_1/Tree_foliage.png" id="22_oruov"]
@@ -34,6 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="30_dxgiv"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="31_jgvxj"]
 [ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
+[ext_resource type="PackedScene" uid="uid://bphg42vmyyfx4" path="res://Scene/SwampLevel1/Water_lilies/water_lily_1.tscn" id="35_psuec"]
+[ext_resource type="PackedScene" uid="uid://nouwupilb4wg" path="res://Scene/SwampLevel1/Water_lilies/water_lily_2.tscn" id="36_13n58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrl0"]
 size = Vector2(349.5, 228)
@@ -279,8 +282,17 @@ debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
 [node name="MarkerRight_Exit" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
 position = Vector2(-2357, -1252)
 
+[node name="Water_lily_1" parent="." instance=ExtResource("35_psuec")]
+position = Vector2(6134, 411)
+
+[node name="Water_lily_2" parent="." instance=ExtResource("36_13n58")]
+position = Vector2(6469, 408)
+
+[node name="Torn_water_lily" parent="." instance=ExtResource("18_1sgaj")]
+position = Vector2(6764, 412)
+
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(19984, 296)
+position = Vector2(5760, 350)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 

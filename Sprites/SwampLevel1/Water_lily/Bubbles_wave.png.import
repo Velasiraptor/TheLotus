@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caqtjnssjmflt"
-path="res://.godot/imported/Tall_water_lily_2.png-84a6565cf69541fa6cbd3d8916c09702.ctex"
+uid="uid://sa3d3scg2in8"
+path="res://.godot/imported/Bubbles_wave.png-08b73574a1bc5bc1df31dd73ada257b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily_2.png"
-dest_files=["res://.godot/imported/Tall_water_lily_2.png-84a6565cf69541fa6cbd3d8916c09702.ctex"]
+source_file="res://Sprites/SwampLevel1/Water_lily/Bubbles_wave.png"
+dest_files=["res://.godot/imported/Bubbles_wave.png-08b73574a1bc5bc1df31dd73ada257b0.ctex"]
 
 [params]
 
