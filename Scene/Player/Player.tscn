@@ -574,6 +574,9 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
+[node name="Timer_water_quicksand" type="Timer" parent="."]
+one_shot = true
+
 [node name="RayCastFall" type="RayCast2D" parent="."]
 scale = Vector2(5, 1)
 target_position = Vector2(0.4, 400)
@@ -638,3 +641,4 @@ theme = ExtResource("31_et63p")
 
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]
+[connection signal="timeout" from="Timer_water_quicksand" to="." method="_on_timer_water_quicksand_timeout"]

@@ -917,11 +917,11 @@ height = 240.206
 radius = 14.75
 height = 120.943
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ni518"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sywp"]
 radius = 14.75
 height = 5308.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d180v"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cnocr"]
 radius = 14.75
 height = 6020.0
 
@@ -2239,14 +2239,14 @@ rotation = -1.71082
 shape = SubResource("CapsuleShape2D_rmqg1")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)
 
-[node name="Water_collisionShape_4_5p" type="CollisionShape2D" parent="."]
-position = Vector2(8357, 504)
+[node name="Water_collisionShape_1" type="CollisionShape2D" parent="."]
+position = Vector2(8357, 517)
 rotation = -1.57288
-shape = SubResource("CapsuleShape2D_ni518")
+shape = SubResource("CapsuleShape2D_7sywp")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)
 
-[node name="Water_collisionShape_6_7p" type="CollisionShape2D" parent="."]
-position = Vector2(15094, 490)
+[node name="Water_collisionShape_2" type="CollisionShape2D" parent="."]
+position = Vector2(15094, 517)
 rotation = -1.57773
-shape = SubResource("CapsuleShape2D_d180v")
+shape = SubResource("CapsuleShape2D_cnocr")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)

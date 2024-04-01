@@ -168,6 +168,7 @@ pointing/emulate_touch_from_mouse=true
 
 [physics]
 
+common/physics_ticks_per_second=75
 2d/physics_engine="GodotPhysics2D"
 common/enable_pause_aware_picking=true
 

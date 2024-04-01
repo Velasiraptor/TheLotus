@@ -10,6 +10,7 @@ var new_load_scene := "res://Scene/SwampLevel1/swamp_level_1.tscn"
 var actual_resume_load_scene := "res://Scene/SwampLevel1/swamp_level_1.tscn"
 
 func _ready():
+	Engine.max_fps = 75
 	State_screen.WINDOW_MODE
 
 func change_state(new_state): #функция изменения состояний

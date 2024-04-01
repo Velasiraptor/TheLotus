@@ -20,6 +20,7 @@ var state := State.IDLE
 @export var gravity := 2200
 @export var length_damage_fall := 1500
 
+
 var vel = Vector2(0, 0)
 var camera_player_position = Vector2(0, -40)
 var dustPatricle = load("res://Sprites/Player/Dust.png")
@@ -39,8 +40,8 @@ func _ready():
 	max_HP()
 	$TongueAr/CollisionShape2D.disabled = true
 
-func _physics_process(delta):
-	#$test_label.text = str()
+func _process(delta):
+	$test_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	if $".".visible == true:
 		move()
 		jump()
@@ -68,6 +69,11 @@ func camera_default(): # камера и цвет для игрока по ум�
 	camera_player.limit_right = 29450
 	camera_player.zoom.x = 1.7
 	camera_player.zoom.y = 1.7
+
+func default_characteristics():
+	speed = 250
+	Jump_speed = 400
+	jump_force = 1000
 
 func move(): #движение
 	if Globals.actual_hp_player > 0:
@@ -283,7 +289,7 @@ func _on_TimerDeath_timeout(): #время появления меню гейм�
 
 
 
-#КОД ДЛЯ ВЗАИМОДЕЙСТВИЙ С 1 УРОВНЕМ
+#КОД ДЛЯ ВЗАИМОДЕЙСТВИЙ С 1 УРОВНЕМ/ level 1
 
 #ПЕЩЕРА 1p
 func change_camera_1p_cave(): # изменение камеры для игрока при входе в 1р пещеру
@@ -328,4 +334,13 @@ func camera_after_cave_7_8p(): #изменения камеры для выхо�
 	camera_player.position_smoothing_speed = 3
 	camera_player.limit_bottom = 540
 
-
+# ЗЫБУЧАЯ ВОДА
+#func Player_on_water_quicksand():
+	#$Timer_water_quicksand.stop()
+	#speed = 200
+	#Jump_speed = 300
+	#jump_force = 650
+#func Player_not_on_water_quicksand():
+	#$Timer_water_quicksand.start()
+#func _on_timer_water_quicksand_timeout(): # таймер
+	#default_characteristics()
