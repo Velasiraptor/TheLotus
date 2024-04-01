@@ -1,5 +1,6 @@
 res://default_env.tres
-res://Scene/SwampLevel1/platforms_collide_level_1.tscn
+res://Scene/SwampLevel1/swamp_level_1.tscn
+res://Scene/Player/GUI.gd
 res://Shaders/water_swamp_level_1.gdshader
 res://Shaders/Dissolve.gdshader
 res://Shaders/GodRays.gdshader
@@ -10,10 +11,9 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
+res://Scene/SwampLevel1/platforms_collide_level_1.tscn
 res://Scene/Player/Player.tscn
-res://Scene/SwampLevel1/swamp_level_1.tscn
 res://Scene/SwampLevel1/Water_quicksand/water_quicksand.tscn
 res://Scene/UI/GUI.tscn
-res://Scene/Player/GUI.gd
 res://Scene/Player/Player.gd
 res://Scene/SwampLevel1/Water_quicksand/water_quicksand.gd

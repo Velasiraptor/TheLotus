@@ -416,7 +416,7 @@ texture = SubResource("CompressedTexture2D_eqpck")
 flip_h = true
 
 [node name="Torn_water_lily6" parent="Water_lilies" instance=ExtResource("18_1sgaj")]
-position = Vector2(10200, 420)
+position = Vector2(10261, 420)
 
 [node name="Torn_water_lily7" parent="Water_lilies" instance=ExtResource("18_1sgaj")]
 position = Vector2(10550, 439)
@@ -428,7 +428,7 @@ flip_h = true
 [node name="Water_quicksand" parent="." instance=ExtResource("19_02x0k")]
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(5685, 318)
+position = Vector2(5718, 340)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 
@@ -644,7 +644,6 @@ position = Vector2(5857, 449)
 texture = ExtResource("36_x2sfb")
 
 [node name="6p_Reed" parent="Platforms_top" instance=ExtResource("36_4byoa")]
-visible = false
 position = Vector2(10837, 441)
 texture = SubResource("CompressedTexture2D_3xscd")
 flip_h = true
@@ -659,6 +658,7 @@ texture = ExtResource("35_3vv7w")
 [node name="4p_WaterTop_2" type="Sprite2D" parent="Platforms_top/4p_WaterTop"]
 modulate = Color(1, 1, 1, 0.411765)
 position = Vector2(12019, 497)
+rotation = -0.0047361
 scale = Vector2(3.07708, 1)
 texture = SubResource("CompressedTexture2D_psomn")
 flip_h = true
@@ -676,15 +676,15 @@ texture = ExtResource("36_81w80")
 
 [node name="6p_Rock" type="Sprite2D" parent="Platforms_top"]
 modulate = Color(0.47451, 0.458824, 0.4, 1)
-position = Vector2(17936, 527)
+position = Vector2(17938.6, 526.132)
 rotation = -0.20707
-scale = Vector2(0.556669, 0.72849)
+scale = Vector2(0.556669, 0.997979)
 texture = ExtResource("37_ioxsc")
 flip_h = true
 
 [node name="6p_TrashBag" type="Sprite2D" parent="Platforms_top"]
 modulate = Color(0.525101, 0.525101, 0.525101, 1)
-position = Vector2(17937, 466)
+position = Vector2(17937, 460)
 rotation = 0.0976807
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("17_7dh4p")

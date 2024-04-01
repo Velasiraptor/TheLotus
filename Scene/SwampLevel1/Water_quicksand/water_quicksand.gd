@@ -17,7 +17,6 @@ func _on_area_player_body_exited(body):
 		animation_water_move.play("animation_quicksand", 0.0, -1.0)
 		get_tree().call_group("Player", "Player_not_on_water_quicksand")
 		
-
 func _on_animation_water_move_animation_finished(anim_name):
 	if ind_death == 0:
 		get_tree().call_group("Player", "fullHurt")

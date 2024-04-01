@@ -26,6 +26,7 @@ var camera_player_position = Vector2(0, -40)
 var dustPatricle = load("res://Sprites/Player/Dust.png")
 var ind = 1
 var idleInd = 1
+var ind_jump_true = 0
 var ind_fall_damage := false 
 var ind_not_fall_damage := false 
 
@@ -104,7 +105,7 @@ func move(): #движение
 			change_state(State.IDLE)
 
 func jump(): #прыжок
-	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0:
+	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_true == 1 and Globals.actual_hp_player > 0:
 		ind_fall_damage = false
 		change_state(State.JUMP)
 		idleInd = 0
@@ -334,13 +335,18 @@ func camera_after_cave_7_8p(): #изменения камеры для выхо�
 	camera_player.position_smoothing_speed = 3
 	camera_player.limit_bottom = 540
 
-# ЗЫБУЧАЯ ВОДА
-#func Player_on_water_quicksand():
-	#$Timer_water_quicksand.stop()
-	#speed = 200
-	#Jump_speed = 300
-	#jump_force = 650
-#func Player_not_on_water_quicksand():
-	#$Timer_water_quicksand.start()
-#func _on_timer_water_quicksand_timeout(): # таймер
-	#default_characteristics()
+ # ЗЫБУЧАЯ ВОДА
+func Player_on_water_quicksand():
+	$Timer_water_quicksand.stop()
+	ind_jump_true = 1
+	speed = 200
+	Jump_speed = 300
+	jump_force = 650
+	if ind_jump_true == 1:
+		await get_tree().create_timer(0.2).timeout
+		ind_jump_true = 0
+func Player_not_on_water_quicksand():
+	ind_jump_true = 0
+	$Timer_water_quicksand.start()
+func _on_timer_water_quicksand_timeout(): # таймер
+	default_characteristics()
