@@ -644,7 +644,7 @@ position = Vector2(5857, 449)
 texture = ExtResource("36_x2sfb")
 
 [node name="6p_Reed" parent="Platforms_top" instance=ExtResource("36_4byoa")]
-position = Vector2(10837, 441)
+position = Vector2(10821, 437)
 texture = SubResource("CompressedTexture2D_3xscd")
 flip_h = true
 

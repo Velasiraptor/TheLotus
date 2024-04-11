@@ -1,8 +1,10 @@
-[gd_scene load_steps=234 format=3 uid="uid://bybfwutajwh87"]
+[gd_scene load_steps=240 format=3 uid="uid://bybfwutajwh87"]
 
 [ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_o8681"]
 [ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_n2j1v"]
+[ext_resource type="Texture2D" uid="uid://d32yhmrwsipp4" path="res://Sprites/SwampLevel1/Items/Oil_stains.png" id="5_7044i"]
 [ext_resource type="Texture2D" uid="uid://c3vpk1ewwrilf" path="res://Sprites/SwampLevel1/Swamp_path_9/Water.png" id="5_vaey0"]
+[ext_resource type="PackedScene" uid="uid://bpnpix70wxkxd" path="res://Scene/Items/Bubbles/bubbles.tscn" id="6_l2hlo"]
 [ext_resource type="Texture2D" uid="uid://uc2k7e3rvrt2" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_1.png" id="6_o3x0e"]
 [ext_resource type="Texture2D" uid="uid://d4joibgvp087t" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_2.png" id="7_cvl02"]
 [ext_resource type="Texture2D" uid="uid://mxumft6w23c" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_3.png" id="8_4b6q3"]
@@ -186,6 +188,42 @@ shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_length = 250.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lyecf"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n37va"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ipw5"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ey7uf"]
+shader = ExtResource("38_rrv6u")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0y87"]
 shader = ExtResource("38_rrv6u")
 shader_parameter/x_intensity = 3.0
 shader_parameter/y_intensity = 1.0
@@ -434,7 +472,7 @@ height = 407.596
 size = Vector2(124.143, 122.284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3n60"]
-size = Vector2(124.143, 170.142)
+size = Vector2(157.828, 166.705)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cl45"]
 radius = 14.75
@@ -1040,6 +1078,30 @@ scale = Vector2(1, 1.03782)
 texture = ExtResource("1_o8681")
 flip_h = true
 
+[node name="OilStains_1" type="Sprite2D" parent="Sprites/Water"]
+material = SubResource("ShaderMaterial_n37va")
+position = Vector2(7210, 420)
+texture = ExtResource("5_7044i")
+flip_v = true
+
+[node name="OilStains_2" type="Sprite2D" parent="Sprites/Water"]
+material = SubResource("ShaderMaterial_1ipw5")
+position = Vector2(9362, 329)
+texture = ExtResource("5_7044i")
+flip_h = true
+
+[node name="OilStains_3" type="Sprite2D" parent="Sprites/Water"]
+material = SubResource("ShaderMaterial_ey7uf")
+position = Vector2(13917, 435)
+texture = ExtResource("5_7044i")
+flip_v = true
+
+[node name="OilStains_4" type="Sprite2D" parent="Sprites/Water"]
+material = SubResource("ShaderMaterial_s0y87")
+position = Vector2(16409, 329)
+texture = ExtResource("5_7044i")
+flip_h = true
+
 [node name="4p_Water_static" type="Sprite2D" parent="Sprites/Water"]
 z_index = -1
 position = Vector2(7566, 305)
@@ -1087,6 +1149,90 @@ position = Vector2(4217.82, 20.092)
 rotation = -0.00526347
 scale = Vector2(197.282, 7.7687)
 texture = SubResource("CompressedTexture2D_wq54t")
+
+[node name="Bubbles" type="Node2D" parent="Sprites"]
+
+[node name="Bubble_1" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(5995, 348)
+
+[node name="Bubble_oil_1" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(6311, 374)
+
+[node name="Bubble_2" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(6799, 221)
+
+[node name="Bubble_oil_2" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(7047, 405)
+
+[node name="Bubble_3" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(8009, 371)
+
+[node name="Bubble_oil_3" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(7568, 276)
+
+[node name="Bubble_4" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(9190, 216)
+
+[node name="Bubble_oil_4" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(8906, 379)
+
+[node name="Bubble_5" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(10395, 249)
+
+[node name="Bubble_oil_5" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(9472, 322)
+
+[node name="Bubble_6" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(11894, 496)
+
+[node name="Bubble_oil_6" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(10058, 409)
+
+[node name="Bubble_7" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(13035, 289)
+
+[node name="Bubble_oil_7" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(13459, 352)
+
+[node name="Bubble_8" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(14168, 223)
+
+[node name="Bubble_oil_8" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(14119, 415)
+
+[node name="Bubble_9" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(15354, 296)
+
+[node name="Bubble_oil_9" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(15383, 428)
+
+[node name="Bubble_10" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+position = Vector2(17589, 416)
+
+[node name="Bubble_oil_10" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(16603, 297)
+
+[node name="Bubble_oil_11" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(16275, 448)
+
+[node name="Bubble_oil_12" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(17066, 398)
+
+[node name="Bubble_oil_13" parent="Sprites/Bubbles" instance=ExtResource("6_l2hlo")]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
+position = Vector2(17396, 317)
 
 [node name="3p_Background_0" type="Sprite2D" parent="Sprites"]
 position = Vector2(4102, -166)
@@ -1234,7 +1380,8 @@ texture = ExtResource("33_xwpbj")
 [node name="5p_ShadowIsland" type="Sprite2D" parent="Sprites/5p_Island"]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_vlqpc")
-position = Vector2(27, 440)
+position = Vector2(32.9999, 425)
+scale = Vector2(0.955369, 1)
 texture = ExtResource("34_8114l")
 
 [node name="4p_Background_0" type="Sprite2D" parent="Sprites"]
@@ -1520,7 +1667,7 @@ shape = SubResource("RectangleShape2D_6k6ea")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 
 [node name="5p" type="CollisionShape2D" parent="."]
-position = Vector2(10902, 505)
+position = Vector2(10885.2, 507.326)
 rotation = -0.0361666
 shape = SubResource("RectangleShape2D_q3n60")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)

@@ -33,6 +33,7 @@ var ind_not_fall_damage := false
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
 @onready var camera_player = %CameraPlayer
+@onready var animation_on_water_oil = %Animation_on_water_oil
 
 
 
@@ -338,15 +339,18 @@ func camera_after_cave_7_8p(): #изменения камеры для выхо�
  # ЗЫБУЧАЯ ВОДА
 func Player_on_water_quicksand():
 	$Timer_water_quicksand.stop()
-	ind_jump_true = 1
-	speed = 200
-	Jump_speed = 300
-	jump_force = 650
-	if ind_jump_true == 1:
-		await get_tree().create_timer(0.2).timeout
-		ind_jump_true = 0
+	if ind_jump_true == 0:
+		ind_jump_true = 1
+		speed = 200
+		Jump_speed = 300
+		jump_force = 650
+		animation_on_water_oil.play("player_on_oil")
+	else:
+		jump_force = 0
 func Player_not_on_water_quicksand():
-	ind_jump_true = 0
+	ind_jump_true += 2 #счетчик чтобы не работал прыжок
 	$Timer_water_quicksand.start()
-func _on_timer_water_quicksand_timeout(): # таймер
+	animation_on_water_oil.play("player_exit_oil")
+func _on_timer_water_quicksand_timeout(): # таймер возвращения прыжка по умолчанию
 	default_characteristics()
+	ind_jump_true = 0
