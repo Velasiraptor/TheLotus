@@ -6,8 +6,8 @@ var actual_hp_player = count_max_hp_player
 enum State_screen { WINDOW_MODE, FULLSCREEN_MODE }
 var state_mode_screen := State_screen.WINDOW_MODE
 
-var new_load_scene := "res://Scene/SwampLevel1/swamp_level_1.tscn"
-var actual_resume_load_scene := "res://Scene/SwampLevel1/swamp_level_1.tscn"
+var new_load_scene := "res://Scene/Swamp_Level_1/swamp_level_1.tscn"
+var actual_resume_load_scene := "res://Scene/Swamp_Level_1/swamp_level_1.tscn"
 
 func _ready():
 	Engine.max_fps = 75

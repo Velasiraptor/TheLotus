@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://nouwupilb4wg"]
+
+[ext_resource type="PackedScene" uid="uid://bphg42vmyyfx4" path="res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn" id="1_eybi4"]
+
+[node name="Water_lily_1" instance=ExtResource("1_eybi4")]

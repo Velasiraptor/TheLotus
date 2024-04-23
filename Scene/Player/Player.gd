@@ -16,9 +16,9 @@ var state := State.IDLE
 
 @export var speed := 250
 @export var Jump_speed := 400
-@export var jump_force := 1000
-@export var gravity := 2200
-@export var length_damage_fall := 1500
+@export var jump_force := 1200
+@export var gravity := 3000
+@export var length_damage_fall := 2500
 
 
 var vel = Vector2(0, 0)
@@ -34,6 +34,10 @@ var ind_not_fall_damage := false
 @onready var side_frog_player = $SideFrogPlayer
 @onready var camera_player = %CameraPlayer
 @onready var animation_on_water_oil = %Animation_on_water_oil
+@onready var ray_jump = %Ray_jump
+@onready var ray_jump_l = %Ray_jump_L
+@onready var ray_jump_r = %Ray_jump_R
+@onready var timer_water_quicksand = %Timer_water_quicksand
 
 
 
@@ -106,7 +110,7 @@ func move(): #движение
 			change_state(State.IDLE)
 
 func jump(): #прыжок
-	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_true == 1 and Globals.actual_hp_player > 0:
+	if Input.is_action_just_pressed("player_jump") and (ray_jump.is_colliding() or ray_jump_l.is_colliding() or ray_jump_r.is_colliding()) and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_true == 1 and Globals.actual_hp_player > 0:
 		ind_fall_damage = false
 		change_state(State.JUMP)
 		idleInd = 0
@@ -122,12 +126,13 @@ func jump(): #прыжок
 		#else:
 			#vel.x = -speed
 	set_velocity(vel)
-	set_up_direction(Vector2.UP)
+	set_up_direction(Vector2.UP)	
 	move_and_slide()
 	vel = velocity
 
 func drop(): #чтобы при нажатии вниз, игрок падал с конкретных платформ
-	position.y += 1
+	if Globals.actual_hp_player > 0:
+		position.y += 1
 
 func soundIdle(): #звук при стоячей анимации
 	if frog_player.visible == true and frog_player.frame == 32:
@@ -200,6 +205,8 @@ func fall_damage_state(): #урон после падения
 	if ind_fall_damage == true and is_on_floor() and ind_not_fall_damage == false:
 		fullHurt()
 		ind_fall_damage = false
+		return
+
 func not_fall_damage_state(): #функция предотвращающая урон от падения
 	ind_not_fall_damage = true
 	ind_fall_damage = false
@@ -318,7 +325,7 @@ func change_camera_3p_tree():
 	camera_player.limit_top = -2000
 
 #ПЕЩЕРА 7p_8p
-func change_camera_7p_8p_in_cave(): #изменения камеры для пещеры 7р_8р
+func change_camera_7p_8p_in_cave(): #изменения камеры для пещеры 7р_8р    
 	camera_player.limit_bottom = 3200
 	$".".modulate = "737373" #добавление тени игроку
 	not_fall_damage_state()
@@ -336,8 +343,8 @@ func camera_after_cave_7_8p(): #изменения камеры для выхо�
 	camera_player.position_smoothing_speed = 3
 	camera_player.limit_bottom = 540
 
- # ЗЫБУЧАЯ ВОДА
-func Player_on_water_quicksand():
+# ЗЫБУЧАЯ ВОДА
+func Player_on_water_quicksand():  
 	$Timer_water_quicksand.stop()
 	if ind_jump_true == 0:
 		ind_jump_true = 1
@@ -349,7 +356,7 @@ func Player_on_water_quicksand():
 		jump_force = 0
 func Player_not_on_water_quicksand():
 	ind_jump_true += 2 #счетчик чтобы не работал прыжок
-	$Timer_water_quicksand.start()
+	timer_water_quicksand.start()
 	animation_on_water_oil.play("player_exit_oil")
 func _on_timer_water_quicksand_timeout(): # таймер возвращения прыжка по умолчанию
 	default_characteristics()

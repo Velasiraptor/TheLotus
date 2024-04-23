@@ -18,8 +18,8 @@ func _ready():
 
 #ДЕЙСТВИЯ КНОПОК
 func _on_NewGame_pressed():  #НОВАЯ ИГРА
-	Globals.new_load_scene = "res://Scene/Forest/ForestLVL.tscn"
-	Globals.actual_resume_load_scene = "res://Scene/Forest/ForestLVL.tscn"
+	Globals.new_load_scene = "res://Scene/Swamp_Level_1/swamp_level_1.tscn"
+	Globals.actual_resume_load_scene = "res://Scene/Swamp_Level_1/swamp_level_1.tscn"
 	var loadingScreen = load("res://Scene/Loads/LoadScene.tscn")
 	get_tree().change_scene_to_packed(loadingScreen)
 func _on_Resume_pressed(): #ПРОДОЛЖИТЬ

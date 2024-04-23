@@ -6,6 +6,7 @@ var HP_zero : Texture2D = preload("res://Sprites/UI/GUI/HpZero.png")
 var HP_full : Texture2D = preload("res://Sprites/UI/GUI/HpFull.png")
 var HP_half : Texture2D = preload("res://Sprites/UI/GUI/HpHalf.png")
 
+var ind_death := false #проверка смерти
 
 func _ready():
 	pass
@@ -52,8 +53,10 @@ func remove_update_lives(lives_count): #убавление хп
 
 
 func remove_always_hp():
-	get_node("Control/IconPlayerFullHp").queue_free()
-	get_node("Control/IconPlayerHalfHp").queue_free()
+	if ind_death == false:
+		get_node("Control/IconPlayerFullHp").queue_free()
+		get_node("Control/IconPlayerHalfHp").queue_free()
+		ind_death = true
 	
 
 func BackgroundsDamage():

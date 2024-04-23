@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://darbc2klxju6e"]
+
+[ext_resource type="Texture2D" uid="uid://0wxwqjq1x852" path="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily.png" id="1_cs6wq"]
+[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_1.gd" id="1_ifo3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nxqf"]
+size = Vector2(271.511, 9.04221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3p2q"]
+size = Vector2(271.45, 10.4901)
+
+[sub_resource type="Animation" id="Animation_j0t7l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tall_water_lily:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bmx1u"]
+resource_name = "fall_water_lily"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tall_water_lily:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 25), Vector2(0, 75), Vector2(0, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uqp3i"]
+_data = {
+"RESET": SubResource("Animation_j0t7l"),
+"fall_water_lily": SubResource("Animation_bmx1u")
+}
+
+[node name="tall_water_lily" type="Sprite2D"]
+position = Vector2(0, -7)
+script = ExtResource("1_ifo3l")
+
+[node name="tall_water_lily" type="AnimatableBody2D" parent="."]
+
+[node name="TallWaterLily1" type="Sprite2D" parent="tall_water_lily"]
+position = Vector2(-8, -68)
+rotation = -0.172331
+texture = ExtResource("1_cs6wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tall_water_lily"]
+position = Vector2(-28, -170)
+rotation = -0.263545
+shape = SubResource("RectangleShape2D_2nxqf")
+one_way_collision = true
+debug_color = Color(0.384314, 0.588235, 0.498039, 0.419608)
+
+[node name="Area_player" type="Area2D" parent="tall_water_lily"]
+collision_mask = 2
+
+[node name="CollisionShape_ar" type="CollisionShape2D" parent="tall_water_lily/Area_player"]
+position = Vector2(-30, -178)
+rotation = -0.263545
+shape = SubResource("RectangleShape2D_r3p2q")
+debug_color = Color(0.709804, 0.470588, 0.333333, 0.419608)
+
+[node name="Animation_tail_water_lily" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_uqp3i")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="tall_water_lily/Area_player" to="." method="_on_area_player_body_entered"]
+[connection signal="body_exited" from="tall_water_lily/Area_player" to="." method="_on_area_player_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

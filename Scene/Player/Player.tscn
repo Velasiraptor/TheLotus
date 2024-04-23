@@ -496,9 +496,8 @@ _data = {
 "1p_cave": SubResource("Animation_t0h6o")
 }
 
-[sub_resource type="Animation" id="Animation_07ko3"]
-resource_name = "player_on_oil"
-length = 0.2
+[sub_resource type="Animation" id="Animation_v1rqf"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -506,10 +505,10 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.690196, 0.690196, 0.690196, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_0buo0"]
@@ -528,8 +527,9 @@ tracks/0/keys = {
 "values": [Color(0.690196, 0.690196, 0.690196, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_v1rqf"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_07ko3"]
+resource_name = "player_on_oil"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -537,10 +537,10 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.690196, 0.690196, 0.690196, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_evksx"]
@@ -555,6 +555,8 @@ light_mask = 2
 scale = Vector2(0.55, 0.55)
 collision_layer = 2
 collision_mask = 5
+floor_stop_on_slope = false
+floor_max_angle = 0.523599
 script = ExtResource("1_bjt4l")
 
 [node name="ParticlesPlayer" type="GPUParticles2D" parent="." groups=["Player"]]
@@ -571,7 +573,7 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"Death"
+animation = &"run"
 autoplay = "run"
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
@@ -629,8 +631,21 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Timer_water_quicksand" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
+
+[node name="Ray_jump" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 43.6363)
+
+[node name="Ray_jump_L" type="RayCast2D" parent="Ray_jump"]
+unique_name_in_owner = true
+position = Vector2(-61.8182, -5.45448)
+
+[node name="Ray_jump_R" type="RayCast2D" parent="Ray_jump"]
+unique_name_in_owner = true
+position = Vector2(61.818, -5.454)
 
 [node name="RayCastFall" type="RayCast2D" parent="."]
 scale = Vector2(5, 1)
@@ -694,6 +709,7 @@ libraries = {
 }
 
 [node name="test_label" type="Label" parent="."]
+visible = false
 offset_left = -101.818
 offset_top = -212.727
 offset_right = -61.8182
