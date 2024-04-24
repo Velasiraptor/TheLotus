@@ -6,6 +6,9 @@ func _ready():
 	$CaveHide.modulate = "ffffff"
 
 func _on_camera_player_body_entered(body): #вход в пещеру
+	body.modulate = "737373" #добавление тени
+	if body.has_method("shadow_log"):
+		body.modulate = "737373"
 	if body.has_method("hurt"):
 		get_tree().call_group("Player", "change_camera_1p_cave")
 		$AnimationCave.play("animation_cave", 0, 1.0)

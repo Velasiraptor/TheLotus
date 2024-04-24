@@ -11,7 +11,9 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
+res://Core/globals.gd
+res://Scene/Loads/LoadScene.gd
 res://Scene/Player/Player.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_small.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long.tscn
+res://Scene/Swamp_Level_1/swamp_level_1.gd
+res://Scene/UI/escape.gd
+res://Scene/MainMenu/MainMenu.gd

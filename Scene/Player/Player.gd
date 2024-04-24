@@ -49,6 +49,7 @@ func _ready():
 func _process(delta):
 	$test_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	if $".".visible == true:
+		items_rigid()
 		move()
 		jump()
 		animate()
@@ -80,6 +81,13 @@ func default_characteristics():
 	speed = 250
 	Jump_speed = 400
 	jump_force = 1000
+
+func items_rigid():
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * speed / 5)
+
 
 func move(): #движение
 	if Globals.actual_hp_player > 0:
@@ -303,7 +311,6 @@ func _on_TimerDeath_timeout(): #время появления меню гейм�
 #ПЕЩЕРА 1p
 func change_camera_1p_cave(): # изменение камеры для игрока при входе в 1р пещеру
 	$CameraPlayer/Animation_camera.play("1p_cave", 0, 1.0)
-	$".".modulate = "737373" #добавление тени игроку
 
 func change_camera_default_1p_cave(): # изменение камеры для игрока при выходе из 1р пещеры
 	$".".modulate = "ffffff" #удаление тени игрока

@@ -27,6 +27,7 @@ Globals="*res://Core/globals.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/resizable=false
+window/size/always_on_top=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
@@ -161,6 +162,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_3="Mobs"
 2d_physics/layer_4="Items"
 2d_physics/layer_5="TakesPlayer"
+2d_physics/layer_6="Stop_rig"
 
 [physics]
 

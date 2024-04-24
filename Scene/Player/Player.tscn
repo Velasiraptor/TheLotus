@@ -554,8 +554,7 @@ _data = {
 light_mask = 2
 scale = Vector2(0.55, 0.55)
 collision_layer = 2
-collision_mask = 5
-floor_stop_on_slope = false
+collision_mask = 13
 floor_max_angle = 0.523599
 script = ExtResource("1_bjt4l")
 
@@ -638,14 +637,17 @@ one_shot = true
 [node name="Ray_jump" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, 43.6363)
+collision_mask = 9
 
 [node name="Ray_jump_L" type="RayCast2D" parent="Ray_jump"]
 unique_name_in_owner = true
 position = Vector2(-61.8182, -5.45448)
+collision_mask = 9
 
 [node name="Ray_jump_R" type="RayCast2D" parent="Ray_jump"]
 unique_name_in_owner = true
 position = Vector2(61.818, -5.454)
+collision_mask = 9
 
 [node name="RayCastFall" type="RayCast2D" parent="."]
 scale = Vector2(5, 1)

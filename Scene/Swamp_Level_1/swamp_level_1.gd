@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var ray_1p_cave_animation = %Ray_1p_Cave_animation
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мышив
+var log_in_hole_ind := true
 
 func _ready():
 	Globals.actual_resume_load_scene = "res://Scene/SwampLevel1/swamp_level_1.tscn" #делаем актуальной сценой для кнопки "продолжить" в главном меню
@@ -32,6 +33,14 @@ func God_ray_Cave1_not_visible():
 	else:
 		ray_1p_cave_animation.play_backwards("ray")
 
+#ОТСКАКИВАНИЕ ОТ ЯМЫ 1p
+func _on_log_in_hole_body_entered(body):
+	if log_in_hole_ind == true:
+		body.apply_central_impulse(Vector2(-750, -5500))
+		log_in_hole_ind = false
+	else:
+		body.apply_central_impulse(Vector2(750, -5500))
+		log_in_hole_ind = true
 
 #ПЕЩЕРА 7_8р
 func _on_camera_left_entered_body_entered(body): #вход в пещеру 7p-8p
@@ -65,3 +74,12 @@ func _on_camera_right_exit_body_entered(body):
 		get_tree().call_group("Player", "camera_after_cave_7_8p")
 		await get_tree().create_timer(1.0).timeout
 		$"7_8p_Cave7-8/Camera_Right_Entered".monitoring = true
+
+
+
+
+
+
+
+
+

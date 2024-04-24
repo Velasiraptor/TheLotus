@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://edr71rj6t0gg"]
+[gd_scene load_steps=30 format=3 uid="uid://edr71rj6t0gg"]
 
 [ext_resource type="Texture2D" uid="uid://owbawvop1lli" path="res://Sprites/SwampLevel1/Cave_path_1/Cave_1.png" id="1_e02li"]
 [ext_resource type="Script" path="res://Scene/Swamp_Level_1/1p_Cave/1p_cave.gd" id="1_m1tqq"]
@@ -81,6 +81,9 @@ height = 224.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_khgti"]
 radius = 32.2682
 height = 342.591
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0opf"]
+size = Vector2(188.305, 143.381)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plhe2"]
 size = Vector2(770.5, 662)
@@ -277,8 +280,14 @@ rotation = 4.67417
 shape = SubResource("CapsuleShape2D_khgti")
 debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
 
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
+position = Vector2(-427.979, 250.878)
+rotation = -2.70464
+shape = SubResource("RectangleShape2D_a0opf")
+debug_color = Color(0.215686, 0.0901961, 0.0352941, 0.419608)
+
 [node name="Camera_player" type="Area2D" parent="."]
-collision_mask = 2
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_player"]
 position = Vector2(-212, -40)

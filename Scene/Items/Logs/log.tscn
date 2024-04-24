@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://fnlpi7snkxi"]
+
+[ext_resource type="Texture2D" uid="uid://swikpiitglvs" path="res://Sprites/SwampLevel1/Items/Log.png" id="1_l3ys8"]
+[ext_resource type="Script" path="res://Scene/Items/Logs/log.gd" id="1_uu1be"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0w73a"]
+friction = 0.3
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ldmi"]
+radius = 156.667
+height = 773.333
+
+[node name="log" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 35
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_0w73a")
+gravity_scale = 5.0
+script = ExtResource("1_uu1be")
+
+[node name="Log" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_l3ys8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.999999, -4.5)
+rotation = 1.5708
+scale = Vector2(0.15, 0.15)
+shape = SubResource("CapsuleShape2D_4ldmi")
+debug_color = Color(0.521382, 0.474014, 0, 0.419608)

@@ -1566,8 +1566,8 @@ shape = SubResource("CapsuleShape2D_hdh8i")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 
 [node name="1p_end" type="CollisionShape2D" parent="."]
-position = Vector2(766, 319)
-rotation = -2.95531
+position = Vector2(775, 315)
+rotation = -3.14082
 shape = SubResource("CapsuleShape2D_x4s1f")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 
