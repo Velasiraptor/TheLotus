@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be3tqk1fwusp5"
-path="res://.godot/imported/inventory_1.png-d5e631f99bb0d3949d2481c380eeda51.ctex"
+uid="uid://b7sc2kuam37q7"
+path="res://.godot/imported/Vines.png-f429bd484bffd516d0ebba11c5ed62b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Inventory/inventory_1.png"
-dest_files=["res://.godot/imported/inventory_1.png-d5e631f99bb0d3949d2481c380eeda51.ctex"]
+source_file="res://Sprites/UI/Inventory/Vines.png"
+dest_files=["res://.godot/imported/Vines.png-f429bd484bffd516d0ebba11c5ed62b1.ctex"]
 
 [params]
 

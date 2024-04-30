@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://m1fdee2xwour"]
+[gd_scene load_steps=32 format=3 uid="uid://m1fdee2xwour"]
 
 [ext_resource type="Script" path="res://Scene/Cave/CaveLVL.gd" id="1_wbc34"]
 [ext_resource type="Texture2D" uid="uid://bjk3e3bhno6nl" path="res://Sprites/Cave/Backgrounds/Backgrounds0.png" id="2_2aktn"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://krpddqjqf0wa" path="res://Sprites/Cave/Fonnn.png" id="13_ir43h"]
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="14_ci4m1"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="15_gx3nq"]
-[ext_resource type="PackedScene" uid="uid://cpaky8se6tuvm" path="res://Scene/inventory2.tscn" id="20_0c73n"]
 [ext_resource type="PackedScene" uid="uid://cqmk2gl5u37bs" path="res://Scene/NPC/dwarf.tscn" id="20_avnp1"]
 
 [sub_resource type="Shader" id="Shader_ii8k6"]
@@ -621,12 +620,6 @@ position = Vector2(-2738, -91)
 rotation = -1.5708
 scale = Vector2(1.46558, 1)
 texture = ExtResource("13_ir43h")
-
-[node name="Inventory" type="CanvasLayer" parent="."]
-layer = 7
-
-[node name="inventory" parent="Inventory" instance=ExtResource("20_0c73n")]
-visible = false
 
 [node name="Escape" type="CanvasLayer" parent="."]
 process_priority = 1

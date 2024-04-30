@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo3jqcdjd1ad3"
-path="res://.godot/imported/FrogInvent_1.png-6a45543336efeaecc12c8ce283052d98.ctex"
+uid="uid://ca8vhsctyukdl"
+path="res://.godot/imported/Inventory_back_2.png-ee581d50049936168538248a43e91f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Inventory/FrogInvent_1.png"
-dest_files=["res://.godot/imported/FrogInvent_1.png-6a45543336efeaecc12c8ce283052d98.ctex"]
+source_file="res://Sprites/UI/Inventory/Inventory_back_2.png"
+dest_files=["res://.godot/imported/Inventory_back_2.png-ee581d50049936168538248a43e91f44.ctex"]
 
 [params]
 

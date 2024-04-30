@@ -11,9 +11,9 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
-res://Core/globals.gd
-res://Scene/Loads/LoadScene.gd
 res://Scene/Player/Player.tscn
-res://Scene/Swamp_Level_1/swamp_level_1.gd
-res://Scene/UI/escape.gd
-res://Scene/MainMenu/MainMenu.gd
+res://Scene/UI/GUI.tscn
+res://Scene/Cave/CaveLVL.tscn
+res://Scene/Cave/CaveLVL.gd
+res://Scene/Forest/ForestLVL.tscn
+res://Scene/UI/escape.tscn

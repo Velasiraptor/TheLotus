@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5cpg1sr7oi7a"]
+[gd_scene load_steps=30 format=3 uid="uid://c5cpg1sr7oi7a"]
 
 [ext_resource type="Texture2D" uid="uid://cygu7fov4xc7j" path="res://Sprites/UI/GUI/IconIdle1.png" id="2_633up"]
 [ext_resource type="Texture2D" uid="uid://b8cro36k5s22a" path="res://Sprites/UI/GUI/IconJump.png" id="2_jwbdh"]
@@ -8,12 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://cin6nc0lq5wd5" path="res://Sprites/UI/GUI/minusHP60.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://djf1wtfyejgjx" path="res://Sprites/UI/GUI/IconIdle3.png" id="7_5tv1c"]
 [ext_resource type="Texture2D" uid="uid://cjur63ms4bhlu" path="res://Sprites/UI/GUI/minusHP40.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cdowf5067d3nq" path="res://Sprites/UI/Inventory/Inventory_back_1.png" id="8_5w42l"]
 [ext_resource type="Texture2D" uid="uid://dcep2loc15mri" path="res://Sprites/UI/GUI/minusHP80.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ca8vhsctyukdl" path="res://Sprites/UI/Inventory/Inventory_back_2.png" id="9_4paox"]
 [ext_resource type="Texture2D" uid="uid://cj42xu1s56usi" path="res://Sprites/UI/GUI/IconIdle4.png" id="9_j5gnk"]
 [ext_resource type="Texture2D" uid="uid://cyshts1lk7c2w" path="res://Sprites/UI/GUI/minusHP20.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dsm41366r0130" path="res://Sprites/UI/Inventory/Inventory_slot.png" id="10_e50tb"]
 [ext_resource type="Texture2D" uid="uid://cfp84ku24wdr2" path="res://Sprites/UI/GUI/IconDMG.png" id="10_hjh6w"]
 [ext_resource type="Texture2D" uid="uid://biejgq6uwvom4" path="res://Sprites/UI/GUI/HealBackground20.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cvmkdq61txq2f" path="res://Sprites/UI/Inventory/Inventory_slot_focus.png" id="11_7r0q6"]
 [ext_resource type="Texture2D" uid="uid://2ug3epkuo4fe" path="res://Sprites/UI/GUI/HealBackground.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://b7sc2kuam37q7" path="res://Sprites/UI/Inventory/Vines.png" id="12_ttm2l"]
 [ext_resource type="Texture2D" uid="uid://ccdwaysb6g5ke" path="res://Sprites/UI/GUI/HealBackground40.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://cqlfkpu3dv0er" path="res://Sprites/UI/GUI/HealBackground80.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://g764s3je7fv5" path="res://Sprites/UI/GUI/HealBackground60.png" id="15"]
@@ -134,6 +139,84 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_jcgbg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1296, 19.3333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Inventory/Vines:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.122173]
+}
+
+[sub_resource type="Animation" id="Animation_xrc3c"]
+resource_name = "Animation_inventory_show"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1296, 19.3333), Vector2(963.333, 19.3333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Inventory/Vines:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.122173, -0.122173, 0.122173, -0.0610865, 0.0610865, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xwrs1"]
+resource_name = "Animation_inventory_hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(963.333, 19.3333), Vector2(1296, 19.333)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxqcl"]
+_data = {
+"Animation_inventory_hide": SubResource("Animation_xwrs1"),
+"Animation_inventory_show": SubResource("Animation_xrc3c"),
+"RESET": SubResource("Animation_jcgbg")
+}
+
 [sub_resource type="SpriteFrames" id="2"]
 animations = [{
 "frames": [{
@@ -197,7 +280,7 @@ scale = Vector2(1.5, 1.5)
 layout_mode = 0
 offset_right = 702.0
 offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="AnimationIcon" type="AnimatedSprite2D" parent="Control/IconPlayer"]
 unique_name_in_owner = true
@@ -214,7 +297,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 702.0
 offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerHalfHp"]
 custom_minimum_size = Vector2(240, 0)
@@ -224,7 +307,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 702.0
 offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerFullHp"]
 custom_minimum_size = Vector2(240, 0)
@@ -234,11 +317,103 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 702.0
 offset_bottom = 240.0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerStamina"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
+
+[node name="Inventory" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1296.0
+offset_top = 19.3333
+offset_right = 1296.0
+offset_bottom = 19.3333
+grow_horizontal = 0
+scale = Vector2(0.45, 0.45)
+
+[node name="Inventory_back_1" type="TextureRect" parent="Control/Inventory"]
+layout_mode = 2
+offset_right = 687.0
+offset_bottom = 301.0
+texture = ExtResource("8_5w42l")
+
+[node name="Inventory_back_2" type="TextureRect" parent="Control/Inventory"]
+offset_right = 687.0
+offset_bottom = 301.0
+texture = ExtResource("9_4paox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Inventory"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Inventory/VBoxContainer"]
+custom_minimum_size = Vector2(700, 35)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Inventory/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Inventory_slot_1" type="TextureButton" parent="Control/Inventory/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 1
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("10_e50tb")
+texture_focused = ExtResource("11_7r0q6")
+
+[node name="Inventory_slot_2" type="TextureButton" parent="Control/Inventory/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 1
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("10_e50tb")
+texture_focused = ExtResource("11_7r0q6")
+
+[node name="Inventory_slot_3" type="TextureButton" parent="Control/Inventory/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 1
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("10_e50tb")
+texture_focused = ExtResource("11_7r0q6")
+
+[node name="Inventory_slot_4" type="TextureButton" parent="Control/Inventory/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 1
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource("10_e50tb")
+texture_focused = ExtResource("11_7r0q6")
+
+[node name="Vines" type="Sprite2D" parent="Control/Inventory"]
+position = Vector2(343.703, 151.111)
+skew = -0.122173
+texture = ExtResource("12_ttm2l")
+
+[node name="Animation_inventory" type="AnimationPlayer" parent="Control/Inventory"]
+unique_name_in_owner = true
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_yxqcl")
+}
+
+[node name="Timer_hide_inventory" type="Timer" parent="Control/Inventory"]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
 
 [node name="BackHeal" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -262,5 +437,7 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[connection signal="animation_finished" from="Control/Inventory/Animation_inventory" to="." method="_on_animation_inventory_animation_finished"]
+[connection signal="timeout" from="Control/Inventory/Timer_hide_inventory" to="." method="_on_timer_hide_inventory_timeout"]
 [connection signal="timeout" from="TimerDamage" to="." method="_on_TimerDamage_timeout"]
 [connection signal="timeout" from="TimerHeal" to="." method="_on_TimerHeal_timeout"]

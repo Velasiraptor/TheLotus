@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://hrim7s88bl86"]
+[gd_scene load_steps=84 format=3 uid="uid://hrim7s88bl86"]
 
 [ext_resource type="Texture2D" uid="uid://c30qjjrujkf1f" path="res://Sprites/Forest/BackgroundsLevel1/BackgroundFull.png" id="1_axv3k"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_1.tscn" id="2_ubu5b"]
@@ -53,7 +53,6 @@
 [ext_resource type="Texture2D" uid="uid://bmsu7cc5i6qlx" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-10.png" id="50_ri4ty"]
 [ext_resource type="Texture2D" uid="uid://bd2k1isgckjpf" path="res://Sprites/Forest/Top.png" id="51_wpigg"]
 [ext_resource type="AudioStream" uid="uid://dwqph1jq3eaqs" path="res://Sounds/Location-/forest.mp3" id="52_kpk6e"]
-[ext_resource type="PackedScene" uid="uid://bf7a0afpemdca" path="res://Scene/inventory.tscn" id="53_2sqsh"]
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="54_ldd2a"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="55_eavr7"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/Bottom.tscn" id="56_hphew"]
@@ -79,14 +78,8 @@ func _input(event):
 		$TimerCursor.start()
 	if event.is_action_pressed(\"ui_cancel\") and $GameOver/GameOver.visible == false and $Inventory/inventory.visible == false:
 		get_tree().call_group(\"Menu\", \"pause\")
-	if event.is_action_pressed(\"open_inventory\") and $GameOver/GameOver.visible == false and $Escape/ESCAPE.visible == false:
-		if $Inventory/inventory.visible == false:
-			$Inventory/inventory.visible = true
-		elif $Inventory/inventory.visible == true:
-			$Inventory/inventory.visible = false
 	if $GameOver/GameOver.visible == true:
 		$Escape/ESCAPE.visible = false
-		$Inventory/inventory.visible = false
 
 func _on_timer_cursor_timeout():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -783,12 +776,6 @@ texture = ExtResource("51_wpigg")
 
 [node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("52_kpk6e")
-
-[node name="Inventory" type="CanvasLayer" parent="."]
-layer = 7
-
-[node name="inventory" parent="Inventory" instance=ExtResource("53_2sqsh")]
-visible = false
 
 [node name="Escape" type="CanvasLayer" parent="."]
 process_priority = 1

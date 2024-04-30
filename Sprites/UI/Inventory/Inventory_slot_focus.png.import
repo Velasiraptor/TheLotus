@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg1lt7ii7xskl"
-path="res://.godot/imported/FrogInvent_2.png-370334a870cff70950e8ff375fcd21a5.ctex"
+uid="uid://cvmkdq61txq2f"
+path="res://.godot/imported/Inventory_slot_focus.png-97e0d79825c6d82312f48aeb4108ae0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Inventory/FrogInvent_2.png"
-dest_files=["res://.godot/imported/FrogInvent_2.png-370334a870cff70950e8ff375fcd21a5.ctex"]
+source_file="res://Sprites/UI/Inventory/Inventory_slot_focus.png"
+dest_files=["res://.godot/imported/Inventory_slot_focus.png-97e0d79825c6d82312f48aeb4108ae0a.ctex"]
 
 [params]
 
