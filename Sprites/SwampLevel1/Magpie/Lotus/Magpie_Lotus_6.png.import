@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvyfin6ck5yfw"
-path="res://.godot/imported/IconDeath.png-6420a3be9b094c0fd919ceabf6143ad4.ctex"
+uid="uid://bj3u3gwvxwf82"
+path="res://.godot/imported/Magpie_Lotus_6.png-6908bd520adbe5e87f5de45da7eda096.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/GUI/IconDeath.png"
-dest_files=["res://.godot/imported/IconDeath.png-6420a3be9b094c0fd919ceabf6143ad4.ctex"]
+source_file="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_6.png"
+dest_files=["res://.godot/imported/Magpie_Lotus_6.png-6908bd520adbe5e87f5de45da7eda096.ctex"]
 
 [params]
 

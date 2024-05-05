@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djf1wtfyejgjx"
-path="res://.godot/imported/IconIdle3.png-206a531123e49ef38e8898d9df55d57f.ctex"
+uid="uid://v7jodbao37xq"
+path="res://.godot/imported/IconDanger_1.png-dc5a3187a0b0fae343f1bbae9ea7a07c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/GUI/IconIdle3.png"
-dest_files=["res://.godot/imported/IconIdle3.png-206a531123e49ef38e8898d9df55d57f.ctex"]
+source_file="res://Sprites/UI/GUI/Icons/IconDanger_1.png"
+dest_files=["res://.godot/imported/IconDanger_1.png-dc5a3187a0b0fae343f1bbae9ea7a07c.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://caudsgp7lcrmo"]
+[gd_scene load_steps=58 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
 [ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_bjt4l"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c5cpg1sr7oi7a" path="res://Scene/UI/GUI.tscn" id="20_ce54u"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="21_mm38c"]
 [ext_resource type="Theme" uid="uid://bqp0odgpbno7c" path="res://Theme_fonts/main_theme.tres" id="31_et63p"]
+[ext_resource type="Texture2D" uid="uid://dsrps3fjtbjls" path="res://Sprites/UI/GUI/Emotion/Emotion_danger.png" id="31_u0wwl"]
 
 [sub_resource type="Gradient" id="Gradient_gtqwp"]
 offsets = PackedFloat32Array(0, 0.155556, 1)
@@ -79,14 +80,6 @@ animations = [{
 "loop": false,
 "name": &"Death",
 "speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6")
-}],
-"loop": true,
-"name": &"Fall",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -452,7 +445,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1.7, 1.7), Vector2(2.5, 2.5)]
+"values": [Vector2(1.7, 1.7), Vector2(2.2, 2.2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -550,12 +543,57 @@ _data = {
 "player_on_oil": SubResource("Animation_07ko3")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dfou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_u0wwl")
+}],
+"loop": true,
+"name": &"Danger",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_x3262"]
+resource_name = "emotion"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.35, 0.35), Vector2(0.3, 0.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufb5v"]
+_data = {
+"emotion": SubResource("Animation_x3262")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 light_mask = 2
 scale = Vector2(0.55, 0.55)
 collision_layer = 2
 collision_mask = 13
 floor_max_angle = 0.523599
+floor_snap_length = 5.0
 script = ExtResource("1_bjt4l")
 
 [node name="ParticlesPlayer" type="GPUParticles2D" parent="." groups=["Player"]]
@@ -572,7 +610,7 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"run"
+animation = &"IdleSide"
 autoplay = "run"
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
@@ -634,24 +672,10 @@ unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
 
-[node name="Ray_jump" type="RayCast2D" parent="."]
+[node name="Timer_danger" type="Timer" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 43.6363)
-collision_mask = 9
-
-[node name="Ray_jump_L" type="RayCast2D" parent="Ray_jump"]
-unique_name_in_owner = true
-position = Vector2(-61.8182, -5.45448)
-collision_mask = 9
-
-[node name="Ray_jump_R" type="RayCast2D" parent="Ray_jump"]
-unique_name_in_owner = true
-position = Vector2(61.818, -5.454)
-collision_mask = 9
-
-[node name="RayCastFall" type="RayCast2D" parent="."]
-scale = Vector2(5, 1)
-target_position = Vector2(0.4, 400)
+wait_time = 0.6
+one_shot = true
 
 [node name="GUI" parent="." instance=ExtResource("20_ce54u")]
 layer = 6
@@ -674,7 +698,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TongueAr"]
-position = Vector2(-104, 23)
+position = Vector2(119.333, 23)
 shape = SubResource("CircleShape2D_kktoy")
 debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
 
@@ -682,12 +706,12 @@ debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
 unique_name_in_owner = true
 position = Vector2(0, -40)
 scale = Vector2(0.2, 0.2)
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(2.06667, 2.06667)
 process_callback = 0
-limit_left = -2444
-limit_top = -1050
+limit_left = -2410
+limit_top = -731
 limit_right = 29450
-limit_bottom = 540
+limit_bottom = 709
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
@@ -710,6 +734,22 @@ libraries = {
 "": SubResource("AnimationLibrary_evksx")
 }
 
+[node name="Animation_walk_away_from_danger" type="AnimationPlayer" parent="."]
+
+[node name="Emotion" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(180, -143.636)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_6dfou")
+animation = &"Danger"
+
+[node name="Animation_emotion" type="AnimationPlayer" parent="Emotion"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_ufb5v")
+}
+
 [node name="test_label" type="Label" parent="."]
 visible = false
 offset_left = -101.818
@@ -721,3 +761,4 @@ theme = ExtResource("31_et63p")
 [connection signal="timeout" from="TimerDeath" to="." method="_on_TimerDeath_timeout"]
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]
 [connection signal="timeout" from="Timer_water_quicksand" to="." method="_on_timer_water_quicksand_timeout"]
+[connection signal="timeout" from="Timer_danger" to="." method="_on_timer_danger_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj42xu1s56usi"
-path="res://.godot/imported/IconIdle4.png-2a76a3a6a99dae8414a8f0f74a6ccdfc.ctex"
+uid="uid://dsrps3fjtbjls"
+path="res://.godot/imported/Emotion_danger.png-6dd5db0c82cd8292a0c29aae3ea13a95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/GUI/IconIdle4.png"
-dest_files=["res://.godot/imported/IconIdle4.png-2a76a3a6a99dae8414a8f0f74a6ccdfc.ctex"]
+source_file="res://Sprites/UI/GUI/Emotion/Emotion_danger.png"
+dest_files=["res://.godot/imported/Emotion_danger.png-6dd5db0c82cd8292a0c29aae3ea13a95.ctex"]
 
 [params]
 

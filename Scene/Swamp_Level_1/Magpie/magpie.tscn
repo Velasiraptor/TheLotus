@@ -1,0 +1,112 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5d3gvvkys1gy"]
+
+[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Magpie/magpie.gd" id="1_n3y5h"]
+[ext_resource type="Texture2D" uid="uid://b6esivdq3db4c" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_open.png" id="2_5av37"]
+[ext_resource type="Texture2D" uid="uid://cy10fk5k0pdh7" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_1.png" id="2_68u8g"]
+[ext_resource type="Texture2D" uid="uid://jf5xub6uda65" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_2.png" id="3_1avpc"]
+[ext_resource type="Texture2D" uid="uid://cabtna75b5qm6" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_close.png" id="3_uh5wo"]
+[ext_resource type="Texture2D" uid="uid://b33gvtq6anp3s" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_3.png" id="4_xrejd"]
+[ext_resource type="Texture2D" uid="uid://ddkojp8ye0cdp" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_4.png" id="5_45g1l"]
+[ext_resource type="Texture2D" uid="uid://cnmbgvlws41ug" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_5.png" id="6_liwx4"]
+[ext_resource type="Texture2D" uid="uid://bj3u3gwvxwf82" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_6.png" id="7_k6crh"]
+[ext_resource type="Texture2D" uid="uid://hku8cvfmton3" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_7.png" id="8_0k8tn"]
+[ext_resource type="Texture2D" uid="uid://25oclx6eypns" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_8.png" id="9_hgorq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6m0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68u8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1avpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrejd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_45g1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_liwx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k6crh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0k8tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hgorq")
+}],
+"loop": true,
+"name": &"Lotus",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j4bl"]
+size = Vector2(3200, 4426.67)
+
+[node name="Magpie" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_n3y5h")
+
+[node name="LotusOpen" type="Sprite2D" parent="."]
+position = Vector2(-1606, 548.667)
+texture = ExtResource("2_5av37")
+flip_h = true
+
+[node name="LotusClose" type="Sprite2D" parent="."]
+position = Vector2(-1606, 548.667)
+texture = ExtResource("3_uh5wo")
+flip_h = true
+
+[node name="Magpie" type="AnimatedSprite2D" parent="."]
+position = Vector2(-13.3333, 20)
+sprite_frames = SubResource("SpriteFrames_p6m0g")
+animation = &"Lotus"
+autoplay = "Lotus"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-833.333, -833.333)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6j4bl")
+debug_color = Color(0, 0.113725, 0.137255, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

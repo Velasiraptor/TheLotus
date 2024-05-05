@@ -7,6 +7,10 @@ extends CanvasLayer
 @onready var inventory_slot_4 = %Inventory_slot_4
 @onready var animation_inventory = %Animation_inventory
 @onready var timer_hide_inventory = %Timer_hide_inventory
+@onready var texture_slot_1 = %Texture_slot_1
+@onready var texture_slot_2 = %Texture_slot_2
+@onready var texture_slot_3 = %Texture_slot_3
+@onready var texture_slot_4 = %Texture_slot_4
 
 
 var HP_zero : Texture2D = preload("res://Sprites/UI/GUI/HpZero.png")
@@ -16,6 +20,7 @@ var HP_half : Texture2D = preload("res://Sprites/UI/GUI/HpHalf.png")
 var ind_inventory = 0
 var anim_name_show = "Animation_inventory_show"
 var anim_name_hide = "Animation_inventory_hide"
+
 
 var ind_death := false #проверка смерти
 
@@ -98,7 +103,8 @@ func DMGIcon():
 	animation_icon.play("TakeDamage")
 func DeathIcon():
 	animation_icon.play("Death")
-
+func DangerIcon():
+	animation_icon.play("danger")
 
 # ИНВЕНТАРЬ
 
@@ -140,5 +146,39 @@ func _on_animation_inventory_animation_finished(anim_name):
 func _on_timer_hide_inventory_timeout():
 	animation_inventory.play("Animation_inventory_hide")
 
+
+func check_inventory_null_slots(new_texture_in_slot): # проверяем на свободный слот, принимает текстуру
+	if texture_slot_1.texture != null:
+		print("занято")
+	else:
+		texture_slot_1.texture = new_texture_in_slot
+		animation_inventory.play("Animation_inventory_show")
+		timer_hide_inventory.stop()
+		timer_hide_inventory.start()
+		return
+	if texture_slot_2.texture != null:
+		print("занято")
+	else:
+		texture_slot_2.texture = new_texture_in_slot
+		animation_inventory.play("Animation_inventory_show")
+		timer_hide_inventory.stop()
+		timer_hide_inventory.start()
+		return
+	if texture_slot_3.texture != null:
+		print("занято")
+	else:
+		texture_slot_3.texture = new_texture_in_slot
+		animation_inventory.play("Animation_inventory_show")
+		timer_hide_inventory.stop()
+		timer_hide_inventory.start()
+		return
+	if texture_slot_4.texture != null:
+		print("занято")
+	else:
+		texture_slot_4.texture = new_texture_in_slot
+		animation_inventory.play("Animation_inventory_show")
+		timer_hide_inventory.stop()
+		timer_hide_inventory.start()
+		return
 
 

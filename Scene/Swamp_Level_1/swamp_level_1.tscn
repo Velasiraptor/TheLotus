@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=72 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cq64cj5jkn58q" path="res://Sprites/SwampLevel1/Items/Hole_top.png" id="24_xfc7i"]
 [ext_resource type="Texture2D" uid="uid://cr3s0ptlqodcv" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2_top.png" id="25_q86qb"]
 [ext_resource type="Texture2D" uid="uid://2ab2kufipnsv" path="res://Sprites/SwampLevel1/Swamp_path_3/Water_wave_3p_top.png" id="25_tobtv"]
+[ext_resource type="PackedScene" uid="uid://c5d3gvvkys1gy" path="res://Scene/Swamp_Level_1/Magpie/magpie.tscn" id="26_1ges8"]
 [ext_resource type="Shader" path="res://Shaders/water_swamp_level_1.gdshader" id="26_5g3va"]
 [ext_resource type="PackedScene" uid="uid://8pg1jibr8hkx" path="res://Scene/Swamp_Level_1/3p_Tree/3p_foliage_area.tscn" id="27_36g05"]
 [ext_resource type="Texture2D" uid="uid://dnuj470e57dyo" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_static.png" id="29_kjcst"]
@@ -430,8 +431,11 @@ debug_color = Color(6.01634e-09, 0.1778, 0.213342, 0.42)
 position = Vector2(468, 402)
 gravity_scale = 3.0
 
+[node name="Magpie" parent="." instance=ExtResource("26_1ges8")]
+position = Vector2(1910, 263)
+
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(255, 386)
+position = Vector2(2120, 340)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 

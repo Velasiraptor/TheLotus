@@ -9,7 +9,7 @@ enum State {
 	TONGUE, 
 	TAKE_DAMAGE, 
 	DEATH,
-	FALL
+	DANGER
 }
 
 var state := State.IDLE
@@ -34,10 +34,10 @@ var ind_not_fall_damage := false
 @onready var side_frog_player = $SideFrogPlayer
 @onready var camera_player = %CameraPlayer
 @onready var animation_on_water_oil = %Animation_on_water_oil
-@onready var ray_jump = %Ray_jump
-@onready var ray_jump_l = %Ray_jump_L
-@onready var ray_jump_r = %Ray_jump_R
 @onready var timer_water_quicksand = %Timer_water_quicksand
+@onready var timer_danger = %Timer_danger
+@onready var emotion = %Emotion
+@onready var animation_emotion = %Animation_emotion
 
 
 
@@ -47,7 +47,7 @@ func _ready():
 	$TongueAr/CollisionShape2D.disabled = true
 
 func _process(delta):
-	$test_label.text = "FPS: " + str(Engine.get_frames_per_second())
+	#$test_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	if $".".visible == true:
 		items_rigid()
 		move()
@@ -90,27 +90,35 @@ func items_rigid():
 
 
 func move(): #движение
-	if Globals.actual_hp_player > 0:
+	if Globals.actual_hp_player > 0 and state != State.DANGER:
+		
 		if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
 			change_state(State.WALK_LEFT)
 			vel.x = -speed
+			if Input.is_action_just_pressed("player_take") and not is_on_floor():
+				change_state(State.TONGUE)
 			if not is_on_floor() and state == State.JUMP:
 				vel.x = -Jump_speed 
 	
 		elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0:  # движение вправо
 			change_state(State.WALK_RIGHT)
 			vel.x = speed
+			if Input.is_action_just_pressed("player_take") and not is_on_floor():
+				change_state(State.TONGUE)
 			if not is_on_floor() and state == State.JUMP:
 				vel.x = Jump_speed 
 	
-		elif Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1: #Язык
+		elif Input.is_action_just_pressed("player_take") and ind == 1: #Язык
 			change_state(State.TONGUE)
-			vel.x = 0
 	
 		elif state == State.TAKE_DAMAGE: #получение урона
 			await get_tree().create_timer(0.5).timeout
 			change_state(State.IDLE) 
-	
+		
+		elif is_on_floor() and state != State.TAKE_DAMAGE and state == State.TONGUE \
+		and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
+			vel.x = 0
+		
 		elif is_on_floor() and state != State.TAKE_DAMAGE and state != State.TONGUE \
 		and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
 			vel.x = 0
@@ -118,7 +126,7 @@ func move(): #движение
 			change_state(State.IDLE)
 
 func jump(): #прыжок
-	if Input.is_action_just_pressed("player_jump") and (ray_jump.is_colliding() or ray_jump_l.is_colliding() or ray_jump_r.is_colliding()) and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_true == 1 and Globals.actual_hp_player > 0:
+	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_true == 1 and Globals.actual_hp_player > 0 and state != State.DANGER:
 		ind_fall_damage = false
 		change_state(State.JUMP)
 		idleInd = 0
@@ -150,7 +158,6 @@ func soundWalk(): #звук ходьбы
 	if side_frog_player.visible == true and (side_frog_player.frame == 1 or side_frog_player.frame == 10):
 		$walkSound.play()
 
-
 func animate(): #анимация
 	if Globals.actual_hp_player > 0:
 		if state == State.WALK_RIGHT:
@@ -165,12 +172,6 @@ func animate(): #анимация
 				$ParticlesPlayer.process_material.gravity.x = -5
 				$ParticlesPlayer.explosiveness = 0.4
 				$ParticlesPlayer.process_material.gravity.y = 0
-			elif vel.y > 0 and not $RayCastFall.is_colliding():#падение
-				state == State.FALL
-				frog_player.visible = false
-				side_frog_player.visible = true
-				side_frog_player.play("Fall") 
-				get_tree().call_group("GUI", "idleIcon")
 		elif state == State.WALK_LEFT:
 			frog_player.visible = false
 			side_frog_player.visible = true
@@ -183,13 +184,7 @@ func animate(): #анимация
 				$ParticlesPlayer.process_material.gravity.x = 5
 				$ParticlesPlayer.process_material.gravity.y = 0
 				$ParticlesPlayer.explosiveness = 0.4
-			elif vel.y > 0 and not $RayCastFall.is_colliding():
-				frog_player.visible = false
-				side_frog_player.visible = true
-				side_frog_player.play("Fall") #падение
-				state == State.FALL
-				get_tree().call_group("GUI", "idleIcon")
-		elif state == State.TONGUE and Input.is_action_just_pressed("player_take") and is_on_floor() and ind == 1:
+		elif state == State.TONGUE and Input.is_action_just_pressed("player_take") and ind == 1:
 			side_frog_player.visible = true
 			frog_player.visible = false
 			side_frog_player.frame = 0
@@ -224,6 +219,34 @@ func not_fall_damage_state(): #функция предотвращающая у�
 	else:
 		return
 	
+
+func walk_away_from_danger_right(): # отходит от опасных объектов вправо
+	change_state(State.DANGER)
+	get_tree().call_group("GUI", "DangerIcon")
+	emotion.flip_h = false
+	emotion.position.x = 180
+	vel.x = speed
+	side_frog_player.flip_h = false
+	frog_player.flip_h = true
+	side_frog_player.play("run")
+	timer_danger.start()
+func walk_away_from_danger_left(): # отходит от опасных объектов влево
+	change_state(State.DANGER)
+	get_tree().call_group("GUI", "DangerIcon")
+	emotion.flip_h = true
+	emotion.position.x = -180
+	vel.x = -speed
+	side_frog_player.flip_h = true
+	frog_player.flip_h = false
+	side_frog_player.play("run")
+	timer_danger.start()
+func _on_timer_danger_timeout():
+	change_state(State.IDLE)
+	animation_emotion.play("emotion")
+	vel.x = 0
+	await get_tree().create_timer(2.0).timeout
+	animation_emotion.play_backwards("emotion")
+
 
 func indTrue():
 	ind = 1
@@ -368,3 +391,4 @@ func Player_not_on_water_quicksand():
 func _on_timer_water_quicksand_timeout(): # таймер возвращения прыжка по умолчанию
 	default_characteristics()
 	ind_jump_true = 0
+

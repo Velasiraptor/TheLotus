@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfp84ku24wdr2"
-path="res://.godot/imported/IconDMG.png-ede2e31d0b972e04e8c97ea3ae8a1633.ctex"
+uid="uid://cabtna75b5qm6"
+path="res://.godot/imported/Lotus_close.png-5b28336a3934a9073205afa53763e4c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/GUI/IconDMG.png"
-dest_files=["res://.godot/imported/IconDMG.png-ede2e31d0b972e04e8c97ea3ae8a1633.ctex"]
+source_file="res://Sprites/SwampLevel1/Items/Lotus/Lotus_close.png"
+dest_files=["res://.godot/imported/Lotus_close.png-5b28336a3934a9073205afa53763e4c1.ctex"]
 
 [params]
 

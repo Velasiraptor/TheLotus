@@ -19,12 +19,12 @@ gravity_scale = 5.0
 script = ExtResource("1_uu1be")
 
 [node name="Log" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.18, 0.18)
 texture = ExtResource("1_l3ys8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.999999, -4.5)
 rotation = 1.5708
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.18, 0.18)
 shape = SubResource("CapsuleShape2D_4ldmi")
 debug_color = Color(0.521382, 0.474014, 0, 0.419608)
