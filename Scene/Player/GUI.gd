@@ -181,4 +181,25 @@ func check_inventory_null_slots(new_texture_in_slot): # проверяем на 
 		timer_hide_inventory.start()
 		return
 
+func check_inventory_item(item_texture): # проверяем на нужный предмет, принимает текстуру
+	if not animation_inventory.is_playing() and ind_inventory == 0:
+		animation_inventory.play("Animation_inventory_show")
+	if texture_slot_1.texture == item_texture and inventory_slot_1.has_focus():
+		items_on(texture_slot_1.texture)
+		texture_slot_1.texture = null
+	elif texture_slot_2.texture == item_texture and inventory_slot_2.has_focus():
+		items_on(texture_slot_2.texture)
+		texture_slot_2.texture = null
+	elif texture_slot_3.texture == item_texture and inventory_slot_3.has_focus():
+		items_on(texture_slot_3.texture)
+		texture_slot_3.texture = null
+	elif texture_slot_4.texture == item_texture and inventory_slot_4.has_focus():
+		items_on(texture_slot_4.texture)
+		texture_slot_4.texture = null
+	else:
+		DangerIcon()
 
+func items_on(item_texture):
+	print(item_texture)
+	if item_texture == preload("res://Sprites/SwampLevel1/Inventory_items/Medallion/Inventory_medallion.png"):
+		get_tree().call_group("Medallion", "item_on")

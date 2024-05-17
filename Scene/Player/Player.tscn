@@ -698,8 +698,9 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TongueAr"]
-position = Vector2(119.333, 23)
+position = Vector2(-119.333, 23)
 shape = SubResource("CircleShape2D_kktoy")
+disabled = true
 debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
 
 [node name="CameraPlayer" type="Camera2D" parent="."]

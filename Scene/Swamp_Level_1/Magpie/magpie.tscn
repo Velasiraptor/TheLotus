@@ -105,7 +105,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-833.333, -833.333)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6j4bl")
 debug_color = Color(0, 0.113725, 0.137255, 0.419608)
 
