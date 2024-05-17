@@ -26,7 +26,8 @@ var camera_player_position = Vector2(0, -40)
 var dustPatricle = load("res://Sprites/Player/Dust.png")
 var ind = 1
 var idleInd = 1
-var ind_jump_true = 0
+var ind_jump = 1
+var ind_jump_on_water = 0
 var ind_fall_damage := false 
 var ind_not_fall_damage := false 
 
@@ -36,6 +37,7 @@ var ind_not_fall_damage := false
 @onready var animation_on_water_oil = %Animation_on_water_oil
 @onready var timer_water_quicksand = %Timer_water_quicksand
 @onready var timer_danger = %Timer_danger
+@onready var timer_emotion_off = %Timer_emotion_off
 @onready var emotion = %Emotion
 @onready var animation_emotion = %Animation_emotion
 
@@ -50,8 +52,8 @@ func _process(delta):
 	#$test_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	if $".".visible == true:
 		items_rigid()
-		move()
 		jump()
+		move()
 		animate()
 		fall_damage_state()
 		emit_player()
@@ -126,25 +128,39 @@ func move(): #движение
 			change_state(State.IDLE)
 
 func jump(): #прыжок
-	if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_true == 1 and Globals.actual_hp_player > 0 and state != State.DANGER:
-		ind_fall_damage = false
-		change_state(State.JUMP)
-		idleInd = 0
-		vel.y -= jump_force
-		frog_player.visible = false
-		side_frog_player.visible = true
-		side_frog_player.frame = 0
-		side_frog_player.play("jump")
-		get_tree().call_group("GUI", "jumpIcon")
-		$jumpSound.play()
-		#if side_frog_player.flip_h == false and frog_player.flip_h == true: # Если добавить, то не сможет прыгать тупо вверх
-			#vel.x = speed
-		#else:
-			#vel.x = -speed
+	if ind_jump == 1:
+		if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_on_water == 1 and Globals.actual_hp_player > 0 and state != State.DANGER:
+			ind_fall_damage = false
+			change_state(State.JUMP)
+			idleInd = 0
+			vel.y -= jump_force
+			frog_player.visible = false
+			side_frog_player.visible = true
+			side_frog_player.frame = 0
+			side_frog_player.play("jump")
+			get_tree().call_group("GUI", "jumpIcon")
+			$jumpSound.play()
+			#if side_frog_player.flip_h == false and frog_player.flip_h == true: # Если добавить, то не сможет прыгать тупо вверх
+				#vel.x = speed
+			#else:
+				#vel.x = -speed
+	elif Input.is_action_just_pressed("player_jump") and ind_jump == 0:
+		emotion.play("Danger")
+		get_tree().call_group("GUI", "NoNoIcon")
+		timer_emotion_off.stop()
+		animation_emotion.play("emotion")
+		timer_emotion_off.start()
 	set_velocity(vel)
 	set_up_direction(Vector2.UP)	
 	move_and_slide()
 	vel = velocity
+
+func jump_off(): #Отключение прыжка
+	ind_jump = 0
+func jump_on(): #Включение прыжка
+	ind_jump = 1
+
+
 
 func drop(): #чтобы при нажатии вниз, игрок падал с конкретных платформ
 	if Globals.actual_hp_player > 0:
@@ -167,7 +183,8 @@ func animate(): #анимация
 			frog_player.flip_h = true
 			if is_on_floor() and not Input.is_action_just_pressed("player_jump"):
 				side_frog_player.play("run")
-				get_tree().call_group("GUI", "idleIcon")
+				if ind_jump == 1:
+					get_tree().call_group("GUI", "idleIcon")
 				$ParticlesPlayer.position.x = -50
 				$ParticlesPlayer.process_material.gravity.x = -5
 				$ParticlesPlayer.explosiveness = 0.4
@@ -179,7 +196,8 @@ func animate(): #анимация
 			frog_player.flip_h = false
 			if is_on_floor() and not Input.is_action_just_pressed("player_jump"):
 				side_frog_player.play("run")
-				get_tree().call_group("GUI", "idleIcon")
+				if ind_jump == 1:
+					get_tree().call_group("GUI", "idleIcon")
 				$ParticlesPlayer.position.x = 50
 				$ParticlesPlayer.process_material.gravity.x = 5
 				$ParticlesPlayer.process_material.gravity.y = 0
@@ -195,7 +213,8 @@ func animate(): #анимация
 				$TongueAr/TongueAnim.play("Tongue_left")
 			$TimerIdleTongue.start()
 		elif state == State.IDLE:
-			get_tree().call_group("GUI", "idleIcon")
+			if ind_jump == 1:
+				get_tree().call_group("GUI", "idleIcon")
 			side_frog_player.visible = false
 			frog_player.visible = true
 			frog_player.play("idle")
@@ -222,7 +241,7 @@ func not_fall_damage_state(): #функция предотвращающая у�
 
 func walk_away_from_danger_right(): # отходит от опасных объектов вправо
 	change_state(State.DANGER)
-	get_tree().call_group("GUI", "DangerIcon")
+	get_tree().call_group("GUI", "NoNoIcon")
 	emotion.flip_h = false
 	emotion.position.x = 180
 	vel.x = speed
@@ -232,7 +251,7 @@ func walk_away_from_danger_right(): # отходит от опасных объ�
 	timer_danger.start()
 func walk_away_from_danger_left(): # отходит от опасных объектов влево
 	change_state(State.DANGER)
-	get_tree().call_group("GUI", "DangerIcon")
+	get_tree().call_group("GUI", "NoNoIcon")
 	emotion.flip_h = true
 	emotion.position.x = -180
 	vel.x = -speed
@@ -242,11 +261,14 @@ func walk_away_from_danger_left(): # отходит от опасных объе
 	timer_danger.start()
 func _on_timer_danger_timeout():
 	change_state(State.IDLE)
+	emotion.play("Danger")
+	timer_emotion_off.stop()
 	animation_emotion.play("emotion")
 	vel.x = 0
-	await get_tree().create_timer(2.0).timeout
-	animation_emotion.play_backwards("emotion")
+	timer_emotion_off.start()
 
+func _on_timer_emotion_off_timeout():
+	animation_emotion.play_backwards("emotion")
 
 func indTrue():
 	ind = 1
@@ -348,6 +370,13 @@ func change_camera_1p_2p_cave():
 	camera_player.limit_bottom = 1359
 	not_fall_damage_state()
 
+#ЛОТОС
+func emotion_lotus_no_force():
+	timer_emotion_off.stop()
+	animation_emotion.play("emotion")
+	emotion.play("No_force")
+	timer_emotion_off.start()
+
 #ДЕРЕВО 3p
 func change_camera_3p_tree():
 	camera_player.limit_left = 4150
@@ -376,8 +405,8 @@ func camera_after_cave_7_8p(): #изменения камеры для выхо�
 # ЗЫБУЧАЯ ВОДА
 func Player_on_water_quicksand():  
 	$Timer_water_quicksand.stop()
-	if ind_jump_true == 0:
-		ind_jump_true = 1
+	if ind_jump_on_water == 0:
+		ind_jump_on_water = 1
 		speed = 200
 		Jump_speed = 300
 		jump_force = 650
@@ -385,10 +414,12 @@ func Player_on_water_quicksand():
 	else:
 		jump_force = 0
 func Player_not_on_water_quicksand():
-	ind_jump_true += 2 #счетчик чтобы не работал прыжок
+	ind_jump_on_water += 2 #счетчик чтобы не работал прыжок
 	timer_water_quicksand.start()
 	animation_on_water_oil.play("player_exit_oil")
 func _on_timer_water_quicksand_timeout(): # таймер возвращения прыжка по умолчанию
 	default_characteristics()
-	ind_jump_true = 0
+	ind_jump_on_water = 0
+
+
 

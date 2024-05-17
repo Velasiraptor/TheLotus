@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://baat563t3l77h"]
+
+[ext_resource type="Texture2D" uid="uid://b6esivdq3db4c" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_open.png" id="1_isejq"]
+[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Gameplay_items/lotus.gd" id="1_q88kc"]
+[ext_resource type="Texture2D" uid="uid://cabtna75b5qm6" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_close.png" id="2_ycsbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7r85"]
+size = Vector2(190, 462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhgm7"]
+size = Vector2(167, 474)
+
+[node name="Lotus" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_q88kc")
+
+[node name="LotusOpen" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_isejq")
+flip_h = true
+
+[node name="LotusClose" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ycsbu")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, -78)
+shape = SubResource("RectangleShape2D_f7r85")
+debug_color = Color(0.333333, 0.607843, 0.403922, 0.419608)
+
+[node name="Player_emotion" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_emotion"]
+position = Vector2(73.5, -83)
+shape = SubResource("RectangleShape2D_dhgm7")
+debug_color = Color(0.638097, 0.445365, 0.735035, 0.42)
+
+[connection signal="body_entered" from="Player_emotion" to="." method="_on_player_emotion_body_entered"]

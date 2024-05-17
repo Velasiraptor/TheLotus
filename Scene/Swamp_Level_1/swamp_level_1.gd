@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var ray_1p_cave_animation = %Ray_1p_Cave_animation
+@onready var magpie = %Magpie
+@onready var magpie_marker_tree = %Magpie_Marker_tree
+
+
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мышив
 var log_in_hole_ind := true
 
@@ -75,7 +79,10 @@ func _on_camera_right_exit_body_entered(body):
 		await get_tree().create_timer(1.0).timeout
 		$"7_8p_Cave7-8/Camera_Right_Entered".monitoring = true
 
-
+func magpie_move_on_tree(): #передвижение сороки к дереву 3р
+	magpie.global_position = magpie_marker_tree.global_position
+	magpie.rotation = magpie_marker_tree.rotation
+	get_tree().call_group("Magpie", "magpie_on_tree")
 
 
 

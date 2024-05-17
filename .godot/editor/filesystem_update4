@@ -14,4 +14,15 @@ res://Shaders/test.gdshader
 res://Scene/Player/Player.tscn
 res://Scene/UI/GUI.tscn
 res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.tscn
+res://Scene/Swamp_Level_1/Magpie/magpie.tscn
+res://Scene/Swamp_Level_1/3p_Tree/3p_tree.tscn
+res://Scene/Swamp_Level_1/3p_Tree/3p_tree.gd
+res://Scene/Player/Player.gd
 res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.gd
+res://Scene/Swamp_Level_1/Magpie/magpie.gd
+res://Scene/Swamp_Level_1/swamp_level_1.gd
+res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.tscn
+res://Scene/Swamp_Level_1/1p_Cave/1p_cave.tscn
+res://Scene/Swamp_Level_1/Gameplay_items/lotus.tscn
+res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.gd
+res://Scene/Swamp_Level_1/Gameplay_items/lotus.gd

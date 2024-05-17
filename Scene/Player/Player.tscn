@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://caudsgp7lcrmo"]
+[gd_scene load_steps=63 format=3 uid="uid://caudsgp7lcrmo"]
 
 [ext_resource type="Texture2D" uid="uid://buh3kxm5swohn" path="res://Sprites/Player/Frogidle1.png" id="1"]
 [ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_bjt4l"]
@@ -32,6 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="21_mm38c"]
 [ext_resource type="Theme" uid="uid://bqp0odgpbno7c" path="res://Theme_fonts/main_theme.tres" id="31_et63p"]
 [ext_resource type="Texture2D" uid="uid://dsrps3fjtbjls" path="res://Sprites/UI/GUI/Emotion/Emotion_danger.png" id="31_u0wwl"]
+[ext_resource type="Texture2D" uid="uid://b0g1bl6vvxb4w" path="res://Sprites/UI/GUI/Emotion/No_strange/No_force_5.png" id="32_ypfiu"]
+[ext_resource type="Texture2D" uid="uid://cobofh803h1rj" path="res://Sprites/UI/GUI/Emotion/No_strange/No_force_4.png" id="33_3pfsv"]
+[ext_resource type="Texture2D" uid="uid://ctc6atktpriwj" path="res://Sprites/UI/GUI/Emotion/No_strange/No_force_3.png" id="34_217ch"]
+[ext_resource type="Texture2D" uid="uid://bnoy7w6cdayyu" path="res://Sprites/UI/GUI/Emotion/No_strange/No_force_2.png" id="35_xoep0"]
+[ext_resource type="Texture2D" uid="uid://d0m7tk6t4q5c7" path="res://Sprites/UI/GUI/Emotion/No_strange/No_force_1.png" id="36_5pvkp"]
 
 [sub_resource type="Gradient" id="Gradient_gtqwp"]
 offsets = PackedFloat32Array(0, 0.155556, 1)
@@ -552,6 +557,59 @@ animations = [{
 "loop": true,
 "name": &"Danger",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_ypfiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3pfsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_217ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xoep0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5pvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xoep0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_217ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3pfsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ypfiu")
+}],
+"loop": false,
+"name": &"No_force",
+"speed": 12.0
 }]
 
 [sub_resource type="Animation" id="Animation_x3262"]
@@ -677,6 +735,11 @@ unique_name_in_owner = true
 wait_time = 0.6
 one_shot = true
 
+[node name="Timer_emotion_off" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+
 [node name="GUI" parent="." instance=ExtResource("20_ce54u")]
 layer = 6
 
@@ -743,7 +806,7 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(180, -143.636)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_6dfou")
-animation = &"Danger"
+animation = &"No_force"
 
 [node name="Animation_emotion" type="AnimationPlayer" parent="Emotion"]
 unique_name_in_owner = true
@@ -763,3 +826,4 @@ theme = ExtResource("31_et63p")
 [connection signal="timeout" from="TimerIdleTongue" to="." method="_on_timer_idle_tongue_timeout"]
 [connection signal="timeout" from="Timer_water_quicksand" to="." method="_on_timer_water_quicksand_timeout"]
 [connection signal="timeout" from="Timer_danger" to="." method="_on_timer_danger_timeout"]
+[connection signal="timeout" from="Timer_emotion_off" to="." method="_on_timer_emotion_off_timeout"]

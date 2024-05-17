@@ -1,16 +1,34 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5d3gvvkys1gy"]
+[gd_scene load_steps=33 format=3 uid="uid://c5d3gvvkys1gy"]
 
 [ext_resource type="Script" path="res://Scene/Swamp_Level_1/Magpie/magpie.gd" id="1_n3y5h"]
-[ext_resource type="Texture2D" uid="uid://b6esivdq3db4c" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_open.png" id="2_5av37"]
 [ext_resource type="Texture2D" uid="uid://cy10fk5k0pdh7" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_1.png" id="2_68u8g"]
 [ext_resource type="Texture2D" uid="uid://jf5xub6uda65" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_2.png" id="3_1avpc"]
-[ext_resource type="Texture2D" uid="uid://cabtna75b5qm6" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_close.png" id="3_uh5wo"]
 [ext_resource type="Texture2D" uid="uid://b33gvtq6anp3s" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_3.png" id="4_xrejd"]
 [ext_resource type="Texture2D" uid="uid://ddkojp8ye0cdp" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_4.png" id="5_45g1l"]
 [ext_resource type="Texture2D" uid="uid://cnmbgvlws41ug" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_5.png" id="6_liwx4"]
 [ext_resource type="Texture2D" uid="uid://bj3u3gwvxwf82" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_6.png" id="7_k6crh"]
 [ext_resource type="Texture2D" uid="uid://hku8cvfmton3" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_7.png" id="8_0k8tn"]
 [ext_resource type="Texture2D" uid="uid://25oclx6eypns" path="res://Sprites/SwampLevel1/Magpie/Lotus/Magpie_Lotus_8.png" id="9_hgorq"]
+[ext_resource type="Texture2D" uid="uid://df7dije1sriv0" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_19.png" id="10_fuop6"]
+[ext_resource type="Texture2D" uid="uid://drpv5vx5u0r7h" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_20.png" id="11_efpa7"]
+[ext_resource type="Texture2D" uid="uid://d01c8wk1s6y3a" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_1.png" id="12_t57f7"]
+[ext_resource type="Texture2D" uid="uid://bc4ogwubogyt4" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_2.png" id="13_8j0h0"]
+[ext_resource type="Texture2D" uid="uid://dsrgankmuulpp" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_3.png" id="14_8s83x"]
+[ext_resource type="Texture2D" uid="uid://cy5h4edp07eh4" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_4.png" id="15_yriyi"]
+[ext_resource type="Texture2D" uid="uid://dj3nvr3rbt2er" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_5.png" id="16_mhpp0"]
+[ext_resource type="Texture2D" uid="uid://b66vmoqfcetxs" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_6.png" id="17_5ku8k"]
+[ext_resource type="Texture2D" uid="uid://cdqjfhnccjaa8" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_7.png" id="18_01pl8"]
+[ext_resource type="Texture2D" uid="uid://cq4sc42a7jtpc" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_8.png" id="19_ntb1n"]
+[ext_resource type="Texture2D" uid="uid://244htkyiajsf" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_9.png" id="20_lnmc6"]
+[ext_resource type="Texture2D" uid="uid://dotslspf1r14x" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_10.png" id="21_0vqc1"]
+[ext_resource type="Texture2D" uid="uid://b0lrorsj6v3sd" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_11.png" id="22_p7n7i"]
+[ext_resource type="Texture2D" uid="uid://drdxp5rcpq1km" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_12.png" id="23_34rrb"]
+[ext_resource type="Texture2D" uid="uid://bpg8ftp14cjhj" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_13.png" id="24_x0f0f"]
+[ext_resource type="Texture2D" uid="uid://c2sg680kfkufd" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_14.png" id="25_1oiju"]
+[ext_resource type="Texture2D" uid="uid://pp1e78x0fx5o" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_15.png" id="26_xt5tc"]
+[ext_resource type="Texture2D" uid="uid://dnscq35wiyhll" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_16.png" id="27_ouevt"]
+[ext_resource type="Texture2D" uid="uid://bfe7e54b27o1e" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_17.png" id="28_sddxh"]
+[ext_resource type="Texture2D" uid="uid://pe1x7c3p5l68" path="res://Sprites/SwampLevel1/Magpie/Tree/Magpie_tree_18.png" id="29_mp4te"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p6m0g"]
 animations = [{
@@ -80,23 +98,110 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j4bl"]
 size = Vector2(3200, 4426.67)
 
-[node name="Magpie" type="Area2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hacrm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_efpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_efpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}],
+"loop": true,
+"name": &"Medalion",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_t57f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8j0h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8s83x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yriyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mhpp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5ku8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_01pl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ntb1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lnmc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0vqc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_p7n7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_34rrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x0f0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1oiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xt5tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ouevt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sddxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mp4te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_efpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuop6")
+}],
+"loop": false,
+"name": &"Tree",
+"speed": 16.0
+}]
+
+[node name="Magpie" type="Area2D" groups=["Magpie"]]
 scale = Vector2(0.15, 0.15)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_n3y5h")
 
-[node name="LotusOpen" type="Sprite2D" parent="."]
-position = Vector2(-1606, 548.667)
-texture = ExtResource("2_5av37")
-flip_h = true
-
-[node name="LotusClose" type="Sprite2D" parent="."]
-position = Vector2(-1606, 548.667)
-texture = ExtResource("3_uh5wo")
-flip_h = true
-
-[node name="Magpie" type="AnimatedSprite2D" parent="."]
+[node name="Magpie_lotus" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13.3333, 20)
 sprite_frames = SubResource("SpriteFrames_p6m0g")
 animation = &"Lotus"
@@ -108,4 +213,13 @@ position = Vector2(-833.333, -833.333)
 shape = SubResource("RectangleShape2D_6j4bl")
 debug_color = Color(0, 0.113725, 0.137255, 0.419608)
 
+[node name="Magpie_tree" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-1000, -953.333)
+scale = Vector2(1.9, 1.9)
+sprite_frames = SubResource("SpriteFrames_hacrm")
+animation = &"Medalion"
+autoplay = "Medalion"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Magpie_tree" to="." method="_on_magpie_tree_animation_finished"]

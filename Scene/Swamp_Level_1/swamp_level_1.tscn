@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=74 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://fnlpi7snkxi" path="res://Scene/Items/Logs/log.tscn" id="23_3k4wm"]
 [ext_resource type="PackedScene" uid="uid://bh4nstby1hsiv" path="res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.tscn" id="23_4x5oc"]
 [ext_resource type="Texture2D" uid="uid://5em4bk2g6xbc" path="res://Sprites/SwampLevel1/Items/Trash/barrel_of_oil.png" id="23_glxaq"]
+[ext_resource type="PackedScene" uid="uid://baat563t3l77h" path="res://Scene/Swamp_Level_1/Gameplay_items/lotus.tscn" id="24_sa1ku"]
 [ext_resource type="Texture2D" uid="uid://cq64cj5jkn58q" path="res://Sprites/SwampLevel1/Items/Hole_top.png" id="24_xfc7i"]
 [ext_resource type="Texture2D" uid="uid://cr3s0ptlqodcv" path="res://Sprites/SwampLevel1/Cave_path_1-2/Cave_1-2_top.png" id="25_q86qb"]
 [ext_resource type="Texture2D" uid="uid://2ab2kufipnsv" path="res://Sprites/SwampLevel1/Swamp_path_3/Water_wave_3p_top.png" id="25_tobtv"]
@@ -404,10 +405,13 @@ scale = Vector2(1, -1)
 
 [node name="Water_quicksand" parent="." instance=ExtResource("19_02x0k")]
 
-[node name="Inventory_items" type="Node2D" parent="."]
+[node name="Items" type="Node2D" parent="."]
 
-[node name="Medallion_on_tree" parent="Inventory_items" instance=ExtResource("23_4x5oc")]
+[node name="Medallion_on_tree" parent="Items" instance=ExtResource("23_4x5oc")]
 position = Vector2(4464, -962)
+
+[node name="Lotus" parent="Items" instance=ExtResource("24_sa1ku")]
+position = Vector2(1669, 345)
 
 [node name="Trash_stop_rig_log" type="StaticBody2D" parent="."]
 position = Vector2(596, 401)
@@ -441,10 +445,19 @@ position = Vector2(468, 402)
 gravity_scale = 3.0
 
 [node name="Magpie" parent="." instance=ExtResource("26_1ges8")]
+unique_name_in_owner = true
 position = Vector2(1910, 263)
 
+[node name="Magpie_Marker_lotus" type="Marker2D" parent="."]
+position = Vector2(1910, 263)
+
+[node name="Magpie_Marker_tree" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(4182, -997)
+rotation = 0.279253
+
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(4662, 310)
+position = Vector2(-298, 369)
 
 [node name="Platforms_top" type="Node2D" parent="."]
 
