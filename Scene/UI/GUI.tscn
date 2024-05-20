@@ -329,16 +329,6 @@ autoplay = "Idle"
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 
-[node name="IconPlayerHalfHp" type="HBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 702.0
-offset_bottom = 240.0
-scale = Vector2(0.6, 0.6)
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/IconPlayerHalfHp"]
-custom_minimum_size = Vector2(240, 0)
-layout_mode = 2
-
 [node name="IconPlayerFullHp" type="HBoxContainer" parent="Control"]
 layout_mode = 0
 offset_right = 702.0
@@ -364,9 +354,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -624.0
+offset_left = 1296.0
 offset_top = 19.3333
-offset_right = -624.0
+offset_right = 1296.0
 offset_bottom = 19.3333
 grow_horizontal = 0
 scale = Vector2(0.45, 0.45)

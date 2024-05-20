@@ -30,6 +30,7 @@ var ind_jump = 1
 var ind_jump_on_water = 0
 var ind_fall_damage := false 
 var ind_not_fall_damage := false 
+var ind_death = 0
 
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
@@ -40,6 +41,8 @@ var ind_not_fall_damage := false
 @onready var timer_emotion_off = %Timer_emotion_off
 @onready var emotion = %Emotion
 @onready var animation_emotion = %Animation_emotion
+@onready var collision_player = %Collision_player
+
 
 
 
@@ -126,6 +129,8 @@ func move(): #движение
 			vel.x = 0
 			#vel.x = lerp(vel.x, 0.0, 0.2) Интерполяция
 			change_state(State.IDLE)
+	elif Globals.actual_hp_player == 0:
+		vel.x = 0 #смерть
 
 func jump(): #прыжок
 	if ind_jump == 1:
@@ -225,7 +230,7 @@ func _on_timer_idle_tongue_timeout(): #Возвращает в idle после �
 
 func fall_damage_state(): #урон после падения
 	if ind_fall_damage == true and is_on_floor() and ind_not_fall_damage == false:
-		fullHurt()
+		hurt()
 		ind_fall_damage = false
 		return
 
@@ -237,7 +242,7 @@ func not_fall_damage_state(): #функция предотвращающая у�
 		ind_not_fall_damage = false
 	else:
 		return
-	
+
 
 func walk_away_from_danger_right(): # отходит от опасных объектов вправо
 	change_state(State.DANGER)
@@ -296,8 +301,8 @@ func max_HP(): #в начале уровня высчитывает, сколь�
 	get_tree().call_group("GUI", "max_icon_hp", Globals.count_max_hp_player)
 
 func hurt(): #снятие здоровья
-	if Globals.actual_hp_player > 0.0 and Globals.actual_hp_player != 0.0:
-		Globals.actual_hp_player -= 0.5
+	if Globals.actual_hp_player != 0.0 and Globals.actual_hp_player > 0.0:
+		Globals.actual_hp_player -= 1.0
 		change_state(State.TAKE_DAMAGE)
 		frog_player.visible = false
 		side_frog_player.visible = true
@@ -306,9 +311,9 @@ func hurt(): #снятие здоровья
 		get_tree().call_group("GUI", "DMGIcon")
 		$TakeDamage.play()
 		vel.y = -600
-		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
+		get_tree().call_group("GUI", "remove_update_lives")
 		get_tree().call_group("GUI", "BackgroundsDamage")
-	if Globals.actual_hp_player == 0.0: #Убит
+	if Globals.actual_hp_player == 0.0 and ind_death == 0: #Убит
 		change_state(State.DEATH)
 		vel.y = -400
 		side_frog_player.visible = true
@@ -317,6 +322,8 @@ func hurt(): #снятие здоровья
 		get_tree().call_group("GUI", "DeathIcon")
 		$TimerDeath.start()
 		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
+		ind_death = 1
+
 
 func fullHurt(): #мгновенная смерть
 	change_state(State.DEATH)
@@ -339,9 +346,9 @@ func RightPush(): #толчок от удара слева
 
 func heal(): #лечение здоровья
 	if Globals.actual_hp_player > 0 and Globals.actual_hp_player != Globals.count_max_hp_player:
-		Globals.actual_hp_player += 0.5
+		Globals.actual_hp_player += 1.0
 		$SideFrogPlayer/EffectsAnim.play("Heal")
-		get_tree().call_group("GUI", "add_update_lives", Globals.actual_hp_player)
+		get_tree().call_group("GUI", "add_update_lives")
 		get_tree().call_group("GUI", "BackgroundsHeal")
 	else:
 		return

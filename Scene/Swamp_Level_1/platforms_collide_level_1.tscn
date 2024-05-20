@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://bybfwutajwh87"]
+[gd_scene load_steps=242 format=3 uid="uid://bybfwutajwh87"]
 
 [ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_o8681"]
 [ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_n2j1v"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c6rewif3bik64" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_4.png" id="12_qdbi0"]
 [ext_resource type="Texture2D" uid="uid://dkd85yf5w81d1" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_5.png" id="13_nego8"]
 [ext_resource type="Texture2D" uid="uid://4tp6giv5krcj" path="res://Sprites/SwampLevel1/Swamp_path_3/Water_wave_3p_2.png" id="14_k1ui5"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="14_r7s44"]
 [ext_resource type="Texture2D" uid="uid://n1ea8wg7r53s" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_6.png" id="14_tsdiu"]
 [ext_resource type="Texture2D" uid="uid://crub8nikwlie8" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_7.png" id="15_v4x58"]
 [ext_resource type="Texture2D" uid="uid://bfvkt6tg0csil" path="res://Sprites/SwampLevel1/Swamp_path_7/Background_1.png" id="16_2vqr1"]
@@ -243,6 +244,10 @@ shader_parameter/offset = 0.0
 shader_parameter/speed = 1.0
 shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_length = 250.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akts1"]
+shader = ExtResource("14_r7s44")
+shader_parameter/lod = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kotc1"]
 shader = ExtResource("38_rrv6u")
@@ -945,11 +950,11 @@ height = 709.379
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6hs8"]
 radius = 14.75
-height = 94.0596
+height = 118.469
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqsem"]
 radius = 14.75
-height = 240.206
+height = 268.4
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rmqg1"]
 radius = 14.75
@@ -1234,20 +1239,68 @@ position = Vector2(17066, 398)
 modulate = Color(0.262745, 0.262745, 0.262745, 0.654902)
 position = Vector2(17396, 317)
 
-[node name="3p_Background_0" type="Sprite2D" parent="Sprites"]
+[node name="ParallaxBackground_0" type="ParallaxBackground" parent="Sprites"]
+layer = -1
+
+[node name="ParallaxLayer_0" type="ParallaxLayer" parent="Sprites/ParallaxBackground_0"]
+motion_scale = Vector2(0.97, 1)
+
+[node name="3p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
 position = Vector2(4102, -166)
 texture = ExtResource("6_o3x0e")
 
+[node name="7p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(19510, -154)
+texture = ExtResource("16_2vqr1")
+flip_h = true
+
+[node name="9p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(27460, -177)
+texture = ExtResource("20_aeje1")
+
+[node name="8p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(23692, -177)
+texture = ExtResource("22_nhbm3")
+
+[node name="6p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(15239, -160)
+texture = ExtResource("31_4a1lu")
+
+[node name="5p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(11399, -160)
+texture = ExtResource("31_4a1lu")
+flip_h = true
+
+[node name="4p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(7561, -160)
+texture = ExtResource("31_4a1lu")
+
+[node name="2p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(1505, -172)
+texture = ExtResource("35_5kdgt")
+
+[node name="1p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+position = Vector2(-311, -188)
+texture = ExtResource("37_ent57")
+
+[node name="Icon" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+material = SubResource("ShaderMaterial_akts1")
+position = Vector2(13529, -236)
+scale = Vector2(500.719, 10.0625)
+texture = ExtResource("40_si556")
+
 [node name="3p_Background_1" type="Sprite2D" parent="Sprites"]
-position = Vector2(4063, 13)
+position = Vector2(3876, -10)
+rotation = -0.00675683
+scale = Vector2(0.954746, 0.994563)
 texture = ExtResource("7_cvl02")
 
 [node name="3p_machine" type="Sprite2D" parent="Sprites"]
 position = Vector2(3361, -244)
 texture = ExtResource("8_4b6q3")
 
-[node name="Rock" type="Sprite2D" parent="Sprites/3p_machine"]
-position = Vector2(100, 255)
+[node name="Rock" type="Sprite2D" parent="Sprites"]
+position = Vector2(3428, 14)
 texture = ExtResource("9_o06sf")
 
 [node name="3p_Shadow_platf" type="Sprite2D" parent="Sprites"]
@@ -1287,11 +1340,6 @@ texture = ExtResource("14_tsdiu")
 position = Vector2(3529, -137)
 texture = ExtResource("15_v4x58")
 
-[node name="7p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(19510, -154)
-texture = ExtResource("16_2vqr1")
-flip_h = true
-
 [node name="7p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(19401, 132)
 texture = ExtResource("17_3g230")
@@ -1304,17 +1352,9 @@ texture = ExtResource("18_3w7gq")
 position = Vector2(19790, 184)
 texture = ExtResource("19_2hfyn")
 
-[node name="9p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(27460, -177)
-texture = ExtResource("20_aeje1")
-
 [node name="9p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(27373, 58)
 texture = ExtResource("21_phsjx")
-
-[node name="8p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(23692, -177)
-texture = ExtResource("22_nhbm3")
 
 [node name="8p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(23644, -8)
@@ -1355,18 +1395,9 @@ offset_right = -1577.0
 offset_bottom = 153.0
 color = Color(0.431373, 0.482353, 0.282353, 1)
 
-[node name="6p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(15239, -160)
-texture = ExtResource("31_4a1lu")
-
 [node name="6p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(15239, -44)
 texture = ExtResource("32_46qc7")
-
-[node name="5p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(11399, -160)
-texture = ExtResource("31_4a1lu")
-flip_h = true
 
 [node name="5p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(11399, -43)
@@ -1384,25 +1415,13 @@ position = Vector2(32.9999, 425)
 scale = Vector2(0.955369, 1)
 texture = ExtResource("34_8114l")
 
-[node name="4p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(7561, -160)
-texture = ExtResource("31_4a1lu")
-
 [node name="4p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(7561, -43)
 texture = ExtResource("32_46qc7")
 
-[node name="2p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(1505, -172)
-texture = ExtResource("35_5kdgt")
-
 [node name="2p_Platform" type="Sprite2D" parent="Sprites"]
 position = Vector2(1413, 304)
 texture = ExtResource("36_3l5qj")
-
-[node name="1p_Background_0" type="Sprite2D" parent="Sprites"]
-position = Vector2(-311, -188)
-texture = ExtResource("37_ent57")
 
 [node name="1p_Water" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_06yep")
@@ -2369,14 +2388,14 @@ shape = SubResource("CapsuleShape2D_vpkln")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 
 [node name="Water_collisionShape_3p" type="CollisionShape2D" parent="."]
-position = Vector2(3518, 429)
-rotation = -0.947696
+position = Vector2(3522, 422)
+rotation = -1.18141
 shape = SubResource("CapsuleShape2D_d6hs8")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)
 
 [node name="Water_collisionShape_3p2" type="CollisionShape2D" parent="."]
-position = Vector2(3657, 455)
-rotation = -1.52454
+position = Vector2(3636, 446)
+rotation = -1.45274
 shape = SubResource("CapsuleShape2D_lqsem")
 debug_color = Color(0.252619, 0.350818, 0.754342, 0.419608)
 

@@ -36,13 +36,6 @@ func create_max_icon_hp_texture() -> TextureRect: #создание иконок
 	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
 	return texture_rect
 
-func create_half_icon_hp_texture() -> TextureRect: #создание иконок половинок хп
-	var texture_rect := TextureRect.new()
-	texture_rect.texture = HP_half
-	texture_rect.expand_mode = TextureRect.EXPAND_KEEP_SIZE
-	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
-	return texture_rect
-
 func create_full_icon_hp_texture() -> TextureRect: #создание иконок полного хп
 	var texture_rect := TextureRect.new()
 	texture_rect.texture = HP_full
@@ -53,20 +46,13 @@ func create_full_icon_hp_texture() -> TextureRect: #создание иконо�
 func max_icon_hp(max_lives : float): #в начале уровня высчитывает максимальное здоровье
 	for i in range(max_lives):
 		get_node("Control/IconPlayer").add_child(create_max_icon_hp_texture())
-		get_node("Control/IconPlayerHalfHp").add_child(create_half_icon_hp_texture())
 		get_node("Control/IconPlayerFullHp").add_child(create_full_icon_hp_texture())
 
-func add_update_lives(lives_count): #Прибавление хп
-	if fmod(lives_count, 1.0) == 0.5:
-		get_node("Control/IconPlayerHalfHp").add_child(create_half_icon_hp_texture())
-	else:
-		get_node("Control/IconPlayerFullHp").add_child(create_full_icon_hp_texture())
+func add_update_lives(): #Прибавление хп
+	get_node("Control/IconPlayerFullHp").add_child(create_full_icon_hp_texture())
 
-func remove_update_lives(lives_count): #убавление хп
-	if fmod(lives_count, 1.0) == 0.5:
-		get_node("Control/IconPlayerFullHp").get_child(-1).queue_free()
-	else:
-		get_node("Control/IconPlayerHalfHp").get_child(-1).queue_free()
+func remove_update_lives(): #убавление хп
+	get_node("Control/IconPlayerFullHp").get_child(-1).queue_free()
 
 
 func remove_always_hp():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=75 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://8pg1jibr8hkx" path="res://Scene/Swamp_Level_1/3p_Tree/3p_foliage_area.tscn" id="27_36g05"]
 [ext_resource type="Texture2D" uid="uid://dnuj470e57dyo" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_static.png" id="29_kjcst"]
 [ext_resource type="Texture2D" uid="uid://dcaw3ffgclehu" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8_top.png" id="29_mf758"]
+[ext_resource type="PackedScene" uid="uid://d2lamfsugabqv" path="res://Scene/Swamp_Level_1/Traps/Acid/acid.tscn" id="30_c1fob"]
 [ext_resource type="Texture2D" uid="uid://845mrghmwpsm" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area.png" id="30_dbbit"]
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="30_dxgiv"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="31_jgvxj"]
@@ -457,7 +458,54 @@ position = Vector2(4182, -997)
 rotation = 0.279253
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(-298, 369)
+position = Vector2(4709, 337)
+
+[node name="Acid" type="Node2D" parent="."]
+
+[node name="Acid_1" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(484, 1110)
+rotation = -0.0820833
+drop_time = 0.5
+
+[node name="Acid_2" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(759, 1131)
+rotation = 0.00743428
+drop_time = 0.1
+
+[node name="Acid_3" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(867, 1129)
+rotation = 0.0151695
+drop_time = 0.7
+
+[node name="Acid_4" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(1263, 1092)
+rotation = 0.0576416
+drop_time = 0.3
+
+[node name="Acid_5" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(1602, 1151)
+rotation = 0.0853096
+drop_time = 1.6
+
+[node name="Acid_6" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(1653, 1161)
+rotation = -0.0612042
+drop_time = 0.9
+
+[node name="Acid_7" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(1699, 1155)
+rotation = -0.0612042
+drop_time = 2.0
+
+[node name="Acid_8" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(1854, 1149)
+rotation = -0.111518
+drop_time = 0.6
+
+[node name="Acid_9" parent="Acid" instance=ExtResource("30_c1fob")]
+position = Vector2(2131, 1110)
+rotation = -0.0969269
+drop_time = 1.1
 
 [node name="Platforms_top" type="Node2D" parent="."]
 
@@ -829,7 +877,7 @@ color = Color(0.00784314, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
 offset_left = 17718.0
-offset_top = 545.0
+offset_top = 539.0
 offset_right = 23276.0
 offset_bottom = 5271.0
 color = Color(0.00784314, 0, 0, 1)
