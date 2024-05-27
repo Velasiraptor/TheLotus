@@ -1243,7 +1243,7 @@ position = Vector2(17396, 317)
 layer = -1
 
 [node name="ParallaxLayer_0" type="ParallaxLayer" parent="Sprites/ParallaxBackground_0"]
-motion_scale = Vector2(0.97, 1)
+motion_scale = Vector2(0.97, 0.96)
 
 [node name="3p_Background_0" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
 position = Vector2(4102, -166)

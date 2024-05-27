@@ -58,7 +58,6 @@ func remove_update_lives(): #убавление хп
 func remove_always_hp():
 	if ind_death == false:
 		get_node("Control/IconPlayerFullHp").queue_free()
-		get_node("Control/IconPlayerHalfHp").queue_free()
 		ind_death = true
 	
 

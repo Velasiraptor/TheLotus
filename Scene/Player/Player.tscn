@@ -360,7 +360,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0n7av"]
-radius = 25.0
+radius = 21.3636
 height = 127.273
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_onmxb"]
@@ -419,10 +419,10 @@ tracks/1/path = NodePath("TongueAr/CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06, 0.12),
+"times": PackedFloat32Array(0, 0.05, 0.12),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(44, 23), Vector2(270, 23), Vector2(44, 23)]
+"values": [Vector2(44, 23), Vector2(255, 23), Vector2(44, 23)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_84stp"]
@@ -432,7 +432,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kktoy"]
-radius = 36.0555
+radius = 39.654
 
 [sub_resource type="Animation" id="Animation_t0h6o"]
 resource_name = "1p_cave"
@@ -666,7 +666,7 @@ visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 [node name="SideFrogPlayer" type="AnimatedSprite2D" parent="." groups=["Player"]]
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("3")
-animation = &"IdleSide"
+animation = &"jump"
 autoplay = "run"
 
 [node name="EffectsAnim" type="AnimationPlayer" parent="SideFrogPlayer"]
@@ -691,7 +691,7 @@ libraries = {
 
 [node name="Collision_player" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 35)
+position = Vector2(0, 38.6364)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0n7av")
 
@@ -754,9 +754,8 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TongueAr"]
-position = Vector2(-119.333, 23)
+position = Vector2(44, 23)
 shape = SubResource("CircleShape2D_kktoy")
-disabled = true
 debug_color = Color(0.709804, 0.415686, 0.670588, 0.419608)
 
 [node name="CameraPlayer" type="Camera2D" parent="."]

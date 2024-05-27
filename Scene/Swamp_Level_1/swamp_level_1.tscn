@@ -386,10 +386,10 @@ position = Vector2(-2357, -1252)
 position = Vector2(6092, 420)
 
 [node name="Water_lily_2" parent="Water_lilies" instance=ExtResource("36_13n58")]
-position = Vector2(6495, 415)
+position = Vector2(6735, 415)
 
 [node name="Torn_water_lily" parent="Water_lilies" instance=ExtResource("18_1sgaj")]
-position = Vector2(6891, 435)
+position = Vector2(7542, 406)
 
 [node name="Water_lilies_tail" type="Node2D" parent="."]
 
@@ -458,7 +458,7 @@ position = Vector2(4182, -997)
 rotation = 0.279253
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(4709, 337)
+position = Vector2(-269, 373)
 
 [node name="Acid" type="Node2D" parent="."]
 
