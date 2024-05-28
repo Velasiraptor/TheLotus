@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://nouwupilb4wg"]
+[gd_scene load_steps=3 format=3 uid="uid://nouwupilb4wg"]
 
 [ext_resource type="PackedScene" uid="uid://bphg42vmyyfx4" path="res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn" id="1_eybi4"]
+[ext_resource type="Texture2D" uid="uid://dbnjwt8nsy2vu" path="res://Sprites/SwampLevel1/Items/Water_lily/Water_lily_1.png" id="2_15b1h"]
 
 [node name="Water_lily_1" instance=ExtResource("1_eybi4")]
+
+[node name="WaterLily" parent="Water_lily_1" index="1"]
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_15b1h")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://bybfwutajwh87"]
+[gd_scene load_steps=243 format=3 uid="uid://bybfwutajwh87"]
 
 [ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_o8681"]
 [ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_n2j1v"]
@@ -472,6 +472,10 @@ height = 260.197
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jpg5y"]
 radius = 14.75
 height = 407.596
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_67cw1"]
+radius = 14.75
+height = 184.084
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k6ea"]
 size = Vector2(124.143, 122.284)
@@ -1678,6 +1682,12 @@ debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 position = Vector2(5666, 409)
 rotation = -1.41473
 shape = SubResource("CapsuleShape2D_jpg5y")
+debug_color = Color(0.356863, 0.27451, 0, 0.419608)
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="."]
+position = Vector2(5859, 436)
+rotation = -1.5495
+shape = SubResource("CapsuleShape2D_67cw1")
 debug_color = Color(0.356863, 0.27451, 0, 0.419608)
 
 [node name="3p_end" type="CollisionShape2D" parent="."]

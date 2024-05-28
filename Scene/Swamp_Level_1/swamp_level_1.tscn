@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=76 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://darbc2klxju6e" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily.tscn" id="19_vsgh4"]
 [ext_resource type="PackedScene" uid="uid://xymq2oucmg4a" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_small.tscn" id="20_mi45v"]
 [ext_resource type="PackedScene" uid="uid://ifn8ww83bu0n" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long.tscn" id="21_vf8ai"]
+[ext_resource type="PackedScene" uid="uid://dmx0i0pbalepv" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long_static.tscn" id="22_0644m"]
 [ext_resource type="Texture2D" uid="uid://d8lfd5nawp61" path="res://Sprites/SwampLevel1/Swamp_path_1/Tree_foliage.png" id="22_oruov"]
 [ext_resource type="PackedScene" uid="uid://fnlpi7snkxi" path="res://Scene/Items/Logs/log.tscn" id="23_3k4wm"]
 [ext_resource type="PackedScene" uid="uid://bh4nstby1hsiv" path="res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.tscn" id="23_4x5oc"]
@@ -380,31 +381,119 @@ debug_color = Color(4.81308e-08, 0.691088, 0.436434, 0.419608)
 [node name="MarkerRight_Exit" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Exit"]
 position = Vector2(-2357, -1252)
 
-[node name="Water_lilies" type="Node2D" parent="."]
+[node name="Water_lilies_L" type="Node2D" parent="."]
 
-[node name="Water_lily_1" parent="Water_lilies" instance=ExtResource("35_psuec")]
-position = Vector2(6092, 420)
+[node name="Water_lily_1" parent="Water_lilies_L" instance=ExtResource("35_psuec")]
+position = Vector2(6092, 422)
 
-[node name="Water_lily_2" parent="Water_lilies" instance=ExtResource("36_13n58")]
-position = Vector2(6735, 415)
+[node name="Water_lily_2" parent="Water_lilies_L" instance=ExtResource("36_13n58")]
+position = Vector2(6500, 422)
 
-[node name="Torn_water_lily" parent="Water_lilies" instance=ExtResource("18_1sgaj")]
-position = Vector2(7542, 406)
+[node name="Water_lily_3" parent="Water_lilies_L" instance=ExtResource("35_psuec")]
+position = Vector2(6895, 413)
+scale = Vector2(-1, 1)
 
-[node name="Water_lilies_tail" type="Node2D" parent="."]
+[node name="Torn_water_lily" parent="Water_lilies_L" instance=ExtResource("18_1sgaj")]
+position = Vector2(7283, 427)
 
-[node name="Tall_water_lily_1" parent="Water_lilies_tail" instance=ExtResource("19_vsgh4")]
-position = Vector2(12460, 476)
+[node name="Water_lily_4" parent="Water_lilies_L" instance=ExtResource("36_13n58")]
+position = Vector2(7656, 430)
+scale = Vector2(-1, 1)
 
-[node name="Tall_water_lily_small" parent="Water_lilies_tail" instance=ExtResource("20_mi45v")]
-position = Vector2(12731, 485)
+[node name="Torn_water_lily2" parent="Water_lilies_L" instance=ExtResource("18_1sgaj")]
+position = Vector2(8019, 418)
+scale = Vector2(-1, 1)
 
-[node name="Tall_water_lily_long" parent="Water_lilies_tail" instance=ExtResource("21_vf8ai")]
-position = Vector2(13118, 547)
+[node name="Water_lily_5" parent="Water_lilies_L" instance=ExtResource("35_psuec")]
+position = Vector2(8409, 419)
+scale = Vector2(-1, 1)
+
+[node name="Water_lily_6" parent="Water_lilies_L" instance=ExtResource("36_13n58")]
+position = Vector2(8809, 422)
+
+[node name="Water_lily_7" parent="Water_lilies_L" instance=ExtResource("35_psuec")]
+position = Vector2(9209, 424)
+
+[node name="Torn_water_lily3" parent="Water_lilies_L" instance=ExtResource("18_1sgaj")]
+position = Vector2(9578, 427)
+scale = Vector2(-1, 1)
+
+[node name="Water_lily_8" parent="Water_lilies_L" instance=ExtResource("36_13n58")]
+position = Vector2(9925, 422)
+
+[node name="Water_lily_9" parent="Water_lilies_L" instance=ExtResource("35_psuec")]
+position = Vector2(10375, 424)
+
+[node name="Water_lily_10" parent="Water_lilies_L" instance=ExtResource("36_13n58")]
+position = Vector2(10676, 426)
+scale = Vector2(-1, 1)
+
+[node name="Water_lilies_R" type="Node2D" parent="."]
+
+[node name="Water_lily_1" parent="Water_lilies_R" instance=ExtResource("35_psuec")]
+position = Vector2(12549, 427)
+
+[node name="Tall_water_lily_1" parent="Water_lilies_R" instance=ExtResource("19_vsgh4")]
+position = Vector2(12893, 476)
+
+[node name="Tall_water_lily_small" parent="Water_lilies_R" instance=ExtResource("20_mi45v")]
+position = Vector2(13164, 485)
+
+[node name="Tall_water_lily_long" parent="Water_lilies_R" instance=ExtResource("21_vf8ai")]
+position = Vector2(13551, 547)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
+[node name="Tall_water_lily_2" parent="Water_lilies_R" instance=ExtResource("19_vsgh4")]
+position = Vector2(13950, 453)
+scale = Vector2(-1, 1)
+
+[node name="Water_lily_2" parent="Water_lilies_R" instance=ExtResource("36_13n58")]
+position = Vector2(14347, 407)
+
+[node name="Torn_water_lily" parent="Water_lilies_R" instance=ExtResource("18_1sgaj")]
+position = Vector2(14674, 398)
+
+[node name="Tall_water_lily_small2" parent="Water_lilies_R" instance=ExtResource("20_mi45v")]
+position = Vector2(14959, 517)
+
+[node name="Tall_water_lily_small3" parent="Water_lilies_R" instance=ExtResource("20_mi45v")]
+position = Vector2(15289, 469)
+scale = Vector2(-1, 1)
+
+[node name="Tall_water_lily_3" parent="Water_lilies_R" instance=ExtResource("19_vsgh4")]
+position = Vector2(15648, 457)
+
+[node name="Tall_water_lily_long2" parent="Water_lilies_R" instance=ExtResource("21_vf8ai")]
+position = Vector2(16044, 577)
+rotation = 3.14159
+scale = Vector2(-1, -1)
+
+[node name="Tall_water_lily_small4" parent="Water_lilies_R" instance=ExtResource("20_mi45v")]
+position = Vector2(16425, 488)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Tall_water_lily_long3" parent="Water_lilies_R" instance=ExtResource("21_vf8ai")]
+position = Vector2(16809, 556)
+scale = Vector2(-1, 1)
+
+[node name="Tall_water_lily_long5" parent="Water_lilies_R" instance=ExtResource("21_vf8ai")]
+position = Vector2(17756, 592)
+scale = Vector2(-1, 1)
+
+[node name="Water_lily_3" parent="Water_lilies_R" instance=ExtResource("35_psuec")]
+position = Vector2(17051, 409)
+
+[node name="Tall_water_lily_long_static" parent="Water_lilies_R" instance=ExtResource("22_0644m")]
+position = Vector2(17245, 592)
+scale = Vector2(-1, 1)
+
+[node name="Torn_water_lily2" parent="Water_lilies_R" instance=ExtResource("18_1sgaj")]
+position = Vector2(17378, 412)
+
 [node name="Water_quicksand" parent="." instance=ExtResource("19_02x0k")]
+position = Vector2(0, 2)
 
 [node name="Items" type="Node2D" parent="."]
 
@@ -458,7 +547,7 @@ position = Vector2(4182, -997)
 rotation = 0.279253
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(-269, 373)
+position = Vector2(12140, 356)
 
 [node name="Acid" type="Node2D" parent="."]
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmx0i0pbalepv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jdc81"]
+load_path = "res://.godot/imported/Tall_water_lily_long_1.png-ce5d1c73f407b79c3edd1ca533c5ca37.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgvnq"]
+size = Vector2(360.336, 9.36214)
+
+[node name="Tall_water_lily_long_static" type="Sprite2D"]
+
+[node name="Tall_water_lily_long_static" type="StaticBody2D" parent="."]
+
+[node name="TallWaterLilyLong1" type="Sprite2D" parent="Tall_water_lily_long_static"]
+position = Vector2(-17.5, -294)
+texture = SubResource("CompressedTexture2D_jdc81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tall_water_lily_long_static"]
+position = Vector2(-94.9534, -468.951)
+rotation = -0.0847526
+shape = SubResource("RectangleShape2D_sgvnq")
+one_way_collision = true
+debug_color = Color(0.294118, 0.615686, 0.4, 0.419608)

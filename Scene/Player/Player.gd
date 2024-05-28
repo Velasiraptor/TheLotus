@@ -85,7 +85,7 @@ func camera_default(): # камера и цвет для игрока по ум�
 func default_characteristics():
 	speed = 250
 	Jump_speed = 400
-	jump_force = 1000
+	jump_force = 1200
 
 func items_rigid():
 	for i in get_slide_collision_count():

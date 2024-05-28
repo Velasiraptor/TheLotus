@@ -23,8 +23,8 @@ func _ready():
 func _on_body_entered(body): # отскок от гриба
 	if body.has_method("hurt") and sprite_jumping_mushroom.frame == 0 and active == 1:
 		$RandomTimer_dust.stop()
+		sprite_jumping_mushroom.play("jumping")
 		body.vel.y = jumping
-		sprite_jumping_mushroom.play("jumping", 1.0)
 		$Animation_mushroom.play_backwards("animation_mushroom_jump")
 		get_tree().call_group("Player", "not_fall_damage_state")
 		await get_tree().create_timer(1.0).timeout
@@ -34,11 +34,13 @@ func _on_body_entered(body): # отскок от гриба
 		animation_activation.play("activation")
 		$Animation_mushroom.play("animation_mushroom_jump")
 		active = 1
-		sprite_jumping_mushroom.play("jumping", -1.0)
+		sprite_jumping_mushroom.play_backwards("jumping")
 		$RandomTimer_dust.start_random()
 		take_emotion_area.monitoring == false
 		animation_emotion.play_backwards("emotion")
 	elif body.collision_layer == 16:
+		animation_activation.stop()
+		sprite_jumping_mushroom.play_backwards("jumping")
 		animation_activation.play("activation")
 	
 func _on_random_timer_dust_timeout(): #рандомный выброс пыли при активном состоянии
