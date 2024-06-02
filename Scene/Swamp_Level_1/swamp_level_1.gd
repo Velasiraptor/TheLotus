@@ -1,17 +1,27 @@
 extends Node2D
 
+@onready var player = %Player
+
+
 @onready var ray_1p_cave_animation = %Ray_1p_Cave_animation
 @onready var magpie = %Magpie
 @onready var magpie_marker_tree = %Magpie_Marker_tree
+
+@onready var catfish_spawner = %Catfish_Spawner
+@onready var catfish = %Catfish
 
 
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мышив
 var log_in_hole_ind := true
 
+var chek_jump_catfish = false
+
 func _ready():
 	Globals.actual_resume_load_scene = "res://Scene/SwampLevel1/swamp_level_1.tscn" #делаем актуальной сценой для кнопки "продолжить" в главном меню
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+
 func _input(event):
 	if event is InputEventMouseMotion and $GameOver/GameOver.visible == true:
 		last_mouse_motion = OS.get_static_memory_peak_usage()
@@ -84,6 +94,21 @@ func magpie_move_on_tree(): #передвижение сороки к дерев
 	magpie.rotation = magpie_marker_tree.rotation
 	get_tree().call_group("Magpie", "magpie_on_tree")
 
+func spawner_catfish(): # спаунер Сома
+	if chek_jump_catfish == false:
+		for i in catfish_spawner.get_children():
+			if i.position.distance_to(player.position) < 400 and i.position.distance_to(player.position) > 200:
+				if player.position.x < i.position.x:
+					chek_jump_catfish = true
+					catfish.position = i.position
+					get_tree().call_group("Catfish", "catfish_left_idle")
+				else:
+					chek_jump_catfish = true
+					catfish.position = i.position
+					get_tree().call_group("Catfish", "catfish_right_idle")
+func chek_jump_catfish_index():
+	await get_tree().create_timer(1.0).timeout
+	chek_jump_catfish = false
 
 
 

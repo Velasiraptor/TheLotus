@@ -12,6 +12,7 @@ func _on_area_player_body_entered(body):
 		animation_water_drops.play("Animation_water_drops")
 		animation_torn_water_lily.stop()
 		ind = 0
+		get_tree().call_group("Level1", "spawner_catfish")
 
 func _on_area_exit_player_body_exited(body):
 	if body.has_method("hurt") and ind == 0:

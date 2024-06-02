@@ -11,6 +11,7 @@ func _on_area_player_body_entered(body):
 		animation_player_on_water_lily.play("Animation_player_on_water_lily")
 		animation_water_drops.play("water_drops")
 		animation_water_lily.stop()
+		get_tree().call_group("Level1", "spawner_catfish")
 		$Timer.stop()
 		$Timer.start()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=77 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="30_dxgiv"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="31_jgvxj"]
 [ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
+[ext_resource type="PackedScene" uid="uid://bg6uiu1evlahf" path="res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.tscn" id="31_wi6ep"]
 [ext_resource type="Texture2D" uid="uid://de8jea48drft8" path="res://Sprites/SwampLevel1/Swamp_path_4/Water_top.png" id="35_3vv7w"]
 [ext_resource type="PackedScene" uid="uid://bphg42vmyyfx4" path="res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn" id="35_psuec"]
 [ext_resource type="PackedScene" uid="uid://by8ag4w6xi37k" path="res://Scene/Items/GrassesArea/grass_area.tscn" id="36_4byoa"]
@@ -547,7 +548,59 @@ position = Vector2(4182, -997)
 rotation = 0.279253
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
-position = Vector2(12140, 356)
+unique_name_in_owner = true
+position = Vector2(5455, 263)
+
+[node name="Catfish" parent="." instance=ExtResource("31_wi6ep")]
+unique_name_in_owner = true
+position = Vector2(8026, 821)
+
+[node name="Catfish_Spawner" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Spawner_1" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(6698, 451)
+
+[node name="Spawner_2" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(7109, 451)
+
+[node name="Spawner_3" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(7454, 450)
+
+[node name="Spawner_4" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(7852, 450)
+
+[node name="Spawner_5" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(8199, 450)
+
+[node name="Spawner_6" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(8605, 450)
+
+[node name="Spawner_7" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(9006, 450)
+
+[node name="Spawner_8" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(9408, 450)
+
+[node name="Spawner_9" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(9733, 450)
+
+[node name="Spawner_10" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(14526, 454)
+
+[node name="Spawner_11" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(17220, 440)
 
 [node name="Acid" type="Node2D" parent="."]
 

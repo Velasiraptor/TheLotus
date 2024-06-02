@@ -1,6 +1,7 @@
 res://default_env.tres
 res://Scene/Swamp_Level_1/swamp_level_1.tscn
 res://Scene/Player/GUI.gd
+res://Scene/Swamp_Level_1/swamp_level_1.gd
 res://Shaders/Blur.gdshader
 res://Shaders/water_swamp_level_1.gdshader
 res://Shaders/Dissolve.gdshader
@@ -11,14 +12,12 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
-res://Scene/Items/JumpingMushroom/jumping_mushroom.tscn
-res://Scene/Items/JumpingMushroom/jumping_mushroom.gd
+res://Scene/Swamp_Level_1/Water_lilies/torn_water_lily.tscn
+res://Scene/Swamp_Level_1/Water_lilies/torn_water_lily.gd
+res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.gd
+res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.tscn
+res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.gd
 res://Scene/UI/GUI.tscn
 res://Scene/Player/Player.tscn
 res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn
 res://Scene/Swamp_Level_1/Water_lilies/water_lily_2.tscn
-res://Scene/Swamp_Level_1/Water_quicksand/water_quicksand.tscn
-res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long.tscn
-res://Scene/Player/Player.gd
