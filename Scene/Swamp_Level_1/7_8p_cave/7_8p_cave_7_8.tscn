@@ -61,12 +61,12 @@ radius = 18.312
 height = 64.0241
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t6o5m"]
-radius = 38.2098
-height = 100.71
+radius = 62.187
+height = 209.995
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q43it"]
-radius = 33.5258
-height = 100.71
+radius = 30.1201
+height = 83.7052
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iaqgh"]
 height = 100.068
@@ -75,16 +75,20 @@ height = 100.068
 height = 364.549
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l10q8"]
-radius = 25.1514
+radius = 39.2017
 height = 127.003
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t2oy"]
-radius = 42.4947
-height = 130.243
+radius = 56.9833
+height = 148.895
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kujqn"]
+radius = 38.8598
+height = 128.88
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7od7"]
-radius = 38.9626
-height = 107.188
+radius = 54.416
+height = 136.451
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hpc0"]
 radius = 38.9626
@@ -98,12 +102,12 @@ height = 136.903
 radius = 45.3983
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnsk2"]
-radius = 11.1718
-height = 56.8386
+radius = 22.7876
+height = 98.4509
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kwy5j"]
-radius = 11.1718
-height = 130.553
+radius = 16.9399
+height = 161.857
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd1nm"]
 radius = 11.1718
@@ -143,11 +147,11 @@ height = 82.3173
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5yhfh"]
 radius = 11.1718
-height = 664.86
+height = 778.177
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecbw1"]
 radius = 11.1718
-height = 217.265
+height = 137.55
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7px0"]
 radius = 11.1718
@@ -157,13 +161,9 @@ height = 93.9436
 radius = 11.1718
 height = 192.194
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dhi4v"]
-radius = 11.1718
-height = 60.6647
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8q08c"]
 radius = 11.1718
-height = 48.3757
+height = 133.462
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r7tpi"]
 radius = 11.1718
@@ -191,7 +191,7 @@ height = 132.572
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26cu3"]
 radius = 11.1718
-height = 47.5239
+height = 81.8554
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i16wl"]
 radius = 11.1718
@@ -218,6 +218,7 @@ modulate = Color(0.227451, 0.227451, 0.227451, 1)
 collision_mask = 6
 
 [node name="7_8p_Cave7-8_sprite" type="Sprite2D" parent="."]
+position = Vector2(-23, -103)
 texture = ExtResource("1_m2dtd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -328,14 +329,14 @@ shape = SubResource("CapsuleShape2D_p17so")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="."]
-position = Vector2(-214, 123)
-rotation = -1.67269
+position = Vector2(-202, 113)
+rotation = -1.56374
 shape = SubResource("CapsuleShape2D_t6o5m")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="."]
-position = Vector2(-183, 125)
-rotation = -1.26321
+position = Vector2(-150, 50)
+rotation = -1.42687
 shape = SubResource("CapsuleShape2D_q43it")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
@@ -352,19 +353,25 @@ shape = SubResource("CapsuleShape2D_j4t07")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="."]
-position = Vector2(62, -6)
+position = Vector2(67, -82)
 rotation = -1.68509
 shape = SubResource("CapsuleShape2D_l10q8")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="."]
-position = Vector2(317, 116)
+position = Vector2(297, 122)
 rotation = -1.97792
 shape = SubResource("CapsuleShape2D_7t2oy")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="."]
+position = Vector2(288, 65)
+rotation = -2.69958
+shape = SubResource("CapsuleShape2D_kujqn")
+debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
+
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="."]
-position = Vector2(353, 106)
+position = Vector2(348, 106)
 rotation = -1.40562
 shape = SubResource("CapsuleShape2D_l7od7")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
@@ -388,14 +395,14 @@ shape = SubResource("CircleShape2D_r6ktr")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="."]
-position = Vector2(703, 121)
+position = Vector2(703, 124)
 rotation = -1.70679
 shape = SubResource("CapsuleShape2D_wnsk2")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="."]
-position = Vector2(764, 78)
-rotation = -2.296
+position = Vector2(769, 74)
+rotation = -2.2383
 shape = SubResource("CapsuleShape2D_kwy5j")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
@@ -436,127 +443,121 @@ shape = SubResource("CapsuleShape2D_vo3ni")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D39" type="CollisionShape2D" parent="."]
-position = Vector2(1007, -870)
+position = Vector2(1020, -1005)
 rotation = -2.94944
 shape = SubResource("CapsuleShape2D_nygfw")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D40" type="CollisionShape2D" parent="."]
-position = Vector2(860, -252)
+position = Vector2(873, -387)
 rotation = -2.59548
 shape = SubResource("CapsuleShape2D_bvuhq")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="."]
-position = Vector2(796, -176)
-rotation = -2.04381
+position = Vector2(805, -318)
+rotation = -1.86146
 shape = SubResource("CapsuleShape2D_483h5")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="."]
-position = Vector2(451, -195)
-rotation = -1.46827
+position = Vector2(398, -321)
+rotation = -1.53876
 shape = SubResource("CapsuleShape2D_5yhfh")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D43" type="CollisionShape2D" parent="."]
-position = Vector2(52, -244)
-rotation = -1.38159
+position = Vector2(-30, -350)
+rotation = -1.26157
 shape = SubResource("CapsuleShape2D_ecbw1")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="."]
-position = Vector2(-79, -263)
-rotation = -1.54248
+position = Vector2(-82, -360)
+rotation = -1.45007
 shape = SubResource("CapsuleShape2D_o7px0")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="."]
-position = Vector2(-189, -225)
-rotation = -2.05278
+position = Vector2(-188, -339)
+rotation = -1.93406
 shape = SubResource("CapsuleShape2D_rnwu7")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
-[node name="CollisionShape2D46" type="CollisionShape2D" parent="."]
-position = Vector2(-273, -173)
-rotation = -2.48143
-shape = SubResource("CapsuleShape2D_dhi4v")
-debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
-
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="."]
-position = Vector2(-299, -147)
-rotation = -2.19882
+position = Vector2(-255, -292)
+rotation = -2.30812
 shape = SubResource("CapsuleShape2D_8q08c")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D48" type="CollisionShape2D" parent="."]
-position = Vector2(-370, -140)
+position = Vector2(-365, -262)
 rotation = -1.54663
 shape = SubResource("CapsuleShape2D_r7tpi")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D49" type="CollisionShape2D" parent="."]
-position = Vector2(-468, -160)
-rotation = -1.11643
+position = Vector2(-466, -284)
+rotation = -1.18012
 shape = SubResource("CapsuleShape2D_wn53f")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D50" type="CollisionShape2D" parent="."]
-position = Vector2(-562, -187)
+position = Vector2(-552, -309)
 rotation = -1.43353
 shape = SubResource("CapsuleShape2D_nv1u0")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D51" type="CollisionShape2D" parent="."]
-position = Vector2(-653, -182)
+position = Vector2(-642, -304)
 rotation = -1.8726
 shape = SubResource("CapsuleShape2D_7ljo4")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D52" type="CollisionShape2D" parent="."]
-position = Vector2(-732, -148)
-rotation = -2.06949
+position = Vector2(-717, -266)
+rotation = -2.18396
 shape = SubResource("CapsuleShape2D_b4tpc")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D53" type="CollisionShape2D" parent="."]
-position = Vector2(-828, -115)
+position = Vector2(-811, -228)
 rotation = -1.76246
 shape = SubResource("CapsuleShape2D_xftrp")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D54" type="CollisionShape2D" parent="."]
-position = Vector2(-888, -122)
+position = Vector2(-872, -246)
 rotation = -0.280714
 shape = SubResource("CapsuleShape2D_26cu3")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D55" type="CollisionShape2D" parent="."]
-position = Vector2(-914, -135)
+position = Vector2(-901, -270)
 rotation = -1.14831
 shape = SubResource("CapsuleShape2D_i16wl")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D56" type="CollisionShape2D" parent="."]
-position = Vector2(-1002, -142)
+position = Vector2(-989, -277)
 rotation = -1.62212
 shape = SubResource("CapsuleShape2D_r4ok4")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D57" type="CollisionShape2D" parent="."]
-position = Vector2(-1125, -183)
+position = Vector2(-1112, -318)
 rotation = -0.793488
 shape = SubResource("CapsuleShape2D_836rp")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D58" type="CollisionShape2D" parent="."]
-position = Vector2(-1189, -269)
+position = Vector2(-1176, -404)
 rotation = -0.400339
 shape = SubResource("CapsuleShape2D_0tx56")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D59" type="CollisionShape2D" parent="."]
-position = Vector2(-1192, -822)
+position = Vector2(-1179, -957)
 rotation = 0.0289632
 shape = SubResource("CapsuleShape2D_uebno")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
@@ -570,10 +571,9 @@ debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 [node name="Jumping_Mushroom" parent="." instance=ExtResource("2_v0dhx")]
 position = Vector2(-1424, -365)
 rotation = 0.0971111
-jumping = -2125
-active = 1
+jumping = -2425
 
 [node name="Jumping_Mushroom2" parent="." instance=ExtResource("2_v0dhx")]
 position = Vector2(1171, -236)
 rotation = -0.247444
-jumping = -2225
+jumping = -2575

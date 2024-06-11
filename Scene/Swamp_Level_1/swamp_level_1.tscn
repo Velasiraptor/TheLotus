@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=79 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://d8lfd5nawp61" path="res://Sprites/SwampLevel1/Swamp_path_1/Tree_foliage.png" id="22_oruov"]
 [ext_resource type="PackedScene" uid="uid://fnlpi7snkxi" path="res://Scene/Items/Logs/log.tscn" id="23_3k4wm"]
 [ext_resource type="PackedScene" uid="uid://bh4nstby1hsiv" path="res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.tscn" id="23_4x5oc"]
+[ext_resource type="PackedScene" uid="uid://bho00a37hmaqo" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_high.tscn" id="23_7hxlg"]
 [ext_resource type="Texture2D" uid="uid://5em4bk2g6xbc" path="res://Sprites/SwampLevel1/Items/Trash/barrel_of_oil.png" id="23_glxaq"]
 [ext_resource type="PackedScene" uid="uid://baat563t3l77h" path="res://Scene/Swamp_Level_1/Gameplay_items/lotus.tscn" id="24_sa1ku"]
 [ext_resource type="Texture2D" uid="uid://cq64cj5jkn58q" path="res://Sprites/SwampLevel1/Items/Hole_top.png" id="24_xfc7i"]
@@ -253,6 +254,9 @@ load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.cte
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f612o"]
 size = Vector2(301, 51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04346"]
+size = Vector2(373.5, 14)
+
 [node name="SwampLevel1" type="Node2D" groups=["Level1"]]
 position = Vector2(0, 1)
 script = ExtResource("1_ukyx4")
@@ -345,7 +349,7 @@ shape = SubResource("RectangleShape2D_yfrl0")
 debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
 [node name="MarkerLeft_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Left_Entered"]
-position = Vector2(-1278, -918)
+position = Vector2(-1414, -824)
 
 [node name="Camera_Right_Entered" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
@@ -357,7 +361,7 @@ shape = SubResource("RectangleShape2D_yfrl0")
 debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
 [node name="MarkerRight_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Entered"]
-position = Vector2(1082, -1010)
+position = Vector2(1100, -598)
 
 [node name="Camera_Left_Exit" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
@@ -493,6 +497,16 @@ scale = Vector2(-1, 1)
 [node name="Torn_water_lily2" parent="Water_lilies_R" instance=ExtResource("18_1sgaj")]
 position = Vector2(17378, 412)
 
+[node name="tall_water_lily_high" parent="." instance=ExtResource("23_7hxlg")]
+position = Vector2(18996, 478)
+
+[node name="tall_water_lily_high2" parent="." instance=ExtResource("23_7hxlg")]
+position = Vector2(19692, 602)
+scale = Vector2(-1, 1)
+
+[node name="tall_water_lily_high3" parent="." instance=ExtResource("23_7hxlg")]
+position = Vector2(27123, 420)
+
 [node name="Water_quicksand" parent="." instance=ExtResource("19_02x0k")]
 position = Vector2(0, 2)
 
@@ -549,7 +563,7 @@ rotation = 0.279253
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(5455, 263)
+position = Vector2(-2196, -144)
 
 [node name="Catfish" parent="." instance=ExtResource("31_wi6ep")]
 unique_name_in_owner = true
@@ -1026,20 +1040,20 @@ color = Color(0.00784314, 0, 0, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="Platforms_top/7p_8p_Cave_Patches"]
 offset_left = 23103.0
-offset_top = 2298.0
+offset_top = 2357.0
 offset_right = 27224.0
-offset_bottom = 5270.0
+offset_bottom = 5329.0
 color = Color(0.00784314, 0, 0, 1)
 
 [node name="Cave7-8Top" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
-position = Vector2(25074, 1955)
+position = Vector2(25077, 1905)
 texture = ExtResource("29_mf758")
 
 [node name="HoleTop_Left" type="Sprite2D" parent="Platforms_top/7p_8p_Cave_Patches"]
-modulate = Color(0.698039, 0.698039, 0.698039, 1)
-position = Vector2(23866, 1679)
-rotation = 0.0334552
-scale = Vector2(0.9, 0.9)
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(23823, 1670)
+rotation = 0.0827954
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("24_xfc7i")
 flip_v = true
 
@@ -1059,6 +1073,26 @@ collision_mask = 8
 position = Vector2(1.5, 86.5)
 shape = SubResource("RectangleShape2D_f612o")
 debug_color = Color(0.905882, 0.282353, 0.309804, 0.419608)
+
+[node name="Hole_death" type="Area2D" parent="."]
+position = Vector2(23659, -47)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_death"]
+position = Vector2(-3928, 537)
+shape = SubResource("RectangleShape2D_04346")
+debug_color = Color(0.947139, 0.186818, 0.350923, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hole_death"]
+position = Vector2(-4557, 529)
+shape = SubResource("RectangleShape2D_04346")
+debug_color = Color(0.947139, 0.186818, 0.350923, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hole_death"]
+position = Vector2(3340, 441)
+shape = SubResource("RectangleShape2D_04346")
+debug_color = Color(0.947139, 0.186818, 0.350923, 0.42)
 
 [node name="Top" type="Node2D" parent="."]
 
@@ -1083,3 +1117,4 @@ visible = false
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Left_Exit" to="." method="_on_camera_left_exit_body_entered"]
 [connection signal="body_entered" from="7_8p_Cave7-8/Camera_Right_Exit" to="." method="_on_camera_right_exit_body_entered"]
 [connection signal="body_entered" from="log_in_hole" to="." method="_on_log_in_hole_body_entered"]
+[connection signal="body_entered" from="Hole_death" to="." method="_on_hole_death_body_entered"]

@@ -647,10 +647,8 @@ light_mask = 2
 scale = Vector2(0.55, 0.55)
 collision_layer = 2
 collision_mask = 13
-floor_max_angle = 0.523599
 floor_snap_length = 5.0
 script = ExtResource("1_bjt4l")
-length_damage_fall = 1650
 
 [node name="ParticlesPlayer" type="GPUParticles2D" parent="." groups=["Player"]]
 position = Vector2(-50, 76)
