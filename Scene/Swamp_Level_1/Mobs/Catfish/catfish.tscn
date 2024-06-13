@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bg6uiu1evlahf"]
+[gd_scene load_steps=15 format=3 uid="uid://bg6uiu1evlahf"]
 
 [ext_resource type="Script" path="res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.gd" id="1_7606g"]
 [ext_resource type="Texture2D" uid="uid://prfd4euw56g5" path="res://Sprites/SwampLevel1/Mobs/Catfish/Catfish_idle.png" id="1_dj4lu"]
 [ext_resource type="Texture2D" uid="uid://dx85dv78wevyp" path="res://Sprites/SwampLevel1/Mobs/Catfish/Catfish_bite_1.png" id="2_acvv2"]
+[ext_resource type="PackedScene" uid="uid://bpnpix70wxkxd" path="res://Scene/Items/Bubbles/bubbles.tscn" id="4_sffrb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0evl"]
 animations = [{
@@ -111,6 +112,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-0.634625]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bubbles:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bubbles:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_g67ft"]
@@ -235,6 +260,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [-0.634625, -0.634625, -0.308523, -0.160542]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Bubbles:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_be4y8"]
 resource_name = "jump_R"
@@ -358,6 +395,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [-0.634625, -0.634625, -0.308923, -0.16057]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Bubbles:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_85x6u"]
 resource_name = "spawn_side_L"
@@ -368,7 +417,7 @@ tracks/0/path = NodePath("Catfish_sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.4, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(120, 110), Vector2(120, 40)]
@@ -380,7 +429,7 @@ tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.4, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-26, 82), Vector2(-26, 12)]
@@ -392,7 +441,7 @@ tracks/2/path = NodePath("Catfish_sprite:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.174533]
@@ -404,10 +453,34 @@ tracks/3/path = NodePath(".:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bubbles:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.517647, 0.517647, 0.517647, 0), Color(0.517647, 0.517647, 0.517647, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubbles:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 25)]
 }
 
 [sub_resource type="Animation" id="Animation_uu8as"]
@@ -419,7 +492,7 @@ tracks/0/path = NodePath("Catfish_sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.4, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(120, 110), Vector2(120, 40)]
@@ -431,7 +504,7 @@ tracks/1/path = NodePath("Catfish_sprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.174533]
@@ -443,7 +516,7 @@ tracks/2/path = NodePath("CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.4, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-26, 82), Vector2(-26, 12)]
@@ -455,10 +528,34 @@ tracks/3/path = NodePath(".:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bubbles:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.517647, 0.517647, 0.517647, 0), Color(0.517647, 0.517647, 0.517647, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubbles:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 25)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjxd7"]
@@ -481,8 +578,51 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_7606g")
 
+[node name="Bubbles" parent="." instance=ExtResource("4_sffrb")]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Bubbles4" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(-20, 3)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles6" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(-11, -21)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles7" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(9, -25)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles8" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(-33, 10)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles9" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(4, -13)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles10" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(-35, -14)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles11" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(22, -33)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles12" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(-3, -39)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles13" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(-27, -33)
+scale = Vector2(-1, 1)
+
+[node name="Bubbles5" parent="Bubbles" instance=ExtResource("4_sffrb")]
+position = Vector2(20, 8)
+scale = Vector2(-1, 1)
+
 [node name="Catfish_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(120, 40)
+position = Vector2(120, 110)
 rotation = 0.174533
 scale = Vector2(-0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_l0evl")

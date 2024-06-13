@@ -1,9 +1,166 @@
-[gd_scene load_steps=17 format=3 uid="uid://bphg42vmyyfx4"]
+[gd_scene load_steps=21 format=3 uid="uid://bphg42vmyyfx4"]
 
 [ext_resource type="Script" path="res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.gd" id="1_ohoih"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="2_vfvrv"]
 [ext_resource type="Texture2D" uid="uid://cea5j1ho3svy4" path="res://Sprites/SwampLevel1/Items/Water_drops.png" id="2_w2h7n"]
 [ext_resource type="Texture2D" uid="uid://2e2387xi6kpl" path="res://Sprites/SwampLevel1/Items/Water_lily/Water_lily_2.png" id="3_01jhk"]
+[ext_resource type="Texture2D" uid="uid://c7mbg383f0dek" path="res://Sprites/SwampLevel1/Items/Water_lily/Wave_water_lily.png" id="3_syywy"]
+
+[sub_resource type="Animation" id="Animation_ltkvn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveWaterLily_Left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-93, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaveWaterLily_Left:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.517647, 0.517647, 0.517647, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaveWaterLily_Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(93, 12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaveWaterLily_Right:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.517647, 0.517647, 0.517647, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WaveWaterLily_Left:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WaveWaterLily_Right:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hnyn4"]
+resource_name = "Wave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveWaterLily_Left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-103, 12), Vector2(-138, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaveWaterLily_Left:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.517647, 0.517647, 0.517647, 0), Color(0.517647, 0.517647, 0.517647, 1), Color(0.517647, 0.517647, 0.517647, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaveWaterLily_Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(103, 12), Vector2(138, 12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaveWaterLily_Right:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.517647, 0.517647, 0.517647, 0), Color(0.517647, 0.517647, 0.517647, 1), Color(0.517647, 0.517647, 0.517647, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WaveWaterLily_Left:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WaveWaterLily_Right:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qpby"]
+_data = {
+"RESET": SubResource("Animation_ltkvn"),
+"Wave": SubResource("Animation_hnyn4")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vs7xr"]
 size = Vector2(212, 13)
@@ -257,6 +414,25 @@ show_behind_parent = true
 position = Vector2(-2.00001, 25.6016)
 scale = Vector2(0.453074, 0.540434)
 texture = ExtResource("2_vfvrv")
+
+[node name="WaveWaterLily_Left" type="Sprite2D" parent="Water_lily_1"]
+modulate = Color(0.517647, 0.517647, 0.517647, 0)
+position = Vector2(-93, 6)
+rotation = 2.99932
+scale = Vector2(1, 1)
+texture = ExtResource("3_syywy")
+
+[node name="WaveWaterLily_Right" type="Sprite2D" parent="Water_lily_1"]
+modulate = Color(0.517647, 0.517647, 0.517647, 0)
+position = Vector2(93, 12)
+rotation = -0.225241
+texture = ExtResource("3_syywy")
+
+[node name="Animation_wave" type="AnimationPlayer" parent="Water_lily_1"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_8qpby")
+}
 
 [node name="WaterLily" type="Sprite2D" parent="Water_lily_1"]
 scale = Vector2(0.58, 0.58)

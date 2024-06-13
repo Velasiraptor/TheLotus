@@ -5,6 +5,6 @@
 
 [node name="Water_lily_1" instance=ExtResource("1_eybi4")]
 
-[node name="WaterLily" parent="Water_lily_1" index="1"]
+[node name="WaterLily" parent="Water_lily_1" index="4"]
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("2_15b1h")

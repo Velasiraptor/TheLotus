@@ -563,7 +563,7 @@ rotation = 0.279253
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(-2196, -144)
+position = Vector2(11224, 206)
 
 [node name="Catfish" parent="." instance=ExtResource("31_wi6ep")]
 unique_name_in_owner = true
