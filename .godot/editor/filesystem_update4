@@ -12,15 +12,3 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
-res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn
-res://Scene/Swamp_Level_1/Water_lilies/water_lily_2.tscn
-res://Scene/Swamp_Level_1/Water_lilies/torn_water_lily.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_high.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_small.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long.tscn
-res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long_static.tscn
-res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.gd
-res://Scene/Swamp_Level_1/Water_lilies/torn_water_lily.gd
-res://Scene/Items/Bubbles/bubbles.tscn
-res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.tscn
