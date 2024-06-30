@@ -31,6 +31,7 @@ var ind_jump_on_water = 0
 var ind_fall_damage := false 
 var ind_not_fall_damage := false 
 var ind_death = 0
+var ind_in_puzzle = 0 # 0 - когда не в головоломке или не в синематике, 1 когда вышел из головоломки
 
 @onready var frog_player = %FrogPlayer
 @onready var side_frog_player = $SideFrogPlayer
@@ -81,6 +82,7 @@ func camera_default(): # камера и цвет для игрока по ум�
 	camera_player.limit_right = 29450
 	camera_player.zoom.x = 1.7
 	camera_player.zoom.y = 1.7
+ 
 
 func default_characteristics():
 	speed = 250
@@ -95,7 +97,7 @@ func items_rigid():
 
 
 func move(): #движение
-	if Globals.actual_hp_player > 0 and state != State.DANGER:
+	if Globals.actual_hp_player > 0 and state != State.DANGER and ind_in_puzzle == 0:
 		
 		if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
 			change_state(State.WALK_LEFT)
@@ -133,7 +135,7 @@ func move(): #движение
 		vel.x = 0 #смерть
 
 func jump(): #прыжок
-	if ind_jump == 1:
+	if ind_jump == 1 and ind_in_puzzle == 0:
 		if Input.is_action_just_pressed("player_jump") and is_on_floor() and Globals.actual_hp_player > 0 or Input.is_action_just_pressed("player_jump") and ind_jump_on_water == 1 and Globals.actual_hp_player > 0 and state != State.DANGER:
 			ind_fall_damage = false
 			change_state(State.JUMP)
@@ -338,10 +340,14 @@ func fullHurt(): #мгновенная смерть
 	$TimerDeath.start()
 
 func leftPush(): #толчок от удара справа
+	state = State.TAKE_DAMAGE
 	vel.x = 500
 
+
 func RightPush(): #толчок от удара слева
+	state = State.TAKE_DAMAGE
 	vel.x = -500
+
 
 
 func heal(): #лечение здоровья
@@ -356,6 +362,12 @@ func heal(): #лечение здоровья
 func _on_TimerDeath_timeout(): #время появления меню геймовер
 	end_game()
 
+func in_puzzle(): # в мини игре или в головоломке
+	ind_in_puzzle = 1
+	state = State.IDLE
+	vel.x = 0
+func exit_puzzle():
+	ind_in_puzzle = 0
 
 
 #КОД ДЛЯ ВЗАИМОДЕЙСТВИЙ С 1 УРОВНЕМ/ level 1
@@ -427,6 +439,3 @@ func Player_not_on_water_quicksand():
 func _on_timer_water_quicksand_timeout(): # таймер возвращения прыжка по умолчанию
 	default_characteristics()
 	ind_jump_on_water = 0
-
-
-

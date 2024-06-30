@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=81 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -47,7 +47,9 @@
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="30_dxgiv"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="31_jgvxj"]
 [ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
+[ext_resource type="PackedScene" uid="uid://bodccpgndfve4" path="res://Scene/Swamp_Level_1/Froggy/Froggy_in_spikes.tscn" id="31_vl3gu"]
 [ext_resource type="PackedScene" uid="uid://bg6uiu1evlahf" path="res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.tscn" id="31_wi6ep"]
+[ext_resource type="PackedScene" uid="uid://lvpoeys2jwcv" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/puzzle_froggy.tscn" id="33_hmg3v"]
 [ext_resource type="Texture2D" uid="uid://de8jea48drft8" path="res://Sprites/SwampLevel1/Swamp_path_4/Water_top.png" id="35_3vv7w"]
 [ext_resource type="PackedScene" uid="uid://bphg42vmyyfx4" path="res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn" id="35_psuec"]
 [ext_resource type="PackedScene" uid="uid://by8ag4w6xi37k" path="res://Scene/Items/GrassesArea/grass_area.tscn" id="36_4byoa"]
@@ -361,7 +363,7 @@ shape = SubResource("RectangleShape2D_yfrl0")
 debug_color = Color(0.775136, 0.414435, 0.415545, 0.419608)
 
 [node name="MarkerRight_Entered" type="Marker2D" parent="7_8p_Cave7-8/Camera_Right_Entered"]
-position = Vector2(1100, -598)
+position = Vector2(1123, -869)
 
 [node name="Camera_Left_Exit" type="Area2D" parent="7_8p_Cave7-8"]
 collision_mask = 2
@@ -561,9 +563,19 @@ unique_name_in_owner = true
 position = Vector2(4182, -997)
 rotation = 0.279253
 
+[node name="Froggy_in_spikes" parent="." instance=ExtResource("31_vl3gu")]
+position = Vector2(18677, 215)
+
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(11224, 206)
+position = Vector2(18179, 124)
+
+[node name="Puzzle_froggy" parent="." instance=ExtResource("33_hmg3v")]
+unique_name_in_owner = true
+z_index = 3
+z_as_relative = false
+position = Vector2(18519, 160.5)
+scale = Vector2(0.44, 0.44)
 
 [node name="Catfish" parent="." instance=ExtResource("31_wi6ep")]
 unique_name_in_owner = true

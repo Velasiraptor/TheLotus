@@ -1,0 +1,229 @@
+[gd_scene load_steps=13 format=3 uid="uid://ibh20vikwwcm"]
+
+[ext_resource type="Texture2D" uid="uid://dl3b51dcfyyct" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_cry_1.png" id="1_48jwv"]
+[ext_resource type="Texture2D" uid="uid://b73bc3qg1xeef" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_cry_3.png" id="2_xhsex"]
+[ext_resource type="Texture2D" uid="uid://dk3xa37ykue2f" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_cry_5.png" id="3_dshhj"]
+[ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="4_mfrvj"]
+
+[sub_resource type="GDScript" id="GDScript_328pk"]
+script/source = "extends CharacterBody2D
+
+@onready var animation_stop = %Animation_stop
+@onready var animation_jump = %Animation_jump
+
+
+const SPEED = 600.0
+var ind_move = 1
+var ind_not_move = 1
+var ind_stop_jump = 0
+
+func _physics_process(delta):
+		move()
+
+func start_move():
+	await get_tree().create_timer(0.8).timeout
+	ind_not_move = 0
+
+func move():
+	if ind_not_move == 0:
+		if Input.is_action_just_pressed(\"ui_left\") and ind_move == 1:
+			velocity.x = -SPEED
+			ind_move = 0
+			ind_stop_jump = 1
+			animation_jump.play(\"start_jump\")
+			
+		elif Input.is_action_just_pressed(\"ui_right\") and ind_move == 1:
+			velocity.x = SPEED
+			ind_move = 0
+			ind_stop_jump = 1
+			animation_jump.play(\"start_jump\")
+			
+		elif Input.is_action_just_pressed(\"ui_up\") and ind_move == 1:
+			velocity.y = -SPEED
+			ind_move = 0
+			ind_stop_jump = 1
+			animation_jump.play(\"start_jump\")
+			
+		elif Input.is_action_just_pressed(\"ui_down\") and ind_move == 1:
+			velocity.y = SPEED
+			ind_move = 0
+			ind_stop_jump = 1
+			animation_jump.play(\"start_jump\")
+			
+		else:
+			if velocity == Vector2(0, 0):
+				if ind_stop_jump == 1:
+					if animation_jump.is_playing():
+						animation_jump.play(\"start_jump\", 0, -2.0)
+					else:
+						animation_jump.play_backwards(\"start_jump\")
+					ind_stop_jump = 0
+				ind_move = 1
+				
+	move_and_slide()
+
+func fail_Frocky_game():
+	ind_not_move = 1
+	animation_stop.play(\"stop_game\")
+	await get_tree().create_timer(0.6).timeout
+	ind_not_move = 0
+
+func stop_move():
+	ind_not_move = 1
+
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xha6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_48jwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_48jwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_48jwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhsex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_48jwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_48jwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_48jwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dshhj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2phe"]
+size = Vector2(84, 84)
+
+[sub_resource type="Animation" id="Animation_js32r"]
+resource_name = "stop_game"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Froggy_sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.815686, 0.0941176, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ngr3i"]
+_data = {
+"stop_game": SubResource("Animation_js32r")
+}
+
+[sub_resource type="Animation" id="Animation_mnmpy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Froggy_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.01999, -1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_3s4um"]
+resource_name = "start_jump"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Froggy_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.01999, -1.8), Vector2(1.02, 4.8), Vector2(1.02, -30.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dl4co"]
+_data = {
+"RESET": SubResource("Animation_mnmpy"),
+"start_jump": SubResource("Animation_3s4um")
+}
+
+[node name="Froggy_in_puzzle" type="CharacterBody2D" groups=["Foggy_in_puzzle"]]
+collision_layer = 128
+collision_mask = 64
+slide_on_ceiling = false
+script = SubResource("GDScript_328pk")
+
+[node name="Froggy_sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1.01999, -1.8)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_xha6a")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.419478
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.019989, 1)
+shape = SubResource("RectangleShape2D_f2phe")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Shadow" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-1, 31)
+scale = Vector2(0.183252, 0.311069)
+texture = ExtResource("4_mfrvj")
+
+[node name="Animation_stop" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_ngr3i")
+}
+
+[node name="Animation_jump" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_dl4co")
+}

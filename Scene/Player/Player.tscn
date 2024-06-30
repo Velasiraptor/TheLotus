@@ -732,7 +732,6 @@ wait_time = 4.0
 one_shot = true
 
 [node name="GUI" parent="." instance=ExtResource("20_ce54u")]
-layer = 6
 
 [node name="Shadow" type="Sprite2D" parent="."]
 show_behind_parent = true

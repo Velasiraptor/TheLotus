@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://duei7yc4bnxv7"]
+[gd_scene load_steps=60 format=3 uid="uid://duei7yc4bnxv7"]
 
 [ext_resource type="Texture2D" uid="uid://dgy15f4uh2ldh" path="res://Sprites/SwampLevel1/Cave_path_7-8/Cave_7-8.png" id="1_m2dtd"]
 [ext_resource type="PackedScene" uid="uid://cbmelwurtnfwl" path="res://Scene/Items/JumpingMushroom/jumping_mushroom.tscn" id="2_v0dhx"]
@@ -143,11 +143,15 @@ height = 161.7
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_483h5"]
 radius = 11.1718
-height = 82.3173
+height = 139.27
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5yhfh"]
 radius = 11.1718
 height = 778.177
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at7x5"]
+radius = 11.1718
+height = 263.838
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecbw1"]
 radius = 11.1718
@@ -455,7 +459,7 @@ shape = SubResource("CapsuleShape2D_bvuhq")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="."]
-position = Vector2(805, -318)
+position = Vector2(774, -309)
 rotation = -1.86146
 shape = SubResource("CapsuleShape2D_483h5")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
@@ -464,6 +468,12 @@ debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 position = Vector2(398, -321)
 rotation = -1.53876
 shape = SubResource("CapsuleShape2D_5yhfh")
+debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
+
+[node name="CollisionShape2D60" type="CollisionShape2D" parent="."]
+position = Vector2(598, -305)
+rotation = -1.45912
+shape = SubResource("CapsuleShape2D_at7x5")
 debug_color = Color(0.615686, 0.52549, 0.309804, 0.419608)
 
 [node name="CollisionShape2D43" type="CollisionShape2D" parent="."]

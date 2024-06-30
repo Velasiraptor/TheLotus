@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpxb4xa24hugh"]
+
+[ext_resource type="Texture2D" uid="uid://2solcfvxsvsh" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Rock_1.png" id="1_koqbd"]
+[ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="2_crbry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt08h"]
+size = Vector2(84, 84)
+
+[node name="Rock_puzzle" type="Sprite2D"]
+position = Vector2(-10, 5)
+texture = ExtResource("1_koqbd")
+
+[node name="Rock_puzzle" type="StaticBody2D" parent="."]
+position = Vector2(1, -4)
+collision_layer = 64
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock_puzzle"]
+position = Vector2(0.019989, 1)
+shape = SubResource("RectangleShape2D_pt08h")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+show_behind_parent = true
+position = Vector2(3, 19)
+scale = Vector2(0.185275, 0.469466)
+texture = ExtResource("2_crbry")

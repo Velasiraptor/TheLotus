@@ -1,0 +1,497 @@
+[gd_scene load_steps=50 format=3 uid="uid://lvpoeys2jwcv"]
+
+[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/puzzle_froggy.gd" id="1_4pjiy"]
+[ext_resource type="Texture2D" uid="uid://02j6un1taxnc" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Field.png" id="1_gvrse"]
+[ext_resource type="PackedScene" uid="uid://ibh20vikwwcm" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/froggy_in_puzzle.tscn" id="2_6x6d5"]
+[ext_resource type="PackedScene" uid="uid://cpxb4xa24hugh" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/rock_puzzle.tscn" id="2_73gpv"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_md4e5"]
+[ext_resource type="Texture2D" uid="uid://cc0q467q7b02n" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Field_glass.png" id="3_7ut0j"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_muvau"]
+[ext_resource type="PackedScene" uid="uid://d2fed1m8brc2t" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/glass_trap.tscn" id="4_51h4h"]
+[ext_resource type="Texture2D" uid="uid://uvt2e1iiwono" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Vines_right_center.png" id="4_56rvg"]
+[ext_resource type="Texture2D" uid="uid://w4y4it8c1uty" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Rock_3.png" id="4_liier"]
+[ext_resource type="Texture2D" uid="uid://b7wmvjwj4hpta" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Vines_left_top.png" id="5_1rny3"]
+[ext_resource type="Texture2D" uid="uid://bnq3aipla8iuc" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Rock_4.png" id="5_c1v87"]
+[ext_resource type="Texture2D" uid="uid://fadkbr3jvyxl" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_7.png" id="5_icctf"]
+[ext_resource type="Texture2D" uid="uid://bscve88vk48uo" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Vines_right_top.png" id="6_dbeui"]
+[ext_resource type="Texture2D" uid="uid://hjum8v3hbfmq" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Rock_2.png" id="6_kb7vq"]
+[ext_resource type="Texture2D" uid="uid://b3ip3fxhyeuww" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_8.png" id="6_m54fw"]
+[ext_resource type="Texture2D" uid="uid://bhbe6b05wwhk4" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_9.png" id="7_a28ku"]
+[ext_resource type="Texture2D" uid="uid://7b7axbo0p1xx" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Rock_5.png" id="7_ciexn"]
+[ext_resource type="Texture2D" uid="uid://cmnik1qa244wd" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Field_green.png" id="7_ttq60"]
+[ext_resource type="Texture2D" uid="uid://cqkklwaxh6vfl" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/items_in_puzzle_froggy/Сross.png" id="8_1jwk7"]
+[ext_resource type="Texture2D" uid="uid://casyh14jgw7e1" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_10.png" id="8_p48ij"]
+[ext_resource type="Texture2D" uid="uid://dfrajo4olinqt" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_11.png" id="9_7co6n"]
+[ext_resource type="Texture2D" uid="uid://8q8leclxwywv" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_12.png" id="10_jxd2i"]
+[ext_resource type="Texture2D" uid="uid://dwr7a7t0irmlv" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_2.png" id="11_gcfqf"]
+[ext_resource type="Texture2D" uid="uid://iwqjfjttdjon" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_3.png" id="12_uhirs"]
+[ext_resource type="Texture2D" uid="uid://cfqlhr0con5p1" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_4.png" id="13_g5ppd"]
+[ext_resource type="Texture2D" uid="uid://dnxedar4kjlsj" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_5.png" id="14_i4ily"]
+[ext_resource type="Texture2D" uid="uid://cn86hdvs2omju" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_6.png" id="15_v1i6u"]
+[ext_resource type="Texture2D" uid="uid://d0a53ib6bre8j" path="res://Sprites/UI/Puzzle/Puzzle_exiit.png" id="27_l2jbq"]
+[ext_resource type="Texture2D" uid="uid://inc4pmwmrxq6" path="res://Sprites/UI/Puzzle/Puzzle_exit_hover.png" id="28_j4snx"]
+[ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="31_1ry6l"]
+[ext_resource type="Texture2D" uid="uid://477d8kx6rxxt" path="res://Sprites/UI/Puzzle/Clue.png" id="31_kasav"]
+[ext_resource type="Texture2D" uid="uid://dhttldx4ebns" path="res://Sprites/UI/Puzzle/Clue_hover.png" id="32_pii1s"]
+[ext_resource type="Texture2D" uid="uid://dci2sn73g03l5" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/items_in_puzzle_froggy/Win_emotion.png" id="33_so2jd"]
+[ext_resource type="Texture2D" uid="uid://cl33vpcfbwvbx" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/items_in_puzzle_froggy/Exclamation_point.png" id="34_y5pmv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gk7ao"]
+shader = ExtResource("2_md4e5")
+shader_parameter/lod = 2.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpanr"]
+size = Vector2(45, 823)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxk0i"]
+size = Vector2(45, 544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v657i"]
+size = Vector2(45, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqtll"]
+size = Vector2(45, 209)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77uxl"]
+size = Vector2(45, 869)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcf44"]
+size = Vector2(45, 823)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jeh1k"]
+load_path = "res://.godot/imported/Rock_1.png-5a33a1eacb198ecb1e990982134aca1a.ctex"
+
+[sub_resource type="Animation" id="Animation_ifsei"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Field_StaticBody/Froggy_in_puzzle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kdexo"]
+resource_name = "start"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Field_StaticBody/Froggy_in_puzzle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jl0f7"]
+_data = {
+"RESET": SubResource("Animation_ifsei"),
+"start": SubResource("Animation_kdexo")
+}
+
+[sub_resource type="Animation" id="Animation_ykfkl"]
+resource_name = "Clue_animation"
+length = 3.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinEmotion:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 2.6, 2.9, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1.5, 1.5), Vector2(1.25, 1.25), Vector2(1.25, 1.25), Vector2(1.5, 1.5), Vector2(0.01, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WinEmotion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExclamationPoint:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExclamationPoint:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1.1, 1.4, 1.7, 2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.0872665, 0.0872665, -0.0872665, 0.0, 0.0872665, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExclamationPoint:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 2.6, 2.9, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1.5, 1.5), Vector2(1.25, 1.25), Vector2(1.25, 1.25), Vector2(1.5, 1.5), Vector2(0.01, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_cnaux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinEmotion:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WinEmotion:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.25, 1.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExclamationPoint:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExclamationPoint:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExclamationPoint:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.25, 1.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0wh7"]
+_data = {
+"Clue_animation": SubResource("Animation_ykfkl"),
+"RESET": SubResource("Animation_cnaux")
+}
+
+[node name="Puzzle_froggy" type="Node2D" groups=["Froggy_puzzle"]]
+script = ExtResource("1_4pjiy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="TextureRect" parent="CanvasLayer/Control"]
+material = SubResource("ShaderMaterial_gk7ao")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3608.0
+offset_top = -1140.0
+offset_right = -3544.0
+offset_bottom = -940.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(118, 13.1875)
+texture = ExtResource("3_muvau")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -970.0
+offset_top = -555.0
+offset_right = 969.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.117647)
+
+[node name="Field_StaticBody" type="StaticBody2D" parent="CanvasLayer/Control"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 64
+collision_mask = 128
+
+[node name="Field" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody"]
+texture = ExtResource("1_gvrse")
+
+[node name="CollisionShape2D_L" type="CollisionShape2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(-419.5, 1.5)
+shape = SubResource("RectangleShape2D_bpanr")
+
+[node name="CollisionShape2D2_RT" type="CollisionShape2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(400.5, -138)
+shape = SubResource("RectangleShape2D_nxk0i")
+
+[node name="Finish" type="CollisionShape2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(437, 178)
+shape = SubResource("RectangleShape2D_v657i")
+
+[node name="CollisionShape2D2_RB" type="CollisionShape2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(400.5, 326.5)
+shape = SubResource("RectangleShape2D_kqtll")
+
+[node name="CollisionShape2D3_T" type="CollisionShape2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(-9.5, -404)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_77uxl")
+
+[node name="CollisionShape2D3_B" type="CollisionShape2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(-3, 415.035)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_kcf44")
+
+[node name="RockS" type="Node2D" parent="CanvasLayer/Control/Field_StaticBody"]
+
+[node name="Rock_puzzle" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(-268, -248)
+
+[node name="Rock_puzzle2" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(-11, -334)
+
+[node name="Rock_puzzle3" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(246, -163)
+texture = ExtResource("4_liier")
+
+[node name="Rock_puzzle4" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(332, 9)
+texture = ExtResource("4_liier")
+
+[node name="Rock_puzzle5" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(161, 266)
+texture = ExtResource("5_c1v87")
+
+[node name="Rock_puzzle6" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(-97, 353)
+texture = ExtResource("6_kb7vq")
+
+[node name="Rock_puzzle7" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(-355, 266)
+texture = ExtResource("7_ciexn")
+
+[node name="Rock_puzzle8" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+position = Vector2(-355, 95)
+texture = ExtResource("7_ciexn")
+
+[node name="Сross" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody/RockS"]
+position = Vector2(-183, -77)
+texture = ExtResource("8_1jwk7")
+
+[node name="Acorn" parent="CanvasLayer/Control/Field_StaticBody/RockS" instance=ExtResource("2_73gpv")]
+visible = false
+modulate = Color(1, 0.278431, 0.2, 1)
+position = Vector2(-1108, 20)
+texture = SubResource("CompressedTexture2D_jeh1k")
+
+[node name="Spikes_glasses" type="Node2D" parent="CanvasLayer/Control/Field_StaticBody"]
+
+[node name="Glass_trap" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(77, -342)
+texture = ExtResource("5_icctf")
+
+[node name="Glass_trap2" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(163, -342)
+texture = ExtResource("6_m54fw")
+
+[node name="Glass_trap3" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(163, -256)
+texture = ExtResource("7_a28ku")
+
+[node name="Glass_trap4" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(337, -169)
+texture = ExtResource("8_p48ij")
+
+[node name="Glass_trap5" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(249, 2)
+texture = ExtResource("9_7co6n")
+
+[node name="Glass_trap6" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(335, 86)
+texture = ExtResource("10_jxd2i")
+
+[node name="Glass_trap7" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(249, 259)
+
+[node name="Glass_trap8" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(165, 345)
+texture = ExtResource("11_gcfqf")
+
+[node name="Glass_trap9" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(-179, 346)
+texture = ExtResource("12_uhirs")
+
+[node name="Glass_trap10" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(-180, 173)
+texture = ExtResource("13_g5ppd")
+
+[node name="Glass_trap11" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(-349, -255)
+texture = ExtResource("14_i4ily")
+
+[node name="Glass_trap12" parent="CanvasLayer/Control/Field_StaticBody/Spikes_glasses" instance=ExtResource("4_51h4h")]
+position = Vector2(-180, -342)
+texture = ExtResource("15_v1i6u")
+
+[node name="Marker_start_position" type="Marker2D" parent="CanvasLayer/Control/Field_StaticBody"]
+unique_name_in_owner = true
+position = Vector2(76, -80)
+
+[node name="Froggy_in_puzzle" parent="CanvasLayer/Control/Field_StaticBody" instance=ExtResource("2_6x6d5")]
+unique_name_in_owner = true
+position = Vector2(76, -80)
+
+[node name="FieldGlass" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody"]
+texture = ExtResource("3_7ut0j")
+
+[node name="VinesRightCenter" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(-420, -411)
+rotation = 0.0342431
+texture = ExtResource("4_56rvg")
+
+[node name="VinesLeftTop" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(503, -18)
+texture = ExtResource("5_1rny3")
+
+[node name="VinesRightTop" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody"]
+position = Vector2(387, -393)
+texture = ExtResource("6_dbeui")
+
+[node name="FieldGreen" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody"]
+texture = ExtResource("7_ttq60")
+
+[node name="Animation_Froggy_start" type="AnimationPlayer" parent="CanvasLayer/Control/Field_StaticBody"]
+unique_name_in_owner = true
+root_node = NodePath("../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_jl0f7")
+}
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Control/Field_StaticBody"]
+
+[node name="Exit_puzzle_button" type="TextureButton" parent="CanvasLayer/Control/Field_StaticBody"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 627.0
+offset_top = -495.0
+offset_right = 833.0
+offset_bottom = -286.0
+grow_horizontal = 0
+texture_normal = ExtResource("27_l2jbq")
+texture_hover = ExtResource("28_j4snx")
+
+[node name="Clue_button" type="TextureButton" parent="CanvasLayer/Control/Field_StaticBody"]
+offset_left = -822.5
+offset_top = 273.75
+offset_right = -624.5
+offset_bottom = 457.75
+texture_normal = ExtResource("31_kasav")
+texture_hover = ExtResource("32_pii1s")
+
+[node name="Clue_sprites" type="Node2D" parent="CanvasLayer/Control/Field_StaticBody"]
+
+[node name="WinEmotion" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody/Clue_sprites"]
+visible = false
+position = Vector2(458.75, 253.75)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("33_so2jd")
+
+[node name="ExclamationPoint" type="Sprite2D" parent="CanvasLayer/Control/Field_StaticBody/Clue_sprites"]
+visible = false
+modulate = Color(1, 0, 0.454902, 1)
+position = Vector2(-181.25, -158.75)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("34_y5pmv")
+
+[node name="Animation_clue" type="AnimationPlayer" parent="CanvasLayer/Control/Field_StaticBody/Clue_sprites"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_b0wh7")
+}
+
+[node name="Audio_hover_button" type="AudioStreamPlayer" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+stream = ExtResource("31_1ry6l")
+volume_db = -20.0
+
+[connection signal="mouse_entered" from="CanvasLayer/Control/Field_StaticBody/Exit_puzzle_button" to="." method="_on_exit_puzzle_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Control/Field_StaticBody/Exit_puzzle_button" to="." method="_on_exit_puzzle_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Field_StaticBody/Clue_button" to="." method="_on_clue_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Control/Field_StaticBody/Clue_button" to="." method="_on_clue_button_pressed"]

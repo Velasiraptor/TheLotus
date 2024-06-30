@@ -10,11 +10,14 @@ extends Node2D
 @onready var catfish_spawner = %Catfish_Spawner
 @onready var catfish = %Catfish
 
+@onready var puzzle_froggy = %Puzzle_froggy
+
 
 var last_mouse_motion = OS.get_static_memory_peak_usage() # время последнего движения мышив
 var log_in_hole_ind := true
 
 var chek_jump_catfish = false
+
 
 func _ready():
 	Globals.actual_resume_load_scene = "res://Scene/SwampLevel1/swamp_level_1.tscn" #делаем актуальной сценой для кнопки "продолжить" в главном меню
@@ -113,3 +116,9 @@ func chek_jump_catfish_index():
 
 func _on_hole_death_body_entered(body): #ямы с стеклом
 	get_tree().call_group("Player", "fullHurt")
+
+
+func start_puzzle_Froggy_game(): # появление головоломки с Фрогги
+	get_tree().call_group("Froggy_puzzle", "start_game")
+	get_tree().call_group("Player", "in_puzzle")
+	get_tree().call_group("Foggy_in_puzzle", "start_move")
