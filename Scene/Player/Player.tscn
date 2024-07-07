@@ -804,7 +804,6 @@ libraries = {
 }
 
 [node name="test_label" type="Label" parent="."]
-visible = false
 offset_left = -101.818
 offset_top = -212.727
 offset_right = -61.8182

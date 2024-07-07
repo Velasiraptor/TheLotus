@@ -4,10 +4,15 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	body.hurt()
+	body.hurt_without_direction()
+	if $".".scale.x > 0:
+		get_tree().call_group("Player", "leftPush")
+	elif $".".scale.x < 0:
+		get_tree().call_group("Player", "RightPush")
 
 func catfish_right_idle():
 	animation_catfish.play("spawn_side_R")
+	
 
 func catfish_left_idle():
 	animation_catfish.play("spawn_side_L")

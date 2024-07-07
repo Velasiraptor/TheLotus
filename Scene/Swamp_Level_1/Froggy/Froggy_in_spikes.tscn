@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bs4s74wtgffl2" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_3.png" id="9_jtnu5"]
 [ext_resource type="Texture2D" uid="uid://ddrifgpg35uy5" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_4.png" id="10_0c0hg"]
 [ext_resource type="Texture2D" uid="uid://dk3xa37ykue2f" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_cry_5.png" id="11_eiwfj"]
-[ext_resource type="Texture2D" uid="uid://c5g8q55wmkems" path="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_1.png" id="12_61gfl"]
+[ext_resource type="Texture2D" uid="uid://c5g8q55wmkems" path="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_Frocky.png" id="13_2hy1w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rupw5"]
 animations = [{
@@ -383,7 +383,7 @@ autoplay = "Idle"
 modulate = Color(0.4, 0.466667, 0.270588, 1)
 position = Vector2(-499.984, 211.111)
 scale = Vector2(11.1111, 11.1111)
-texture = ExtResource("12_61gfl")
+texture = ExtResource("13_2hy1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-25, -20.5)
@@ -415,6 +415,7 @@ shape = SubResource("CapsuleShape2D_1sbnb")
 debug_color = Color(0.694118, 0.466667, 0.462745, 0.419608)
 
 [node name="Glasse_spikes" type="Area2D" parent="."]
+unique_name_in_owner = true
 collision_layer = 4
 collision_mask = 2
 

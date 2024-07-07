@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5t327ct5ulkw"
-path="res://.godot/imported/Spike_glass_6.png-f6bc657ce41c97c5e9e24845b8f97217.ctex"
+uid="uid://c5g8q55wmkems"
+path="res://.godot/imported/Spike_glass_Frocky.png-378796899d2535a47609c09e1bab34cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_6.png"
-dest_files=["res://.godot/imported/Spike_glass_6.png-f6bc657ce41c97c5e9e24845b8f97217.ctex"]
+source_file="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_Frocky.png"
+dest_files=["res://.godot/imported/Spike_glass_Frocky.png-378796899d2535a47609c09e1bab34cb.ctex"]
 
 [params]
 

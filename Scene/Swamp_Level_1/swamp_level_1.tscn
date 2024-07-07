@@ -568,7 +568,7 @@ position = Vector2(18677, 215)
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(18179, 124)
+position = Vector2(18206, 167)
 
 [node name="Puzzle_froggy" parent="." instance=ExtResource("33_hmg3v")]
 unique_name_in_owner = true
@@ -625,6 +625,10 @@ unique_name_in_owner = true
 position = Vector2(14526, 454)
 
 [node name="Spawner_11" type="Marker2D" parent="Catfish_Spawner"]
+unique_name_in_owner = true
+position = Vector2(16863, 440)
+
+[node name="Spawner_12" type="Marker2D" parent="Catfish_Spawner"]
 unique_name_in_owner = true
 position = Vector2(17220, 440)
 

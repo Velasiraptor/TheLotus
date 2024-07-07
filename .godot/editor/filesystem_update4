@@ -1,5 +1,5 @@
 res://default_env.tres
-res://Scene/Swamp_Level_1/swamp_level_1.tscn
+res://Scene/Player/Player.tscn
 res://Scene/Player/GUI.gd
 res://Scene/Swamp_Level_1/swamp_level_1.gd
 res://Shaders/Blur.gdshader
@@ -12,3 +12,18 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
+res://Scene/Player/Player.gd
+res://Scene/Swamp_Level_1/Traps/Acid/acid.tscn
+res://Scene/Swamp_Level_1/Traps/Acid/acid.gd
+res://Scene/Swamp_Level_1/swamp_level_1.tscn
+res://Scene/Swamp_Level_1/Froggy/Froggy_in_spikes.tscn
+res://Scene/Swamp_Level_1/Traps/Traps/spike_sprite_bottom_1.tscn
+res://Scene/Swamp_Level_1/Traps/Traps/spike_sprite_bottom_1.gd
+res://Scene/Swamp_Level_1/Froggy/Froggy_in_spikes.gd
+res://Scene/Swamp_Level_1/Traps/Spikes/spike_sprite_bottom_1.tscn
+res://Scene/Swamp_Level_1/Traps/Spikes/spike_sprite_bottom_1.gd
+res://Core/globals.gd
+res://Scene/Swamp_Level_1/Traps/Spikes/spike_sprite_bottom_2.tscn
+res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.tscn
+res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.gd
+res://Scene/Swamp_Level_1/Traps/Spikes/spike_sprite_bottom_4.tscn

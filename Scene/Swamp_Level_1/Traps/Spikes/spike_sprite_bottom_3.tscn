@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlxrjrxfsnrbr"]
+
+[ext_resource type="PackedScene" uid="uid://d2bju033wafg8" path="res://Scene/Swamp_Level_1/Traps/Spikes/spike_sprite_bottom_1.tscn" id="1_e254k"]
+[ext_resource type="Texture2D" uid="uid://5t327ct5ulkw" path="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_3.png" id="2_r4p7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqvd7"]
+size = Vector2(132.857, 55.7143)
+
+[node name="Spike_sprite_bottom_3" instance=ExtResource("1_e254k")]
+texture = ExtResource("2_r4p7a")
+
+[node name="CollisionShape2D" parent="Sprite_Area" index="0"]
+position = Vector2(0.714277, -3.57143)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hqvd7")

@@ -31,6 +31,7 @@ var ind_jump_on_water = 0
 var ind_fall_damage := false 
 var ind_not_fall_damage := false 
 var ind_death = 0
+var ind_invulnerability = 1 #индекс неуязвимости
 var ind_in_puzzle = 0 # 0 - когда не в головоломке или не в синематике, 1 когда вышел из головоломки
 
 @onready var frog_player = %FrogPlayer
@@ -99,7 +100,7 @@ func items_rigid():
 func move(): #движение
 	if Globals.actual_hp_player > 0 and state != State.DANGER and ind_in_puzzle == 0:
 		
-		if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0:  # движение влево
+		if Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right") and Globals.actual_hp_player > 0.0 and not state == State.TAKE_DAMAGE:  # движение влево
 			change_state(State.WALK_LEFT)
 			vel.x = -speed
 			if Input.is_action_just_pressed("player_take") and not is_on_floor():
@@ -107,7 +108,7 @@ func move(): #движение
 			if not is_on_floor() and state == State.JUMP:
 				vel.x = -Jump_speed 
 	
-		elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0:  # движение вправо
+		elif Input.is_action_pressed("player_right") and not Input.is_action_pressed("player_left")  and Globals.actual_hp_player > 0.0 and not state == State.TAKE_DAMAGE:  # движение вправо
 			change_state(State.WALK_RIGHT)
 			vel.x = speed
 			if Input.is_action_just_pressed("player_take") and not is_on_floor():
@@ -119,8 +120,10 @@ func move(): #движение
 			change_state(State.TONGUE)
 	
 		elif state == State.TAKE_DAMAGE: #получение урона
-			await get_tree().create_timer(0.5).timeout
-			change_state(State.IDLE) 
+			await get_tree().create_timer(0.3).timeout
+			if is_on_floor():
+				change_state(State.IDLE) 
+		
 		
 		elif is_on_floor() and state != State.TAKE_DAMAGE and state == State.TONGUE \
 		and not Input.is_action_pressed("player_left") and not Input.is_action_pressed("player_right"): # спокойное
@@ -302,8 +305,8 @@ func max_HP(): #в начале уровня высчитывает, сколь�
 	Globals.actual_hp_player = Globals.count_max_hp_player
 	get_tree().call_group("GUI", "max_icon_hp", Globals.count_max_hp_player)
 
-func hurt(): #снятие здоровья
-	if Globals.actual_hp_player != 0.0 and Globals.actual_hp_player > 0.0:
+func hurt(): #снятие здоровья c толчком, в зависимости от направления
+	if Globals.actual_hp_player != 0.0 and Globals.actual_hp_player > 0.0 and ind_invulnerability == 1:
 		Globals.actual_hp_player -= 1.0
 		change_state(State.TAKE_DAMAGE)
 		frog_player.visible = false
@@ -315,6 +318,10 @@ func hurt(): #снятие здоровья
 		vel.y = -600
 		get_tree().call_group("GUI", "remove_update_lives")
 		get_tree().call_group("GUI", "BackgroundsDamage")
+		ind_invulnerability = 0
+		push_depending_on_the_side()
+		await get_tree().create_timer(1.0).timeout
+		ind_invulnerability = 1
 	if Globals.actual_hp_player == 0.0 and ind_death == 0: #Убит
 		change_state(State.DEATH)
 		vel.y = -400
@@ -326,6 +333,29 @@ func hurt(): #снятие здоровья
 		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
 		ind_death = 1
 
+func hurt_without_direction(): #снятие здоровья без встроенного толчка
+	if Globals.actual_hp_player != 0.0 and Globals.actual_hp_player > 0.0:
+			Globals.actual_hp_player -= 1.0
+			change_state(State.TAKE_DAMAGE)
+			frog_player.visible = false
+			side_frog_player.visible = true
+			side_frog_player.play("TakeDamage")
+			$SideFrogPlayer/EffectsAnim.play("Damage")
+			get_tree().call_group("GUI", "DMGIcon")
+			$TakeDamage.play()
+			vel.y = -600
+			get_tree().call_group("GUI", "remove_update_lives")
+			get_tree().call_group("GUI", "BackgroundsDamage")
+	if Globals.actual_hp_player == 0.0 and ind_death == 0: #Убит
+		change_state(State.DEATH)
+		vel.y = -400
+		side_frog_player.visible = true
+		frog_player.visible = false
+		side_frog_player.play("Death")
+		get_tree().call_group("GUI", "DeathIcon")
+		$TimerDeath.start()
+		get_tree().call_group("GUI", "remove_update_lives", Globals.actual_hp_player)
+		ind_death = 1
 
 func fullHurt(): #мгновенная смерть
 	change_state(State.DEATH)
@@ -339,14 +369,19 @@ func fullHurt(): #мгновенная смерть
 	get_tree().call_group("GUI", "remove_always_hp")
 	$TimerDeath.start()
 
-func leftPush(): #толчок от удара справа
+func leftPush(): #толчок влево
 	state = State.TAKE_DAMAGE
-	vel.x = 500
+	vel.x = -300
 
-
-func RightPush(): #толчок от удара слева
+func RightPush(): #толчок вправо
 	state = State.TAKE_DAMAGE
-	vel.x = -500
+	vel.x = 300
+
+func push_depending_on_the_side(): #толчок в зависимости от стороны
+	if side_frog_player.flip_h == false or frog_player.flip_h == true:
+		leftPush()
+	elif side_frog_player.flip_h == true or frog_player.flip_h == false:
+		RightPush()
 
 
 

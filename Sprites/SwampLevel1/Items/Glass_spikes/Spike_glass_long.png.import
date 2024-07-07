@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb8k5st4mtcso"
-path="res://.godot/imported/Spike_glass_7.png-6c14f463abb71449727d5350204e4811.ctex"
+uid="uid://wttdtmt0jl5b"
+path="res://.godot/imported/Spike_glass_long.png-81c4e7fb4afed037dd387a3f597312ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_7.png"
-dest_files=["res://.godot/imported/Spike_glass_7.png-6c14f463abb71449727d5350204e4811.ctex"]
+source_file="res://Sprites/SwampLevel1/Items/Glass_spikes/Spike_glass_long.png"
+dest_files=["res://.godot/imported/Spike_glass_long.png-81c4e7fb4afed037dd387a3f597312ce.ctex"]
 
 [params]
 
