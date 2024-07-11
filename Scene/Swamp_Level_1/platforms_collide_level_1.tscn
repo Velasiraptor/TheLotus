@@ -1,4 +1,4 @@
-[gd_scene load_steps=256 format=3 uid="uid://bybfwutajwh87"]
+[gd_scene load_steps=257 format=3 uid="uid://bybfwutajwh87"]
 
 [ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_o8681"]
 [ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_n2j1v"]
@@ -247,7 +247,10 @@ shader_parameter/wave_length = 250.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akts1"]
 shader = ExtResource("14_r7s44")
-shader_parameter/lod = 0.3
+shader_parameter/lod = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o0ofc"]
+load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kotc1"]
 shader = ExtResource("38_rrv6u")
@@ -1335,11 +1338,17 @@ texture = ExtResource("35_5kdgt")
 position = Vector2(-311, -188)
 texture = ExtResource("37_ent57")
 
-[node name="Icon" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+[node name="Blur" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
 material = SubResource("ShaderMaterial_akts1")
-position = Vector2(13529, -236)
-scale = Vector2(500.719, 10.0625)
+position = Vector2(9999, -236)
+scale = Vector2(390.406, 10.0625)
 texture = ExtResource("40_si556")
+
+[node name="Blur2" type="Sprite2D" parent="Sprites/ParallaxBackground_0/ParallaxLayer_0"]
+material = SubResource("ShaderMaterial_akts1")
+position = Vector2(26346.3, -225)
+scale = Vector2(98.1172, 10.0625)
+texture = SubResource("CompressedTexture2D_o0ofc")
 
 [node name="3p_Background_1" type="Sprite2D" parent="Sprites"]
 position = Vector2(3876, -10)

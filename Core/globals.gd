@@ -1,6 +1,6 @@
 extends Node
 
-var count_max_hp_player := 6.0 # максимальное хп гг
+var count_max_hp_player := 3.0 # максимальное хп гг
 var actual_hp_player = count_max_hp_player
 
 enum State_screen { WINDOW_MODE, EXCLUSIVE_FULLSCREEN }

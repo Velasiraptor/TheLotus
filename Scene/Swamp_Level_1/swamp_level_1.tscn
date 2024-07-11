@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://byhenmf1cb3p6"]
+[gd_scene load_steps=84 format=3 uid="uid://byhenmf1cb3p6"]
 
 [ext_resource type="Texture2D" uid="uid://kvqhg8xuhpb5" path="res://Sprites/SwampLevel1/Background.png" id="1_c3xjh"]
 [ext_resource type="PackedScene" uid="uid://bybfwutajwh87" path="res://Scene/Swamp_Level_1/platforms_collide_level_1.tscn" id="1_ksoob"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://epw3whmiy8pa" path="res://Sprites/SwampLevel1/Tree_path_3/Foliage_area_small.png" id="31_m5vf0"]
 [ext_resource type="PackedScene" uid="uid://bodccpgndfve4" path="res://Scene/Swamp_Level_1/Froggy/Froggy_in_spikes.tscn" id="31_vl3gu"]
 [ext_resource type="PackedScene" uid="uid://bg6uiu1evlahf" path="res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.tscn" id="31_wi6ep"]
+[ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="32_2yu7r"]
 [ext_resource type="PackedScene" uid="uid://lvpoeys2jwcv" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/puzzle_froggy.tscn" id="33_hmg3v"]
 [ext_resource type="Texture2D" uid="uid://de8jea48drft8" path="res://Sprites/SwampLevel1/Swamp_path_4/Water_top.png" id="35_3vv7w"]
 [ext_resource type="PackedScene" uid="uid://bphg42vmyyfx4" path="res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.tscn" id="35_psuec"]
@@ -57,6 +58,8 @@
 [ext_resource type="Texture2D" uid="uid://dsi4yf2ay73l5" path="res://Sprites/SwampLevel1/Swamp_path_3/Water_top.png" id="36_81w80"]
 [ext_resource type="Texture2D" uid="uid://bolvaj1niudan" path="res://Sprites/SwampLevel1/Items/Reed.png" id="36_x2sfb"]
 [ext_resource type="Texture2D" uid="uid://56mcvj5mr1eu" path="res://Sprites/SwampLevel1/Items/Rock.png" id="37_ioxsc"]
+[ext_resource type="Texture2D" uid="uid://dcl5sckpsur1a" path="res://Sprites/SwampLevel1/Swamp_path_9/Grill_back.png" id="58_brp3a"]
+[ext_resource type="Texture2D" uid="uid://crp0x8wnlegpe" path="res://Sprites/SwampLevel1/Swamp_path_9/Grill.png" id="59_0xwhd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrl0"]
 size = Vector2(349.5, 228)
@@ -566,9 +569,22 @@ rotation = 0.279253
 [node name="Froggy_in_spikes" parent="." instance=ExtResource("31_vl3gu")]
 position = Vector2(18677, 215)
 
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(28941, 221)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("32_2yu7r")
+
+[node name="GrillBack" type="Sprite2D" parent="."]
+position = Vector2(28935.5, 33)
+texture = ExtResource("58_brp3a")
+
+[node name="Grill" type="Sprite2D" parent="."]
+position = Vector2(28933.5, 127)
+texture = ExtResource("59_0xwhd")
+
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(18206, 167)
+position = Vector2(28633, 161)
 
 [node name="Puzzle_froggy" parent="." instance=ExtResource("33_hmg3v")]
 unique_name_in_owner = true
