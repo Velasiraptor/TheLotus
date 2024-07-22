@@ -584,7 +584,7 @@ texture = ExtResource("59_0xwhd")
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(28633, 161)
+position = Vector2(273, 359)
 
 [node name="Puzzle_froggy" parent="." instance=ExtResource("33_hmg3v")]
 unique_name_in_owner = true

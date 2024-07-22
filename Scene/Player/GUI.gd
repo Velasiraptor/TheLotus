@@ -12,6 +12,12 @@ extends CanvasLayer
 @onready var texture_slot_3 = %Texture_slot_3
 @onready var texture_slot_4 = %Texture_slot_4
 
+var inventory_items = [
+	"",
+	"",
+	"",
+	""
+]
 
 var HP_zero : Texture2D = preload("res://Sprites/UI/GUI/HpZero.png")
 var HP_full : Texture2D = preload("res://Sprites/UI/GUI/HpFull.png")
@@ -132,65 +138,73 @@ func _on_timer_hide_inventory_timeout():
 	animation_inventory.play("Animation_inventory_hide")
 
 
-func check_inventory_null_slots(new_texture_in_slot): # проверяем на свободный слот, принимает текстуру
-	if texture_slot_1.texture != null:
+func check_inventory_null_slots(new_texture_in_slot, item): # проверяем на свободный слот, принимает текстуру
+	if texture_slot_1.texture != null and item in inventory_items:
 		print("занято")
 	else:
 		texture_slot_1.texture = new_texture_in_slot
+		inventory_items[0] = item
 		animation_inventory.play("Animation_inventory_show")
 		timer_hide_inventory.stop()
 		timer_hide_inventory.start()
 		return
-	if texture_slot_2.texture != null:
+	if texture_slot_2.texture != null and item in inventory_items:
 		print("занято")
 	else:
 		texture_slot_2.texture = new_texture_in_slot
+		inventory_items[1] = item
 		animation_inventory.play("Animation_inventory_show")
 		timer_hide_inventory.stop()
 		timer_hide_inventory.start()
 		return
-	if texture_slot_3.texture != null:
+	if texture_slot_3.texture != null and item in inventory_items:
 		print("занято")
 	else:
 		texture_slot_3.texture = new_texture_in_slot
+		inventory_items[2] = item
 		animation_inventory.play("Animation_inventory_show")
 		timer_hide_inventory.stop()
 		timer_hide_inventory.start()
 		return
-	if texture_slot_4.texture != null:
+	if texture_slot_4.texture != null and item in inventory_items:
 		print("занято")
 	else:
 		texture_slot_4.texture = new_texture_in_slot
+		inventory_items[3] = item
 		animation_inventory.play("Animation_inventory_show")
 		timer_hide_inventory.stop()
 		timer_hide_inventory.start()
 		return
 
-func check_inventory_item(item_texture): # проверяем на нужный предмет, принимает текстуру
+func check_inventory_item(item): # проверяем на нужный предмет, принимает текстуру
 	if not animation_inventory.is_playing() and ind_inventory == 0:
 		animation_inventory.play("Animation_inventory_show")
 		timer_hide_inventory.stop()
-	if texture_slot_1.texture == item_texture and inventory_slot_1.has_focus():
-		items_on(texture_slot_1.texture)
+	if inventory_items[0] == item and inventory_slot_1.has_focus():
+		items_on(item)
+		inventory_items[0] = ""
 		texture_slot_1.texture = null
 		timer_hide_inventory.start()
-	elif texture_slot_2.texture == item_texture and inventory_slot_2.has_focus():
-		items_on(texture_slot_2.texture)
+	elif inventory_items[1] == item and inventory_slot_2.has_focus():
+		items_on(item)
+		inventory_items[1] = ""
 		texture_slot_2.texture = null
 		timer_hide_inventory.start()
-	elif texture_slot_3.texture == item_texture and inventory_slot_3.has_focus():
-		items_on(texture_slot_3.texture)
+	elif inventory_items[2] == item and inventory_slot_3.has_focus():
+		items_on(item)
+		inventory_items[2] = ""
 		texture_slot_3.texture = null
 		timer_hide_inventory.start()
-	elif texture_slot_4.texture == item_texture and inventory_slot_4.has_focus():
-		items_on(texture_slot_4.texture)
+	elif inventory_items[3] == item and inventory_slot_4.has_focus():
+		items_on(item)
+		inventory_items[3] = ""
 		texture_slot_4.texture = null
 		timer_hide_inventory.start()
 	else:
 		NoNoIcon()
 		timer_hide_inventory.start()
 
-func items_on(item_texture):
-	print(item_texture)
-	if item_texture == preload("res://Sprites/SwampLevel1/Inventory_items/Medallion/Inventory_medallion.png"):
+func items_on(item):
+	print(item)
+	if item == "medalion":
 		get_tree().call_group("Medallion_on_tree", "item_on")

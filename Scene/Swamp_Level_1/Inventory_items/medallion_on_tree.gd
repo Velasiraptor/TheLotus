@@ -1,6 +1,9 @@
 extends Area2D
 
-var item_texture = preload("res://Sprites/SwampLevel1/Inventory_items/Medallion/Medallion_on_tree.png")
+@export var item_texture = preload("res://Sprites/SwampLevel1/Inventory_items/Medallion/Medallion_on_tree.png")
+
+@export var item = "medalion"
+
 @onready var medallion_on_tree_sprite = $MedallionOnTree_sprite
 @onready var medallion_on_tree = $"."
 @onready var animation_medallion = $Animation_medallion
@@ -12,8 +15,7 @@ var item_texture = preload("res://Sprites/SwampLevel1/Inventory_items/Medallion/
 var anim_name = "medallion_on_tree"
 
 func _on_body_entered(body):
-	var check_item = preload("res://Sprites/SwampLevel1/Inventory_items/Medallion/Inventory_medallion.png")
-	get_tree().call_group("GUI", "check_inventory_item", check_item)
+	get_tree().call_group("GUI", "check_inventory_item", item)
 
 
 func item_on():

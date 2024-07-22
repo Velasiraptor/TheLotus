@@ -114,6 +114,7 @@ func chek_jump_catfish_index():
 	chek_jump_catfish = false
 
 
+@warning_ignore("unused_parameter")
 func _on_hole_death_body_entered(body): #ямы с стеклом
 	get_tree().call_group("Player", "fullHurt")
 
