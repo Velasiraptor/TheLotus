@@ -1,10 +1,10 @@
 res://default_env.tres
 res://Scene/Swamp_Level_1/swamp_level_1.tscn
-res://Scene/Player/GUI.gd
-res://Scene/Swamp_Level_1/swamp_level_1.gd
 res://Shaders/Blur.gdshader
 res://Shaders/water_swamp_level_1.gdshader
+res://Scene/Swamp_Level_1/swamp_level_1.gd
 res://Shaders/Dissolve.gdshader
+res://Scene/Player/GUI.gd
 res://Shaders/GodRays.gdshader
 res://Shaders/Grass.gdshader
 res://Shaders/Rain.gdshader
@@ -12,6 +12,12 @@ res://Shaders/water.gdshader
 res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
 res://Shaders/test.gdshader
+res://Scene/Swamp_Level_1/1p_2p_Cave/1p_2p_cave.gd
+res://Scene/Forest/ScriptsForest/Bottom.gd
+res://Scene/Cave/CaveLVL.gd
+res://Scene/comic/prologue.gd
+res://Scene/Swamp_Level_1/Traps/Spikes/spike_sprite_bottom_1.gd
+res://Scene/Swamp_Level_1/Water_lilies/water_lily_1.gd
 res://Scene/Player/Player.tscn
 res://Scene/UI/GUI.tscn
 res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.tscn

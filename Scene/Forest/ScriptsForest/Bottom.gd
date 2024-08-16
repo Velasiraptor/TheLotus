@@ -11,4 +11,3 @@ func _on_Bottom_body_entered(body):
 func _on_Bottom_body_exited(body):
 	$BottomAnimate.frame = 0
 	$BottomAnimate.play("damping2")
-

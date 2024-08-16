@@ -19,4 +19,3 @@ func _on_area_player_body_entered(body):
 
 func _on_timer_timeout():
 	animation_water_lily.play("Water_lily")
-

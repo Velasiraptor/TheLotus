@@ -24,4 +24,3 @@ func _on_timer_cursor_timeout():
 
 func _on_timer_music_timeout(): #МУЗЫКА ЛОКАЦИИ
 	$BackgroundSound.play()
-

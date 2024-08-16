@@ -11,4 +11,3 @@ func _on_camera_player_body_entered(body): #вход в пещеру
 	elif body.has_method("hurt") and ind == 1:
 		ind = 0
 		get_tree().call_group("Player", "camera_default")
-

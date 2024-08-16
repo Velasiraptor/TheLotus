@@ -11,6 +11,3 @@ func _on_sprite_area_body_entered(body):
 	if body.has_method("hurt") and Globals.actual_hp_player != 0.0:
 		body.hurt()
 		body.vel.y = damage_jump
-
-
-

@@ -53,6 +53,3 @@ func _on_timer_frame_7_timeout(): #начало седьмого кадра
 
 func _on_timer_frame_8_timeout(): #начало восьмого кадра
 	$background/frame8/Animation_frame8.play("frame8")
-
-
-
