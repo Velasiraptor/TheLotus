@@ -735,8 +735,8 @@ one_shot = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, 80)
-scale = Vector2(0.2, 0.2)
+position = Vector2(0, 74.5455)
+scale = Vector2(0.25, 0.3)
 texture = ExtResource("21_mm38c")
 
 [node name="TongueAr" type="CharacterBody2D" parent="."]

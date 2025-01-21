@@ -22,7 +22,7 @@
 [ext_resource type="Shader" path="res://Shaders/GodRays.gdshader" id="17_db6n5"]
 [ext_resource type="PackedScene" uid="uid://skn1d7kismjk" path="res://Scene/Swamp_Level_1/Water_lilies/torn_water_lily.tscn" id="18_1sgaj"]
 [ext_resource type="Texture2D" uid="uid://bd2wqem48vu6w" path="res://Sprites/SwampLevel1/Items/Patch_Rock.png" id="18_4ycxt"]
-[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="18_5hyka"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="18_5hyka"]
 [ext_resource type="PackedScene" uid="uid://bdnad407swrlk" path="res://Scene/Swamp_Level_1/Water_quicksand/water_quicksand.tscn" id="19_02x0k"]
 [ext_resource type="PackedScene" uid="uid://darbc2klxju6e" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily.tscn" id="19_vsgh4"]
 [ext_resource type="PackedScene" uid="uid://xymq2oucmg4a" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_small.tscn" id="20_mi45v"]
@@ -584,7 +584,7 @@ texture = ExtResource("59_0xwhd")
 
 [node name="Player" parent="." instance=ExtResource("15_85155")]
 unique_name_in_owner = true
-position = Vector2(-923, 306)
+position = Vector2(250, 369)
 
 [node name="Puzzle_froggy" parent="." instance=ExtResource("33_hmg3v")]
 unique_name_in_owner = true

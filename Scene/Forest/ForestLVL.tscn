@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_2.tscn" id="3_1pkg0"]
 [ext_resource type="Texture2D" uid="uid://dp481rliiwafx" path="res://Sprites/Forest/BackgroundsLevel1/CityMirror.png" id="4_vsk6d"]
 [ext_resource type="Shader" path="res://Shaders/water.gdshader" id="5_jog88"]
-[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="6_3b2y1"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="6_3b2y1"]
 [ext_resource type="Texture2D" uid="uid://dq7ggyy7ud8wn" path="res://Sprites/Forest/BackgroundsLevel1/City.png" id="7_tk0bd"]
 [ext_resource type="Texture2D" uid="uid://b3ldqv0x14tm6" path="res://Sprites/Forest/BackgroundsLevel1/Background3.png" id="8_a2xkd"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/leaf_fall.tscn" id="9_qnf3j"]

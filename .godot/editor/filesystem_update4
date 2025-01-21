@@ -7,12 +7,14 @@ res://Shaders/Dissolve.gdshader
 res://Scene/Player/GUI.gd
 res://Shaders/GodRays.gdshader
 res://Shaders/Grass.gdshader
-res://Shaders/Rain.gdshader
 res://Shaders/water.gdshader
-res://Shaders/Outline.gdshader
 res://Shaders/Wave.gdshader
+res://Shaders/Rain.gdshader
+res://Shaders/Outline.gdshader
 res://Shaders/test.gdshader
 res://Scene/Player/Player.tscn
 res://Scene/UI/GUI.tscn
 res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.tscn
 res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.tscn
+res://Scene/MainMenu/MainMenu.tscn
+res://Scene/comic/prologue.tscn

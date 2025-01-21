@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crh5mw2pn65yn" path="res://Sprites/UI/GameOver/GameOver.png" id="2_7xuoc"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_pnj0y"]
 [ext_resource type="Texture2D" uid="uid://d3k1jv1p56py6" path="res://Sprites/Menu/Button.png" id="3_vvhwo"]
-[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_yvry7"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="3_yvry7"]
 [ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="4_skf8n"]
 [ext_resource type="Texture2D" uid="uid://bqmid6o6ih6vf" path="res://Sprites/UI/ButtonPlay.png" id="6_a3xt7"]
 [ext_resource type="Texture2D" uid="uid://cv6dd23qr0c3o" path="res://Sprites/UI/ButtonPlayClick.png" id="7_awxj8"]

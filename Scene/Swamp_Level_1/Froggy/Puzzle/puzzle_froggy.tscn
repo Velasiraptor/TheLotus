@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpxb4xa24hugh" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/rock_puzzle.tscn" id="2_73gpv"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_md4e5"]
 [ext_resource type="Texture2D" uid="uid://cc0q467q7b02n" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Field_glass.png" id="3_7ut0j"]
-[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="3_muvau"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="3_muvau"]
 [ext_resource type="PackedScene" uid="uid://d2fed1m8brc2t" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/glass_trap.tscn" id="4_51h4h"]
 [ext_resource type="Texture2D" uid="uid://uvt2e1iiwono" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Vines_right_center.png" id="4_56rvg"]
 [ext_resource type="Texture2D" uid="uid://w4y4it8c1uty" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Rock_3.png" id="4_liier"]

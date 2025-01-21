@@ -44,7 +44,7 @@
 [ext_resource type="Shader" path="res://Shaders/water_swamp_level_1.gdshader" id="38_rrv6u"]
 [ext_resource type="Texture2D" uid="uid://c77v6utea1ejx" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_2.png" id="39_r3nwo"]
 [ext_resource type="Texture2D" uid="uid://d1fa1pt37moaj" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_3.png" id="40_biycs"]
-[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://icon.png" id="40_si556"]
+[ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="40_si556"]
 [ext_resource type="Texture2D" uid="uid://crighu4ws2xgs" path="res://Sprites/SwampLevel1/Swamp_path_1/Platform.png" id="41_3udaq"]
 [ext_resource type="Texture2D" uid="uid://8jfl7vgq5iif" path="res://Sprites/SwampLevel1/Swamp_path_1/Background_2.png" id="42_rt15k"]
 [ext_resource type="Texture2D" uid="uid://dfdob7bq6khad" path="res://Sprites/SwampLevel1/Swamp_path_1/Background_3.png" id="43_k0s8u"]
