@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=3 uid="uid://edr71rj6t0gg"]
 
 [ext_resource type="Texture2D" uid="uid://owbawvop1lli" path="res://Sprites/SwampLevel1/Cave_path_1/Cave_1.png" id="1_e02li"]
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/1p_Cave/1p_cave.gd" id="1_m1tqq"]
-[ext_resource type="Shader" path="res://Shaders/Dissolve.gdshader" id="2_5e1yk"]
+[ext_resource type="Script" uid="uid://bsusj3op8oerj" path="res://Scene/Swamp_Level_1/1p_Cave/1p_cave.gd" id="1_m1tqq"]
+[ext_resource type="Shader" uid="uid://cb82st51h3d4o" path="res://Shaders/Dissolve.gdshader" id="2_5e1yk"]
 [ext_resource type="Texture2D" uid="uid://c7fq1xxjios3" path="res://Sprites/SwampLevel1/Cave_path_1/Cave_hide.png" id="4_3dklc"]
 [ext_resource type="PackedScene" uid="uid://esxdmoxsxkl1" path="res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.tscn" id="4_uotd5"]
 
@@ -16,8 +16,8 @@ noise = SubResource("FastNoiseLite_rg7he")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0tntb"]
 shader = ExtResource("2_5e1yk")
-shader_parameter/dissolve_value = 1.0
 shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_don3w")
+shader_parameter/dissolve_value = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxg2l"]
 radius = 14.75
@@ -164,8 +164,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_46ipc"]
 _data = {
-"RESET": SubResource("Animation_cbynj"),
-"animation_cave": SubResource("Animation_ihc4w")
+&"RESET": SubResource("Animation_cbynj"),
+&"animation_cave": SubResource("Animation_ihc4w")
 }
 
 [node name="1p_Cave" type="StaticBody2D"]

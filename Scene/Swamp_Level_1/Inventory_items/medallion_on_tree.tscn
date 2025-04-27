@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bh4nstby1hsiv"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.gd" id="1_0c7ax"]
+[ext_resource type="Script" uid="uid://bnqk551fgostq" path="res://Scene/Swamp_Level_1/Inventory_items/medallion_on_tree.gd" id="1_0c7ax"]
 [ext_resource type="Texture2D" uid="uid://chwv22klbryfo" path="res://Sprites/SwampLevel1/Inventory_items/Medallion/Shine.png" id="3_e8nox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ml14"]
@@ -56,9 +56,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8rcj"]
 _data = {
-"RESET": SubResource("Animation_670uj"),
-"medallion_magpie": SubResource("Animation_cwn0n"),
-"medallion_on_tree": SubResource("Animation_6uurj")
+&"RESET": SubResource("Animation_670uj"),
+&"medallion_magpie": SubResource("Animation_cwn0n"),
+&"medallion_on_tree": SubResource("Animation_6uurj")
 }
 
 [sub_resource type="Animation" id="Animation_jge4f"]
@@ -119,8 +119,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_coex6"]
 _data = {
-"RESET": SubResource("Animation_jge4f"),
-"shine": SubResource("Animation_bb75m")
+&"RESET": SubResource("Animation_jge4f"),
+&"shine": SubResource("Animation_bb75m")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jtny"]
@@ -186,8 +186,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3h47h"]
 _data = {
-"RESET": SubResource("Animation_7tyg0"),
-"emotion": SubResource("Animation_k3rxm")
+&"RESET": SubResource("Animation_7tyg0"),
+&"emotion": SubResource("Animation_k3rxm")
 }
 
 [node name="Medallion_on_tree" type="Area2D" groups=["Medallion_on_tree"]]
@@ -210,12 +210,12 @@ debug_color = Color(0.411765, 0.572549, 0.556863, 0.419608)
 
 [node name="Animation_medallion" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b8rcj")
+&"": SubResource("AnimationLibrary_b8rcj")
 }
 
 [node name="Animation_shine" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_coex6")
+&"": SubResource("AnimationLibrary_coex6")
 }
 
 [node name="Take_emotion" type="Area2D" parent="."]
@@ -237,7 +237,7 @@ texture = SubResource("CompressedTexture2D_q3qie")
 [node name="AnimationEmotion" type="AnimationPlayer" parent="Take_emotion/TakeItemEmotion"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_3h47h")
+&"": SubResource("AnimationLibrary_3h47h")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

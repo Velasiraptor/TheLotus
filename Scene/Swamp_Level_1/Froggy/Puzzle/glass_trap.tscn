@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2fed1m8brc2t"]
 
 [ext_resource type="Texture2D" uid="uid://cheyoo8vlojty" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Glass_trap_1.png" id="1_8krr5"]
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/glass_trap.gd" id="2_yrnfw"]
+[ext_resource type="Script" uid="uid://b5hxh7gfuvl5m" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/glass_trap.gd" id="2_yrnfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpgc"]
 size = Vector2(78, 78)

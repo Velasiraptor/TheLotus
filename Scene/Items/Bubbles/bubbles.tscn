@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bpnpix70wxkxd"]
 
 [ext_resource type="Texture2D" uid="uid://dit1v2ll71q46" path="res://Sprites/SwampLevel1/Items/Water_lily/Bubbles_1.png" id="1_ffccp"]
-[ext_resource type="Script" path="res://Scene/Items/Bubbles/bubbles.gd" id="1_o2ykh"]
+[ext_resource type="Script" uid="uid://b3hesnvsh77np" path="res://Scene/Items/Bubbles/bubbles.gd" id="1_o2ykh"]
 [ext_resource type="Texture2D" uid="uid://cnewqu1rrwqj2" path="res://Sprites/SwampLevel1/Items/Water_lily/Bubbles_2.png" id="2_j8307"]
 [ext_resource type="Texture2D" uid="uid://buviakpog18ve" path="res://Sprites/SwampLevel1/Items/Water_lily/Bubbles_3.png" id="3_js523"]
 [ext_resource type="Texture2D" uid="uid://dty042ba6mjet" path="res://Sprites/SwampLevel1/Items/Water_lily/Bubbles_wave_1.png" id="5_ic51b"]
 [ext_resource type="Texture2D" uid="uid://cp8qg1cgm2n04" path="res://Sprites/SwampLevel1/Items/Water_lily/Bubbles_wave_2.png" id="6_qw23d"]
 [ext_resource type="Texture2D" uid="uid://b6no1q4oueu0a" path="res://Sprites/SwampLevel1/Items/Water_lily/Bubbles_wave_3.png" id="7_ttfha"]
-[ext_resource type="Script" path="res://addons/random_timer/random_timer.gd" id="8_82idu"]
+[ext_resource type="Script" uid="uid://b4fsi6qqrhpox" path="res://addons/random_timer/random_timer.gd" id="8_82idu"]
 
 [sub_resource type="Animation" id="Animation_as5gb"]
 length = 0.001
@@ -378,8 +378,8 @@ tracks/14/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_261cx"]
 _data = {
-"RESET": SubResource("Animation_as5gb"),
-"bubbles": SubResource("Animation_08gt7")
+&"RESET": SubResource("Animation_as5gb"),
+&"bubbles": SubResource("Animation_08gt7")
 }
 
 [node name="Bubbles" type="Node2D"]

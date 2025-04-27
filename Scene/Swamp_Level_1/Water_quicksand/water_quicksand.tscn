@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bdnad407swrlk"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Water_quicksand/water_quicksand.gd" id="1_0jfg7"]
+[ext_resource type="Script" uid="uid://xpasac66saiw" path="res://Scene/Swamp_Level_1/Water_quicksand/water_quicksand.gd" id="1_0jfg7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5yjc5"]
 radius = 14.75
@@ -51,8 +51,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xevht"]
 _data = {
-"RESET": SubResource("Animation_sndf5"),
-"animation_quicksand": SubResource("Animation_2ydsv")
+&"RESET": SubResource("Animation_sndf5"),
+&"animation_quicksand": SubResource("Animation_2ydsv")
 }
 
 [node name="Water_quicksand" type="Node2D"]

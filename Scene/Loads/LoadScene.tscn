@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bexj681ov6obm"]
 
-[ext_resource type="Script" path="res://Scene/Loads/LoadScene.gd" id="1_d1fh7"]
+[ext_resource type="Script" uid="uid://bgb8jbipsornp" path="res://Scene/Loads/LoadScene.gd" id="1_d1fh7"]
 [ext_resource type="Texture2D" uid="uid://ijlgsxgcik8l" path="res://Sprites/UI/Loading.png" id="2_2e4uc"]
 [ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="3_jdgkt"]
 
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bn2ja"]
 _data = {
-"PressSpace": SubResource("Animation_tbn71"),
-"RESET": SubResource("Animation_cf185")
+&"PressSpace": SubResource("Animation_tbn71"),
+&"RESET": SubResource("Animation_cf185")
 }
 
 [sub_resource type="Animation" id="Animation_qtac8"]
@@ -61,7 +61,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnce2"]
 _data = {
-"Loading": SubResource("Animation_qtac8")
+&"Loading": SubResource("Animation_qtac8")
 }
 
 [node name="LoadScene" type="Control" groups=["LoadScreen"]]

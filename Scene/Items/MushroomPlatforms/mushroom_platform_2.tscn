@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4xsev3wvng7w"]
 
-[ext_resource type="Script" path="res://Scene/Items/MushroomPlatforms/mushroom_platform_2.gd" id="1_a3fwk"]
+[ext_resource type="Script" uid="uid://2e8ihjkj0dnd" path="res://Scene/Items/MushroomPlatforms/mushroom_platform_2.gd" id="1_a3fwk"]
 [ext_resource type="Texture2D" uid="uid://bsl53umhhtml" path="res://Sprites/SwampLevel1/Tree_path_3/Mushroom_platform_2.png" id="1_nl43k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax5y7"]

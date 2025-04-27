@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bg6uiu1evlahf"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.gd" id="1_7606g"]
+[ext_resource type="Script" uid="uid://c7fae4nsshjt2" path="res://Scene/Swamp_Level_1/Mobs/Catfish/catfish.gd" id="1_7606g"]
 [ext_resource type="Texture2D" uid="uid://prfd4euw56g5" path="res://Sprites/SwampLevel1/Mobs/Catfish/Catfish_idle.png" id="1_dj4lu"]
 [ext_resource type="Texture2D" uid="uid://dx85dv78wevyp" path="res://Sprites/SwampLevel1/Mobs/Catfish/Catfish_bite_1.png" id="2_acvv2"]
 [ext_resource type="PackedScene" uid="uid://bpnpix70wxkxd" path="res://Scene/Items/Bubbles/bubbles.tscn" id="4_sffrb"]
@@ -560,11 +560,11 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjxd7"]
 _data = {
-"RESET": SubResource("Animation_finnv"),
-"jump_L": SubResource("Animation_g67ft"),
-"jump_R": SubResource("Animation_be4y8"),
-"spawn_side_L": SubResource("Animation_85x6u"),
-"spawn_side_R": SubResource("Animation_uu8as")
+&"RESET": SubResource("Animation_finnv"),
+&"jump_L": SubResource("Animation_g67ft"),
+&"jump_R": SubResource("Animation_be4y8"),
+&"spawn_side_L": SubResource("Animation_85x6u"),
+&"spawn_side_R": SubResource("Animation_uu8as")
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nj05o"]

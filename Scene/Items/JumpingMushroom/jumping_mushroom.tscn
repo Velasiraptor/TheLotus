@@ -1,12 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://cbmelwurtnfwl"]
 
 [ext_resource type="Texture2D" uid="uid://dlwkfp54ubphk" path="res://Sprites/Items/JumpingMushroom/Jumping_Mushroom_0.png" id="1_tdbmp"]
-[ext_resource type="Script" path="res://Scene/Items/JumpingMushroom/jumping_mushroom.gd" id="1_y8y6j"]
+[ext_resource type="Script" uid="uid://cc2noim25jybc" path="res://Scene/Items/JumpingMushroom/jumping_mushroom.gd" id="1_y8y6j"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="2_lba4r"]
 [ext_resource type="Texture2D" uid="uid://qm7lx86x6glg" path="res://Sprites/Items/JumpingMushroom/Jumping_Mushroom_1.png" id="2_ptl7i"]
 [ext_resource type="Texture2D" uid="uid://c2d7mutdn118s" path="res://Sprites/Items/JumpingMushroom/Jumping_Mushroom_2.png" id="3_g75mr"]
 [ext_resource type="Texture2D" uid="uid://csvr3ehha3ohd" path="res://Sprites/Items/steam.png" id="3_vu22l"]
-[ext_resource type="Script" path="res://addons/random_timer/random_timer.gd" id="7_m0ddu"]
+[ext_resource type="Script" uid="uid://b4fsi6qqrhpox" path="res://addons/random_timer/random_timer.gd" id="7_m0ddu"]
 [ext_resource type="Texture2D" uid="uid://bm1alrreu4j71" path="res://Sprites/Items/Take_item_emotion.png" id="8_ydino"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fh3do"]
@@ -63,8 +63,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5jwrb"]
 _data = {
-"RESET": SubResource("Animation_3gjnb"),
-"animation_mushroom_jump": SubResource("Animation_h6fxv")
+&"RESET": SubResource("Animation_3gjnb"),
+&"animation_mushroom_jump": SubResource("Animation_h6fxv")
 }
 
 [sub_resource type="Animation" id="Animation_vqd52"]
@@ -148,8 +148,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cu60a"]
 _data = {
-"RESET": SubResource("Animation_vqd52"),
-"animation_dust": SubResource("Animation_8ko60")
+&"RESET": SubResource("Animation_vqd52"),
+&"animation_dust": SubResource("Animation_8ko60")
 }
 
 [sub_resource type="Animation" id="Animation_sg2cc"]
@@ -245,8 +245,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5jpt2"]
 _data = {
-"RESET": SubResource("Animation_sg2cc"),
-"activation": SubResource("Animation_k4v3a")
+&"RESET": SubResource("Animation_sg2cc"),
+&"activation": SubResource("Animation_k4v3a")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ni3y6"]
@@ -309,8 +309,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i212d"]
 _data = {
-"RESET": SubResource("Animation_pvtlu"),
-"emotion": SubResource("Animation_irx3w")
+&"RESET": SubResource("Animation_pvtlu"),
+&"emotion": SubResource("Animation_irx3w")
 }
 
 [node name="Jumping_Mushroom" type="Area2D"]

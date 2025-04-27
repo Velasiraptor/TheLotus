@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=3 uid="uid://bbsyj7n0uunr5"]
 
 [ext_resource type="Texture2D" uid="uid://da1hhok1ap3dg" path="res://Sprites/Comic/background_comic.png" id="1_2oif7"]
-[ext_resource type="Script" path="res://Scene/comic/prologue.gd" id="1_ae1e1"]
+[ext_resource type="Script" uid="uid://cbsn00gnv2uqr" path="res://Scene/comic/prologue.gd" id="1_ae1e1"]
 [ext_resource type="AudioStream" uid="uid://cgeeq7g0j6nq0" path="res://Sounds/Comic/prologue/swamp.mp3" id="1_scbfe"]
 [ext_resource type="Texture2D" uid="uid://dgxixsotrnbxm" path="res://Sprites/Comic/prologue/frame1.png" id="2_sg2k1"]
 [ext_resource type="Texture2D" uid="uid://dinxwv6povsby" path="res://Sprites/Comic/prologue/light_flower.png" id="4_hxx1h"]
@@ -151,7 +151,7 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2j1yo"]
 _data = {
-"frame1": SubResource("Animation_njg0q")
+&"frame1": SubResource("Animation_njg0q")
 }
 
 [sub_resource type="Animation" id="Animation_b7sv6"]
@@ -207,9 +207,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_axl0t"]
 _data = {
-"smoke": SubResource("Animation_b7sv6"),
-"smoke_2": SubResource("Animation_nx2la"),
-"smoke_3": SubResource("Animation_lmb8g")
+&"smoke": SubResource("Animation_b7sv6"),
+&"smoke_2": SubResource("Animation_nx2la"),
+&"smoke_3": SubResource("Animation_lmb8g")
 }
 
 [sub_resource type="Animation" id="Animation_i4wmf"]
@@ -302,7 +302,7 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2keq7"]
 _data = {
-"frame2": SubResource("Animation_i4wmf")
+&"frame2": SubResource("Animation_i4wmf")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ryi7i"]
@@ -403,7 +403,7 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tx7fa"]
 _data = {
-"frame3": SubResource("Animation_g6udp")
+&"frame3": SubResource("Animation_g6udp")
 }
 
 [sub_resource type="Gradient" id="Gradient_xnwt7"]
@@ -484,7 +484,7 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1x25g"]
 _data = {
-"frame6": SubResource("Animation_16dxa")
+&"frame6": SubResource("Animation_16dxa")
 }
 
 [sub_resource type="Animation" id="Animation_w4eb5"]
@@ -553,7 +553,7 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q7tpa"]
 _data = {
-"frame7": SubResource("Animation_w4eb5")
+&"frame7": SubResource("Animation_w4eb5")
 }
 
 [sub_resource type="Animation" id="Animation_byknx"]
@@ -634,7 +634,7 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_txluv"]
 _data = {
-"frame8": SubResource("Animation_byknx")
+&"frame8": SubResource("Animation_byknx")
 }
 
 [node name="prologue" type="Node2D"]

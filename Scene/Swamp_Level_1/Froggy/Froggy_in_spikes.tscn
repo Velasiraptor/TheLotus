@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bodccpgndfve4"]
 
 [ext_resource type="Texture2D" uid="uid://tykvcmgn3xm5" path="res://Sprites/SwampLevel1/Froggy/Froggy_character/Froggy_2.png" id="1_2ca6i"]
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Froggy/Froggy_in_spikes.gd" id="1_ivwkf"]
+[ext_resource type="Script" uid="uid://3d44pb57ubk3" path="res://Scene/Swamp_Level_1/Froggy/Froggy_in_spikes.gd" id="1_ivwkf"]
 [ext_resource type="Texture2D" uid="uid://dlh2tcnryvtjs" path="res://Sprites/SwampLevel1/Froggy/Froggy_jump_1.png" id="3_0ukg1"]
 [ext_resource type="Texture2D" uid="uid://cvrgwxdktkf1h" path="res://Sprites/SwampLevel1/Froggy/Froggy_jump_2.png" id="4_af3vi"]
 [ext_resource type="Texture2D" uid="uid://b5nh3ibuugws0" path="res://Sprites/SwampLevel1/Froggy/Froggy_jump_3.png" id="5_1mfh8"]
@@ -354,8 +354,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6135b"]
 _data = {
-"RESET": SubResource("Animation_5vrb6"),
-"emotion": SubResource("Animation_w2y5s")
+&"RESET": SubResource("Animation_5vrb6"),
+&"emotion": SubResource("Animation_w2y5s")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1sbnb"]

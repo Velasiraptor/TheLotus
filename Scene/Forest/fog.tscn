@@ -81,7 +81,7 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dsmxi"]
 _data = {
-"Fog_animation": SubResource("Animation_m8sik")
+&"Fog_animation": SubResource("Animation_m8sik")
 }
 
 [node name="Fog" type="Node2D"]

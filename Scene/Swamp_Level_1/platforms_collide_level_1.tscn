@@ -1,4 +1,4 @@
-[gd_scene load_steps=257 format=3 uid="uid://bybfwutajwh87"]
+[gd_scene load_steps=256 format=3 uid="uid://bybfwutajwh87"]
 
 [ext_resource type="Texture2D" uid="uid://p0h2dr34bu57" path="res://Sprites/SwampLevel1/Swamp_path_4/Water.png" id="1_o8681"]
 [ext_resource type="Texture2D" uid="uid://ugnu7n87247p" path="res://Sprites/SwampLevel1/Swamp_path_8/Water_right.png" id="4_n2j1v"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c6rewif3bik64" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_4.png" id="12_qdbi0"]
 [ext_resource type="Texture2D" uid="uid://dkd85yf5w81d1" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_5.png" id="13_nego8"]
 [ext_resource type="Texture2D" uid="uid://4tp6giv5krcj" path="res://Sprites/SwampLevel1/Swamp_path_3/Water_wave_3p_2.png" id="14_k1ui5"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="14_r7s44"]
 [ext_resource type="Texture2D" uid="uid://n1ea8wg7r53s" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_6.png" id="14_tsdiu"]
 [ext_resource type="Texture2D" uid="uid://crub8nikwlie8" path="res://Sprites/SwampLevel1/Swamp_path_3/Background_7.png" id="15_v4x58"]
 [ext_resource type="Texture2D" uid="uid://bfvkt6tg0csil" path="res://Sprites/SwampLevel1/Swamp_path_7/Background_1.png" id="16_2vqr1"]
@@ -41,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://c8rasivf4e1j5" path="res://Sprites/SwampLevel1/Swamp_path_2/Platform.png" id="36_3l5qj"]
 [ext_resource type="Texture2D" uid="uid://pg0ir8b4bods" path="res://Sprites/SwampLevel1/Swamp_path_1/Background_1.png" id="37_ent57"]
 [ext_resource type="Texture2D" uid="uid://oai4ahgfogiv" path="res://Sprites/SwampLevel1/Swamp_path_1/Water.png" id="38_ivnil"]
-[ext_resource type="Shader" path="res://Shaders/water_swamp_level_1.gdshader" id="38_rrv6u"]
+[ext_resource type="Shader" uid="uid://dfkelpj3p64er" path="res://Shaders/water_swamp_level_1.gdshader" id="38_rrv6u"]
 [ext_resource type="Texture2D" uid="uid://c77v6utea1ejx" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_2.png" id="39_r3nwo"]
 [ext_resource type="Texture2D" uid="uid://d1fa1pt37moaj" path="res://Sprites/SwampLevel1/Swamp_path_2/Background_3.png" id="40_biycs"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="40_si556"]
@@ -106,6 +105,8 @@ noise = SubResource("FastNoiseLite_r6j20")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wpxv1"]
 shader = SubResource("Shader_gqmnb")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 shader_parameter/scroll1 = Vector2(0, -0.03)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.01
@@ -113,8 +114,6 @@ shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
 shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
-shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wq54t"]
 load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
@@ -130,6 +129,8 @@ shader_parameter/wave_length = 250.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_50mwx"]
 shader = SubResource("Shader_gqmnb")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 shader_parameter/scroll1 = Vector2(0, -0.03)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.01
@@ -137,8 +138,6 @@ shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
 shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
-shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0iht"]
 shader = ExtResource("38_rrv6u")
@@ -154,6 +153,8 @@ load_path = "res://.godot/imported/Water_left.png-4f73db2e5a53028144be7eb32eb910
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_htqmg"]
 shader = SubResource("Shader_gqmnb")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 shader_parameter/scroll1 = Vector2(0, -0.03)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.01
@@ -161,8 +162,6 @@ shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
 shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
-shader_parameter/noise1 = SubResource("NoiseTexture2D_se746")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_mpxsy")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lqwq8"]
 load_path = "res://.godot/imported/Water.png-b63f009c96500d39a5f4062feac0b81e.ctex"
@@ -246,8 +245,6 @@ shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_length = 250.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akts1"]
-shader = ExtResource("14_r7s44")
-shader_parameter/lod = 1.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o0ofc"]
 load_path = "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
@@ -357,6 +354,8 @@ noise = SubResource("FastNoiseLite_i57dd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w0vt4"]
 shader = SubResource("Shader_gqmnb")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_ix0nq")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_46k8l")
 shader_parameter/scroll1 = Vector2(0, -0.03)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.01
@@ -364,8 +363,6 @@ shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
 shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
-shader_parameter/noise1 = SubResource("NoiseTexture2D_ix0nq")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_46k8l")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea3ga"]
 size = Vector2(228, 665)

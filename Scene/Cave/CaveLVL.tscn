@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://m1fdee2xwour"]
 
-[ext_resource type="Script" path="res://Scene/Cave/CaveLVL.gd" id="1_wbc34"]
+[ext_resource type="Script" uid="uid://sltkiiptbyuv" path="res://Scene/Cave/CaveLVL.gd" id="1_wbc34"]
 [ext_resource type="Texture2D" uid="uid://bjk3e3bhno6nl" path="res://Sprites/Cave/Backgrounds/Backgrounds0.png" id="2_2aktn"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="3_ut855"]
 [ext_resource type="Texture2D" uid="uid://ckx0r2qkm3tf6" path="res://Sprites/Cave/Backgrounds/Backgrounds1.png" id="3_xcad3"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://7i5goxtewiyi" path="res://Sprites/Cave/Backgrounds/Backgrounds4.png" id="9_vw5g3"]
 [ext_resource type="Texture2D" uid="uid://6ibn6oc4mfn1" path="res://Sprites/Cave/Backgrounds/Backgrounds5.png" id="10_dsann"]
 [ext_resource type="AudioStream" uid="uid://bxkclmqw3njy3" path="res://Sounds/Location-/CaveSound.mp3" id="11_vlvw3"]
-[ext_resource type="Script" path="res://Scene/Cave/Abyss.gd" id="12_7iuvf"]
+[ext_resource type="Script" uid="uid://bacdremwf6ryl" path="res://Scene/Cave/Abyss.gd" id="12_7iuvf"]
 [ext_resource type="PackedScene" uid="uid://0qcetmsr5o2g" path="res://Scene/Items/mushroom.tscn" id="12_s2vl0"]
 [ext_resource type="Texture2D" uid="uid://krpddqjqf0wa" path="res://Sprites/Cave/Fonnn.png" id="13_ir43h"]
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="14_ci4m1"]
@@ -195,8 +195,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wa4il"]
 _data = {
-"WD": SubResource("Animation_5s4to"),
-"WD_2": SubResource("Animation_pbh3p")
+&"WD": SubResource("Animation_5s4to"),
+&"WD_2": SubResource("Animation_pbh3p")
 }
 
 [sub_resource type="Animation" id="Animation_g5axq"]
@@ -313,7 +313,7 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tnphs"]
 _data = {
-"linean": SubResource("Animation_g5axq")
+&"linean": SubResource("Animation_g5axq")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vg8ji"]

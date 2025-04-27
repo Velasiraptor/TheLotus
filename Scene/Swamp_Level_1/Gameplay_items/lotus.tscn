@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://baat563t3l77h"]
 
 [ext_resource type="Texture2D" uid="uid://b6esivdq3db4c" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_open.png" id="1_isejq"]
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Gameplay_items/lotus.gd" id="1_q88kc"]
+[ext_resource type="Script" uid="uid://dqm15g4lw4w2m" path="res://Scene/Swamp_Level_1/Gameplay_items/lotus.gd" id="1_q88kc"]
 [ext_resource type="Texture2D" uid="uid://cabtna75b5qm6" path="res://Sprites/SwampLevel1/Items/Lotus/Lotus_close.png" id="2_ycsbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7r85"]

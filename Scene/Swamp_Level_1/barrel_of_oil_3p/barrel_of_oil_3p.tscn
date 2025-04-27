@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dviqbc0xl5wt7"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/barrel_of_oil_3p/barrel_of_oil_3p.gd" id="1_axsfb"]
+[ext_resource type="Script" uid="uid://drclwptdpoi4n" path="res://Scene/Swamp_Level_1/barrel_of_oil_3p/barrel_of_oil_3p.gd" id="1_axsfb"]
 [ext_resource type="Texture2D" uid="uid://cea5j1ho3svy4" path="res://Sprites/SwampLevel1/Items/Water_drops.png" id="2_ygvmn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iffet"]
@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6q16s"]
 _data = {
-"RESET": SubResource("Animation_pfhy4"),
-"water_animation": SubResource("Animation_3dk06")
+&"RESET": SubResource("Animation_pfhy4"),
+&"water_animation": SubResource("Animation_3dk06")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ltf4"]
@@ -83,8 +83,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ey3g3"]
 _data = {
-"Animation_Player_on_barrel": SubResource("Animation_bwua1"),
-"RESET": SubResource("Animation_cd103")
+&"Animation_Player_on_barrel": SubResource("Animation_bwua1"),
+&"RESET": SubResource("Animation_cd103")
 }
 
 [sub_resource type="Animation" id="Animation_2j5kv"]
@@ -240,8 +240,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgikg"]
 _data = {
-"RESET": SubResource("Animation_2j5kv"),
-"water_drops": SubResource("Animation_5qka0")
+&"RESET": SubResource("Animation_2j5kv"),
+&"water_drops": SubResource("Animation_5qka0")
 }
 
 [node name="barrel_of_oil_3p" type="Node2D"]

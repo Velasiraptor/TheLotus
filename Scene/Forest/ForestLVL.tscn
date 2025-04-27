@@ -1,16 +1,15 @@
-[gd_scene load_steps=84 format=3 uid="uid://hrim7s88bl86"]
+[gd_scene load_steps=83 format=3 uid="uid://hrim7s88bl86"]
 
 [ext_resource type="Texture2D" uid="uid://c30qjjrujkf1f" path="res://Sprites/Forest/BackgroundsLevel1/BackgroundFull.png" id="1_axv3k"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_1.tscn" id="2_ubu5b"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/smoke_2.tscn" id="3_1pkg0"]
 [ext_resource type="Texture2D" uid="uid://dp481rliiwafx" path="res://Sprites/Forest/BackgroundsLevel1/CityMirror.png" id="4_vsk6d"]
-[ext_resource type="Shader" path="res://Shaders/water.gdshader" id="5_jog88"]
+[ext_resource type="Shader" uid="uid://djjt3lb5atpri" path="res://Shaders/water.gdshader" id="5_jog88"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="6_3b2y1"]
 [ext_resource type="Texture2D" uid="uid://dq7ggyy7ud8wn" path="res://Sprites/Forest/BackgroundsLevel1/City.png" id="7_tk0bd"]
 [ext_resource type="Texture2D" uid="uid://b3ldqv0x14tm6" path="res://Sprites/Forest/BackgroundsLevel1/Background3.png" id="8_a2xkd"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/leaf_fall.tscn" id="9_qnf3j"]
 [ext_resource type="Texture2D" uid="uid://i36e15xxw3ja" path="res://Sprites/Forest/BackgroundsLevel1/Background4.png" id="10_etumo"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="11_1yqdb"]
 [ext_resource type="Texture2D" uid="uid://1m5b4gdai2va" path="res://Sprites/Forest/BackgroundsLevel1/Background5.png" id="12_aw23o"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/water.tscn" id="13_60kp0"]
 [ext_resource type="PackedScene" uid="uid://tbhcnn0bwgeo" path="res://Scene/Forest/fog.tscn" id="14_d1dqn"]
@@ -20,7 +19,7 @@
 [ext_resource type="PackedScene" path="res://Scene/Forest/platf_small_2.tscn" id="18_1ucfl"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/platf_big_1.tscn" id="19_b31sm"]
 [ext_resource type="PackedScene" path="res://Scene/Forest/platf_bad_small_1.tscn" id="20_45voo"]
-[ext_resource type="Shader" path="res://Shaders/Grass.gdshader" id="21_44ilp"]
+[ext_resource type="Shader" uid="uid://ddhsgvxbb5p36" path="res://Shaders/Grass.gdshader" id="21_44ilp"]
 [ext_resource type="Texture2D" uid="uid://cw3auo0ncmue2" path="res://Sprites/Forest/Grass2.png" id="22_q7p2p"]
 [ext_resource type="Texture2D" uid="uid://cexkouorbo250" path="res://Sprites/Forest/Grass4.png" id="23_3vhip"]
 [ext_resource type="Texture2D" uid="uid://b5e2cb8hse2wn" path="res://Sprites/Forest/Grass5.png" id="24_1n2j5"]
@@ -40,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://c0nup35r8n3ul" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull6.png" id="37_qr77c"]
 [ext_resource type="Texture2D" uid="uid://b0dcxe7eww6g8" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull7.png" id="38_l0ldt"]
 [ext_resource type="Texture2D" uid="uid://c5i2cfdv750y3" path="res://Sprites/Forest/whirlPool/Full/whirlpoolFull8.png" id="39_uuxmh"]
-[ext_resource type="Script" path="res://Scene/Forest/ScriptsForest/AreaWh.gd" id="40_pgw12"]
+[ext_resource type="Script" uid="uid://c4qea2jsu1iai" path="res://Scene/Forest/ScriptsForest/AreaWh.gd" id="40_pgw12"]
 [ext_resource type="Texture2D" uid="uid://twaag6kb8nd7" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-1.png" id="41_e5q3o"]
 [ext_resource type="Texture2D" uid="uid://cn7rx4kyqlq3g" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-2.png" id="42_p355d"]
 [ext_resource type="Texture2D" uid="uid://cijvppo78yp7k" path="res://Sprites/Forest/whirlpoolFrog/whirlpoolFrog-3.png" id="43_4h0id"]
@@ -55,7 +54,7 @@
 [ext_resource type="AudioStream" uid="uid://dwqph1jq3eaqs" path="res://Sounds/Location-/forest.mp3" id="52_kpk6e"]
 [ext_resource type="PackedScene" uid="uid://o4mtmtl8n46o" path="res://Scene/UI/escape.tscn" id="54_ldd2a"]
 [ext_resource type="PackedScene" uid="uid://cye50rqhw7x7y" path="res://Scene/UI/GameOver.tscn" id="55_eavr7"]
-[ext_resource type="PackedScene" path="res://Scene/Forest/Bottom.tscn" id="56_hphew"]
+[ext_resource type="PackedScene" uid="uid://ds6scf5ke40mk" path="res://Scene/Forest/Bottom.tscn" id="56_hphew"]
 [ext_resource type="Texture2D" uid="uid://ddd5re4fsxr8v" path="res://Sprites/Forest/BottomStatic.png" id="57_bysl0"]
 [ext_resource type="Texture2D" uid="uid://cx0ulfx824wai" path="res://Sprites/Forest/BackgroundsLevel1/Edge.png" id="58_2jd71"]
 [ext_resource type="PackedScene" uid="uid://by8ag4w6xi37k" path="res://Scene/Items/GrassesArea/grass_area.tscn" id="59_a7nt7"]
@@ -108,6 +107,8 @@ noise = SubResource("FastNoiseLite_ddro4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_32obc"]
 shader = ExtResource("5_jog88")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_yhx7d")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_ivibj")
 shader_parameter/scroll1 = Vector2(0, 0)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.03
@@ -115,8 +116,6 @@ shader_parameter/tone_color = Color(0.823529, 0.878431, 1, 0.486275)
 shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
-shader_parameter/noise1 = SubResource("NoiseTexture2D_yhx7d")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_ivibj")
 
 [sub_resource type="Animation" id="Animation_r4w2h"]
 resource_name = "foggy"
@@ -221,12 +220,10 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fw38h"]
 _data = {
-"foggy": SubResource("Animation_r4w2h")
+&"foggy": SubResource("Animation_r4w2h")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_20xbu"]
-shader = ExtResource("11_1yqdb")
-shader_parameter/lod = 0.7
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7toa6"]
 shader = ExtResource("21_44ilp")
@@ -321,6 +318,8 @@ noise = SubResource("FastNoiseLite_pj3fy")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3t8qd"]
 shader = ExtResource("5_jog88")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_sgbdx")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_cxhai")
 shader_parameter/scroll1 = Vector2(0, 0)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.01
@@ -328,8 +327,6 @@ shader_parameter/tone_color = Color(1, 1, 1, 0.501961)
 shader_parameter/top_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 shader_parameter/light_start = 0.339
 shader_parameter/light_end = 0.687
-shader_parameter/noise1 = SubResource("NoiseTexture2D_sgbdx")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_cxhai")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3nrk"]
 animations = [{
@@ -422,8 +419,8 @@ shader = ExtResource("5_jog88")
 shader_parameter/scroll1 = Vector2(0.05, 0.05)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strenght = 0.2
-shader_parameter/tone_color = null
-shader_parameter/top_color = null
+shader_parameter/tone_color = Color(0, 0, 0, 1)
+shader_parameter/top_color = Color(0, 0, 0, 1)
 shader_parameter/light_start = 0.275
 shader_parameter/light_end = 0.4
 

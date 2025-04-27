@@ -150,7 +150,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ngr3i"]
 _data = {
-"stop_game": SubResource("Animation_js32r")
+&"stop_game": SubResource("Animation_js32r")
 }
 
 [sub_resource type="Animation" id="Animation_mnmpy"]
@@ -186,8 +186,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dl4co"]
 _data = {
-"RESET": SubResource("Animation_mnmpy"),
-"start_jump": SubResource("Animation_3s4um")
+&"RESET": SubResource("Animation_mnmpy"),
+&"start_jump": SubResource("Animation_3s4um")
 }
 
 [node name="Froggy_in_puzzle" type="CharacterBody2D" groups=["Foggy_in_puzzle"]]

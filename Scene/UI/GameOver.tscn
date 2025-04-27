@@ -1,20 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cye50rqhw7x7y"]
+[gd_scene load_steps=12 format=3 uid="uid://cye50rqhw7x7y"]
 
 [ext_resource type="FontFile" uid="uid://br46uq16dmf1i" path="res://Comic Sans MS.ttf" id="1"]
 [ext_resource type="Texture2D" uid="uid://dwnd6qtb24rdp" path="res://Sprites/UI/GameOver/ButtonExitClick.png" id="2"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_1qba5"]
 [ext_resource type="Texture2D" uid="uid://dw2kvsyiper7i" path="res://Sprites/UI/GameOver/ButtonResetClick.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="3_elud1"]
 [ext_resource type="Texture2D" uid="uid://d3k1jv1p56py6" path="res://Sprites/Menu/Button.png" id="4_c23iw"]
 [ext_resource type="Texture2D" uid="uid://b2ws5eit5coyo" path="res://Sprites/UI/GameOver/ButtonReset.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://cnmvopsc8chlg" path="res://Sprites/UI/GameOver/ButtonExit.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://crh5mw2pn65yn" path="res://Sprites/UI/GameOver/GameOver.png" id="8"]
-[ext_resource type="Script" path="res://Scene/Player/GameOver.gd" id="9"]
+[ext_resource type="Script" uid="uid://n4810l17yr4m" path="res://Scene/Player/GameOver.gd" id="9"]
 [ext_resource type="AudioStream" uid="uid://gn82pc41cvlx" path="res://Sounds/Press.mp3" id="10_7v21w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52wxo"]
-shader = ExtResource("2_1qba5")
-shader_parameter/lod = 2.0
 
 [node name="GameOver" type="Control" groups=["GameOver"]]
 process_mode = 3

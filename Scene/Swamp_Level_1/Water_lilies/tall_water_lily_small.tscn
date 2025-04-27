@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://xymq2oucmg4a"]
 
 [ext_resource type="Texture2D" uid="uid://caqtjnssjmflt" path="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily_small.png" id="1_0rq64"]
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_small.gd" id="1_6noo5"]
+[ext_resource type="Script" uid="uid://cyackrg7kkjay" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_small.gd" id="1_6noo5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3xrr"]
 size = Vector2(269, 10)
@@ -42,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3yrux"]
 _data = {
-"RESET": SubResource("Animation_xrhsf"),
-"fall_water_lily": SubResource("Animation_o8gf6")
+&"RESET": SubResource("Animation_xrhsf"),
+&"fall_water_lily": SubResource("Animation_o8gf6")
 }
 
 [node name="Tall_water_lily_small" type="Sprite2D"]

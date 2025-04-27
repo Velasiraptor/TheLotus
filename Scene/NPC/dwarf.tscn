@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cqmk2gl5u37bs"]
 
-[ext_resource type="Script" path="res://Scene/NPC/dwarf.gd" id="1_u3k52"]
+[ext_resource type="Script" uid="uid://guqk8bhxbnao" path="res://Scene/NPC/dwarf.gd" id="1_u3k52"]
 [ext_resource type="Texture2D" uid="uid://c6l715y8kw2aj" path="res://Sprites/Dwarf/DwarfIdle_1_5.png" id="1_vobkw"]
 [ext_resource type="Texture2D" uid="uid://dpqfvr4pkc4f2" path="res://Sprites/Dwarf/DwarfIdle_2_4.png" id="2_vf0vx"]
 [ext_resource type="Texture2D" uid="uid://d4kyl433amugo" path="res://Sprites/Dwarf/DwarfIdle_3.png" id="3_hqtyt"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dukowtahvht10" path="res://Sprites/Dwarf/DwarfTalk_3.png" id="6_go4c8"]
 [ext_resource type="Texture2D" uid="uid://c3ae0khl1q30f" path="res://addons/ActionIcon/Keyboard/E.png" id="9_u4yrk"]
 [ext_resource type="AudioStream" uid="uid://tccvvsp3i1m1" path="res://Sounds/NPC/Dwarf/DwarfFanpinio.mp3" id="10_hgsvo"]
-
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwivy"]
 animations = [{
@@ -143,7 +142,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dc5vu"]
 _data = {
-"scale": SubResource("Animation_h55r5")
+&"scale": SubResource("Animation_h55r5")
 }
 
 [node name="Dwarf" type="CharacterBody2D"]

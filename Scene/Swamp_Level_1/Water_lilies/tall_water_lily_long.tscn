@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ifn8ww83bu0n"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long.gd" id="1_e0tct"]
+[ext_resource type="Script" uid="uid://cdq4a7j5juk0w" path="res://Scene/Swamp_Level_1/Water_lilies/tall_water_lily_long.gd" id="1_e0tct"]
 [ext_resource type="Texture2D" uid="uid://i3ibj68qcu2x" path="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily_long/Tall_water_lily_long_3.png" id="1_kq111"]
 [ext_resource type="Texture2D" uid="uid://cv50vnjrudq1m" path="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily_long/Tall_water_lily_long_4.png" id="2_i55r7"]
 [ext_resource type="Texture2D" uid="uid://dy1i0jk6w0toj" path="res://Sprites/SwampLevel1/Items/Water_lily/Tall_water_lily_long/Tall_water_lily_long_5.png" id="3_cd3a0"]
@@ -362,8 +362,8 @@ tracks/13/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f6i3x"]
 _data = {
-"RESET": SubResource("Animation_7bwp4"),
-"fall_water_lily": SubResource("Animation_w8hlv")
+&"RESET": SubResource("Animation_7bwp4"),
+&"fall_water_lily": SubResource("Animation_w8hlv")
 }
 
 [node name="Tall_water_lily_long" type="Sprite2D"]

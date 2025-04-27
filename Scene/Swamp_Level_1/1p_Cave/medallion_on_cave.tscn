@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://esxdmoxsxkl1"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.gd" id="1_c41df"]
+[ext_resource type="Script" uid="uid://cpgf3i1iulyqh" path="res://Scene/Swamp_Level_1/1p_Cave/medallion_on_cave.gd" id="1_c41df"]
 [ext_resource type="Texture2D" uid="uid://b7qq246r4kaaj" path="res://Sprites/SwampLevel1/Inventory_items/Medallion/Medallion_on_cave.png" id="1_kkk1e"]
 [ext_resource type="Texture2D" uid="uid://chwv22klbryfo" path="res://Sprites/SwampLevel1/Inventory_items/Medallion/Shine.png" id="2_u30n6"]
 [ext_resource type="Texture2D" uid="uid://bm1alrreu4j71" path="res://Sprites/Items/Take_item_emotion.png" id="4_vmxgm"]
@@ -66,8 +66,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_as76h"]
 _data = {
-"RESET": SubResource("Animation_4cyv0"),
-"new_animation": SubResource("Animation_t063a")
+&"RESET": SubResource("Animation_4cyv0"),
+&"new_animation": SubResource("Animation_t063a")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mflq5"]
@@ -130,8 +130,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7srn0"]
 _data = {
-"RESET": SubResource("Animation_o47m4"),
-"emotion": SubResource("Animation_eg5dp")
+&"RESET": SubResource("Animation_o47m4"),
+&"emotion": SubResource("Animation_eg5dp")
 }
 
 [node name="Medallion_on_cave" type="Area2D"]
@@ -152,7 +152,7 @@ debug_color = Color(0.160784, 0.596078, 0.678431, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_as76h")
+&"": SubResource("AnimationLibrary_as76h")
 }
 autoplay = "new_animation"
 
@@ -184,7 +184,7 @@ texture = ExtResource("4_vmxgm")
 [node name="AnimationEmotion" type="AnimationPlayer" parent="TakeItemEmotion"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_7srn0")
+&"": SubResource("AnimationLibrary_7srn0")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=50 format=3 uid="uid://lvpoeys2jwcv"]
+[gd_scene load_steps=49 format=3 uid="uid://lvpoeys2jwcv"]
 
-[ext_resource type="Script" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/puzzle_froggy.gd" id="1_4pjiy"]
+[ext_resource type="Script" uid="uid://c5lhtdhaciowk" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/puzzle_froggy.gd" id="1_4pjiy"]
 [ext_resource type="Texture2D" uid="uid://02j6un1taxnc" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Field.png" id="1_gvrse"]
 [ext_resource type="PackedScene" uid="uid://ibh20vikwwcm" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/froggy_in_puzzle.tscn" id="2_6x6d5"]
 [ext_resource type="PackedScene" uid="uid://cpxb4xa24hugh" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/rock_puzzle.tscn" id="2_73gpv"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_md4e5"]
 [ext_resource type="Texture2D" uid="uid://cc0q467q7b02n" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/Field_glass.png" id="3_7ut0j"]
 [ext_resource type="Texture2D" uid="uid://cki6nsa0r000q" path="res://Sprites/SwampLevel1/icon.png" id="3_muvau"]
 [ext_resource type="PackedScene" uid="uid://d2fed1m8brc2t" path="res://Scene/Swamp_Level_1/Froggy/Puzzle/glass_trap.tscn" id="4_51h4h"]
@@ -37,8 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://cl33vpcfbwvbx" path="res://Sprites/SwampLevel1/Froggy/Froggy_puzzle/items_in_puzzle_froggy/Exclamation_point.png" id="34_y5pmv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gk7ao"]
-shader = ExtResource("2_md4e5")
-shader_parameter/lod = 2.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpanr"]
 size = Vector2(45, 823)
@@ -94,8 +91,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jl0f7"]
 _data = {
-"RESET": SubResource("Animation_ifsei"),
-"start": SubResource("Animation_kdexo")
+&"RESET": SubResource("Animation_ifsei"),
+&"start": SubResource("Animation_kdexo")
 }
 
 [sub_resource type="Animation" id="Animation_ykfkl"]
@@ -227,8 +224,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b0wh7"]
 _data = {
-"Clue_animation": SubResource("Animation_ykfkl"),
-"RESET": SubResource("Animation_cnaux")
+&"Clue_animation": SubResource("Animation_ykfkl"),
+&"RESET": SubResource("Animation_cnaux")
 }
 
 [node name="Puzzle_froggy" type="Node2D" groups=["Froggy_puzzle"]]

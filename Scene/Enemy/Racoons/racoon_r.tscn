@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://dk5bsr1asyhip"]
 
-[ext_resource type="Script" path="res://Scene/Enemy/Racoons/EnemyAR.gd" id="1_1fs38"]
+[ext_resource type="Script" uid="uid://b8mapwt11185h" path="res://Scene/Enemy/Racoons/EnemyAR.gd" id="1_1fs38"]
 [ext_resource type="Texture2D" uid="uid://c6hintfs8fn7k" path="res://Sprites/NPC/Racoon/RacoonHit1.png" id="2_1owkb"]
 [ext_resource type="Texture2D" uid="uid://cer7ag0q67ddo" path="res://Sprites/NPC/Racoon/RacoonHit2.png" id="3_sulka"]
 [ext_resource type="Texture2D" uid="uid://f0p528x1hu7o" path="res://Sprites/NPC/Racoon/RacoonHit3.png" id="4_m6m26"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cjwde67yn4mwm" path="res://Sprites/NPC/Racoon/RacoonWalk-4.png" id="11_t1227"]
 [ext_resource type="Texture2D" uid="uid://drixhxnriu53i" path="res://Sprites/NPC/Racoon/RacoonWalk-5.png" id="12_fcv6e"]
 [ext_resource type="AudioStream" uid="uid://ch0inhrbft72g" path="res://Sounds/NPC/Racoon.mp3" id="13_ap7u0"]
-[ext_resource type="Script" path="res://addons/random_timer/random_timer.gd" id="14_4xgiv"]
+[ext_resource type="Script" uid="uid://b4fsi6qqrhpox" path="res://addons/random_timer/random_timer.gd" id="14_4xgiv"]
 [ext_resource type="Texture2D" uid="uid://cw1ubqnkiyemp" path="res://Sprites/Shadow.png" id="15_bk8u2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1i85f"]

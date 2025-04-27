@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://ds6scf5ke40mk"]
 
 [ext_resource type="Texture2D" uid="uid://cubkru0xmbi1w" path="res://Sprites/Forest/Bottom.png" id="1"]
-[ext_resource type="Shader" path="res://Shaders/Grass.gdshader" id="1_b0iqr"]
-[ext_resource type="Script" path="res://Scene/Forest/ScriptsForest/Bottom.gd" id="2"]
+[ext_resource type="Shader" uid="uid://ddhsgvxbb5p36" path="res://Shaders/Grass.gdshader" id="1_b0iqr"]
+[ext_resource type="Script" uid="uid://cqrsu55283kuk" path="res://Scene/Forest/ScriptsForest/Bottom.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://v0rx3flohgt" path="res://Sprites/Forest/Bottom60.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dns72ev465l16" path="res://Sprites/Forest/Bottom80.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bddnclovqy0bq" path="res://Sprites/Forest/Bottom50.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://bxocg544hnpmk" path="res://Sprites/Forest/Bottom90.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://gje1lnch4758" path="res://Sprites/Forest/Bottom70.png" id="7"]
-
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2v58"]
 shader = ExtResource("1_b0iqr")

@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://d4d8qyfxeifj7"]
 
 [ext_resource type="Texture2D" uid="uid://bwsmg6tpd3u88" path="res://Sprites/Forest/BackgroundsLevel1/Smoke.png" id="1_kudkn"]
 
 [sub_resource type="Curve" id="Curve_lky1q"]
-max_value = 1024.0
+_limits = [0.0, 1024.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1024), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_xpc4p"]
-max_value = 1.5
+_limits = [0.0, 1.5, 0.0, 1.0]
 _data = [Vector2(0, 0.0217558), 0.0, 0.0, 0, 0, Vector2(0.566237, 1.5), 0.0, 0.0, 0, 0, Vector2(0.798068, 1.24466), 0.0, 0.0, 0, 0, Vector2(0.974701, 0.708779), 0.0, 0.0, 0, 0, Vector2(1, 0.172901), 0.0, 0.0, 0, 0]
 point_count = 5
 
